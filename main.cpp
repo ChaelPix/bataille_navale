@@ -3,7 +3,7 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Title");
+    sf::RenderWindow window(sf::VideoMode(1600, 900), "Title");
 
     sf::Event event;
 
