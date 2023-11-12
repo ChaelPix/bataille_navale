@@ -13,10 +13,37 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers sources\Utilities">
+      <UniqueIdentifier>{cc403c51-0f1e-4c90-879c-3ca98f0d2262}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers de ressources\localization">
+      <UniqueIdentifier>{842012ea-308a-4a96-8e7d-aaa51e2f25ff}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Localization.cpp">
+      <Filter>Fichiers sources\Utilities</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Localization.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <_EmbedManagedResourceFile Include="localization\fr.json">
+      <Filter>Fichiers de ressources\localization</Filter>
+    </_EmbedManagedResourceFile>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="localization\eng.json">
+      <Filter>Fichiers de ressources\localization</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>
