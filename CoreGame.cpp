@@ -4,13 +4,14 @@
 // Vous n'avez pas besoin de d\202clarer nbLig et nbCol dans le .cpp car ils sont d\202jà d\202clar\202s comme 'static const' dans le .h
 
 CoreGame::CoreGame() : nombreTotalBateaux(0), bateauxCoulés(0) {
-    // Initialise la grille avec des cases vides.
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
             grille[i][j] = typeCase::vide;
+            grilleAdversaire[i][j] = typeCase::vide; // Initialisation de la grille de l'adversaire
         }
     }
 }
+
 
 CoreGame::typeCase CoreGame::getCase(int ligne, int colonne) const {
     return grille[ligne][colonne];
@@ -21,28 +22,37 @@ void CoreGame::setCase(int ligne, int colonne, CoreGame::typeCase type) {
 }
 
 void CoreGame::afficheGrille() const {
+    std::cout << "Votre Grille:\t\t\tGrille Adversaire:\n";
     for (int i = 0; i < nbLig; ++i) {
+        // Afficher la ligne de la grille du joueur
         for (int j = 0; j < nbCol; ++j) {
-            char representation;
-            switch (grille[i][j]) {
-            case typeCase::vide:
-                representation = 'O'; // V pour vide
-                break;
-            case typeCase::bateau:
-                representation = 'B'; // B pour bateau
-                break;
-            case typeCase::touche:
-                representation = 'X'; // T pour touché
-                break;
-            case typeCase::eau:
-                representation = '~'; // E pour eau
-                break;
-            default:
-                representation = '?'; // Caractère par défaut pour un état inconnu
-            }
-            std::cout << representation << " ";
+            std::cout << getRepresentationCaractere(grille[i][j]) << " ";
         }
+
+        std::cout << "\t";
+
+        // Afficher la ligne de la grille de l'adversaire
+        for (int j = 0; j < nbCol; ++j) {
+            // Ne pas montrer les bateaux adverses, seulement les tirs effectués
+            if (grilleAdversaire[i][j] == typeCase::bateau) {
+                std::cout << getRepresentationCaractere(typeCase::vide) << " ";
+            }
+            else {
+                std::cout << getRepresentationCaractere(grilleAdversaire[i][j]) << " ";
+            }
+        }
+
         std::cout << std::endl;
+    }
+}
+
+char CoreGame::getRepresentationCaractere(typeCase caseType) const {
+    switch (caseType) {
+    case typeCase::vide: return 'O';
+    case typeCase::bateau: return 'B';
+    case typeCase::touche: return 'X';
+    case typeCase::eau: return '~';
+    default: return '?';
     }
 }
 
@@ -110,13 +120,19 @@ void CoreGame::placerBateaux() {
 }
 
 bool CoreGame::attaqueJoueur(int ligne, int colonne) {
-    // V\202rification simple de la case attaqu\202e
+    // Vérification simple de la case attaquée
     if (grille[ligne][colonne] == typeCase::bateau) {
-        grille[ligne][colonne] = typeCase::touche; // Marquer la case comme touch\202e
+        grille[ligne][colonne] = typeCase::touche; // Marquer la case comme touchée sur votre grille
+        grilleAdversaire[ligne][colonne] = typeCase::touche; // Marquer la case comme touchée sur la grille de l'adversaire
+        verifierBateauCoule(ligne, colonne); // Vérifier si un bateau a été coulé
         return true;
     }
-    return false;
+    else {
+        grilleAdversaire[ligne][colonne] = typeCase::eau; // Marquer la case comme eau (manqué) sur la grille de l'adversaire
+        return false;
+    }
 }
+
 
 void CoreGame::attaqueIA() {
     int ligne, colonne;
