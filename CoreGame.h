@@ -48,6 +48,9 @@ public:
     // Deserialise l'état de la grille à partir d'une chaîne de caractères.
     bool deserialisation(std::string trame);
 
+    bool caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)[nbCol]);
+
+
     // Ajout de nouvelles méthodes publiques pour le déroulement du jeu
     void placerBateaux(bool pourAdversaire); // Pour placer les bateaux de l'IA et du joueur
 

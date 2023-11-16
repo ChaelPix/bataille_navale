@@ -173,36 +173,42 @@ bool CoreGame::deserialisation(std::string trame) {
     return true;
 }
 
-void CoreGame::placerBateaux(bool pourAdversaire) {
-    // Utiliser un seed différent pour le joueur et pour l'IA
-    unsigned int seed = static_cast<unsigned int>(std::time(nullptr)) + (pourAdversaire ? 1 : 0);
-    std::srand(seed);
+bool CoreGame::caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)[nbCol]) {
+    for (int i = -1; i <= 1; i++) {
+        for (int j = -1; j <= 1; j++) {
+            int l = ligne + i;
+            int c = colonne + j;
+            if (l >= 0 && l < nbLig && c >= 0 && c < nbCol) {
+                if (grilleCible[l][c] != typeCase::vide) {
+                    return false; // Une case adjacente n'est pas vide
+                }
+            }
+        }
+    }
+    return true; // Toutes les cases adjacentes sont libres
+}
 
+void CoreGame::placerBateaux(bool pourAdversaire) {
     typeCase(*grilleCible)[nbCol] = pourAdversaire ? grilleAdversaire : grille;
     const std::vector<int> taillesBateaux = { 3, 2, 4, 5 };
 
     for (int tailleBateau : taillesBateaux) {
         bool placementValide = false;
-
         while (!placementValide) {
             int direction = std::rand() % 2; // 0 pour horizontal, 1 pour vertical
             int ligne = std::rand() % nbLig;
             int colonne = std::rand() % nbCol;
-            placementValide = true;
 
-            // Vérifier si le bateau peut être placé
+            placementValide = true;
             for (int i = 0; i < tailleBateau; ++i) {
                 int l = ligne + (direction == 0 ? 0 : i);
                 int c = colonne + (direction == 1 ? 0 : i);
-
-                // Vérifier les limites de la grille et si la case est déjà occupée
-                if (l >= nbLig || c >= nbCol || grilleCible[l][c] != typeCase::vide) {
+                if (l >= nbLig || c >= nbCol || grilleCible[l][c] != typeCase::vide || !caseAdjacenteLibre(l, c, grilleCible)) {
                     placementValide = false;
                     break;
                 }
             }
 
-            // Placer le bateau si possible
             if (placementValide) {
                 for (int i = 0; i < tailleBateau; ++i) {
                     int l = ligne + (direction == 0 ? 0 : i);
@@ -211,9 +217,6 @@ void CoreGame::placerBateaux(bool pourAdversaire) {
                 }
             }
         }
-
-        // Incrémenter le nombre total de bateaux
-        nombreTotalBateaux += 1;
     }
 }
 
