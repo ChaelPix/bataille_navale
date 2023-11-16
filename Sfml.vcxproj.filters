@@ -33,6 +33,9 @@
     <ClCompile Include="TCPWinsocksMaster.cpp">
       <Filter>Fichiers sources\Server</Filter>
     </ClCompile>
+    <ClCompile Include="TCPClient.cpp">
+      <Filter>Fichiers sources\Server</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Localization.h">
@@ -42,6 +45,9 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="TCPWinsocksMaster.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPClient.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

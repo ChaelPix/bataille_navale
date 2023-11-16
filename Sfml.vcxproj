@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClCompile Include="Localization.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TCPClient.cpp" />
     <ClCompile Include="TCPWinsocksMaster.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Localization.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="TCPClient.h" />
     <ClInclude Include="TCPWinsocksMaster.h" />
   </ItemGroup>
   <ItemGroup>

@@ -13,7 +13,6 @@ private:
 
     void connectToServer();
 
-
 public:
 
     TCPClient(const std::string& ip, ushort portNum);
