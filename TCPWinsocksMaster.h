@@ -22,8 +22,11 @@ public:
 
     TCPWinsocksMaster();
     virtual ~TCPWinsocksMaster();
-    virtual void start() = 0;
+    virtual void init() = 0;
 
     const SOCKET getIdSocket();
-    
+
+    void send(SOCKET targetSocketId);
+
+    void receive();
 };
