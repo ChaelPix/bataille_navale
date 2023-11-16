@@ -20,8 +20,8 @@ public:
 private:
     typeCase grille[nbLig][nbCol];
     typeCase grilleAdversaire[nbLig][nbCol];
-    int nombreTotalBateaux;
-    int bateauxCoulés;
+    int nombreTotalBateaux; // obselete
+    int bateauxCoulés; //obselete
 
 public:
     // Constructeur qui initialise la grille, par exemple avec des cases vides.
@@ -45,7 +45,10 @@ public:
 
     bool partiePerdu() const;
     // Serialise l'état de la grille en chaîne de caractères.
-    std::string serialisation() const;
+    std::string serialisationJoueur() const;
+
+    // Serialise l'état de la grille en chaîne de caractères de l'adversaire.
+    std::string serialisationAdversaire() const;
 
     // Deserialise l'état de la grille à partir d'une chaîne de caractères.
     bool deserialisation(std::string trame);

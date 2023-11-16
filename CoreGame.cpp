@@ -1,7 +1,7 @@
 #include "CoreGame.h"
 #include <iostream>
 
-CoreGame::CoreGame() : nombreTotalBateaux(0), bateauxCoulés(0) {
+CoreGame::CoreGame() : nombreTotalBateaux(4), bateauxCoulés(0) {
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
             grille[i][j] = typeCase::vide;
@@ -9,9 +9,6 @@ CoreGame::CoreGame() : nombreTotalBateaux(0), bateauxCoulés(0) {
         }
     }
     placerBateaux(false); // Place un bateau pour le joueur
-
-    // Réinitialiser le générateur de nombres aléatoires
-    std::srand(static_cast<unsigned int>(std::time(nullptr) + 1));
 
     placerBateaux(true);  // Place un bateau pour l'IA
 }
@@ -162,12 +159,24 @@ bool CoreGame::partiePerdu() const {
     return true; // Plus de bateaux, la partie est perdue.
 }
 
-std::string CoreGame::serialisation() const {
+std::string CoreGame::serialisationJoueur() const {
     // Convertit l'\202tat actuel de la grille en une chaîne de caractères.
     std::string result;
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
             result += std::to_string(static_cast<int>(grille[i][j])) + " ";
+        }
+        result += "\n";
+    }
+    return result;
+}
+
+std::string CoreGame::serialisationAdversaire() const {
+    // Convertit l'\202tat actuel de la grille en une chaîne de caractères.
+    std::string result;
+    for (int i = 0; i < nbLig; ++i) {
+        for (int j = 0; j < nbCol; ++j) {
+            result += std::to_string(static_cast<int>(grilleAdversaire[i][j])) + " ";
         }
         result += "\n";
     }
@@ -196,8 +205,8 @@ bool CoreGame::caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)
 }
 
 void CoreGame::placerBateaux(bool pourAdversaire) {
-    typeCase(*grilleCible)[nbCol] = pourAdversaire ? grilleAdversaire : grille;
-    const std::vector<int> taillesBateaux = { 3, 2, 4, 5 };
+    typeCase(*grilleCible)[nbCol] = pourAdversaire ? grilleAdversaire : grille; // Expression conditionnelle. Si pourAdversaire est vrai (true), alors la valeur grilleAdversaire est utilisée ; sinon, la valeur grille est utilisée.
+    const std::vector<int> taillesBateaux = { 3, 2, 4, 5 }; // Les bateaux disponible par joueurs, il doit y avoir un bateau avec 2 cases, 3 cases, 4 cases et enfin 5 cases selon wikipedia : https:// fr.wikipedia.org/wiki/Bataille_navale_(jeu)
 
     for (int tailleBateau : taillesBateaux) {
         bool placementValide = false;
@@ -279,6 +288,8 @@ void CoreGame::jouer() {
         std::cout << espace3 << "L'adversaire joue...";
         Sleep(1000);
         system("cls");
+        std::cout  << "MOI: " << std::endl << serialisationJoueur() << std::endl;
+        std::cout  << "ADVERSAIRE: " << std::endl << serialisationAdversaire();
         std::cout << std::endl;
         if (attaqueJoueur(ligne, colonne)) {
             std::cout << std::endl << std::endl << std::endl << std::endl;
@@ -352,7 +363,7 @@ void CoreGame::verifierBateauCoule(int ligne, int colonne, bool pourAdversaire) 
     }
 }
 
-
+// obselete
 void CoreGame::afficherBateauxCoules() const {
-   /* std::cout << espace << "Bateaux coul\202s: " << bateauxCoulés << " sur " << nombreTotalBateaux << std::endl;*/
+    //std::cout << espace << "Bateaux coul\202s: " << bateauxCoulés << " sur " << nombreTotalBateaux << std::endl;
 }
