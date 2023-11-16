@@ -6,6 +6,7 @@
 #define espace2 "\t\t\t\t\t\t      "
 #define espace3 "\t\t\t\t\t\t   "
 #define espace4 "\t\t\t\t\t\t         "
+#define espace5 "\t\t\t\t\t\t      "
 
 class CoreGame {
 public:
@@ -31,6 +32,8 @@ public:
 
     // Affiche la grille dans la console ou l'interface utilisateur.
     void afficheGrille() const;
+
+    void afficherCaractereAvecCouleur(typeCase caseType, bool estGrilleAdversaire) const;
 
     char getRepresentationCaractere(typeCase caseType) const;
 

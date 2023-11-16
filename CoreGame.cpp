@@ -38,36 +38,80 @@ void setGreenText() {
 
 void CoreGame::afficheGrille() const {
     std::cout << espace << "Votre Grille:" << "           Grille Adversaire:\n";
-    for (int i = 0; i < nbLig; ++i) {
-        // Afficher l'espace de centrage avant la grille du joueur
-        std::cout << espace;
 
-        // Afficher la ligne de la grille du joueur
+    // Afficher les repères de colonne
+    std::cout << espace << "  ";
+    for (int i = 0; i < nbCol; ++i) {
+        std::cout << "\033[90m" << i << "\033[0m" <<" ";
+    }
+    std::cout << "    ";
+    for (int i = 0; i < nbCol; ++i) {
+        std::cout << "\033[90m" << i << "\033[0m" << " ";
+    }
+    std::cout << std::endl;
+
+    for (int i = 0; i < nbLig; ++i) {
+        // Afficher le repère de ligne
+        std::cout << espace << "\033[90m" << i << "\033[0m" << " ";
+
+        // Afficher la grille du joueur
         for (int j = 0; j < nbCol; ++j) {
-            setGreenText(); // Changer la couleur du texte en rouge
-            std::cout << getRepresentationCaractere(grille[i][j]) << " ";
-            resetTextColor(); // Réinitialiser la couleur du texte
+            afficherCaractereAvecCouleur(grille[i][j], false);
+            std::cout << " ";
         }
 
-        std::cout << "\t";
+        std::cout << "\t" << "\033[90m" << i << "\033[0m" << " "; // Repère de ligne pour la grille de l'adversaire
 
-        // Afficher la ligne de la grille de l'adversaire
+        // Afficher la grille de l'adversaire
         for (int j = 0; j < nbCol; ++j) {
-            // Ne pas montrer les bateaux adverses, seulement les tirs effectués
-            if (grilleAdversaire[i][j] == typeCase::bateau) {
-                setRedText(); // Changer la couleur du texte en rouge
-                std::cout << getRepresentationCaractere(typeCase::vide) << " ";
-                resetTextColor(); // Réinitialiser la couleur du texte
-            }
-            else {
-                setRedText(); // Changer la couleur du texte en rouge
-                std::cout << getRepresentationCaractere(grilleAdversaire[i][j]) << " ";
-                resetTextColor(); // Réinitialiser la couleur du texte
-            }
+            afficherCaractereAvecCouleur(grilleAdversaire[i][j], true);
+            std::cout << " ";
         }
 
         std::cout << std::endl;
     }
+}
+
+
+
+void CoreGame::afficherCaractereAvecCouleur(typeCase caseType, bool estGrilleAdversaire) const {
+
+    // Codes de couleur ANSI
+    const std::string RESET = "\033[0m";
+    const std::string RED = "\033[31m";     // Pour "touche"
+    const std::string BLUE = "\033[34m";    // Pour "bateau"
+    const std::string CYAN = "\033[36m";    // Pour "eau"
+    const std::string VERT = "\033[32m";  // Pour "vide"
+    const std::string GREY = "\033[90m";    // Pour un caractère inconnu
+    const std::string YELLOW = "\033[33m";    // Pour un caractère inconnu
+
+    std::string couleur;
+    char caractere;
+
+    switch (caseType) {
+    case typeCase::vide:
+        couleur = estGrilleAdversaire ? YELLOW : VERT; // Rouge pour adversaire, bleu pour joueur
+        caractere = 'O';
+        break;
+    case typeCase::bateau:
+        couleur = RESET;
+        caractere = 'B';
+        break;
+    case typeCase::touche:
+        couleur = RED;
+        caractere = 'X';
+        break;
+    case typeCase::eau:
+        couleur = CYAN;
+        caractere = '~';
+        break;
+    default:
+        couleur = GREY;
+        caractere = '?';
+        break;
+    }
+
+    std::cout << couleur << caractere << RESET;
 }
 
 
@@ -84,9 +128,11 @@ char CoreGame::getRepresentationCaractere(typeCase caseType) const {
 std::pair<int, int> CoreGame::saisieJoueur() {
     // lire les entr\202es du joueur.
     int ligne, colonne;
-    std::cout << std::endl << espace << "            Entrez la ligne: ";
+    std::cout << std::endl << espace 
+        << "            Entrez la ligne: ";
     std::cin >> ligne; std::cout << std::endl;
-    std::cout << espace << "            Entrez la colonne: ";
+    std::cout << espace 
+        << "            Entrez la colonne: ";
     std::cin >> colonne; std::cout << std::endl;
     return { ligne, colonne };
    
@@ -167,7 +213,7 @@ void CoreGame::attaqueIA() {
     } while (grille[ligne][colonne] == typeCase::touche || grille[ligne][colonne] == typeCase::eau); // \202viter les cases d\202jà attaqu\202es
     // L'IA attaque une case
     if (grille[ligne][colonne] == typeCase::bateau) {
-        std::cout << espace3 << "\033[31mL'IA a touch\202 un bateau !\033[0m" << std::endl << std::endl;
+        std::cout << espace5 << "\033[31mL'IA a touch\202 un bateau !\033[0m" << std::endl << std::endl;
         grille[ligne][colonne] = typeCase::touche;
     }
     else {
