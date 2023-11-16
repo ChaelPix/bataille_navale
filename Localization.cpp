@@ -1,6 +1,6 @@
 #include "Localization.h"
 
-Localization::Localization(const std::string& language = "")
+Localization::Localization(const std::string& language)
 {
     if (language != "")
         init(language);
