@@ -16,16 +16,23 @@ const SOCKET TCPWinsocksMaster::getIdSocket()
 	return idSocket;
 }
 
-void TCPWinsocksMaster::sendMessage(SOCKET targetSocketId, std::string msg)
+std::string TCPWinsocksMaster::sendAndReceiveMsg(const std::string& msg)
 {
-	if (send(targetSocketId, msg.c_str(), msg.size() + 1, 0) == SOCKET_ERROR) {
+	sendMessage(msg);
+	return receiveMessage();
+}
+
+void TCPWinsocksMaster::sendMessage(std::string msg)
+{
+	if (send(idSocket, msg.c_str(), msg.size() + 1, 0) == SOCKET_ERROR) {
 		throw std::runtime_error("Send Failed");
 	}
 }
 
 std::string TCPWinsocksMaster::receiveMessage()
 {
-	recv(idSocket, trame_lect, DIMMAX, 0);
+	uint trameLenght = recv(idSocket, trame_lect, DIMMAX, 0);
+	trame_lect[trameLenght] = '\0';
 	return trame_lect;
 }
 

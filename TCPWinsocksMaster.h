@@ -6,6 +6,7 @@
 #include <ws2tcpip.h>
 #include <stdexcept>
 #include <string>
+#include <iostream>
 
 typedef unsigned int uint;
 typedef unsigned short ushort;
@@ -34,7 +35,8 @@ public:
 
     const SOCKET getIdSocket();
 
-    void sendMessage(SOCKET targetSocketId, std::string msg);
+    std::string sendAndReceiveMsg(const std::string& msg);
+    void sendMessage(std::string msg);
     std::string receiveMessage();
 };
 

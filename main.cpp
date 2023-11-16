@@ -7,8 +7,9 @@ int main()
 {
     try {
 
-        TCPClient testClient("10.187.52.16", 50000);
-        std::cout << testClient.receiveMessage();
+        TCPClient testClient("10.187.52.16", 55555);
+        std::cout << testClient.sendAndReceiveMsg("TMP");
+
     }
     catch (const std::runtime_error& e)
     {
