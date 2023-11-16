@@ -9,7 +9,6 @@ class TCPClient : public TCPWinsocksMaster
 
 private:
     std::string serverIP;
-    ushort serverPORT;
 
     void connectToServer();
 

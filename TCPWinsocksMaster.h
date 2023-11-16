@@ -19,7 +19,8 @@ class TCPWinsocksMaster
 protected:
     WSADATA wsaData;
     SOCKET idSocket;
-    struct sockaddr_in adr_serveur;
+    struct sockaddr_in adr_server;
+    ushort serverPORT;
 
     char trame_lect[DIMMAX + 1];
 
@@ -29,7 +30,7 @@ protected:
 
 public:
 
-    TCPWinsocksMaster();
+    TCPWinsocksMaster(uint serverPORT);
     ~TCPWinsocksMaster();
     virtual void init() = 0;
 

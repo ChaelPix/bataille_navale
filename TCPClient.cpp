@@ -1,6 +1,6 @@
 #include "TCPClient.h"
 
-TCPClient::TCPClient(const std::string& serverIP, ushort serverPORT) : TCPWinsocksMaster(), serverIP(serverIP), serverPORT(serverPORT)
+TCPClient::TCPClient(const std::string& serverIP, ushort serverPORT) : TCPWinsocksMaster(serverPORT), serverIP(serverIP)
 {
 	init();
 }
@@ -12,11 +12,11 @@ void TCPClient::init()
 
 void TCPClient::connectToServer()
 {
-    adr_serveur.sin_family = AF_INET;
-    adr_serveur.sin_port = htons(serverPORT);
+    adr_server.sin_family = AF_INET;
+    adr_server.sin_port = htons(serverPORT);
 
-    inet_pton(AF_INET, serverIP.c_str(), &adr_serveur.sin_addr);
-    if (connect(idSocket, (struct sockaddr*)&adr_serveur, sizeof(adr_serveur)) < 0) {
+    inet_pton(AF_INET, serverIP.c_str(), &adr_server.sin_addr);
+    if (connect(idSocket, (struct sockaddr*)&adr_server, sizeof(adr_server)) < 0) {
         throw std::runtime_error("Connect to Server Failed");
     }
 }

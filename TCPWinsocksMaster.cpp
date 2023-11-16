@@ -1,6 +1,6 @@
 #include "TCPWinsocksMaster.h"
 
-TCPWinsocksMaster::TCPWinsocksMaster()
+TCPWinsocksMaster::TCPWinsocksMaster(uint serverPORT) : serverPORT(serverPORT)
 {
 	initializeWinsock();
 	createSocket();
