@@ -230,6 +230,11 @@ void CoreGame::placerBateaux(bool pourAdversaire) {
 
 
 bool CoreGame::attaqueJoueur(int ligne, int colonne) {
+    // Si la case a déjà été attaquée, ne rien faire
+    if (grilleAdversaire[ligne][colonne] == typeCase::touche || grilleAdversaire[ligne][colonne] == typeCase::eau) {
+        return false;
+    }
+
     // Vérification simple de la case attaquée
     if (grilleAdversaire[ligne][colonne] == typeCase::bateau) {
         grilleAdversaire[ligne][colonne] = typeCase::touche; // Marquer la case comme touchée sur la grille de l'adversaire
@@ -241,6 +246,7 @@ bool CoreGame::attaqueJoueur(int ligne, int colonne) {
         return false;
     }
 }
+
 
 
 

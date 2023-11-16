@@ -8,6 +8,8 @@
 #define espace3 "\t\t\t\t\t\t   "
 #define espace4 "\t\t\t\t\t\t         "
 #define espace5 "\t\t\t\t\t\t      "
+#define SautaLaLigne std::cout<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl;
+
 
 class CoreGame {
 public:
