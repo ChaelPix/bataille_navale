@@ -10,35 +10,40 @@ class Localization {
 
 private:
     /**
-     * @brief Contient les traductions de textes chargées à partir des fichiers JSON.
-     * La clé représente l'identifiant du texte et la valeur est le texte traduit.
+     * @brief Contains text translations loaded from JSON files.
+     * The key represents the text identifier, and the value is the translated text.
      */
     std::unordered_map<std::string, std::string> translations;
 
 public:
     /**
-     * @brief Constructeur de la classe Localization.
-     * Initialise la map de traductions en chargeant les données depuis un fichier JSON spécifique à la langue.
+     * @brief Constructor of the Localization class.
+     * Initializes the translations map by loading data from a language-specific JSON file.
      *
-     * @param language La langue pour laquelle charger les traductions (ex: "fr", "en").
+     * @param language The language for which to load the translations (e.g., "fr", "en"). If "", then do not initialize.
      */
-    Localization(const std::string& language);
+    Localization(const std::string& language = "");
 
     /**
-     * @brief Récupère une chaîne de caractères traduite correspondant à la clé donnée.
+    * Initializes translations by reading the JSON associated with the name.
+    */
+    void init(const std::string& language);
+
+    /**
+     * @brief Retrieves a translated string corresponding to the given key.
      *
-     * @param key La clé identifiant le texte à récupérer.
-     * @return std::string Le texte traduit si la clé est trouvée, sinon un message d'erreur.
+     * @param key The key identifying the text to retrieve.
+     * @return std::string The translated text if the key is found, otherwise an error message.
      */
     std::string getString(const std::string& key);
 
 private:
 
     /**
-     * @brief Charge les données de traduction à partir d'un fichier JSON.
-     * Lit le fichier JSON correspondant à la langue spécifiée et remplit la map 'translations'.
+     * @brief Loads translation data from a JSON file.
+     * Reads the JSON file corresponding to the specified language and fills the 'translations' map.
      *
-     * @param language La langue pour laquelle le fichier JSON doit être chargé.
+     * @param language The language for which the JSON file should be loaded.
      */
     void loadLanguageFile(const std::string& language);
 
