@@ -34,7 +34,8 @@ void TCPServer::bindAndListen()
 
 void TCPServer::acceptClients()
 {
-
+    addr_len = sizeof(adr_client);
+    idClient = accept(idSocket, (struct sockaddr*)&adr_client, &addr_len);
 }
 
 
