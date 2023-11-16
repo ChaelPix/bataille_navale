@@ -37,8 +37,11 @@ void setGreenText() {
 }
 
 void CoreGame::afficheGrille() const {
-    std::cout << "Votre Grille:\t\t\tGrille Adversaire:\n";
+    std::cout << espace << "Votre Grille:" << "           Grille Adversaire:\n";
     for (int i = 0; i < nbLig; ++i) {
+        // Afficher l'espace de centrage avant la grille du joueur
+        std::cout << espace;
+
         // Afficher la ligne de la grille du joueur
         for (int j = 0; j < nbCol; ++j) {
             setGreenText(); // Changer la couleur du texte en rouge
@@ -67,6 +70,7 @@ void CoreGame::afficheGrille() const {
     }
 }
 
+
 char CoreGame::getRepresentationCaractere(typeCase caseType) const {
     switch (caseType) {
     case typeCase::vide: return 'O';
@@ -80,10 +84,10 @@ char CoreGame::getRepresentationCaractere(typeCase caseType) const {
 std::pair<int, int> CoreGame::saisieJoueur() {
     // lire les entr\202es du joueur.
     int ligne, colonne;
-    std::cout << "Entrez la ligne: ";
-    std::cin >> ligne;
-    std::cout << "Entrez la colonne: ";
-    std::cin >> colonne;
+    std::cout << std::endl << espace << "            Entrez la ligne: ";
+    std::cin >> ligne; std::cout << std::endl;
+    std::cout << espace << "            Entrez la colonne: ";
+    std::cin >> colonne; std::cout << std::endl;
     return { ligne, colonne };
    
 }
@@ -161,14 +165,13 @@ void CoreGame::attaqueIA() {
         ligne = std::rand() % nbLig;
         colonne = std::rand() % nbCol;
     } while (grille[ligne][colonne] == typeCase::touche || grille[ligne][colonne] == typeCase::eau); // \202viter les cases d\202jà attaqu\202es
-
     // L'IA attaque une case
     if (grille[ligne][colonne] == typeCase::bateau) {
-        std::cout << "L'IA a touch\202 un bateau !" << std::endl;
+        std::cout << espace3 << "\033[31mL'IA a touch\202 un bateau !\033[0m" << std::endl << std::endl;
         grille[ligne][colonne] = typeCase::touche;
     }
     else {
-        std::cout << "L'IA a manqu\202." << std::endl;
+        std::cout << espace2 << "\033[34mL'IA a manqu\202.\033[0m" << std::endl << std::endl;
         grille[ligne][colonne] = typeCase::eau;
     }
 }
@@ -176,17 +179,23 @@ void CoreGame::attaqueIA() {
 void CoreGame::jouer() {
     // Boucle principale du jeu, alternant entre le joueur et l'IA
     while (!estFinDuJeu()) {
+        
         afficherBateauxCoules();
         afficheGrille();
         std::pair<int, int> saisie = saisieJoueur(); // Utilisez le type explicite au lieu de 'auto'
         int ligne = saisie.first;
         int colonne = saisie.second;
+        std::cout << espace3 << "L'adversaire joue...";
+        Sleep(1000);
         system("cls");
+        std::cout << std::endl;
         if (attaqueJoueur(ligne, colonne)) {
-            std::cout << "Touch\202!" << std::endl;
+            std::cout << std::endl << std::endl << std::endl << std::endl;
+            std::cout << espace4 << "\033[34mTouch\202!\033[0m" << std::endl << std::endl;
         }
         else {
-            std::cout << "Manqu\202!" << std::endl;
+            std::cout << std::endl << std::endl << std::endl << std::endl;
+            std::cout << espace4 << "\033[31mManqu\202!\033[0m" << std::endl << std::endl;
         }
         attaqueIA();
     }
@@ -239,5 +248,5 @@ void CoreGame::verifierBateauCoule(int ligne, int colonne) {
 
 
 void CoreGame::afficherBateauxCoules() const {
-    std::cout << "Bateaux coul\202s: " << bateauxCoulés << " sur " << nombreTotalBateaux << std::endl;
+   /* std::cout << espace << "Bateaux coul\202s: " << bateauxCoulés << " sur " << nombreTotalBateaux << std::endl;*/
 }

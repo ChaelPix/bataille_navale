@@ -1,7 +1,11 @@
 #pragma once
 #include <utility> // Pour std::pair
 #include <string>
-
+#include <windows.h>
+#define espace "\t\t\t\t\t"
+#define espace2 "\t\t\t\t\t\t      "
+#define espace3 "\t\t\t\t\t\t   "
+#define espace4 "\t\t\t\t\t\t         "
 
 class CoreGame {
 public:
