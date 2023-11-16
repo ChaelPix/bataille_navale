@@ -21,12 +21,29 @@ void CoreGame::setCase(int ligne, int colonne, CoreGame::typeCase type) {
     grille[ligne][colonne] = type;
 }
 
+// Fonction pour changer la couleur du texte en rouge
+void setRedText() {
+    std::cout << "\033[33m"; // Code ANSI pour le texte en rouge
+}
+
+// Fonction pour réinitialiser la couleur du texte à sa valeur par défaut
+void resetTextColor() {
+    std::cout << "\033[0m"; // Code ANSI pour réinitialiser la couleur
+}
+
+// Fonction pour changer la couleur du texte en rouge
+void setGreenText() {
+    std::cout << "\033[32m"; // Code ANSI pour le texte en rouge
+}
+
 void CoreGame::afficheGrille() const {
     std::cout << "Votre Grille:\t\t\tGrille Adversaire:\n";
     for (int i = 0; i < nbLig; ++i) {
         // Afficher la ligne de la grille du joueur
         for (int j = 0; j < nbCol; ++j) {
+            setGreenText(); // Changer la couleur du texte en rouge
             std::cout << getRepresentationCaractere(grille[i][j]) << " ";
+            resetTextColor(); // Réinitialiser la couleur du texte
         }
 
         std::cout << "\t";
@@ -35,10 +52,14 @@ void CoreGame::afficheGrille() const {
         for (int j = 0; j < nbCol; ++j) {
             // Ne pas montrer les bateaux adverses, seulement les tirs effectués
             if (grilleAdversaire[i][j] == typeCase::bateau) {
+                setRedText(); // Changer la couleur du texte en rouge
                 std::cout << getRepresentationCaractere(typeCase::vide) << " ";
+                resetTextColor(); // Réinitialiser la couleur du texte
             }
             else {
+                setRedText(); // Changer la couleur du texte en rouge
                 std::cout << getRepresentationCaractere(grilleAdversaire[i][j]) << " ";
+                resetTextColor(); // Réinitialiser la couleur du texte
             }
         }
 
