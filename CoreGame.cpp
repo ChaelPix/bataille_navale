@@ -183,11 +183,27 @@ std::string CoreGame::serialisationAdversaire() const {
     return result;
 }
 
-bool CoreGame::deserialisation(std::string trame) {
-    // Construit l'\202tat de la grille à partir d'une chaîne de caractères.
-    // À compl\202ter selon le format de la trame.
-    return true;
+bool CoreGame::deserialisation(const std::string& trame) {
+    std::istringstream iss(trame);
+    std::string ligneTrame;
+    int numLigne = 0;
+
+    while (std::getline(iss, ligneTrame) && numLigne < nbLig) {
+        std::istringstream issLigne(ligneTrame);
+        int valeur;
+        int numColonne = 0;
+
+        while (issLigne >> valeur && numColonne < nbCol) {
+            grille[numLigne][numColonne] = static_cast<typeCase>(valeur);
+            numColonne++;
+        }
+
+        numLigne++;
+    }
+
+    return (numLigne == nbLig);
 }
+
 
 bool CoreGame::caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)[nbCol]) {
     for (int i = -1; i <= 1; i++) {

@@ -2,6 +2,7 @@
 #include <utility> // Pour std::pair
 #include <string>
 #include <vector>
+#include <sstream>
 #include <windows.h>
 #define espace "\t\t\t\t\t"
 #define espace2 "\t\t\t\t\t\t      "
@@ -51,7 +52,7 @@ public:
     std::string serialisationAdversaire() const;
 
     // Deserialise l'état de la grille à partir d'une chaîne de caractères.
-    bool deserialisation(std::string trame);
+    bool deserialisation(const std::string& trame);
 
     bool caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)[nbCol]);
 
