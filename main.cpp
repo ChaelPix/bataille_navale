@@ -7,7 +7,7 @@ int main()
 {
     try {
 
-        TCPClient testClient("10.187.52.16", 55555);
+        TCPClient testClient("10.187.52.16", 50000);
         std::cout << testClient.receiveMessage();
     }
     catch (const std::runtime_error& e)
