@@ -54,6 +54,8 @@ public:
     // Deserialise l'état de la grille à partir d'une chaîne de caractères.
     bool deserialisation(const std::string& trame);
 
+    bool deserialisationAdversaire(const std::string& trame);
+
     bool caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)[nbCol]);
 
 
