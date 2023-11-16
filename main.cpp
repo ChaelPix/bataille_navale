@@ -13,7 +13,7 @@ int main()
     //Localization l2("eng");
     //std::cout << l2.getString("titre du jeu") << std::endl;
 
-    CoreGame jeu; // Création d'une instance de CoreGame
+    CoreGame jeu; // Cr\202ation d'une instance de CoreGame
     std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
     jeu.jouer(); // Lancer le jeu
     
@@ -21,7 +21,7 @@ int main()
         std::cout << espace << "Vous avez perdu la partie." << std::endl;
     }
     else {
-        std::cout << espace << "Félicitations ! Vous avez gagné !" << std::endl;
+        std::cout << espace << "F\202licitations ! Vous avez gagn\202 !" << std::endl;
     }
 
     return 0;

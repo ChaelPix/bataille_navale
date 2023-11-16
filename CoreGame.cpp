@@ -46,7 +46,7 @@ void CoreGame::afficheGrille() const {
     // Afficher les repères de colonne
     std::cout << espace << "  ";
     for (int i = 0; i < nbCol; ++i) {
-        std::cout << "\033[90m" << i << "\033[0m" <<" ";
+        std::cout << "\033[90m" << i << "\033[0m" << " ";
     }
     std::cout << "    ";
     for (int i = 0; i < nbCol; ++i) {
@@ -68,7 +68,14 @@ void CoreGame::afficheGrille() const {
 
         // Afficher la grille de l'adversaire
         for (int j = 0; j < nbCol; ++j) {
-            afficherCaractereAvecCouleur(grilleAdversaire[i][j], true);
+            // Afficher seulement les tirs effectués sur la grille de l'adversaire
+            if (grilleAdversaire[i][j] == typeCase::touche || grilleAdversaire[i][j] == typeCase::eau) {
+                afficherCaractereAvecCouleur(grilleAdversaire[i][j], true);
+            }
+            else {
+                // Afficher 'O' pour les cases vides et celles contenant des bateaux non découverts
+                afficherCaractereAvecCouleur(typeCase::vide, true);
+            }
             std::cout << " ";
         }
 
@@ -298,7 +305,7 @@ bool CoreGame::estFinDuJeu() const {
         std::cout << "Vous avez perdu la partie." << std::endl;
     }
     else if (adversairePerdu) {
-        std::cout << "Vous avez gagné la partie !" << std::endl;
+        std::cout << "Vous avez gagn\202 la partie !" << std::endl;
     }
 
     return joueurPerdu || adversairePerdu;
