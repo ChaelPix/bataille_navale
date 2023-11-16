@@ -1,8 +1,6 @@
 #include "CoreGame.h"
 #include <iostream>
 
-// Vous n'avez pas besoin de d\202clarer nbLig et nbCol dans le .cpp car ils sont d\202jà d\202clar\202s comme 'static const' dans le .h
-
 CoreGame::CoreGame() : nombreTotalBateaux(0), bateauxCoulés(0) {
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
@@ -10,6 +8,12 @@ CoreGame::CoreGame() : nombreTotalBateaux(0), bateauxCoulés(0) {
             grilleAdversaire[i][j] = typeCase::vide; // Initialisation de la grille de l'adversaire
         }
     }
+    placerBateaux(false); // Place un bateau pour le joueur
+
+    // Réinitialiser le générateur de nombres aléatoires
+    std::srand(static_cast<unsigned int>(std::time(nullptr) + 1));
+
+    placerBateaux(true);  // Place un bateau pour l'IA
 }
 
 
@@ -169,33 +173,57 @@ bool CoreGame::deserialisation(std::string trame) {
     return true;
 }
 
-void CoreGame::placerBateaux() {
-    std::srand(static_cast<unsigned int>(std::time(nullptr))); // Seed pour la g\202n\202ration de nombres al\202atoires
-    // Supposons que nous plaçons un seul bateau de taille 3 pour l'exemple
-    int direction = std::rand() % 2; // 0 pour horizontal, 1 pour vertical
-    int tailleBateau = 3;
+void CoreGame::placerBateaux(bool pourAdversaire) {
+    // Utiliser un seed différent pour le joueur et pour l'IA
+    unsigned int seed = static_cast<unsigned int>(std::time(nullptr)) + (pourAdversaire ? 1 : 0);
+    std::srand(seed);
 
-    int ligne = std::rand() % nbLig;
-    int colonne = std::rand() % nbCol;
+    typeCase(*grilleCible)[nbCol] = pourAdversaire ? grilleAdversaire : grille;
+    const std::vector<int> taillesBateaux = { 3, 2, 4, 5 };
 
-    // V\202rifier si le placement est possible et placer le bateau
-    // Ce code ne gère pas les collisions de bateaux ou les bateaux sortant de la grille.
-    for (int i = 0; i < tailleBateau; ++i) {
-        if (direction == 0) {
-            grille[ligne][(colonne + i) % nbCol] = typeCase::bateau; // Wrap-around pour simplifier
+    for (int tailleBateau : taillesBateaux) {
+        bool placementValide = false;
+
+        while (!placementValide) {
+            int direction = std::rand() % 2; // 0 pour horizontal, 1 pour vertical
+            int ligne = std::rand() % nbLig;
+            int colonne = std::rand() % nbCol;
+            placementValide = true;
+
+            // Vérifier si le bateau peut être placé
+            for (int i = 0; i < tailleBateau; ++i) {
+                int l = ligne + (direction == 0 ? 0 : i);
+                int c = colonne + (direction == 1 ? 0 : i);
+
+                // Vérifier les limites de la grille et si la case est déjà occupée
+                if (l >= nbLig || c >= nbCol || grilleCible[l][c] != typeCase::vide) {
+                    placementValide = false;
+                    break;
+                }
+            }
+
+            // Placer le bateau si possible
+            if (placementValide) {
+                for (int i = 0; i < tailleBateau; ++i) {
+                    int l = ligne + (direction == 0 ? 0 : i);
+                    int c = colonne + (direction == 1 ? 0 : i);
+                    grilleCible[l][c] = typeCase::bateau;
+                }
+            }
         }
-        else {
-            grille[(ligne + i) % nbLig][colonne] = typeCase::bateau; // Wrap-around pour simplifier
-        }
+
+        // Incrémenter le nombre total de bateaux
+        nombreTotalBateaux += 1;
     }
 }
 
+
+
 bool CoreGame::attaqueJoueur(int ligne, int colonne) {
     // Vérification simple de la case attaquée
-    if (grille[ligne][colonne] == typeCase::bateau) {
-        grille[ligne][colonne] = typeCase::touche; // Marquer la case comme touchée sur votre grille
+    if (grilleAdversaire[ligne][colonne] == typeCase::bateau) {
         grilleAdversaire[ligne][colonne] = typeCase::touche; // Marquer la case comme touchée sur la grille de l'adversaire
-        verifierBateauCoule(ligne, colonne); // Vérifier si un bateau a été coulé
+        verifierBateauCoule(ligne, colonne, true); // Vérifier si un bateau a été coulé sur la grille de l'adversaire
         return true;
     }
     else {
@@ -203,6 +231,7 @@ bool CoreGame::attaqueJoueur(int ligne, int colonne) {
         return false;
     }
 }
+
 
 
 void CoreGame::attaqueIA() {
@@ -249,20 +278,35 @@ void CoreGame::jouer() {
 
 
 bool CoreGame::estFinDuJeu() const {
-    // V\202rifier si tous les bateaux ont \202t\202 coul\202s
+    bool joueurPerdu = true, adversairePerdu = true;
+
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
             if (grille[i][j] == typeCase::bateau) {
-                return false; // Il reste encore des bateaux non coul\202s
+                joueurPerdu = false;
+            }
+            if (grilleAdversaire[i][j] == typeCase::bateau) {
+                adversairePerdu = false;
             }
         }
     }
-    return true; // Tous les bateaux ont \202t\202 coul\202s
+
+    if (joueurPerdu) {
+        std::cout << "Vous avez perdu la partie." << std::endl;
+    }
+    else if (adversairePerdu) {
+        std::cout << "Vous avez gagné la partie !" << std::endl;
+    }
+
+    return joueurPerdu || adversairePerdu;
 }
 
-void CoreGame::verifierBateauCoule(int ligne, int colonne) {
+
+void CoreGame::verifierBateauCoule(int ligne, int colonne, bool pourAdversaire) {
+    typeCase(*grilleCible)[nbCol] = pourAdversaire ? grilleAdversaire : grille;
+
     // Vérifier d'abord si la case contient un bateau touché
-    if (grille[ligne][colonne] != typeCase::touche) {
+    if (grilleCible[ligne][colonne] != typeCase::touche) {
         return; // Si la case n'est pas un bateau touché, aucune vérification supplémentaire n'est nécessaire
     }
 
@@ -277,7 +321,7 @@ void CoreGame::verifierBateauCoule(int ligne, int colonne) {
 
             // Vérifier les limites de la grille
             if (voisinLigne >= 0 && voisinLigne < nbLig && voisinColonne >= 0 && voisinColonne < nbCol) {
-                if (grille[voisinLigne][voisinColonne] == typeCase::bateau) {
+                if (grilleCible[voisinLigne][voisinColonne] == typeCase::bateau) {
                     bateauCoulé = false; // Il reste des parties non touchées du bateau
                     break;
                 }

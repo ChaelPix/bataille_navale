@@ -1,6 +1,7 @@
 #pragma once
 #include <utility> // Pour std::pair
 #include <string>
+#include <vector>
 #include <windows.h>
 #define espace "\t\t\t\t\t"
 #define espace2 "\t\t\t\t\t\t      "
@@ -48,7 +49,7 @@ public:
     bool deserialisation(std::string trame);
 
     // Ajout de nouvelles méthodes publiques pour le déroulement du jeu
-    void placerBateaux(); // Pour placer les bateaux de l'IA et du joueur
+    void placerBateaux(bool pourAdversaire); // Pour placer les bateaux de l'IA et du joueur
 
     bool attaqueJoueur(int ligne, int colonne); // Pour que le joueur attaque l'IA
 
@@ -59,7 +60,7 @@ public:
     bool estFinDuJeu() const; // Pour vérifier si la partie est terminée
 
     // Nouvelle méthode pour vérifier et mettre à jour l'état du bateau coulé
-    void verifierBateauCoule(int ligne, int colonne);
+    void verifierBateauCoule(int ligne, int colonne, bool grilleAdversaire);
 
     // Méthode pour afficher le nombre de bateaux coulés
     void afficherBateauxCoules() const;

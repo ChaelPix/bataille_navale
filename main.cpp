@@ -7,6 +7,7 @@
 
 int main()
 {
+
     //Localization l("fr");
     //std::cout << l.getString("titre du jeu") << std::endl;
     //Localization l2("eng");
@@ -14,7 +15,6 @@ int main()
 
     CoreGame jeu; // Création d'une instance de CoreGame
     std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-    jeu.placerBateaux(); // Placer les bateaux pour le joueur et l'IA
     jeu.jouer(); // Lancer le jeu
     
     if (jeu.partiePerdu()) {
