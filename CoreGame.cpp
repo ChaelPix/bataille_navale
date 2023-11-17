@@ -325,8 +325,8 @@ void CoreGame::jouer() {
         std::cout << espace3 << "L'adversaire joue...";
         Sleep(1000);
         system("cls");
-        std::cout  << "MOI: " << std::endl << serialisationJoueur() << std::endl;
-        std::cout  << "ADVERSAIRE: " << std::endl << serialisationAdversaire();
+        //std::cout  << "MOI: " << std::endl << serialisationJoueur() << std::endl;
+        //std::cout  << "ADVERSAIRE: " << std::endl << serialisationAdversaire();
         std::cout << std::endl;
         if (attaqueJoueur(ligne, colonne)) {
             std::cout << std::endl << std::endl << std::endl << std::endl;
