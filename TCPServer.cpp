@@ -37,8 +37,6 @@ void TCPServer::bindAndListen()
 void TCPServer::acceptClients()
 {
     while (isServerOn) {
-
-        //avoid accept to block the thread
         fd_set readfds;
         FD_ZERO(&readfds);
         FD_SET(idSocket, &readfds);
@@ -50,10 +48,12 @@ void TCPServer::acceptClients()
         {
             addr_len = sizeof(adr_client);
             SOCKET clientSocket = accept(idSocket, (struct sockaddr*)&adr_client, &addr_len);
-
+          
             if (clientSocket != INVALID_SOCKET) 
             {
+                idsClients.push_back(clientSocket);
                 handleClient(clientSocket);
+                waitClientInstruction(clientSocket);
             }
         }
     }
@@ -62,6 +62,24 @@ void TCPServer::acceptClients()
 void TCPServer::closeClientSocket(SOCKET clientSocket)
 {
     closesocket(clientSocket);
+}
+
+void TCPServer::waitClientInstruction(SOCKET clientId)
+{
+    while (isServerOn)
+    {
+        receiveMessageFromClient(clientId);
+
+        //Then according behavior tree / state machine
+        sendMessage("Reponse");
+    }
+}
+
+std::string TCPServer::receiveMessageFromClient(SOCKET clientId)
+{
+    uint trameLenght = recv(clientId, trame_lect, DIMMAX, 0);
+    trame_lect[trameLenght] = '\0';
+    return trame_lect;
 }
 
 void TCPServer::closeSocket()
@@ -73,7 +91,6 @@ void TCPServer::closeSocket()
 
 void TCPServer::handleClient(SOCKET clientSocket)
 {
-    sendMessage(clientSocket, "Bonjour");
-    closeClientSocket(clientSocket);
+   
 }
 

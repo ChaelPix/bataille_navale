@@ -26,19 +26,19 @@ protected:
 
     void initializeWinsock();
     virtual void createSocket();
+    virtual void init() = 0;
    
 
 public:
 
     TCPWinsocksMaster(uint serverPORT);
     ~TCPWinsocksMaster();
-    virtual void init() = 0;
 
     const SOCKET getIdSocket();
 
     std::string sendAndReceiveMsg(SOCKET idTarget, const std::string& msg);
-    void sendMessage(SOCKET idTarget, std::string msg);
-    std::string receiveMessage();
+    void sendMessage(std::string msg);
+    virtual std::string receiveMessage();
 
     virtual void closeSocket();
 };

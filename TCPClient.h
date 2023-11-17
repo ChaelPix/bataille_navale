@@ -11,11 +11,11 @@ private:
     std::string serverIP;
 
     void connectToServer();
+    void init() override;
 
 public:
 
     TCPClient(const std::string& ip, ushort portNum);
-    void init() override;
 };
 
 #endif

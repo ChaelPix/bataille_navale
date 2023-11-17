@@ -3,18 +3,17 @@
 #include "TCPClient.h"
 #include "TCPServer.h"
 
-
+#include <Windows.h>
 int main()
 {
-   
-    TCPServer tcpServeur(55555);
-    
-    std::string fin;
+    TCPServer serveur(55555);
+    TCPClient client("10.187.52.31", 55555);
 
-    std::cout << "Finir serveur ?";
-    std::cin >> fin;
+    client.sendMessage("Bonjour");
+    Sleep(5000);
+    std::cout << client.receiveMessage();
 
-    tcpServeur.closeSocket();
+    serveur.closeSocket();
 
     return 0;
 }
