@@ -1,20 +1,20 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "TCPClient.h"
+#include "TCPServer.h"
 
 
 int main()
 {
-    try {
+   
+    TCPServer tcpServeur(55555);
+    
+    std::string fin;
 
-        TCPClient testClient("10.187.52.16", 55555);
-        std::cout << testClient.sendAndReceiveMsg("TMP");
+    std::cout << "Finir serveur ?";
+    std::cin >> fin;
 
-    }
-    catch (const std::runtime_error& e)
-    {
-        std::cout << e.what();
-    }
+    tcpServeur.closeSocket();
 
     return 0;
 }

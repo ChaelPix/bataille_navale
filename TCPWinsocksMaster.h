@@ -26,7 +26,7 @@ protected:
 
     void initializeWinsock();
     virtual void createSocket();
-    void closeSocket();
+   
 
 public:
 
@@ -36,9 +36,11 @@ public:
 
     const SOCKET getIdSocket();
 
-    std::string sendAndReceiveMsg(const std::string& msg);
-    void sendMessage(std::string msg);
+    std::string sendAndReceiveMsg(SOCKET idTarget, const std::string& msg);
+    void sendMessage(SOCKET idTarget, std::string msg);
     std::string receiveMessage();
+
+    virtual void closeSocket();
 };
 
 #endif
