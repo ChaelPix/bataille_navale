@@ -5,21 +5,38 @@
 
 int main()
 {
-    //Localization l("fr");
-    //std::cout << l.getString("titre du jeu") << std::endl;
-    //Localization l2("eng");
-    //std::cout << l2.getString("titre du jeu") << std::endl;
-    std::srand(static_cast<unsigned int>(std::time(nullptr))); // Réinitialiser le générateur de nombres aléatoires (a garder dans le main, car si le programme est exécuté plusieurs fois en peu de temps, std::time(nullptr) pourrait retourner la même valeur, ce qui entraîne la création des mêmes séquences de nombres aléatoires et donc des mêmes positions de bateaux.
-    SautaLaLigne
-    CoreGame jeu; 
-    jeu.jouer();
 
-    if (jeu.partiePerdu()) {
-        std::cout << espace << "Vous avez perdu la partie." << std::endl;
+    sf::RenderWindow window(sf::VideoMode(600, 800), "BattleShip");
+
+    sf::Texture shipTexture;
+    if (!shipTexture.loadFromFile("ressources/UI/ui_boat_prototype.png")) {
+        // erreur de chargement
     }
-    else {
-        std::cout << espace << "F\202licitations ! Vous avez gagn\202 !" << std::endl;
+
+    sf::Sprite shipSprite;
+    shipSprite.setTexture(shipTexture);
+    shipSprite.setPosition(100, 100); // position initiale
+
+    // Dans la boucle de jeu
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
+                window.close();
+
+            // Gérer d'autres événements, comme les mouvements de la souris
+            if (event.type == sf::Event::MouseButtonPressed) {
+                if (event.mouseButton.button == sf::Mouse::Left) {
+                    // Mettre à jour la position du sprite de bateau, etc.
+                }
+            }
+        }
+
+        window.clear();
+        window.draw(shipSprite); // dessiner le sprite
+        window.display();
     }
+
 
     return 0;
 }

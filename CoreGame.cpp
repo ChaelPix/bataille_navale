@@ -257,8 +257,8 @@ void CoreGame::placerBateaux(bool pourAdversaire) {
             }
             else {
                 afficheGrille();
-                std::cout << "             Placer le bateau de taille " << tailleBateau << ": ";
-                std::cout << "             \nEntrez la ligne, la colonne (0-" << nbLig - 1 << ", 0-" << nbCol - 1 << "), et la direction (0 pour horizontal, 1 pour vertical): ";
+                std::cout << "Placer le bateau de taille " << tailleBateau << ": ";
+                std::cout << " \nEntrez la ligne, la colonne (0-" << nbLig - 1 << ", 0-" << nbCol - 1 << "), et la direction (0 pour horizontal, 1 pour vertical): ";
                 std::cin >> ligne >> colonne >> direction;
                 system("cls"); SautaLaLigne
 
