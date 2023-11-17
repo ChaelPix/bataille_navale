@@ -1,3 +1,5 @@
+//Fichier de définition de ma classe CoreGame, (CoreGame.cpp)
+
 #include "CoreGame.h"
 #include <iostream>
 

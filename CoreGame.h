@@ -1,3 +1,5 @@
+//Fichier header de ma classe CoreGame, (CoreGame.h)
+
 #pragma once
 #include <utility> // Pour std::pair
 #include <string>
@@ -75,6 +77,14 @@ public:
 
     // Méthode pour afficher le nombre de bateaux coulés
     void afficherBateauxCoules() const;
+    
+    
+    int getNbLig() const {
+        return nbLig;
+    }
 
+    int getNbCol() const {
+        return nbCol;
+    }
 };
 
