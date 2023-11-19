@@ -12,7 +12,7 @@ int main()
     std::srand(static_cast<unsigned int>(std::time(nullptr))); // Réinitialiser le générateur de nombres aléatoires (a garder dans le main, car si le programme est exécuté plusieurs fois en peu de temps, std::time(nullptr) pourrait retourner la même valeur, ce qui entraîne la création des mêmes séquences de nombres aléatoires et donc des mêmes positions de bateaux.
     SautaLaLigne
     CoreGame jeu; 
-    jeu.jouer();
+    jeu.jouer(); //boucle du jeu
 
     if (jeu.partiePerdu()) {
         std::cout << espace << "Vous avez perdu la partie." << std::endl;
@@ -23,3 +23,4 @@ int main()
 
     return 0;
 }
+
