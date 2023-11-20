@@ -1,21 +1,29 @@
 #pragma once
-#include <utility> // Pour std::pair
-#include <string>
-#include <vector>
-#include <sstream>
-#include <windows.h>
+#define SautaLaLigne std::cout<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl;
 #define espace "\t\t\t\t\t"
 #define espace2 "\t\t\t\t\t\t      "
 #define espace3 "\t\t\t\t\t\t   "
 #define espace4 "\t\t\t\t\t\t         "
 #define espace5 "\t\t\t\t\t\t      "
-#define SautaLaLigne std::cout<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl;
+#define effacer system("cls");
+#include <utility> // Pour std::pair
+#include <string>
+#include <vector>
+#include <sstream>
+#include <windows.h>
+#include "BsBDD.h"
+#include <jdbc/cppconn/driver.h>
+#include <jdbc/cppconn/exception.h>
+#include <jdbc/cppconn/resultset.h>
+#include <jdbc/cppconn/statement.h>
+#include <jdbc/cppconn/prepared_statement.h>
 
 class CoreGame {
 public:
     enum class typeCase { vide, bateau, touche, eau, erreur = 99};
     static const int nbLig = 10;
     static const int nbCol = 10;
+    BsBDD obj;
 
 private:
     typeCase grille[nbLig][nbCol];

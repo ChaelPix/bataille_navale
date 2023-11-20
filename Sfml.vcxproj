@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BsBDD.cpp" />
     <ClCompile Include="CoreGame.cpp" />
     <ClCompile Include="Localization.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BsBDD.h" />
     <ClInclude Include="CoreGame.h" />
     <ClInclude Include="Localization.h" />
     <ClInclude Include="resource.h" />
@@ -37,6 +39,26 @@
       <FileType>Document</FileType>
       <DeploymentContent>true</DeploymentContent>
     </_EmbedManagedResourceFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn-static.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn8-static.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn8.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn-9-vs14.dll">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\libcrypto-3-x64.dll">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\libssl-3-x64.dll">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+    <None Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn8-2-vs14.dll" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -101,6 +123,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Users\laurentr\source\repos\bataille_navale\SqlLibs\boost_1_64_0\boost_1_64_0;C:\Users\laurentr\source\repos\bataille_navale\SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

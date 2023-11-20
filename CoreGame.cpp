@@ -283,6 +283,8 @@ void CoreGame::jouer() {
         
         afficherBateauxCoules(); // a supprimer
         afficheGrille();
+        obj.Connexion();
+        obj.BonusWin();
         std::pair<int, int> saisie = saisieJoueur(); // Utilisez le type explicite au lieu de 'auto'
         int ligne = saisie.first;
         int colonne = saisie.second;

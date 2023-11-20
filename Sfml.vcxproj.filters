@@ -30,6 +30,9 @@
     <ClCompile Include="CoreGame.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="BsBDD.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Localization.h">
@@ -39,6 +42,9 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="CoreGame.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="BsBDD.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -51,5 +57,25 @@
     <CopyFileToFolders Include="localization\eng.json">
       <Filter>Fichiers de ressources\localization</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn-9-vs14.dll">
+      <Filter>Fichiers de ressources</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\libcrypto-3-x64.dll">
+      <Filter>Fichiers de ressources</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\libssl-3-x64.dll">
+      <Filter>Fichiers de ressources</Filter>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn8.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn8-static.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn-static.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn8-2-vs14.dll">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
   </ItemGroup>
 </Project>
