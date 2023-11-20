@@ -2,7 +2,7 @@
 
 TCPServer::TCPServer(ushort serverPORT) : TCPWinsocksMaster(serverPORT)
 {
-    init();
+   
 }
 
 void TCPServer::init()
@@ -154,10 +154,6 @@ void TCPServer::closeSocket()
     }
 }
 
-void TCPServer::handleClient(SOCKET clientSocket)
-{
-   
-}
 
 std::string TCPServer::processGameMessage(const std::string& message)
 {

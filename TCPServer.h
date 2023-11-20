@@ -12,7 +12,8 @@
 
 class TCPServer : public TCPWinsocksMaster
 {
-private: 
+protected: 
+    bool isServerOn;
     struct sockaddr_in adr_client;
     int addr_len;
 
@@ -29,27 +30,22 @@ private:
     std::condition_variable cvMatchmaking;
     std::unordered_map<SOCKET, std::thread> gameThreads;
 
-    void matchClientsForGame();
-    void gameSession(SOCKET client1, SOCKET client2);
-
-    bool isServerOn;
-    void init() override;
-
-    std::string processGameMessage(const std::string& message);
+    virtual void gameSession(SOCKET client1, SOCKET client2);
+    virtual std::string processGameMessage(const std::string& message);
+    virtual void matchClientsForGame();
 
 public:
 
+    virtual void init() override;
     TCPServer(ushort portNum);
-    virtual void handleClient(SOCKET clientSocket);
     void closeSocket() override;
     std::string receiveMessageFromClient(SOCKET clientId);
+    virtual void acceptClients();
 
-private:
+protected:
     void setupAddress();
     void bindAndListen();
-    void acceptClients();
     void closeClientSocket(SOCKET clientSocket);
-    virtual void waitClientInstruction(SOCKET clientId);
     
 };
 

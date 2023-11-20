@@ -15,7 +15,7 @@ private:
 
 public:
 
-    TCPClient(const std::string& ip, ushort portNum);
+    TCPClient(const std::string& ipServeur, ushort portServeur);
 };
 
 #endif

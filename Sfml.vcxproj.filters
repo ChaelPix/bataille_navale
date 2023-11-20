@@ -39,6 +39,9 @@
     <ClCompile Include="TCPServer.cpp">
       <Filter>Fichiers sources\Server</Filter>
     </ClCompile>
+    <ClCompile Include="BattleshipServer.cpp">
+      <Filter>Fichiers sources\Server</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Localization.h">
@@ -54,6 +57,9 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="TCPServer.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleshipServer.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
