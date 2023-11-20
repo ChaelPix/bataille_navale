@@ -3,13 +3,9 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Localization.h"
-#include "CoreGame.h"
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1300, 850), "BattleShip");
-
-    // Création de l'instance de CoreGame
-    CoreGame coreGame;
 
     // Initialisation des textures et des sprites des bateaux
     std::vector<sf::Texture> shipTextures; // Textures pour les différents types de bateaux

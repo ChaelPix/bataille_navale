@@ -17,6 +17,7 @@
 class CoreGame {
 public:
     enum class typeCase { vide, bateau, touche, eau, erreur = 99};
+    enum class typeBateau { PorteAvion = 5, Croiseur = 4, ContreTorpilleur = 3, Torpilleur = 2}; //int = nbCase
     static const int nbLig = 10;
     static const int nbCol = 10;
 

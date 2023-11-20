@@ -245,9 +245,12 @@ bool CoreGame::caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)
 
 void CoreGame::placerBateaux(bool pourAdversaire) {
     typeCase(*grilleCible)[nbCol] = pourAdversaire ? grilleAdversaire : grille;
-    const std::vector<int> taillesBateaux = { 3, 2, 4, 5 };
+    const std::vector<typeBateau> taillesBateaux = 
+    { typeBateau::PorteAvion, typeBateau::Croiseur, typeBateau::ContreTorpilleur , typeBateau::ContreTorpilleur , typeBateau::Torpilleur };
 
-    for (int tailleBateau : taillesBateaux) {
+    for (const auto& bateau : taillesBateaux) {
+        int tailleBateau = static_cast<int>(bateau);
+
         bool placementValide = false;
         while (!placementValide) {
             int ligne, colonne, direction;
