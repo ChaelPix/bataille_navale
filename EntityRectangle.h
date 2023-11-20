@@ -22,5 +22,19 @@ public:
     void setTexture(sf::Texture* texture) {
         shape.setTexture(texture);
     }
-    // Autres méthodes spécifiques à EntityRectangle
+    
+    void setPosition(sf::Vector2f position)
+    {
+        shape.setPosition(position);
+    }
+
+    void setPosition(float x, float y)
+    {
+        shape.setPosition(sf::Vector2f(x, y));
+    }
+
+    sf::RectangleShape getShape()
+    {
+        return shape;
+    }
 };

@@ -8,3 +8,13 @@ Boat::Boat(int id, CoreGame::typeBateau boatType, sf::Vector2f size, sf::Texture
 	if (texture != nullptr)
 		setTexture(texture);
 }
+
+int Boat::getBoatId()
+{
+	return this->boatId;
+}
+
+CoreGame::typeBateau Boat::getBoatType()
+{
+	return this->boatType;
+}
