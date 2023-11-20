@@ -17,7 +17,9 @@ int main() {
     sf::Texture texture;
 
     Boat boat1(0, CoreGame::typeBateau::PorteAvion, sf::Vector2f(gridSize * (int)CoreGame::typeBateau::PorteAvion, gridSize));
+    Boat boat2(1, CoreGame::typeBateau::Torpilleur, sf::Vector2f(gridSize * (int)CoreGame::typeBateau::Torpilleur, gridSize));
     boat1.setPosition(500, 100);
+    boat2.setPosition(500, 300);
 
     bool dragging = false;
     Boat* selectedBoat = nullptr;
@@ -34,9 +36,10 @@ int main() {
                 if (boat1.getShape().getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
                     dragging = true;
                     selectedBoat = &boat1;
-
-                    std::cout << "Bateau choisi : " << selectedBoat->getBoatId() << " taille : " << static_cast<int>(selectedBoat->getBoatType()) << std::endl;
-
+                }
+                else if (boat2.getShape().getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
+                    dragging = true;
+                    selectedBoat = &boat2;
                 }
             }
         }
@@ -60,8 +63,28 @@ int main() {
 
             sf::Vector2f snappedPosition(gridOrigin.x + gridX * gridSize, gridOrigin.y + gridY * gridSize);
             selectedBoat->setPosition(snappedPosition);
+
+            std::cout << "Bateau choisi : " << selectedBoat->getBoatId()
+                << "\t taille : " << static_cast<int>(selectedBoat->getBoatType())
+                << "\t nb colonne : " << gridX
+                << "\t nb ligne : " << gridY
+                << std::endl;
         }
+
+        // Dessiner la grille
+        sf::RectangleShape line(sf::Vector2f(500, 1));
+        line.setFillColor(sf::Color::Blue);
+        for (int i = 0; i <= 10; ++i) {
+            line.setPosition(100, i * 50 + 100);
+            window.draw(line);
+            line.setSize(sf::Vector2f(1, 500));
+            line.setPosition(i * 50 + 100, 100);
+            window.draw(line);
+            line.setSize(sf::Vector2f(500, 1)); 
+        }
+
         boat1.draw(window);
+        boat2.draw(window);
 
 
         window.display();
