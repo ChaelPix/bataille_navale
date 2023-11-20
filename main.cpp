@@ -14,12 +14,12 @@ int main()
     CoreGame jeu; 
     jeu.jouer(); //boucle du jeu
 
-    if (jeu.partiePerdu()) {
-        std::cout << espace << "Vous avez perdu la partie." << std::endl;
-    }
-    else {
-        std::cout << espace << "F\202licitations ! Vous avez gagn\202 !" << std::endl;
-    }
+    //if (jeu.partiePerdu()) {
+    //    std::cout << espace << "Vous avez perdu la partie." << std::endl;
+    //}
+    //else {
+    //    std::cout << espace << "F\202licitations ! Vous avez gagn\202 !" << std::endl;
+    //}
 
     return 0;
 }

@@ -304,7 +304,7 @@ void CoreGame::attaqueIA() {
     } while (grille[ligne][colonne] == typeCase::touche || grille[ligne][colonne] == typeCase::eau); // éviter les cases déjà attaquées
     // L'IA attaque une case
     if (grille[ligne][colonne] == typeCase::bateau) {
-        std::cout << espace5 << "\033[31mL'IA a touch\202 un bateau !\033[0m" << std::endl << std::endl;
+        std::cout << espace3 << "\033[31mL'IA a touch\202 un bateau !\033[0m" << std::endl << std::endl;
         grille[ligne][colonne] = typeCase::touche;
     }
     else {
@@ -323,10 +323,10 @@ void CoreGame::jouer() {
         int ligne = saisie.first;
         int colonne = saisie.second;
         std::cout << espace3 << "L'adversaire joue...";
-        Sleep(1000);
+        //Sleep(1000);
         system("cls");
-        //std::cout  << "MOI: " << std::endl << serialisationJoueur() << std::endl;
-        //std::cout  << "ADVERSAIRE: " << std::endl << serialisationAdversaire();
+        std::cout << "MOI: " << std::endl << serialisationJoueur() << std::endl;
+        std::cout << "ADVERSAIRE: " << std::endl << serialisationAdversaire();
         std::cout << std::endl;
         if (attaqueJoueur(ligne, colonne)) {
             std::cout << std::endl << std::endl << std::endl << std::endl;
@@ -356,10 +356,10 @@ bool CoreGame::estFinDuJeu() const {
     }
 
     if (joueurPerdu) {
-        std::cout << "Vous avez perdu la partie." << std::endl;
+        std::cout << espace << "         Vous avez perdu la partie." << std::endl;
     }
     else if (adversairePerdu) {
-        std::cout << "Vous avez gagn\202 la partie !" << std::endl;
+        std::cout << espace << "         Vous avez gagn\202 la partie !" << std::endl;
     }
 
     return joueurPerdu || adversairePerdu;
