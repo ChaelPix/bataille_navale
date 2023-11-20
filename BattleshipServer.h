@@ -1,17 +1,13 @@
-#pragma once
 #include "TCPServer.h"
 
-class BattleshipServer : public TCPServer
-{
+class BattleshipServer : public TCPServer {
+public:
+    BattleshipServer(ushort serverPORT);
 
-private :
-     void init() override;
-     void acceptClients() override;
-     void gameSession(SOCKET client1, SOCKET client2) override;
-     std::string processGameMessage(const std::string& message) override;
-     void matchClientsForGame() override;
+protected:
+    void gameSession(SOCKET client1, SOCKET client2) override;
+    std::string processGameMessage(const std::string& message) override;
 
-public :
-    BattleshipServer(ushort portNum);
 };
+
 

@@ -2,7 +2,7 @@
 
 TCPServer::TCPServer(ushort serverPORT) : TCPWinsocksMaster(serverPORT)
 {
-   
+    init();
 }
 
 void TCPServer::init()
