@@ -19,6 +19,9 @@
     <Filter Include="Fichiers de ressources\localization">
       <UniqueIdentifier>{842012ea-308a-4a96-8e7d-aaa51e2f25ff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Server">
+      <UniqueIdentifier>{930275f4-f8a2-42f7-9d23-42351ddaa724}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -27,12 +30,36 @@
     <ClCompile Include="Localization.cpp">
       <Filter>Fichiers sources\Utilities</Filter>
     </ClCompile>
+    <ClCompile Include="TCPWinsocksMaster.cpp">
+      <Filter>Fichiers sources\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPClient.cpp">
+      <Filter>Fichiers sources\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPServer.cpp">
+      <Filter>Fichiers sources\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleshipServer.cpp">
+      <Filter>Fichiers sources\Server</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Localization.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPWinsocksMaster.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPClient.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPServer.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleshipServer.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -45,5 +72,8 @@
     <CopyFileToFolders Include="localization\eng.json">
       <Filter>Fichiers de ressources\localization</Filter>
     </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="WS2_32.Lib" />
   </ItemGroup>
 </Project>

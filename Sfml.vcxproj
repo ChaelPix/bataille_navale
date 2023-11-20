@@ -19,12 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BattleshipServer.cpp" />
     <ClCompile Include="Localization.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TCPClient.cpp" />
+    <ClCompile Include="TCPServer.cpp" />
+    <ClCompile Include="TCPWinsocksMaster.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BattleshipServer.h" />
     <ClInclude Include="Localization.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="TCPClient.h" />
+    <ClInclude Include="TCPServer.h" />
+    <ClInclude Include="TCPWinsocksMaster.h" />
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="localization\eng.json">
@@ -35,6 +43,9 @@
       <FileType>Document</FileType>
       <DeploymentContent>true</DeploymentContent>
     </_EmbedManagedResourceFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="WS2_32.Lib" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
