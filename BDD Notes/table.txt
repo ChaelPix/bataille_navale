@@ -1,0 +1,16 @@
+CREATE TABLE player (
+  idPlayers INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  mdp VARCHAR(25) NOT NULL,
+  INDEX idx_idPlayers (idPlayers)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE playersData (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  score INT UNSIGNED NOT NULL CHECK (score >= 0 AND score <= 1000000),
+  nbGames INT UNSIGNED NOT NULL,
+  nbLostGames INT UNSIGNED NOT NULL,
+  nbWonGames INT UNSIGNED NOT NULL,
+  idPlayers INT UNSIGNED NOT NULL,
+  FOREIGN KEY (idPlayers) REFERENCES player(idPlayers),
+  INDEX idx_idPlayers (idPlayers)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
