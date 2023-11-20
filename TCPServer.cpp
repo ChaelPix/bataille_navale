@@ -116,16 +116,6 @@ void TCPServer::closeClientSocket(SOCKET clientSocket)
     closesocket(clientSocket);
 }
 
-void TCPServer::waitClientInstruction(SOCKET clientId)
-{
-    while (isServerOn)
-    {
-        receiveMessageFromClient(clientId);
-
-        //Then according behavior tree / state machine
-        sendMessage("Reponse");
-    }
-}
 
 std::string TCPServer::receiveMessageFromClient(SOCKET clientId)
 {
