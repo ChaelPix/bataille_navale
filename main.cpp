@@ -4,16 +4,21 @@
 #include "TCPServer.h"
 
 #include <Windows.h>
-int main()
-{
-    TCPServer serveur(55555);
-    TCPClient client("10.187.52.31", 55555);
+int main() {
+    try {
+        ushort port = 12345;
+        TCPServer server(port);
 
-    client.sendMessage("Bonjour");
-    Sleep(5000);
-    std::cout << client.receiveMessage();
+        std::cout << "Serveur d\202marr\202 sur le port " << port << ". Appuyez sur Entr\202e pour arrêter..." << std::endl;
+        std::cin.get();
 
-    serveur.closeSocket();
+        server.closeSocket();
+        std::cout << "Serveur arret\202." << std::endl;
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+        return 1;
+    }
 
     return 0;
 }

@@ -36,6 +36,7 @@ public:
 
     const SOCKET getIdSocket();
 
+    void sendMessage(SOCKET idTarget, std::string msg);
     std::string sendAndReceiveMsg(SOCKET idTarget, const std::string& msg);
     void sendMessage(std::string msg);
     virtual std::string receiveMessage();

@@ -5,6 +5,10 @@
 #include "TCPWinsocksMaster.h"
 #include <thread>
 #include <vector>
+#include <queue>
+#include <mutex>
+#include <unordered_map>
+#include <chrono>
 
 class TCPServer : public TCPWinsocksMaster
 {
@@ -14,9 +18,24 @@ private:
 
     std::thread listenerThread;
     std::thread receiveThread;
+
+    std::thread matchThread;
+
     std::vector<SOCKET> idsClients;
+
+    std::queue<SOCKET> matchmakingQueue;
+
+    std::mutex matchmakingMutex;
+    std::condition_variable cvMatchmaking;
+    std::unordered_map<SOCKET, std::thread> gameThreads;
+
+    void matchClientsForGame();
+    void gameSession(SOCKET client1, SOCKET client2);
+
     bool isServerOn;
     void init() override;
+
+    std::string processGameMessage(const std::string& message);
 
 public:
 

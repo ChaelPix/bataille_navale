@@ -28,6 +28,12 @@ void TCPWinsocksMaster::sendMessage(std::string msg)
 		throw std::runtime_error("Send Failed");
 	}
 }
+void TCPWinsocksMaster::sendMessage(SOCKET idTarget, std::string msg)
+{
+	if (send(idTarget, msg.c_str(), msg.size() + 1, 0) == SOCKET_ERROR) {
+		throw std::runtime_error("Send Failed SocketId : " + std::to_string(idTarget) + " msg : " + msg);
+	}
+}
 
 std::string TCPWinsocksMaster::receiveMessage()
 {
