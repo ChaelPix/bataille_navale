@@ -19,12 +19,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Boat.cpp" />
     <ClCompile Include="CoreGame.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityRectangle.cpp" />
     <ClCompile Include="Localization.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Boat.h" />
     <ClInclude Include="CoreGame.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityRectangle.h" />
     <ClInclude Include="Localization.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
