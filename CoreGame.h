@@ -11,7 +11,6 @@
 #define espace5 "\t\t\t\t\t\t      "
 #define SautaLaLigne std::cout<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl;
 
-
 class CoreGame {
 public:
     enum class typeCase { vide, bateau, touche, eau, erreur = 99};
@@ -28,11 +27,11 @@ public:
     // Constructeur qui initialise la grille, par exemple avec des cases vides.
     CoreGame();
 
-    // Retourne la case de la grille à la position spécifiée.
-    typeCase getCase(int ligne, int colonne) const;
+    //// Retourne la case de la grille à la position spécifiée.
+    //typeCase getCase(int ligne, int colonne) const;
 
-    // Définit la case de la grille à la position spécifiée avec le type donné.
-    void setCase(int ligne, int colonne, typeCase type);
+    //// Définit la case de la grille à la position spécifiée avec le type donné.
+    //void setCase(int ligne, int colonne, typeCase type);
 
     // Affiche la grille dans la console ou l'interface utilisateur.
     void afficheGrille() const;

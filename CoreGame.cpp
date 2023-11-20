@@ -13,30 +13,6 @@ CoreGame::CoreGame() : nombreTotalBateaux(4), bateauxCoulés(0) {
     placerBateaux(true);  // Place un bateau pour l'IA
 }
 
-
-//CoreGame::typeCase CoreGame::getCase(int ligne, int colonne) const { //a supprimer
-//    return grille[ligne][colonne];
-//}
-//
-//void CoreGame::setCase(int ligne, int colonne, CoreGame::typeCase type) { //a supprimer
-//    grille[ligne][colonne] = type;
-//}
-
-//// Fonction pour changer la couleur du texte en rouge
-//void setRedText() {
-//    std::cout << "\033[33m"; // Code ANSI pour le texte en rouge
-//}
-//
-//// Fonction pour réinitialiser la couleur du texte à sa valeur par défaut
-//void resetTextColor() {
-//    std::cout << "\033[0m"; // Code ANSI pour réinitialiser la couleur
-//}
-//
-//// Fonction pour changer la couleur du texte en rouge
-//void setGreenText() {
-//    std::cout << "\033[32m"; // Code ANSI pour le texte en rouge
-//}
-
 void CoreGame::afficheGrille() const {
     std::cout << espace << "Votre Grille:" << "           Grille Adversaire:\n";
 
@@ -81,7 +57,6 @@ void CoreGame::afficheGrille() const {
 }
 
 
-
 void CoreGame::afficherCaractereAvecCouleur(typeCase caseType, bool estGrilleAdversaire) const {
 
     // Codes de couleur ANSI
@@ -121,17 +96,6 @@ void CoreGame::afficherCaractereAvecCouleur(typeCase caseType, bool estGrilleAdv
 
     std::cout << couleur << caractere << RESET;
 }
-
-
-//char CoreGame::getRepresentationCaractere(typeCase caseType) const { // a supprimer
-//    switch (caseType) {
-//    case typeCase::vide: return 'O';
-//    case typeCase::bateau: return 'B';
-//    case typeCase::touche: return 'X';
-//    case typeCase::eau: return '~';
-//    default: return '?';
-//    }
-//}
 
 std::pair<int, int> CoreGame::saisieJoueur() {
     // lire les entr\202es du joueur.
@@ -404,3 +368,37 @@ void CoreGame::verifierBateauCoule(int ligne, int colonne, bool pourAdversaire) 
 void CoreGame::afficherBateauxCoules() const {
     //std::cout << espace << "Bateaux coul\202s: " << bateauxCoulés << " sur " << nombreTotalBateaux << std::endl;
 }
+
+
+//CoreGame::typeCase CoreGame::getCase(int ligne, int colonne) const { //a supprimer
+//    return grille[ligne][colonne];
+//}
+//
+//void CoreGame::setCase(int ligne, int colonne, CoreGame::typeCase type) { //a supprimer
+//    grille[ligne][colonne] = type;
+//}
+
+//// Fonction pour changer la couleur du texte en rouge
+//void setRedText() {
+//    std::cout << "\033[33m"; // Code ANSI pour le texte en rouge
+//}
+//
+//// Fonction pour réinitialiser la couleur du texte à sa valeur par défaut
+//void resetTextColor() {
+//    std::cout << "\033[0m"; // Code ANSI pour réinitialiser la couleur
+//}
+//
+//// Fonction pour changer la couleur du texte en rouge
+//void setGreenText() {
+//    std::cout << "\033[32m"; // Code ANSI pour le texte en rouge
+//}
+
+//char CoreGame::getRepresentationCaractere(typeCase caseType) const { // a supprimer
+//    switch (caseType) {
+//    case typeCase::vide: return 'O';
+//    case typeCase::bateau: return 'B';
+//    case typeCase::touche: return 'X';
+//    case typeCase::eau: return '~';
+//    default: return '?';
+//    }
+//}
