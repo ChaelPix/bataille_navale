@@ -205,6 +205,13 @@ bool CoreGame::caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)
     return true; // Toutes les cases adjacentes sont libres
 }
 
+void CoreGame::setBonus(){
+    
+}
+
+void CoreGame::Appel() const{
+}
+
 void CoreGame::placerBateaux(bool pourAdversaire) {
     typeCase(*grilleCible)[nbCol] = pourAdversaire ? grilleAdversaire : grille; // Expression conditionnelle. Si pourAdversaire est vrai (true), alors la valeur grilleAdversaire est utilisée ; sinon, la valeur grille est utilisée.
     const std::vector<int> taillesBateaux = { 3, 2, 4, 5 }; // Les bateaux disponible par joueurs, il doit y avoir un bateau avec 2 cases, 3 cases, 4 cases et enfin 5 cases selon wikipedia : https:// fr.wikipedia.org/wiki/Bataille_navale_(jeu)
@@ -278,13 +285,14 @@ void CoreGame::attaqueIA() {
 }
 
 void CoreGame::jouer() {
+    obj.Connexion();
+    system("cls");
+    SautaLaLigne
+    obj.displayPlayerInfo();
     // Boucle principale du jeu, alternant entre le joueur et l'IA
     while (!estFinDuJeu()) {
-        
         afficherBateauxCoules(); // a supprimer
         afficheGrille();
-        obj.Connexion();
-        obj.BonusWin();
         std::pair<int, int> saisie = saisieJoueur(); // Utilisez le type explicite au lieu de 'auto'
         int ligne = saisie.first;
         int colonne = saisie.second;
@@ -304,10 +312,11 @@ void CoreGame::jouer() {
         }
         attaqueIA();
     }
+    obj.incrementNbGames();
 }
 
 
-bool CoreGame::estFinDuJeu() const {
+bool CoreGame::estFinDuJeu() {
     bool joueurPerdu = true, adversairePerdu = true;
 
     for (int i = 0; i < nbLig; ++i) {
@@ -323,9 +332,12 @@ bool CoreGame::estFinDuJeu() const {
 
     if (joueurPerdu) {
         std::cout << espace << "         Vous avez perdu la partie." << std::endl;
+        obj.incrementNbLostGames();
     }
     else if (adversairePerdu) {
         std::cout << espace << "         Vous avez gagn\202 la partie !" << std::endl;
+        obj.BonusWin();
+        obj.incrementNbWonGames();
     }
 
     return joueurPerdu || adversairePerdu;

@@ -13,40 +13,44 @@ BsBDD::~BsBDD() {
 void BsBDD::Connexion() {
     std::string idUser, password;
     char choice;
-
-    std::cout << "Bienvenue dans le jeu de bataille navale!\n";
-    std::cout << "Voulez-vous (C)onnexion ou (I)nscription? [C/I]: ";
+    SautaLaLigne SautaLaLigne
+    std::cout << espace<< "Bienvenue dans le jeu de bataille navale!\n";
+    std::cout << espace << "Voulez-vous (C)onnexion ou (I)nscription? [C/I]: ";
     std::cin >> choice;
 
     if (choice == 'C' || choice == 'c') {
-        std::cout << "Entrez votre identifiant utilisateur: ";
+        std::cout << espace << "Entrez votre identifiant utilisateur: ";
         std::cin >> idUser;
-        std::cout << "Entrez votre mot de passe: ";
+        std::cout << espace << "Entrez votre mot de passe: ";
         std::cin >> password;
 
-        std::cout << "Utilisateur connecté : " << userId << std::endl;
         if (login(idUser, password)) {
-            std::cout << "Connexion réussie!\n";
+            std::cout << espace << "Connexion r\202ussie!\n";
+            setPseudo(idUser);
             loadPlayerData();
         }
         else {
-            std::cout << "Identifiant ou mot de passe incorrect.\n";
+            std::cout << espace << "Identifiant ou mot de passe incorrect.\n";
         }
     }
     else if (choice == 'I' || choice == 'i') {
-        std::cout << "Choisissez un identifiant utilisateur: ";
+        std::cout << espace << "Choisissez un identifiant utilisateur: ";
         std::cin >> idUser;
-        std::cout << "Choisissez un mot de passe: ";
+        std::cout << espace << "Choisissez un mot de passe: ";
         std::cin >> password;
 
         if (registerUser(idUser, password)) {
-            std::cout << "Inscription réussie! Vous êtes maintenant connecté.\n";
+            std::cout << espace << "Inscription r\202ussie! Vous êtes maintenant connect\202.\n";
             loadPlayerData();
         }
         else {
-            std::cout << "Erreur lors de l'inscription ou l'identifiant existe déjà.\n";
+            std::cout << espace << "Erreur lors de l'inscription ou l'identifiant existe d\202jà.\n";
         }
     }
+}
+
+void BsBDD::setPseudo(std::string name) {
+    this->userId = name;
 }
 
 void BsBDD::connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password) {
@@ -117,10 +121,10 @@ void BsBDD::savePlayerData() {
 }
 
 void BsBDD::BonusWin() {
-    std::cout << "Utilisateur connecté : " << this->userId << std::endl;
+    std::cout << espace << "Utilisateur connect\202 : " << this->userId << std::endl;
 
     if (userId.empty()) {
-        std::cout << "Aucun utilisateur connecté." << std::endl;
+        std::cout << espace << "Aucun utilisateur connect\202." << std::endl;
         return;
     }
 
@@ -130,9 +134,92 @@ void BsBDD::BonusWin() {
         pstmt->setString(1, userId);
         pstmt->executeUpdate();
 
-        std::cout << "Bonus appliqué avec succès pour l'utilisateur " << userId << "." << std::endl;
+        std::cout << espace << "Bonus appliqu\202 avec succès pour l'utilisateur " << userId << "." << std::endl;
     }
     catch (sql::SQLException& e) {
-        std::cerr << "Erreur lors de la mise à jour du score: " << e.what() << std::endl;
+        std::cerr << espace << "Erreur lors de la mise à jour du score: " << e.what() << std::endl;
+    }
+}
+
+
+void BsBDD::incrementNbGames() {
+    if (userId.empty()) {
+        std::cout << espace << "Aucun utilisateur connect\202." << std::endl;
+        return;
+    }
+
+    try {
+        pstmt = con->prepareStatement("UPDATE playersData SET nbGames = nbGames + 1 WHERE idPlayers = ?");
+        pstmt->setString(1, userId);
+        pstmt->executeUpdate();
+
+        std::cout << espace << "Nombre de jeux jou\202s mis à jour pour l'utilisateur " << userId << "." << std::endl;
+    }
+    catch (sql::SQLException& e) {
+        std::cerr << espace << "Erreur lors de la mise à jour du nombre de jeux jou\202s: " << e.what() << std::endl;
+    }
+}
+
+void BsBDD::incrementNbLostGames() {
+    if (userId.empty()) {
+        std::cout << espace << "Aucun utilisateur connect\202." << std::endl;
+        return;
+    }
+
+    try {
+        pstmt = con->prepareStatement("UPDATE playersData SET nbLostGames = nbLostGames + 1 WHERE idPlayers = ?");
+        pstmt->setString(1, userId);
+        pstmt->executeUpdate();
+
+        std::cout << espace << "Nombre de parties perdues mis à jour pour l'utilisateur " << userId << "." << std::endl;
+    }
+    catch (sql::SQLException& e) {
+        std::cerr << espace << "Erreur lors de la mise à jour du nombre de parties perdues: " << e.what() << std::endl;
+    }
+}
+
+void BsBDD::incrementNbWonGames() {
+    if (userId.empty()) {
+        std::cout << espace << "Aucun utilisateur connect\202." << std::endl;
+        return;
+    }
+
+    try {
+        pstmt = con->prepareStatement("UPDATE playersData SET nbWonGames = nbWonGames + 1 WHERE idPlayers = ?");
+        pstmt->setString(1, userId);
+        pstmt->executeUpdate();
+
+        std::cout << espace << "Nombre de parties gagn\202es mis à jour pour l'utilisateur " << userId << "." << std::endl;
+    }
+    catch (sql::SQLException& e) {
+        std::cerr << espace << "Erreur lors de la mise à jour du nombre de parties gagn\202es: " << e.what() << std::endl;
+    }
+}
+
+void BsBDD::displayPlayerInfo() {
+    if (userId.empty()) {
+        std::cout << espace << "Aucun utilisateur connecté." << std::endl;
+        return;
+    }
+
+    try {
+        // Requête pour récupérer les données de l'utilisateur
+        pstmt = con->prepareStatement("SELECT * FROM playersData WHERE idPlayers = ?");
+        pstmt->setString(1, userId);
+        res = pstmt->executeQuery();
+
+        if (res->next()) {
+            std::cout << espace << "Informations de l'utilisateur " << userId << ":" << std::endl;
+            std::cout << espace << "Score: " << res->getInt("score") << std::endl;
+            std::cout << espace << "Nombre de jeux jou\202s: " << res->getInt("nbGames") << std::endl;
+            std::cout << espace << "Nombre de jeux perdus: " << res->getInt("nbLostGames") << std::endl;
+            std::cout << espace << "Nombre de jeux gagn\202s: " << res->getInt("nbWonGames") << std::endl;
+        }
+        else {
+            std::cout << espace << "Aucune information trouv\202e pour l'utilisateur " << userId << "." << std::endl;
+        }
+    }
+    catch (sql::SQLException& e) {
+        std::cerr << espace << "Erreur lors de la r\202cup\202ration des informations de l'utilisateur: " << e.what() << std::endl;
     }
 }

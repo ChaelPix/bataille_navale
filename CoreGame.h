@@ -65,7 +65,6 @@ public:
 
     bool caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)[nbCol]);
 
-
     // Ajout de nouvelles méthodes publiques pour le déroulement du jeu
     void placerBateaux(bool pourAdversaire); // Pour placer les bateaux de l'IA et du joueur
 
@@ -75,7 +74,7 @@ public:
 
     void jouer(); // Pour démarrer la boucle de jeu
 
-    bool estFinDuJeu() const; // Pour vérifier si la partie est terminée
+    bool estFinDuJeu(); // Pour vérifier si la partie est terminée
 
     // Nouvelle méthode pour vérifier et mettre à jour l'état du bateau coulé
     void verifierBateauCoule(int ligne, int colonne, bool grilleAdversaire);
@@ -83,5 +82,7 @@ public:
     // Méthode pour afficher le nombre de bateaux coulés
     void afficherBateauxCoules() const;
 
+    void setBonus();
+    void Appel() const;
 };
 
