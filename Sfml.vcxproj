@@ -23,12 +23,14 @@
     <ClCompile Include="CoreGame.cpp" />
     <ClCompile Include="Localization.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TCPClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BsBDD.h" />
     <ClInclude Include="CoreGame.h" />
     <ClInclude Include="Localization.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="TCPClient.h" />
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="localization\eng.json">

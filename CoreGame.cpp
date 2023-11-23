@@ -1,6 +1,7 @@
 #include "CoreGame.h"
 #include <iostream>
 
+
 CoreGame::CoreGame() : nombreTotalBateaux(4), bateauxCoulés(0) {
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {

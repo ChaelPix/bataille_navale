@@ -18,18 +18,20 @@
 #include <jdbc/cppconn/statement.h>
 #include <jdbc/cppconn/prepared_statement.h>
 
+class TCPClient;
+
 class CoreGame {
 public:
     enum class typeCase { vide, bateau, touche, eau, erreur = 99};
     static const int nbLig = 10;
     static const int nbCol = 10;
     BsBDD obj;
-
 private:
     typeCase grille[nbLig][nbCol];
     typeCase grilleAdversaire[nbLig][nbCol];
     int nombreTotalBateaux; // obselete
     int bateauxCoulés; //obselete
+    TCPClient* __tcp;
 
 public:
     // Constructeur qui initialise la grille, par exemple avec des cases vides.
