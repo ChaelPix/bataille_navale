@@ -1,10 +1,8 @@
-#pragma once
 #ifndef TCPCLIENT_H
 #define TCPCLIENT_H
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
-
-#include <iostream>
 #include <winsock2.h>
+#include <iostream>
 #include <string>
 #include "BsBDD.h"
 

@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="BsBDD.cpp" />
     <ClCompile Include="CoreGame.cpp" />
+    <ClCompile Include="Debug.cpp" />
     <ClCompile Include="Localization.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TCPClient.cpp" />
@@ -28,6 +29,7 @@
   <ItemGroup>
     <ClInclude Include="BsBDD.h" />
     <ClInclude Include="CoreGame.h" />
+    <ClInclude Include="Debug.h" />
     <ClInclude Include="Localization.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="TCPClient.h" />

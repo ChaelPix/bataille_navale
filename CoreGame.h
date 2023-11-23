@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _COREGAME_H
+#define _COREGAME_H
 #define SautaLaLigne std::cout<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl;
 #define espace "\t\t\t\t\t"
 #define espace2 "\t\t\t\t\t\t      "
@@ -6,6 +7,8 @@
 #define espace4 "\t\t\t\t\t\t         "
 #define espace5 "\t\t\t\t\t\t      "
 #define effacer system("cls");
+#include "TCPClient.h"
+
 #include <utility> // Pour std::pair
 #include <string>
 #include <vector>
@@ -17,6 +20,7 @@
 #include <jdbc/cppconn/resultset.h>
 #include <jdbc/cppconn/statement.h>
 #include <jdbc/cppconn/prepared_statement.h>
+
 
 class TCPClient;
 
@@ -87,4 +91,4 @@ public:
     void setBonus();
     void Appel() const;
 };
-
+#endif
