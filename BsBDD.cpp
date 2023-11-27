@@ -27,7 +27,6 @@ void BsBDD::Connexion() {
         if (login(idUser, password)) {
             std::cout << espace << "Connexion r\202ussie!\n";
             setPseudo(idUser);
-            loadPlayerData();
         }
         else {
             std::cout << espace << "Identifiant ou mot de passe incorrect.\n";
@@ -41,7 +40,6 @@ void BsBDD::Connexion() {
 
         if (registerUser(idUser, password)) {
             std::cout << espace << "Inscription r\202ussie! Vous êtes maintenant connect\202.\n";
-            loadPlayerData();
         }
         else {
             std::cout << espace << "Erreur lors de l'inscription ou l'identifiant existe d\202jà.\n";
@@ -68,7 +66,6 @@ bool BsBDD::login(const std::string& idUser, const std::string& password) {
 
         if (res->next()) {
             this->userId = idUser; // Définir l'userId pour l'utilisateur connecté
-            loadPlayerData();
             return true;
         }
         else {
@@ -102,8 +99,7 @@ bool BsBDD::registerUser(const std::string& idUser, const std::string& password)
         pstmt = con->prepareStatement("INSERT INTO playersData (score, nbGames, nbLostGames, nbWonGames, idPlayers) VALUES (0, 0, 0, 0, ?)");
         pstmt->setString(1, idUser);
         pstmt->executeUpdate();
-
-        loadPlayerData();
+        this->userId = idUser; // Définir l'userId pour l'utilisateur connecté
         return true;
     }
     catch (sql::SQLException& e) {
@@ -112,16 +108,7 @@ bool BsBDD::registerUser(const std::string& idUser, const std::string& password)
     return false;
 }
 
-void BsBDD::loadPlayerData() {
-    // Charger les données du joueur depuis la base de données
-}
-
-void BsBDD::savePlayerData() {
-    // Sauvegarder les données du joueur dans la base de données
-}
-
 void BsBDD::BonusWin() {
-    std::cout << espace << "Utilisateur connect\202 : " << this->userId << std::endl;
 
     if (userId.empty()) {
         std::cout << espace << "Aucun utilisateur connect\202." << std::endl;
@@ -134,7 +121,7 @@ void BsBDD::BonusWin() {
         pstmt->setString(1, userId);
         pstmt->executeUpdate();
 
-        std::cout << espace << "Bonus appliqu\202 avec succès pour l'utilisateur " << userId << "." << std::endl;
+        std::cout << espace << "Bonus appliqu\202 avec succ\202s pour l'utilisateur " << userId << "." << std::endl;
     }
     catch (sql::SQLException& e) {
         std::cerr << espace << "Erreur lors de la mise à jour du score: " << e.what() << std::endl;
@@ -214,6 +201,13 @@ void BsBDD::displayPlayerInfo() {
             std::cout << espace << "Nombre de jeux jou\202s: " << res->getInt("nbGames") << std::endl;
             std::cout << espace << "Nombre de jeux perdus: " << res->getInt("nbLostGames") << std::endl;
             std::cout << espace << "Nombre de jeux gagn\202s: " << res->getInt("nbWonGames") << std::endl;
+
+            // Mise à jour des attributs
+            this->id = std::to_string(res->getInt("id"));
+            this->score = std::to_string(res->getInt("score"));
+            this->nbGames = std::to_string(res->getInt("nbGames"));
+            this->nbLostGames = std::to_string(res->getInt("nbLostGames"));
+            this->nbWonGames = std::to_string(res->getInt("nbWonGames"));
         }
         else {
             std::cout << espace << "Aucune information trouv\202e pour l'utilisateur " << userId << "." << std::endl;
@@ -222,4 +216,37 @@ void BsBDD::displayPlayerInfo() {
     catch (sql::SQLException& e) {
         std::cerr << espace << "Erreur lors de la r\202cup\202ration des informations de l'utilisateur: " << e.what() << std::endl;
     }
+}
+
+bool BsBDD::isConnect() {
+
+    if (this->userId.empty()) {
+        std::cout << espace << "Aucun utilisateur connect\202. r\202essayez" << std::endl;
+        return false;
+    }
+    return true;
+}
+
+std::string BsBDD::getId() const {
+    return id;
+}
+
+std::string BsBDD::getScore() const {
+    return score;
+}
+
+std::string BsBDD::getNbGames() const {
+    return nbGames;
+}
+
+std::string BsBDD::getNbLostGames() const {
+    return nbLostGames;
+}
+
+std::string BsBDD::getNbWonGames() const {
+    return nbWonGames;
+}
+
+std::string BsBDD::getIdPlayers() const {
+    return idPlayers;
 }

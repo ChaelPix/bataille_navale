@@ -286,10 +286,13 @@ void CoreGame::attaqueIA() {
 }
 
 void CoreGame::jouer() {
-    obj.Connexion();
-    system("cls");
+    do{
+        obj.Connexion();
+        system("cls");
+    }while (!obj.isConnect());
     SautaLaLigne
     obj.displayPlayerInfo();
+    std::cout << std::endl;
     // Boucle principale du jeu, alternant entre le joueur et l'IA
     while (!estFinDuJeu()) {
         afficherBateauxCoules(); // a supprimer

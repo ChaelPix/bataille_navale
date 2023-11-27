@@ -26,6 +26,13 @@ private:
     sql::ResultSet* res;
     std::string userId; 
 
+    std::string id;
+    std::string score;
+    std::string nbGames;
+    std::string nbLostGames;
+    std::string nbWonGames;
+    std::string idPlayers;
+
 public:
     BsBDD();
     ~BsBDD();
@@ -35,13 +42,19 @@ public:
     void connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password);
     bool login(const std::string& idPlayer, const std::string& password);
     bool registerUser(const std::string& idUser, const std::string& password);
-    void loadPlayerData();
-    void savePlayerData();
     void BonusWin();
     void incrementNbGames();
     void incrementNbLostGames();
     void incrementNbWonGames();
     void displayPlayerInfo();
+    bool isConnect();
+    void getPlayerData();
 
-
+    // Déclarations des méthodes getteurs
+    std::string getId() const;
+    std::string getScore() const;
+    std::string getNbGames() const;
+    std::string getNbLostGames() const;
+    std::string getNbWonGames() const;
+    std::string getIdPlayers() const;
 };
