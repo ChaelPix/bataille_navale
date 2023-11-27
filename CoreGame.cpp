@@ -286,38 +286,41 @@ void CoreGame::attaqueIA() {
 }
 
 void CoreGame::jouer() {
-    do{
+    do {
         obj.Connexion();
         system("cls");
-    }while (!obj.isConnect());
+    } while (!obj.isConnect());
+
     SautaLaLigne
     obj.displayPlayerInfo();
     std::cout << std::endl;
-    // Boucle principale du jeu, alternant entre le joueur et l'IA
+
     while (!estFinDuJeu()) {
-        afficherBateauxCoules(); // a supprimer
         afficheGrille();
-        std::pair<int, int> saisie = saisieJoueur(); // Utilisez le type explicite au lieu de 'auto'
-        int ligne = saisie.first;
-        int colonne = saisie.second;
-        std::cout << espace3 << "L'adversaire joue...";
-        //Sleep(1000);
+
+        // Le joueur effectue une attaque
+        std::pair<int, int> saisie = saisieJoueur();
+        envoyerAttaque(saisie.first, saisie.second); // Envoie l'attaque et l'état actuel de la grille
+
+        // Attendre et traiter l'attaque de l'adversaire
+        recevoirAttaque(); // Reçoit l'attaque de l'adversaire et met à jour les grilles
+
         system("cls");
         std::cout << "MOI: " << std::endl << serialisationJoueur() << std::endl;
         std::cout << "ADVERSAIRE: " << std::endl << serialisationAdversaire();
         std::cout << std::endl;
-        if (attaqueJoueur(ligne, colonne)) {
-            std::cout << std::endl << std::endl << std::endl << std::endl;
-            std::cout << espace4 << "\033[34mTouch\202!\033[0m" << std::endl << std::endl;
+
+        // Affichage du résultat de l'attaque
+        if (grilleAdversaire[saisie.first][saisie.second] == typeCase::touche) {
+            std::cout << espace4 << "\033[34mTouché!\033[0m" << std::endl << std::endl;
         }
         else {
-            std::cout << std::endl << std::endl << std::endl << std::endl;
-            std::cout << espace4 << "\033[31mManqu\202!\033[0m" << std::endl << std::endl;
+            std::cout << espace4 << "\033[31mManqué!\033[0m" << std::endl << std::endl;
         }
-        attaqueIA();
     }
     obj.incrementNbGames();
 }
+
 
 
 bool CoreGame::estFinDuJeu() {
@@ -386,6 +389,51 @@ void CoreGame::verifierBateauCoule(int ligne, int colonne, bool pourAdversaire) 
 void CoreGame::afficherBateauxCoules() const {
     //std::cout << espace << "Bateaux coul\202s: " << bateauxCoulés << " sur " << nombreTotalBateaux << std::endl;
 }
+
+void CoreGame::envoyerAttaque(int ligne, int colonne) {
+    // Envoie les coordonnées de l'attaque
+    std::string messageAttaque = "ATTAQUE " + std::to_string(ligne) + " " + std::to_string(colonne);
+    __tcp->sendMessage(messageAttaque);
+
+    // Envoie l'état actuel de la grille
+    std::string etatGrille = serialisationJoueur();
+    __tcp->sendMessage(etatGrille);
+}
+
+
+void CoreGame::recevoirAttaque() {
+    std::string message = __tcp->receiveMessage();
+    std::istringstream iss(message);
+    int ligne, colonne;
+    iss >> ligne >> colonne;
+
+    // Traiter l'attaque
+    traiterAttaqueAdversaire(ligne, colonne);
+
+    // Recevoir et désérialiser l'état de la grille de l'adversaire
+    std::string trameGrilleAdversaire = __tcp->receiveMessage();
+    deserialisationAdversaire(trameGrilleAdversaire);
+}
+
+
+bool CoreGame::traiterAttaqueAdversaire(int ligne, int colonne) {
+    // Vérifier si la case a déjà été attaquée
+    if (grille[ligne][colonne] == typeCase::touche || grille[ligne][colonne] == typeCase::eau) {
+        return false; // L'attaque a déjà été effectuée sur cette case
+    }
+
+    // Vérifier si l'attaque touche un bateau
+    if (grille[ligne][colonne] == typeCase::bateau) {
+        grille[ligne][colonne] = typeCase::touche; // Marquer la case comme touchée
+        verifierBateauCoule(ligne, colonne, false); // Vérifier si un bateau a été coulé
+        return true; // L'attaque a touché un bateau
+    }
+    else {
+        grille[ligne][colonne] = typeCase::eau; // Marquer la case comme manquée (eau)
+        return false; // L'attaque a manqué
+    }
+}
+
 
 
 //CoreGame::typeCase CoreGame::getCase(int ligne, int colonne) const { //a supprimer

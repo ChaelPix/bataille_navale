@@ -90,5 +90,11 @@ public:
 
     void setBonus();
     void Appel() const;
+
+    void envoyerAttaque(int ligne, int colonne);
+    bool traiterAttaqueAdversaire(int ligne, int colonne);
+    void recevoirAttaque();
+    void recevoirAttaque();
+
 };
 #endif
