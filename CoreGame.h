@@ -52,8 +52,6 @@ public:
 
     void afficherCaractereAvecCouleur(typeCase caseType, bool estGrilleAdversaire) const;
 
-    char getRepresentationCaractere(typeCase caseType) const;
-
     // Permet au joueur de saisir une position sur la grille.
     static std::pair<int, int> saisieJoueur();
 
@@ -94,7 +92,5 @@ public:
     void envoyerAttaque(int ligne, int colonne);
     bool traiterAttaqueAdversaire(int ligne, int colonne);
     void recevoirAttaque();
-    void recevoirAttaque();
-
 };
 #endif
