@@ -10,9 +10,7 @@ CoreGame::CoreGame() : nombreTotalBateaux(4), bateauxCoulés(0) {
             grilleAdversaire[i][j] = typeCase::vide; // Initialisation de la grille de l'adversaire
         }
     }
-    placerBateaux(false); // Place un bateau pour le joueur
 
-    placerBateaux(true);  // Place un bateau pour l'IA
 }
 
 
@@ -243,56 +241,38 @@ bool CoreGame::caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)
     return true; // Toutes les cases adjacentes sont libres
 }
 
-void CoreGame::placerBateaux(bool pourAdversaire) {
-    typeCase(*grilleCible)[nbCol] = pourAdversaire ? grilleAdversaire : grille;
-    const std::vector<typeBateau> taillesBateaux = 
-    { typeBateau::PorteAvion, typeBateau::Croiseur, typeBateau::ContreTorpilleur , typeBateau::ContreTorpilleur , typeBateau::Torpilleur };
+bool CoreGame::estPlacementValide(typeBateau bateau, int ligne, int colonne, int direction) {
+    int tailleBateau = static_cast<int>(bateau);
 
-    for (const auto& bateau : taillesBateaux) {
+    // Vérifier si le bateau sort de la grille
+    if (direction == 0 && ligne + tailleBateau > nbLig) return false; // Vertical
+    if (direction == 1 && colonne + tailleBateau > nbCol) return false; // Horizontal
+
+    // Vérifier si le bateau chevauche un autre bateau
+    for (int i = 0; i < tailleBateau; ++i) {
+        int l = ligne + (direction == 0 ? i : 0);
+        int c = colonne + (direction == 1 ? i : 0);
+        if (grille[l][c] != typeCase::vide) return false;
+    }
+
+    return true; // Le placement est valide
+}
+
+
+void CoreGame::placerBateau(typeBateau bateau, int ligne, int colonne, int direction) {
+    if (estPlacementValide(bateau, ligne, colonne, direction)) {
         int tailleBateau = static_cast<int>(bateau);
 
-        bool placementValide = false;
-        while (!placementValide) {
-            int ligne, colonne, direction;
+        // Placez le bateau sur la grille en fonction de la direction
+        for (int i = 0; i < tailleBateau; ++i) {
+            int l = ligne + (direction == 0 ? 0 : i); // Direction verticale
+            int c = colonne + (direction == 1 ? 0 : i); // Direction horizontale
 
-            if (pourAdversaire) {
-                direction = std::rand() % 2;
-                ligne = std::rand() % nbLig;
-                colonne = std::rand() % nbCol;
-            }
-            else {
-                afficheGrille();
-                std::cout << "Placer le bateau de taille " << tailleBateau << ": ";
-                std::cout << " \nEntrez la ligne, la colonne (0-" << nbLig - 1 << ", 0-" << nbCol - 1 << "), et la direction (0 pour horizontal, 1 pour vertical): ";
-                std::cin >> ligne >> colonne >> direction;
-                system("cls"); SautaLaLigne
-
-            }
-
-            placementValide = true;
-            for (int i = 0; i < tailleBateau; ++i) {
-                int l = ligne + (direction == 0 ? 0 : i);
-                int c = colonne + (direction == 1 ? 0 : i);
-
-                if (l >= nbLig || c >= nbCol || grilleCible[l][c] != typeCase::vide || !caseAdjacenteLibre(l, c, grilleCible)) {
-                    placementValide = false;
-                    if (!pourAdversaire) {
-                        std::cout << "Placement invalide, veuillez réessayer." << std::endl;
-                    }
-                    break;
-                }
-            }
-
-            if (placementValide) {
-                for (int i = 0; i < tailleBateau; ++i) {
-                    int l = ligne + (direction == 0 ? 0 : i);
-                    int c = colonne + (direction == 1 ? 0 : i);
-                    grilleCible[l][c] = typeCase::bateau;
-                }
-            }
+            grille[l][c] = typeCase::bateau; // Assumer que cette méthode place les bateaux sur la grille du joueur
         }
     }
 }
+
 
 
 

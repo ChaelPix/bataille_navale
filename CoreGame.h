@@ -62,8 +62,11 @@ public:
     bool caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)[nbCol]);
 
 
-    // Ajout de nouvelles méthodes publiques pour le déroulement du jeu
-    void placerBateaux(bool pourAdversaire); // Pour placer les bateaux de l'IA et du joueur
+    // Méthodes supplémentaires
+    bool estPlacementValide(typeBateau bateau, int ligne, int colonne, int direction);
+
+    void placerBateau(typeBateau bateau, int ligne, int colonne, int direction);
+
 
     bool attaqueJoueur(int ligne, int colonne); // Pour que le joueur attaque l'IA
 
