@@ -1,3 +1,5 @@
+//Fichier de définition de ma classe CoreGame, (CoreGame.cpp)
+
 #include "CoreGame.h"
 #include <iostream>
 
@@ -214,22 +216,41 @@ void CoreGame::Appel() const{
 }
 
 void CoreGame::placerBateaux(bool pourAdversaire) {
-    typeCase(*grilleCible)[nbCol] = pourAdversaire ? grilleAdversaire : grille; // Expression conditionnelle. Si pourAdversaire est vrai (true), alors la valeur grilleAdversaire est utilisée ; sinon, la valeur grille est utilisée.
-    const std::vector<int> taillesBateaux = { 3, 2, 4, 5 }; // Les bateaux disponible par joueurs, il doit y avoir un bateau avec 2 cases, 3 cases, 4 cases et enfin 5 cases selon wikipedia : https:// fr.wikipedia.org/wiki/Bataille_navale_(jeu)
+    typeCase(*grilleCible)[nbCol] = pourAdversaire ? grilleAdversaire : grille;
+    const std::vector<typeBateau> taillesBateaux = 
+    { typeBateau::PorteAvion, typeBateau::Croiseur, typeBateau::ContreTorpilleur , typeBateau::ContreTorpilleur , typeBateau::Torpilleur };
 
-    for (int tailleBateau : taillesBateaux) {
+    for (const auto& bateau : taillesBateaux) {
+        int tailleBateau = static_cast<int>(bateau);
+
         bool placementValide = false;
         while (!placementValide) {
-            int direction = std::rand() % 2; // 0 pour horizontal, 1 pour vertical
-            int ligne = std::rand() % nbLig;
-            int colonne = std::rand() % nbCol;
+            int ligne, colonne, direction;
+
+            if (pourAdversaire) {
+                direction = std::rand() % 2;
+                ligne = std::rand() % nbLig;
+                colonne = std::rand() % nbCol;
+            }
+            else {
+                afficheGrille();
+                std::cout << "Placer le bateau de taille " << tailleBateau << ": ";
+                std::cout << " \nEntrez la ligne, la colonne (0-" << nbLig - 1 << ", 0-" << nbCol - 1 << "), et la direction (0 pour horizontal, 1 pour vertical): ";
+                std::cin >> ligne >> colonne >> direction;
+                system("cls"); SautaLaLigne
+
+            }
 
             placementValide = true;
             for (int i = 0; i < tailleBateau; ++i) {
                 int l = ligne + (direction == 0 ? 0 : i);
                 int c = colonne + (direction == 1 ? 0 : i);
+
                 if (l >= nbLig || c >= nbCol || grilleCible[l][c] != typeCase::vide || !caseAdjacenteLibre(l, c, grilleCible)) {
                     placementValide = false;
+                    if (!pourAdversaire) {
+                        std::cout << "Placement invalide, veuillez réessayer." << std::endl;
+                    }
                     break;
                 }
             }
