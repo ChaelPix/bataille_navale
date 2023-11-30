@@ -6,14 +6,14 @@ class Boat : public EntityRectangle
 
 private : 
 	int boatId;
-	CoreGame::typeBateau boatType;
+	CoreGame::boatTypes boatType;
 
 public :
 
-	Boat(int id, CoreGame::typeBateau boatType, sf::Vector2f size, sf::Texture* texture = nullptr);
+	Boat(int id, CoreGame::boatTypes boatType, sf::Vector2f size, sf::Texture* texture = nullptr);
 
 	int getBoatId();
-	CoreGame::typeBateau getBoatType();
+	CoreGame::boatTypes getBoatType();
 
 };
 

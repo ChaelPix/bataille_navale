@@ -1,6 +1,6 @@
 #include "Boat.h"
 
-Boat::Boat(int id, CoreGame::typeBateau boatType, sf::Vector2f size, sf::Texture* texture) : EntityRectangle(size)
+Boat::Boat(int id, CoreGame::boatTypes boatType, sf::Vector2f size, sf::Texture* texture) : EntityRectangle(size)
 {
 	boatId = id;
 	this->boatType = boatType;
@@ -14,7 +14,7 @@ int Boat::getBoatId()
 	return this->boatId;
 }
 
-CoreGame::typeBateau Boat::getBoatType()
+CoreGame::boatTypes Boat::getBoatType()
 {
 	return this->boatType;
 }

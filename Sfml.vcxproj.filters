@@ -60,6 +60,9 @@
     <ClCompile Include="Grid.cpp">
       <Filter>Fichiers sources\SFML</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerBoatsManager.cpp">
+      <Filter>Fichiers sources\SFML</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Localization.h">
@@ -96,6 +99,9 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="TCPClient.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBoatsManager.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

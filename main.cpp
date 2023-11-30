@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "Boat.h"
+#include "PlayerBoatsManager.h"
 #include "Grid.h"
 #include "Settings.h"
 #include "AnimatedBackground.h"
@@ -32,8 +32,8 @@ int main() {
 
     /***************___BOATS___***************/
     Boat* selectedBoat = nullptr;
-
-
+    PlayerBoatsManager playerBoatsManager;
+    
 
     /***************___GAME WINDOW___***************/
     while (window.isOpen()) 
@@ -50,6 +50,9 @@ int main() {
         /*___Grids___*/
         gridPlayer.DrawGrid(window);
         gridEnemy.DrawGrid(window);
+
+        /*___Boats___*/
+        playerBoatsManager.draw(window);
 
         /*___Entities (Polymorphism :p)___*/
         for (int i = 0; i < entitiesPtr.size(); i++)
