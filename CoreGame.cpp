@@ -286,6 +286,12 @@ void CoreGame::attaqueIA() {
 }
 
 void CoreGame::jouer() {
+    int time = 0;
+    while (time <= 15) {
+        Sleep(1000);
+        time++;
+        std::cout << "Vous pouvez rejouer dans " << time << " seondes si l'adversaire ne joue pas." << std::endl;
+    }
     do {
         obj.Connexion();
         system("cls");
@@ -316,6 +322,7 @@ void CoreGame::jouer() {
             std::cout << espace4 << "\033[31mManqué!\033[0m" << std::endl << std::endl;
         }
         envoyerAttaque(saisie.first, saisie.second); // Envoie l'attaque et l'état actuel de la grille
+
     }
     obj.incrementNbGames();
 }
