@@ -29,6 +29,7 @@
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Localization.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MouseManager.cpp" />
     <ClCompile Include="PlayerBoatsManager.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="TCPClient.cpp" />
@@ -43,6 +44,7 @@
     <ClInclude Include="EntityRectangle.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Localization.h" />
+    <ClInclude Include="MouseManager.h" />
     <ClInclude Include="PlayerBoatsManager.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Settings.h" />

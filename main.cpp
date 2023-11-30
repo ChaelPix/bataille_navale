@@ -6,6 +6,7 @@
 #include "Grid.h"
 #include "Settings.h"
 #include "AnimatedBackground.h"
+#include "MouseManager.h"
 
 /*----Settings-----*/
 const int fps = 15;
@@ -17,6 +18,7 @@ int main() {
 
     /***************___WINDOW___***************/
     sf::RenderWindow window(sf::VideoMode(windowSize.x, windowSize.y), "BattleShip");
+    MouseManager mouseManager;
 
     /***************___BACKGROUND___***************/
     AnimatedBackground gameBackground("ressources/UI/backgrounds/waterBg/Layer ", 59, 100, true, windowSize);
@@ -42,6 +44,8 @@ int main() {
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
+
+            mouseManager.update(event, window);
         }
 
         /*___BG___*/
