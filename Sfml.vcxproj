@@ -22,16 +22,20 @@
     <ClCompile Include="BsBDD.cpp" />
     <ClCompile Include="CoreGame.cpp" />
     <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Localization.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Settings.cpp" />
     <ClCompile Include="TCPClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BsBDD.h" />
     <ClInclude Include="CoreGame.h" />
     <ClInclude Include="Debug.h" />
+    <ClInclude Include="Grid.h" />
     <ClInclude Include="Localization.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Settings.h" />
     <ClInclude Include="TCPClient.h" />
   </ItemGroup>
   <ItemGroup>
