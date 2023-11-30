@@ -99,7 +99,7 @@
 #include <iomanip> // Pour std::setw et std::setfill
 #include <sstream> // Pour std::stringstream
 #include <algorithm>    // std::max
-
+#include <map>
 std::string getFileName(int number) {
     std::stringstream ss;
     ss << "BackGroundDoc/background" << std::setw(5) << std::setfill('0') << number << ".jpg";
@@ -134,11 +134,11 @@ std::vector<sf::Texture> loadTextures(int numberOfItems, const std::string& base
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(1333, 749), "Menu d'accueil");
-    sf::Texture backgroundTexture;
-    if (!backgroundTexture.loadFromFile("C:/Users/laurentr/Pictures/background.jpg")) {
-        return -1;
-    }
-    sf::Sprite backgrounds(backgroundTexture);
+    //sf::Texture backgroundTexture;
+    //if (!backgroundTexture.loadFromFile("C:/Users/laurentr/Pictures/background.jpg")) {
+    //    return -1;
+    //}
+    //sf::Sprite backgrounds(backgroundTexture);
     sf::Font font;
     if (!font.loadFromFile("Fonts/AGENCYB.ttf")) {
         return -1;
@@ -185,10 +185,12 @@ int main() {
 
     ////////////////////---Boutique---//////////////////////
 
-    // Définissez ces variables en haut de votre fonction main ou en tant que constantes globales
-    const float itemWidth = 200.0f; // Largeur d'un élément de la boutique
-    const float itemHeight = 200.0f; // Hauteur d'un élément de la boutique
-    const float spacing = 20.0f; // Espacement entre les éléments de la boutique
+// Configuration de la boutique
+    const int itemsPerRow = 4; // Nombre d'items par ligne
+    const float spacing = 10.0f; // Espacement entre les items
+    const float itemWidth = (window.getSize().x - (itemsPerRow + 1) * spacing) / itemsPerRow;
+    const float itemHeight = itemWidth; // Les items sont carrés
+
 
 
     // Supposons que vous ayez chargé des textures dans un vecteur de sf::Texture
@@ -212,9 +214,11 @@ int main() {
 
     // Création des ShopItem avec texturesShop
     std::vector<ShopItem> items;
-    int itemsPerRow = 4; // Nombre d'items par ligne
     int currentRow = 0;
     int currentColumn = 0;
+
+    float targetWidth = 200.0f; // Largeur cible
+    float targetHeight = 200.0f; // Hauteur cible
 
     for (int i = 0; i < texturesShop.size(); ++i) {
         float posX = 10 + currentColumn * (itemWidth + spacing);
@@ -229,17 +233,21 @@ int main() {
         }
 
         // Redimensionnement
-        float targetWidth = 200.0f; // Largeur cible
-        float targetHeight = 200.0f; // Hauteur cible
+
         float scaleX = targetWidth / items[i].sprite.getGlobalBounds().width;
         float scaleY = targetHeight / items[i].sprite.getGlobalBounds().height;
         items[i].sprite.setScale(scaleX, scaleY);
     }
 
-    // Disposition des items (à ajuster selon vos besoins)
-    for (int i = 0; i < items.size(); ++i) {
-        items[i].sprite.setPosition(10 + i * 100, 100); // Positionnez les sprites
-        items[i].title.setPosition(10 + i * 100, 200); // Positionnez les titres
+    // Positionnement des items
+    for (size_t i = 0; i < items.size(); ++i) {
+        int row = i / itemsPerRow;
+        int col = i % itemsPerRow;
+        float x = spacing + col * (itemWidth + spacing);
+        float y = spacing + row * (itemHeight + spacing);
+
+        items[i].sprite.setPosition(x, y);
+        items[i].title.setPosition(x, y + itemHeight + 5); // Un petit espace sous l'image pour le titre
     }
 
 
@@ -259,6 +267,7 @@ int main() {
                     if (playButton.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
                         isMenuScreen = false; // change l'écran
                         isSettingsScreen = false;
+                        isShopScreen = false; // Active l'écran de la boutique
                         // Logique pour le nouvel écran de jeu
                     }
 
@@ -282,27 +291,7 @@ int main() {
                         isSettingsScreen = false;
                         // Logique pour le nouvel écran de jeu
                     }
-                    // Gestion du défilement
-                    if (event.type == sf::Event::MouseWheelScrolled && isShopScreen) {
-                        scrollOffset += event.mouseWheelScroll.delta * 30.0f; // 30 est la vitesse de défilement
-                        // Limitez scrollOffset si nécessaire
-                    }
 
-                    //// Gestion du défilement
-                    //if (event.type == sf::Event::MouseWheelScrolled && isShopScreen) {
-                    //    scrollOffset -= event.mouseWheelScroll.delta * 30.0f; // Ajustez ce facteur selon vos besoins
-
-                    //    // Limitez scrollOffset pour éviter le défilement hors des limites
-                    //    // Par exemple, si vous ne voulez pas défiler au-delà du premier ou du dernier élément
-                    //    scrollOffset = std::max(scrollOffset, /* limite inférieure */);
-                    //    scrollOffset = std::min(scrollOffset, /* limite supérieure */);
-                    //}
-
-                    // Mettre à jour la position Y des ShopItem en fonction de scrollOffset
-                    for (auto& item : items) {
-                        item.sprite.setPosition(item.sprite.getPosition().x, item.originalY + scrollOffset);
-                        item.title.setPosition(item.title.getPosition().x, item.originalTitleY + scrollOffset);
-                    }
 
                 }
             }
@@ -328,6 +317,13 @@ int main() {
 
 
         window.clear();
+
+        // Dessin des items
+        for (const auto& item : items) {
+            window.draw(item.sprite);
+            window.draw(item.title);
+        }
+
         window.draw(background);
         if (isMenuScreen) {
             window.draw(playButton);
