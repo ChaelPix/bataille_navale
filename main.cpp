@@ -72,5 +72,22 @@ int main() {
 }
 
 
-
-
+//
+//
+//if (dragging && selectedBoat != nullptr) {
+//    sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+//    sf::Vector2f worldPos = window.mapPixelToCoords(mousePos);
+//    int gridX = (worldPos.x - gridOrigin.x) / gridSize;
+//    int gridY = (worldPos.y - gridOrigin.y) / gridSize;
+//    gridX = std::max(0, std::min(gridX, gridCols - 1));
+//    gridY = std::max(0, std::min(gridY, gridRows - 1));
+//
+//    sf::Vector2f snappedPosition(gridOrigin.x + gridX * gridSize, gridOrigin.y + gridY * gridSize);
+//    selectedBoat->setPosition(snappedPosition);
+//
+//    std::cout << "Bateau choisi : " << selectedBoat->getBoatId()
+//        << "\t taille : " << static_cast<int>(selectedBoat->getBoatType())
+//        << "\t nb colonne : " << gridX
+//        << "\t nb ligne : " << gridY
+//        << std::endl;
+//}
