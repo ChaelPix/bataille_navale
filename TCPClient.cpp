@@ -1,55 +1,25 @@
 #include "TCPClient.h"
-#pragma comment(lib, "ws2_32.lib") // Lien vers la bibliothèque Winsock
 
-TCPClient::TCPClient() : isConnected(false) {
-    WSAStartup(MAKEWORD(2, 0), &WSAData);
+TCPClient::TCPClient(const std::string& serverIP, ushort serverPORT) : TCPWinsocksMaster(serverPORT), serverIP(serverIP)
+{
+	init();
 }
 
-TCPClient::~TCPClient() {
-    if (isConnected) {
-        closesocket(serverSocket);
-    }
-    WSACleanup();
+void TCPClient::init()
+{
+	connectToServer();
 }
 
-bool TCPClient::connectToServer(const std::string& address, int port) {
-    serverSocket = socket(AF_INET, SOCK_STREAM, 0);
-    serverAddr.sin_addr.s_addr = inet_addr(address.c_str());
-    serverAddr.sin_family = AF_INET;
-    serverAddr.sin_port = htons(port);
+void TCPClient::connectToServer()
+{
+    adr_server.sin_family = AF_INET;
+    adr_server.sin_port = htons(serverPORT);
 
-    if (connect(serverSocket, (SOCKADDR*)&serverAddr, sizeof(serverAddr)) != 0) {
-        std::cerr << "Connexion au serveur échouée." << std::endl;
-        return false;
-    }
-
-    std::cout << "Connecté au serveur!" << std::endl;
-    isConnected = true;
-    return true;
-}
-
-bool TCPClient::sendMessage(const std::string& message) {
-    if (send(serverSocket, message.c_str(), message.size(), 0) < 0) {
-        std::cerr << "Échec de l'envoi du message." << std::endl;
-        return false;
-    }
-    return true;
-}
-
-std::string TCPClient::receiveMessage() {
-    char buffer[1024] = { 0 };
-    int bytesReceived = recv(serverSocket, buffer, sizeof(buffer), 0);
-    if (bytesReceived < 0) {
-        std::cerr << "Erreur de réception du message." << std::endl;
-        return "";
-    }
-    return std::string(buffer, bytesReceived);
-}
-
-void TCPClient::closeConnection() {
-    if (isConnected) {
-        closesocket(serverSocket);
-        isConnected = false;
-        std::cout << "Connexion fermée." << std::endl;
+    std::cout << "\nClient :" << idSocket;
+    inet_pton(AF_INET, serverIP.c_str(), &adr_server.sin_addr);
+    if (connect(idSocket, (struct sockaddr*)&adr_server, sizeof(adr_server)) < 0) {
+        throw std::runtime_error("Connect to Server Failed");
     }
 }
+
+
