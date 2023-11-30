@@ -3,7 +3,7 @@
 void MouseManager::update(sf::Event event, sf::RenderWindow& window)
 {
     if (event.type == sf::Event::MouseButtonPressed) {
-        clickPosition = sf::Mouse::getPosition(window);
+        clickPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
         isClicked = true;
     }
     if (event.type == sf::Event::MouseButtonReleased) {
@@ -11,7 +11,7 @@ void MouseManager::update(sf::Event event, sf::RenderWindow& window)
     }
 }
 
-sf::Vector2i MouseManager::getClickPosition()
+sf::Vector2f MouseManager::getClickPosition()
 {
     return clickPosition;
 }
