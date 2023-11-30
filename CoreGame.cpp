@@ -99,17 +99,21 @@ void CoreGame::afficherCaractereAvecCouleur(typeCase caseType, bool estGrilleAdv
 }
 
 std::pair<int, int> CoreGame::saisieJoueur() {
-    // lire les entr\202es du joueur.
     int ligne, colonne;
-    std::cout << std::endl << espace 
-        << "            Entrez la ligne: ";
-    std::cin >> ligne; std::cout << std::endl;
-    std::cout << espace 
-        << "            Entrez la colonne: ";
-    std::cin >> colonne; std::cout << std::endl;
+    do {
+        std::cout << std::endl << espace << "Entrez la ligne: ";
+        std::cin >> ligne;
+        std::cout << espace << "Entrez la colonne: ";
+        std::cin >> colonne;
+
+        if (ligne < 0 || ligne >= nbLig || colonne < 0 || colonne >= nbCol) {
+            std::cout << "Coordonnées invalides. Veuillez réessayer." << std::endl;
+        }
+    } while (ligne < 0 || ligne >= nbLig || colonne < 0 || colonne >= nbCol);
+
     return { ligne, colonne };
-   
 }
+
 
 bool CoreGame::partiePerdu() const {
     // Impl\202mentation de la v\202rification pour voir si la partie est perdue.
@@ -125,16 +129,22 @@ bool CoreGame::partiePerdu() const {
 }
 
 std::string CoreGame::serialisationJoueur() const {
-    // Convertit l'\202tat actuel de la grille en une chaîne de caractères.
     std::string result;
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
-            result += std::to_string(static_cast<int>(grille[i][j])) + " ";
+            switch (grille[i][j]) {
+            case typeCase::vide: result += 'V'; break;
+            case typeCase::bateau: result += 'B'; break;
+            case typeCase::touche: result += 'T'; break;
+            case typeCase::eau: result += 'E'; break;
+            default: result += '?'; break;
+            }
         }
         result += "\n";
     }
     return result;
 }
+
 
 std::string CoreGame::serialisationAdversaire() const {
     // Convertit l'\202tat actuel de la grille en une chaîne de caractères.
@@ -148,47 +158,61 @@ std::string CoreGame::serialisationAdversaire() const {
     return result;
 }
 
-bool CoreGame::deserialisation(const std::string& trame) {
-    std::istringstream iss(trame);
-    std::string ligneTrame;
-    int numLigne = 0;
-
-    while (std::getline(iss, ligneTrame) && numLigne < nbLig) {
-        std::istringstream issLigne(ligneTrame);
-        int valeur;
-        int numColonne = 0;
-
-        while (issLigne >> valeur && numColonne < nbCol) {
-            grille[numLigne][numColonne] = static_cast<typeCase>(valeur);
-            numColonne++;
-        }
-
-        numLigne++;
-    }
-
-    return (numLigne == nbLig);
-}
-
 bool CoreGame::deserialisationAdversaire(const std::string& trame) {
     std::istringstream iss(trame);
     std::string ligneTrame;
     int numLigne = 0;
 
     while (std::getline(iss, ligneTrame) && numLigne < nbLig) {
-        std::istringstream issLigne(ligneTrame);
-        int valeur;
-        int numColonne = 0;
-
-        while (issLigne >> valeur && numColonne < nbCol) {
-            grilleAdversaire[numLigne][numColonne] = static_cast<typeCase>(valeur);
-            numColonne++;
+        if (ligneTrame.size() != nbCol) {
+            std::cerr << "Erreur de format de trame: longueur incorrecte." << std::endl;
+            return false;
         }
 
-        numLigne++;
+        for (int numColonne = 0; numColonne < nbCol; ++numColonne) {
+            char caractere = ligneTrame[numColonne];
+            typeCase caseType;
+
+            switch (caractere) {
+            case 'V': caseType = typeCase::vide; break;
+            case 'B': caseType = typeCase::bateau; break;
+            case 'T': caseType = typeCase::touche; break;
+            case 'E': caseType = typeCase::eau; break;
+            default:
+                std::cerr << "Caractère inconnu dans la trame: " << caractere << std::endl;
+                return false;
+            }
+
+            grilleAdversaire[numLigne][numColonne] = caseType;
+        }
+
+        ++numLigne;
     }
 
     return (numLigne == nbLig);
 }
+
+
+//bool CoreGame::deserialisationAdversaire(const std::string& trame) {
+//    std::istringstream iss(trame);
+//    std::string ligneTrame;
+//    int numLigne = 0;
+//
+//    while (std::getline(iss, ligneTrame) && numLigne < nbLig) {
+//        std::istringstream issLigne(ligneTrame);
+//        int valeur;
+//        int numColonne = 0;
+//
+//        while (issLigne >> valeur && numColonne < nbCol) {
+//            grilleAdversaire[numLigne][numColonne] = static_cast<typeCase>(valeur);
+//            numColonne++;
+//        }
+//
+//        numLigne++;
+//    }
+//
+//    return (numLigne == nbLig);
+//}
 
 
 bool CoreGame::caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)[nbCol]) {
@@ -286,12 +310,7 @@ void CoreGame::attaqueIA() {
 }
 
 void CoreGame::jouer() {
-    int time = 0;
-    while (time <= 15) {
-        Sleep(1000);
-        time++;
-        std::cout << "Vous pouvez rejouer dans " << time << " seondes si l'adversaire ne joue pas." << std::endl;
-    }
+
     do {
         obj.Connexion();
         system("cls");
@@ -323,6 +342,13 @@ void CoreGame::jouer() {
         }
         envoyerAttaque(saisie.first, saisie.second); // Envoie l'attaque et l'état actuel de la grille
 
+        //int time = 0;
+        //while (time <= 15) {
+        //    Sleep(1000);
+        //    time++;
+        //    std::cout << "Vous pouvez rejouer dans " << time << " secondes si l'adversaire ne joue pas." << std::endl;
+        //    system("cls");
+        //}
     }
     obj.incrementNbGames();
 }
@@ -397,11 +423,16 @@ void CoreGame::afficherBateauxCoules() const {
 }
 
 void CoreGame::envoyerAttaque(int ligne, int colonne) {
-
-    // Envoie l'état actuel de la grille
-    std::string etatGrille = serialisationJoueur();
-    __tcp->sendMessage(etatGrille);
+    try {
+        std::string etatGrille = serialisationJoueur();
+        __tcp->sendMessage(etatGrille);
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Erreur lors de l'envoi de l'attaque : " << e.what() << std::endl;
+        // Gestion de la reconnexion ou notification à l'utilisateur ici
+    }
 }
+
 
 
 void CoreGame::recevoirAttaque() {

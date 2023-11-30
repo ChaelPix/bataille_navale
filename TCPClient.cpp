@@ -5,6 +5,11 @@ TCPClient::TCPClient(const std::string& serverIP, ushort serverPORT) : TCPWinsoc
 	init();
 }
 
+std::string TCPClient::processGameMessage(const std::string& message)
+{
+    return std::string();
+}
+
 void TCPClient::init()
 {
 	connectToServer();

@@ -16,6 +16,8 @@ private:
 public:
 
     TCPClient(const std::string& ipServeur, ushort portServeur);
+    virtual std::string processGameMessage(const std::string& message);
+
 };
 
 #endif
