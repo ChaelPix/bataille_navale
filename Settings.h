@@ -8,6 +8,6 @@ struct GridSettings {
     const int fps = 15;
     const sf::Color lineColor = sf::Color(255, 255, 255, 75);
 
-    const sf::Vector2f playerGridPosition = sf::Vector2f(100, 250);
-    const sf::Vector2f ennemyGridPosition = sf::Vector2f(700, 250);
+    const sf::Vector2f playerGridPosition = sf::Vector2f(100, 200);
+    const sf::Vector2f ennemyGridPosition = sf::Vector2f(700, 200);
 };

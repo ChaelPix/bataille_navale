@@ -14,38 +14,49 @@ sf::Vector2f windowSize(1600, 850);
 
 
 int main() {
+
+    /***************___WINDOW___***************/
     sf::RenderWindow window(sf::VideoMode(windowSize.x, windowSize.y), "BattleShip");
 
-    GridSettings gridSettings;
-
-    std::vector<Entity*> entitiesPtr;
-
-    Boat* selectedBoat = nullptr;
-
+    /***************___BACKGROUND___***************/
     AnimatedBackground gameBackground("ressources/UI/backgrounds/waterBg/Layer ", 59, 100, true, windowSize);
     //entitiesPtr.push_back(&gameBackground);
 
+     /***************___GRID___***************/
+    GridSettings gridSettings;
     Grid gridPlayer(gridSettings.nbPixels, gridSettings.squareSize, gridSettings.playerGridPosition, gridSettings.lineColor);
     Grid gridEnemy(gridSettings.nbPixels, gridSettings.squareSize, gridSettings.ennemyGridPosition, gridSettings.lineColor);
 
-    while (window.isOpen()) {
+    /***************___ENTITIES___***************/
+    std::vector<Entity*> entitiesPtr;
+
+    /***************___BOATS___***************/
+    Boat* selectedBoat = nullptr;
+
+
+
+    /***************___GAME WINDOW___***************/
+    while (window.isOpen()) 
+    {
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
         }
 
+        /*___BG___*/
         gameBackground.draw(window);
 
+        /*___Grids___*/
         gridPlayer.DrawGrid(window);
         gridEnemy.DrawGrid(window);
 
-        //Polymorphisme Wesh :p
+        /*___Entities (Polymorphism :p)___*/
         for (int i = 0; i < entitiesPtr.size(); i++)
-        {
             entitiesPtr.at(i)->draw(window);
-        }
+        
 
+        /*___GameWindow Reset___*/
         window.display();
         window.clear(bgColor);
     }
