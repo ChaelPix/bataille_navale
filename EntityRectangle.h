@@ -1,8 +1,12 @@
+#ifndef _EntityR
+#define _EntityR
+
 #include "Entity.h"
 
-//hpp, will be changed to h + cpp
+
 class EntityRectangle : public Entity {
-private:
+
+protected:
     sf::RectangleShape shape;
 
 public:
@@ -11,12 +15,12 @@ public:
         // Autres initialisations
     }
 
-    void draw(sf::RenderWindow& window) override {
+    virtual void draw(sf::RenderWindow& window) {
         window.draw(shape);
     }
 
     void update() override {
-        // Mettre à jour la logique spécifique du rectangle
+        
     }
 
     void setTexture(sf::Texture* texture) {
@@ -38,3 +42,4 @@ public:
         return shape;
     }
 };
+#endif

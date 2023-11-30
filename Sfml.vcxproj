@@ -19,9 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AnimatedBackground.cpp" />
+    <ClCompile Include="Boat.cpp" />
     <ClCompile Include="BsBDD.cpp" />
     <ClCompile Include="CoreGame.cpp" />
     <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityRectangle.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="Localization.cpp" />
     <ClCompile Include="main.cpp" />
@@ -29,9 +33,13 @@
     <ClCompile Include="TCPClient.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimatedBackground.h" />
+    <ClInclude Include="Boat.h" />
     <ClInclude Include="BsBDD.h" />
     <ClInclude Include="CoreGame.h" />
     <ClInclude Include="Debug.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityRectangle.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Localization.h" />
     <ClInclude Include="resource.h" />
@@ -128,11 +136,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\beaujardt\Documents\GitHub\bataille_navale\SqlLibs\boost_1_64_0\boost_1_64_0;C:\Users\beaujardt\Documents\GitHub\bataille_navale\SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>SqlLibs\boost_1_64_0\boost_1_64_0;SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\beaujardt\Documents\GitHub\bataille_navale\SqlLibs\boost_1_64_0\boost_1_64_0;C:\Users\beaujardt\Documents\GitHub\bataille_navale\SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\include;C:\Users\laurentr\source\repos\bataille_navale\SqlLibs\boost_1_64_0\boost_1_64_0;C:\Users\laurentr\source\repos\bataille_navale\SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\include;$(IncludePath)</IncludePath>
+    <IncludePath>SqlLibs\boost_1_64_0\boost_1_64_0;SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\include;C:\Users\laurentr\source\repos\bataille_navale\SqlLibs\boost_1_64_0\boost_1_64_0;C:\Users\laurentr\source\repos\bataille_navale\SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

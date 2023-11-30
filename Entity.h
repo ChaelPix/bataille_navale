@@ -1,13 +1,16 @@
+#ifndef _Entity
+#define _Entity
+
 #pragma once
+
 #include <SFML/Graphics.hpp>
 
 class Entity {
 public:
-    virtual void draw(sf::RenderWindow& window) = 0; // Méthode purement virtuelle pour dessiner l'entité.
-    virtual void update() = 0; // Méthode pour mettre à jour l'entité.
+    virtual void draw(sf::RenderWindow& window) = 0;
+    virtual void update() = 0;
 
-    // Autres méthodes communes (positionnement, rotation, etc.)
-
-
-    virtual ~Entity() {} // Destructeur virtuel
+    virtual ~Entity() {} 
 };
+
+#endif
