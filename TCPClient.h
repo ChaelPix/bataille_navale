@@ -1,27 +1,22 @@
-#ifndef TCPCLIENT_H
-#define TCPCLIENT_H
-#define _WINSOCK_DEPRECATED_NO_WARNINGS
-#include <winsock2.h>
-#include <iostream>
-#include <string>
-#include "BsBDD.h"
+#pragma once
+#ifndef _TCPClient
+#define _TCPClient
 
-class CoreGame;
+#include "TCPWinsocksMaster.h"
 
-class TCPClient {
+class TCPClient : public TCPWinsocksMaster
+{
+
 private:
-    WSADATA WSAData;
-    SOCKET serverSocket;
-    SOCKADDR_IN serverAddr;
-    bool isConnected;
-    CoreGame* __Coregame;
+    std::string serverIP;
+
+    void connectToServer();
+    void init() override;
+
 public:
-    TCPClient();
-    ~TCPClient();
-    bool connectToServer(const std::string& address, int port);
-    bool sendMessage(const std::string& message);
-    std::string receiveMessage();
-    void closeConnection();
+
+    TCPClient(const std::string& ipServeur, ushort portServeur);
 };
 
-#endif // TCPCLIENT_H
+#endif
+
