@@ -22,8 +22,6 @@
 #include <jdbc/cppconn/prepared_statement.h>
 
 
-class TCPClient;
-
 class CoreGame {
 public:
     enum class typeCase { vide, bateau, touche, eau, erreur = 99};
@@ -35,12 +33,15 @@ private:
     typeCase grilleAdversaire[nbLig][nbCol];
     int nombreTotalBateaux; // obselete
     int bateauxCoulés; //obselete
-    TCPClient* __tcp;
+    TCPClient* client = nullptr;
 
 public:
+
+    
+
     // Constructeur qui initialise la grille, par exemple avec des cases vides.
     CoreGame();
-
+    CoreGame(TCPClient* tcpClient);
     //// Retourne la case de la grille à la position spécifiée.
     //typeCase getCase(int ligne, int colonne) const;
 
@@ -48,6 +49,8 @@ public:
     //void setCase(int ligne, int colonne, typeCase type);
 
     // Affiche la grille dans la console ou l'interface utilisateur.
+
+    void connexion();
     void afficheGrille() const;
 
     void afficherCaractereAvecCouleur(typeCase caseType, bool estGrilleAdversaire) const;

@@ -2,16 +2,43 @@
 #include <iostream>
 
 
-CoreGame::CoreGame() : nombreTotalBateaux(4), bateauxCoulés(0) {
+//CoreGame::CoreGame(const std::string& ipServeur, ushort portServeur)
+//    : client(ipServeur, portServeur), nombreTotalBateaux(4), bateauxCoulés(0) {
+//    // Initialisation de la grille
+//    for (int i = 0; i < nbLig; ++i) {
+//        for (int j = 0; j < nbCol; ++j) {
+//            grille[i][j] = typeCase::vide;
+//            grilleAdversaire[i][j] = typeCase::vide;
+//        }
+//    }
+//    // Placer les bateaux
+//    placerBateaux(false); // Place un bateau pour le joueur
+//    placerBateaux(true);  // Place un bateau pour l'IA
+//}
+
+
+CoreGame::CoreGame() : client(nullptr) {
+    // Initialisation de la grille
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
             grille[i][j] = typeCase::vide;
-            grilleAdversaire[i][j] = typeCase::vide; // Initialisation de la grille de l'adversaire
+            grilleAdversaire[i][j] = typeCase::vide;
         }
     }
+    // Placer les bateaux
     placerBateaux(false); // Place un bateau pour le joueur
-
     placerBateaux(true);  // Place un bateau pour l'IA
+}
+
+CoreGame::CoreGame(TCPClient* tcpClient) : client(tcpClient) {
+    // Initialisation de la grille
+    // ...
+}
+
+
+
+void CoreGame::connexion()
+{
 }
 
 void CoreGame::afficheGrille() const {
@@ -183,7 +210,7 @@ bool CoreGame::deserialisationAdversaire(const std::string& trame) {
                 return false;
             }
 
-            grille[numLigne][numColonne] = caseType;
+            grilleAdversaire[numLigne][numColonne] = caseType;
         }
 
         ++numLigne;
@@ -320,7 +347,8 @@ void CoreGame::jouer() {
     obj.displayPlayerInfo();
     std::cout << std::endl;
 
-    while (!estFinDuJeu()) {
+    while (/*!estFinDuJeu()*/ true) {
+
         afficheGrille();
 
         // Le joueur effectue une attaque
@@ -429,7 +457,7 @@ void CoreGame::afficherBateauxCoules() const {
 void CoreGame::envoyerAttaque(int ligne, int colonne) {
     try {
         std::string etatGrille = serialisationAdversaire();
-        __tcp->sendMessage(etatGrille);
+        client->sendMessage(etatGrille);
     }
     catch (const std::exception& e) {
         std::cerr << "Erreur lors de l'envoi de l'attaque : " << e.what() << std::endl;
@@ -440,7 +468,7 @@ void CoreGame::envoyerAttaque(int ligne, int colonne) {
 
 
 void CoreGame::recevoirAttaque() {
-    std::string message = __tcp->receiveMessage();
+    std::string message = client->receiveMessage();
     std::istringstream iss(message);
     int ligne, colonne;
     iss >> ligne >> colonne;
@@ -449,7 +477,7 @@ void CoreGame::recevoirAttaque() {
     traiterAttaqueAdversaire(ligne, colonne);
 
     // Recevoir et désérialiser l'état de la grille de l'adversaire
-    std::string trameGrilleAdversaire = __tcp->receiveMessage();
+    std::string trameGrilleAdversaire = client->receiveMessage();
     deserialisationAdversaire(trameGrilleAdversaire);
 }
 
