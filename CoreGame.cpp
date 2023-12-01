@@ -183,7 +183,7 @@ bool CoreGame::deserialisationAdversaire(const std::string& trame) {
                 return false;
             }
 
-            grilleAdversaire[numLigne][numColonne] = caseType;
+            grille[numLigne][numColonne] = caseType;
         }
 
         ++numLigne;
