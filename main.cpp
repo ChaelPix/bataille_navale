@@ -48,7 +48,7 @@ int main() {
         mouseManager.update(event, window);
 
         /*___BG___*/
-        gameBackground.draw(window);
+        //gameBackground.draw(window);
 
         /*___Grids___*/
         gridPlayer.DrawGrid(window);
@@ -62,7 +62,6 @@ int main() {
         for (int i = 0; i < entitiesPtr.size(); i++)
             entitiesPtr.at(i)->draw(window);
         
-
         /*___GameWindow Reset___*/
         window.display();
         window.clear(bgColor);

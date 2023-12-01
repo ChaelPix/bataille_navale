@@ -12,7 +12,6 @@ protected:
 public:
     EntityRectangle(const sf::Vector2f& size) {
         shape.setSize(size);
-        // Autres initialisations
     }
 
     virtual void draw(sf::RenderWindow& window) {
