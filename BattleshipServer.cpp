@@ -37,7 +37,5 @@ void BattleshipServer::gameSession(SOCKET client1, SOCKET client2)
 
 std::string BattleshipServer::processGameMessage(const std::string& message)
 {
-    // Implémenter la logique spécifique du traitement des messages pour le jeu de bataille navale
-    // ...
-    return "Réponse de bataille navale traitée"; // Retourner la réponse traitée pour la bataille navale
+    return message; 
 }
