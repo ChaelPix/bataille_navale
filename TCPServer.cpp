@@ -161,5 +161,5 @@ std::string TCPServer::processGameMessage(const std::string& message)
     // Par exemple, analyser le message et mettre à jour l'état du jeu
     // ...
 
-    return "Réponse traitée"; // Retourner la réponse traitée
+    return message; // Retourner la réponse traitée
 }
