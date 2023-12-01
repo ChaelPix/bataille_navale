@@ -9,7 +9,7 @@ int main()
 {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));                                               // Réinitialiser le générateur de nombres aléatoires (a garder dans le main, car si le programme est exécuté plusieurs fois en peu de temps, std::time(nullptr) pourrait retourner la même valeur, ce qui entraîne la création des mêmes séquences de nombres aléatoires et donc des mêmes positions de bateaux.
     TCPClient client("10.187.52.32", 12345);
-    std::cout << client.receiveMessage();
+    //std::cout << client.receiveMessage();
     CoreGame jeu(&client);
     jeu.jouer(); //boucle du jeu
 

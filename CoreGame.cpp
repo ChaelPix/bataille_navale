@@ -174,16 +174,34 @@ std::string CoreGame::serialisationJoueur() const {
 
 
 std::string CoreGame::serialisationAdversaire() const {
-    // Convertit l'\202tat actuel de la grille en une chaîne de caractères.
     std::string result;
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
-            result += std::to_string(static_cast<int>(grilleAdversaire[i][j])) + " ";
+            switch (grilleAdversaire[i][j]) {
+            case typeCase::vide: result += 'V'; break;
+            case typeCase::bateau: result += 'B'; break;
+            case typeCase::touche: result += 'T'; break;
+            case typeCase::eau: result += 'E'; break;
+            default: result += '?'; break;
+            }
         }
         result += "\n";
     }
     return result;
 }
+
+
+//std::string CoreGame::serialisationAdversaire() const {
+//    // Convertit l'\202tat actuel de la grille en une chaîne de caractères.
+//    std::string result;
+//    for (int i = 0; i < nbLig; ++i) {
+//        for (int j = 0; j < nbCol; ++j) {
+//            result += std::to_string(static_cast<int>(grilleAdversaire[i][j])) + " ";
+//        }
+//        result += "\n";
+//    }
+//    return result;
+//}
 
 bool CoreGame::deserialisationAdversaire(const std::string& trame) {
     std::istringstream iss(trame);
@@ -210,7 +228,7 @@ bool CoreGame::deserialisationAdversaire(const std::string& trame) {
                 return false;
             }
 
-            grilleAdversaire[numLigne][numColonne] = caseType;
+            grille[numLigne][numColonne] = caseType;
         }
 
         ++numLigne;
