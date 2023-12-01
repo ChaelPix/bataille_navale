@@ -21,7 +21,7 @@ int main() {
     MouseManager mouseManager;
 
     /***************___BACKGROUND___***************/
-    //AnimatedBackground gameBackground("ressources/UI/backgrounds/waterBg/Layer ", 59, 100, true, windowSize);
+    AnimatedBackground gameBackground("ressources/UI/backgrounds/waterBg/Layer ", 59, 100, true, windowSize);
     //entitiesPtr.push_back(&gameBackground);
 
     /***************___GRID___***************/
@@ -48,7 +48,7 @@ int main() {
         mouseManager.update(event, window);
 
         /*___BG___*/
-        //gameBackground.draw(window);
+        gameBackground.draw(window);
 
         /*___Grids___*/
         gridPlayer.DrawGrid(window);

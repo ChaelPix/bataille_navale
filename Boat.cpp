@@ -4,6 +4,7 @@ Boat::Boat(int id, CoreGame::boatTypes boatType, sf::Vector2f size, sf::Texture*
 {
 	boatId = id;
 	this->boatType = boatType;
+	this->isRotated = false;
 
 	if (texture != nullptr)
 		setTexture(texture);
@@ -27,4 +28,50 @@ bool Boat::getIsRotated()
 void Boat::setRotated(bool state)
 {
 	isRotated = state;
+}
+
+void Boat::setSpawnPos(sf::Vector2f spawnPos)
+{
+	this->spawnPos = spawnPos;
+}
+
+void Boat::OnRelease(bool isGrid)
+{
+	if (!isGrid)
+	{
+		rotate(0);
+		isRotated = false;
+		this->setPosition(spawnPos);
+	}	
+}
+
+bool Boat::isInGrid()
+{
+	GridSettings grid;
+	sf::Vector2f pos = shape.getPosition();
+
+	int width = 0;
+	int height = 0;
+	int offsetX = 0;
+
+	int gridSize = grid.squareSize / grid.nbPixels;
+
+	if (isRotated)
+	{
+		width = gridSize;
+		offsetX = gridSize;
+		height = shape.getSize().x;
+	}
+	else {
+		width = shape.getSize().x;
+		height = gridSize;
+	}
+
+	bool isInGrid = (pos.x - offsetX > grid.playerGridPosition.x
+		&& pos.x + width - offsetX < grid.playerGridPosition.x + grid.squareSize + grid.boatTolerance)
+		&& (pos.y > grid.playerGridPosition.y
+			&& pos.y + height < grid.playerGridPosition.y + grid.squareSize + grid.boatTolerance);
+
+	std::cout << " " << isInGrid;
+	return isInGrid;
 }

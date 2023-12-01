@@ -26,7 +26,9 @@ void PlayerBoatsManager::InstiantiateBoats(int bottomGridOffset)
 		int boatTypeInt = static_cast<int>(boatsType.at(i));
 		Boat boat(i, boatsType.at(i), sf::Vector2f(gridCellSize * boatTypeInt, gridCellSize));
 
-		boat.setPosition(gridSettings.playerGridPosition.x + totalSize * gridCellSize, gridSettings.playerGridPosition.y + bottomGridOffset * (gridSettings.nbPixels + 1));
+		sf::Vector2f boatPos(gridSettings.playerGridPosition.x + totalSize * gridCellSize, gridSettings.playerGridPosition.y + bottomGridOffset * (gridSettings.nbPixels + 1));
+		boat.setPosition(boatPos.x, boatPos.y);
+		boat.setSpawnPos(boatPos);
 
 		totalSize += boatTypeInt + 1;
 		boatsList.push_back(boat);
@@ -50,7 +52,11 @@ void PlayerBoatsManager::dragBoats(MouseManager &mouseManager)
 
 	if (!mouseManager.isMouseClicked())
 	{
+		if (selectedBoat != nullptr)
+			selectedBoat->OnRelease(isBoatInGrid);
+
 		selectedBoat = nullptr;
+		isBoatInGrid = false;
 		return;
 	}
 
@@ -58,7 +64,6 @@ void PlayerBoatsManager::dragBoats(MouseManager &mouseManager)
 	{
 		for (int i = 0; i < boatsList.size(); i++)
 		{
-			
 			if (boatsList.at(i).getShape().getGlobalBounds().contains(mouseManager.getClickPosition())) {
 				selectedBoat = &boatsList.at(i);
 				break;
@@ -67,7 +72,23 @@ void PlayerBoatsManager::dragBoats(MouseManager &mouseManager)
 	}
 	else
 	{
-		selectedBoat->setPosition(mouseManager.getClickPosition());
+		int offsetX = 0;
+		if(selectedBoat->getIsRotated()) offsetX = 50;
+		selectedBoat->setPosition(mouseManager.getClickPosition() + sf::Vector2f(offsetX, 0));
+
+		isBoatInGrid = selectedBoat->isInGrid();
+		if (isBoatInGrid)
+		{
+			GridSettings grid;
+			int gridSize = grid.squareSize / grid.nbPixels;
+
+			int anchoredX = selectedBoat->getShape().getPosition().x / gridSize;
+			int anchoredY = selectedBoat->getShape().getPosition().y / gridSize;
+
+			selectedBoat->setPosition(anchoredX * gridSize, anchoredY * gridSize);
+		}
+
+
 		if (mouseManager.isMouseRClicked() && cooldown > rotateCooldown)
 		{
 			bool isBoatRoated = selectedBoat->getIsRotated();

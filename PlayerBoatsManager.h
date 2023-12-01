@@ -17,6 +17,7 @@ private:
 
 	int rotateCooldown;
 	unsigned int cooldown;
+	bool isBoatInGrid = false;
 
 public:
 	PlayerBoatsManager(int bottomGridOffset = 50);
