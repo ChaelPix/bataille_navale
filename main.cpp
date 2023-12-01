@@ -11,9 +11,12 @@ int main() {
         server.init();*/
 
         BattleshipServer server(port);
-
         std::cout << "Serveur d\202marr\202 sur le port " << port << ". Appuyez sur Entr\202e pour arrêter..." << std::endl;
-        
+
+        std::cin.get();
+        server.closeSocket();
+
+        /*
         Sleep(1000);
         std::cout << "Cr\202ation Client 1 & 2" << std::endl;
 
@@ -33,7 +36,7 @@ int main() {
         tcpClient2.closeSocket();
 
         server.closeSocket();
-        std::cout << "Serveur arret\202." << std::endl;
+        std::cout << "Serveur arret\202." << std::endl;*/
     }
     catch (const std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
