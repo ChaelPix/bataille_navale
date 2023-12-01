@@ -64,7 +64,7 @@
       <Filter>Fichiers sources\SFML</Filter>
     </ClCompile>
     <ClCompile Include="MouseManager.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\SFML</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

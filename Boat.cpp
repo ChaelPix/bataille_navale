@@ -18,3 +18,13 @@ CoreGame::boatTypes Boat::getBoatType()
 {
 	return this->boatType;
 }
+
+bool Boat::getIsRotated()
+{
+	return isRotated;
+}
+
+void Boat::setRotated(bool state)
+{
+	isRotated = state;
+}

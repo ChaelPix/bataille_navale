@@ -3,6 +3,7 @@
 #include "Boat.h"
 #include "CoreGame.h"
 #include "Settings.h"
+#include "MouseManager.h"
 #include <SFML/Graphics.hpp>
 
 class PlayerBoatsManager
@@ -14,8 +15,12 @@ private:
 	Boat* selectedBoat = nullptr;
 	void InstiantiateBoats(int bottomGridOffset);
 
+	int rotateCooldown;
+	unsigned int cooldown;
+
 public:
 	PlayerBoatsManager(int bottomGridOffset = 50);
 	void draw(sf::RenderWindow& window);
+	void dragBoats(MouseManager &mouseManager);
 };
 

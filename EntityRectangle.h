@@ -37,6 +37,11 @@ public:
         shape.setPosition(sf::Vector2f(x, y));
     }
 
+    void rotate(float angleTarget)
+    {
+        shape.setRotation(angleTarget);
+    }
+
     sf::RectangleShape getShape()
     {
         return shape;

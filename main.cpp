@@ -21,10 +21,10 @@ int main() {
     MouseManager mouseManager;
 
     /***************___BACKGROUND___***************/
-    AnimatedBackground gameBackground("ressources/UI/backgrounds/waterBg/Layer ", 59, 100, true, windowSize);
+    //AnimatedBackground gameBackground("ressources/UI/backgrounds/waterBg/Layer ", 59, 100, true, windowSize);
     //entitiesPtr.push_back(&gameBackground);
 
-     /***************___GRID___***************/
+    /***************___GRID___***************/
     GridSettings gridSettings;
     Grid gridPlayer(gridSettings.nbPixels, gridSettings.squareSize, gridSettings.playerGridPosition, gridSettings.lineColor);
     Grid gridEnemy(gridSettings.nbPixels, gridSettings.squareSize, gridSettings.ennemyGridPosition, gridSettings.lineColor);
@@ -33,10 +33,8 @@ int main() {
     std::vector<Entity*> entitiesPtr;
 
     /***************___BOATS___***************/
-    Boat* selectedBoat = nullptr;
     PlayerBoatsManager playerBoatsManager;
     
-
     /***************___GAME WINDOW___***************/
     while (window.isOpen()) 
     {
@@ -45,17 +43,19 @@ int main() {
             if (event.type == sf::Event::Closed)
                 window.close();
 
-            mouseManager.update(event, window);
+           
         }
+        mouseManager.update(event, window);
 
         /*___BG___*/
-        gameBackground.draw(window);
+        //gameBackground.draw(window);
 
         /*___Grids___*/
         gridPlayer.DrawGrid(window);
         gridEnemy.DrawGrid(window);
 
         /*___Boats___*/
+        playerBoatsManager.dragBoats(mouseManager);
         playerBoatsManager.draw(window);
 
         /*___Entities (Polymorphism :p)___*/

@@ -7,6 +7,9 @@ class Boat : public EntityRectangle
 private : 
 	int boatId;
 	CoreGame::boatTypes boatType;
+	bool isRotated;
+	bool canBeRotated;
+
 
 public :
 
@@ -15,5 +18,7 @@ public :
 	int getBoatId();
 	CoreGame::boatTypes getBoatType();
 
+	bool getIsRotated();
+	void setRotated(bool state);
 };
 
