@@ -325,6 +325,11 @@ void CoreGame::jouer() {
 
         // Le joueur effectue une attaque
         std::pair<int, int> saisie = saisieJoueur();
+        int ligne = saisie.first;
+        int colonne = saisie.second;
+        attaqueJoueur(ligne, colonne);
+        envoyerAttaque(saisie.first, saisie.second); // Envoie l'attaque et l'état actuel de la grille
+
         // Attendre et traiter l'attaque de l'adversaire
         recevoirAttaque(); // Reçoit l'attaque de l'adversaire et met à jour les grilles
 
@@ -340,7 +345,6 @@ void CoreGame::jouer() {
         else {
             std::cout << espace4 << "\033[31mManqué!\033[0m" << std::endl << std::endl;
         }
-        envoyerAttaque(saisie.first, saisie.second); // Envoie l'attaque et l'état actuel de la grille
 
         //int time = 0;
         //while (time <= 15) {
@@ -424,7 +428,7 @@ void CoreGame::afficherBateauxCoules() const {
 
 void CoreGame::envoyerAttaque(int ligne, int colonne) {
     try {
-        std::string etatGrille = serialisationJoueur();
+        std::string etatGrille = serialisationAdversaire();
         __tcp->sendMessage(etatGrille);
     }
     catch (const std::exception& e) {
