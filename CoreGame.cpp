@@ -1,19 +1,44 @@
-//Fichier de définition de ma classe CoreGame, (CoreGame.cpp)
-
 #include "CoreGame.h"
 #include <iostream>
 
 
-CoreGame::CoreGame() : nombreTotalBateaux(4), bateauxCoulés(0) {
+//CoreGame::CoreGame(const std::string& ipServeur, ushort portServeur)
+//    : client(ipServeur, portServeur), nombreTotalBateaux(4), bateauxCoulés(0) {
+//    // Initialisation de la grille
+//    for (int i = 0; i < nbLig; ++i) {
+//        for (int j = 0; j < nbCol; ++j) {
+//            grille[i][j] = typeCase::vide;
+//            grilleAdversaire[i][j] = typeCase::vide;
+//        }
+//    }
+//    // Placer les bateaux
+//    placerBateaux(false); // Place un bateau pour le joueur
+//    placerBateaux(true);  // Place un bateau pour l'IA
+//}
+
+
+CoreGame::CoreGame() : client(nullptr) {
+    // Initialisation de la grille
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
             grille[i][j] = typeCase::vide;
-            grilleAdversaire[i][j] = typeCase::vide; // Initialisation de la grille de l'adversaire
+            grilleAdversaire[i][j] = typeCase::vide;
         }
     }
+    // Placer les bateaux
     placerBateaux(false); // Place un bateau pour le joueur
-
     placerBateaux(true);  // Place un bateau pour l'IA
+}
+
+CoreGame::CoreGame(TCPClient* tcpClient) : client(tcpClient) {
+    // Initialisation de la grille
+    // ...
+}
+
+
+
+void CoreGame::connexion()
+{
 }
 
 void CoreGame::afficheGrille() const {
@@ -101,17 +126,21 @@ void CoreGame::afficherCaractereAvecCouleur(typeCase caseType, bool estGrilleAdv
 }
 
 std::pair<int, int> CoreGame::saisieJoueur() {
-    // lire les entr\202es du joueur.
     int ligne, colonne;
-    std::cout << std::endl << espace 
-        << "            Entrez la ligne: ";
-    std::cin >> ligne; std::cout << std::endl;
-    std::cout << espace 
-        << "            Entrez la colonne: ";
-    std::cin >> colonne; std::cout << std::endl;
+    do {
+        std::cout << std::endl << espace << "Entrez la ligne: ";
+        std::cin >> ligne;
+        std::cout << espace << "Entrez la colonne: ";
+        std::cin >> colonne;
+
+        if (ligne < 0 || ligne >= nbLig || colonne < 0 || colonne >= nbCol) {
+            std::cout << "Coordonnées invalides. Veuillez réessayer." << std::endl;
+        }
+    } while (ligne < 0 || ligne >= nbLig || colonne < 0 || colonne >= nbCol);
+
     return { ligne, colonne };
-   
 }
+
 
 bool CoreGame::partiePerdu() const {
     // Impl\202mentation de la v\202rification pour voir si la partie est perdue.
@@ -127,49 +156,52 @@ bool CoreGame::partiePerdu() const {
 }
 
 std::string CoreGame::serialisationJoueur() const {
-    // Convertit l'\202tat actuel de la grille en une chaîne de caractères.
     std::string result;
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
-            result += std::to_string(static_cast<int>(grille[i][j])) + " ";
+            switch (grille[i][j]) {
+            case typeCase::vide: result += 'V'; break;
+            case typeCase::bateau: result += 'B'; break;
+            case typeCase::touche: result += 'T'; break;
+            case typeCase::eau: result += 'E'; break;
+            default: result += '?'; break;
+            }
         }
         result += "\n";
     }
     return result;
 }
+
 
 std::string CoreGame::serialisationAdversaire() const {
-    // Convertit l'\202tat actuel de la grille en une chaîne de caractères.
     std::string result;
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
-            result += std::to_string(static_cast<int>(grilleAdversaire[i][j])) + " ";
+            switch (grilleAdversaire[i][j]) {
+            case typeCase::vide: result += 'V'; break;
+            case typeCase::bateau: result += 'B'; break;
+            case typeCase::touche: result += 'T'; break;
+            case typeCase::eau: result += 'E'; break;
+            default: result += '?'; break;
+            }
         }
         result += "\n";
     }
     return result;
 }
 
-bool CoreGame::deserialisation(const std::string& trame) {
-    std::istringstream iss(trame);
-    std::string ligneTrame;
-    int numLigne = 0;
 
-    while (std::getline(iss, ligneTrame) && numLigne < nbLig) {
-        std::istringstream issLigne(ligneTrame);
-        int valeur;
-        int numColonne = 0;
-
-        while (issLigne >> valeur && numColonne < nbCol) {
-            grille[numLigne][numColonne] = static_cast<typeCase>(valeur);
-            numColonne++;
-        }
-
-        numLigne++;
-    }
-
-    return (numLigne == nbLig);
-}
+//std::string CoreGame::serialisationAdversaire() const {
+//    // Convertit l'\202tat actuel de la grille en une chaîne de caractères.
+//    std::string result;
+//    for (int i = 0; i < nbLig; ++i) {
+//        for (int j = 0; j < nbCol; ++j) {
+//            result += std::to_string(static_cast<int>(grilleAdversaire[i][j])) + " ";
+//        }
+//        result += "\n";
+//    }
+//    return result;
+//}
 
 bool CoreGame::deserialisationAdversaire(const std::string& trame) {
     std::istringstream iss(trame);
@@ -177,20 +209,55 @@ bool CoreGame::deserialisationAdversaire(const std::string& trame) {
     int numLigne = 0;
 
     while (std::getline(iss, ligneTrame) && numLigne < nbLig) {
-        std::istringstream issLigne(ligneTrame);
-        int valeur;
-        int numColonne = 0;
-
-        while (issLigne >> valeur && numColonne < nbCol) {
-            grilleAdversaire[numLigne][numColonne] = static_cast<typeCase>(valeur);
-            numColonne++;
+        if (ligneTrame.size() != nbCol) {
+            std::cerr << "Erreur de format de trame: longueur incorrecte." << std::endl;
+            return false;
         }
 
-        numLigne++;
+        for (int numColonne = 0; numColonne < nbCol; ++numColonne) {
+            char caractere = ligneTrame[numColonne];
+            typeCase caseType;
+
+            switch (caractere) {
+            case 'V': caseType = typeCase::vide; break;
+            case 'B': caseType = typeCase::bateau; break;
+            case 'T': caseType = typeCase::touche; break;
+            case 'E': caseType = typeCase::eau; break;
+            default:
+                std::cerr << "Caractère inconnu dans la trame: " << caractere << std::endl;
+                return false;
+            }
+
+            grille[numLigne][numColonne] = caseType;
+        }
+
+        ++numLigne;
     }
 
     return (numLigne == nbLig);
 }
+
+
+//bool CoreGame::deserialisationAdversaire(const std::string& trame) {
+//    std::istringstream iss(trame);
+//    std::string ligneTrame;
+//    int numLigne = 0;
+//
+//    while (std::getline(iss, ligneTrame) && numLigne < nbLig) {
+//        std::istringstream issLigne(ligneTrame);
+//        int valeur;
+//        int numColonne = 0;
+//
+//        while (issLigne >> valeur && numColonne < nbCol) {
+//            grilleAdversaire[numLigne][numColonne] = static_cast<typeCase>(valeur);
+//            numColonne++;
+//        }
+//
+//        numLigne++;
+//    }
+//
+//    return (numLigne == nbLig);
+//}
 
 
 bool CoreGame::caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)[nbCol]) {
@@ -208,49 +275,30 @@ bool CoreGame::caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)
     return true; // Toutes les cases adjacentes sont libres
 }
 
-void CoreGame::setBonus(){
-    
+void CoreGame::setBonus() {
+
 }
 
-void CoreGame::Appel() const{
+void CoreGame::Appel() const {
 }
 
 void CoreGame::placerBateaux(bool pourAdversaire) {
-    typeCase(*grilleCible)[nbCol] = pourAdversaire ? grilleAdversaire : grille;
-    const std::vector<typeBateau> taillesBateaux = 
-    { typeBateau::PorteAvion, typeBateau::Croiseur, typeBateau::ContreTorpilleur , typeBateau::ContreTorpilleur , typeBateau::Torpilleur };
+    typeCase(*grilleCible)[nbCol] = pourAdversaire ? grilleAdversaire : grille; // Expression conditionnelle. Si pourAdversaire est vrai (true), alors la valeur grilleAdversaire est utilisée ; sinon, la valeur grille est utilisée.
+    const std::vector<int> taillesBateaux = { 3, 2, 4, 5 }; // Les bateaux disponible par joueurs, il doit y avoir un bateau avec 2 cases, 3 cases, 4 cases et enfin 5 cases selon wikipedia : https:// fr.wikipedia.org/wiki/Bataille_navale_(jeu)
 
-    for (const auto& bateau : taillesBateaux) {
-        int tailleBateau = static_cast<int>(bateau);
-
+    for (int tailleBateau : taillesBateaux) {
         bool placementValide = false;
         while (!placementValide) {
-            int ligne, colonne, direction;
-
-            if (pourAdversaire) {
-                direction = std::rand() % 2;
-                ligne = std::rand() % nbLig;
-                colonne = std::rand() % nbCol;
-            }
-            else {
-                afficheGrille();
-                std::cout << "Placer le bateau de taille " << tailleBateau << ": ";
-                std::cout << " \nEntrez la ligne, la colonne (0-" << nbLig - 1 << ", 0-" << nbCol - 1 << "), et la direction (0 pour horizontal, 1 pour vertical): ";
-                std::cin >> ligne >> colonne >> direction;
-                system("cls"); SautaLaLigne
-
-            }
+            int direction = std::rand() % 2; // 0 pour horizontal, 1 pour vertical
+            int ligne = std::rand() % nbLig;
+            int colonne = std::rand() % nbCol;
 
             placementValide = true;
             for (int i = 0; i < tailleBateau; ++i) {
                 int l = ligne + (direction == 0 ? 0 : i);
                 int c = colonne + (direction == 1 ? 0 : i);
-
                 if (l >= nbLig || c >= nbCol || grilleCible[l][c] != typeCase::vide || !caseAdjacenteLibre(l, c, grilleCible)) {
                     placementValide = false;
-                    if (!pourAdversaire) {
-                        std::cout << "Placement invalide, veuillez réessayer." << std::endl;
-                    }
                     break;
                 }
             }
@@ -307,20 +355,25 @@ void CoreGame::attaqueIA() {
 }
 
 void CoreGame::jouer() {
+
     do {
         obj.Connexion();
         system("cls");
     } while (!obj.isConnect());
 
     SautaLaLigne
-    obj.displayPlayerInfo();
+        obj.displayPlayerInfo();
     std::cout << std::endl;
 
-    while (!estFinDuJeu()) {
+    while (/*!estFinDuJeu()*/ true) {
+
         afficheGrille();
 
         // Le joueur effectue une attaque
         std::pair<int, int> saisie = saisieJoueur();
+        int ligne = saisie.first;
+        int colonne = saisie.second;
+        attaqueJoueur(ligne, colonne);
         envoyerAttaque(saisie.first, saisie.second); // Envoie l'attaque et l'état actuel de la grille
 
         // Attendre et traiter l'attaque de l'adversaire
@@ -338,6 +391,14 @@ void CoreGame::jouer() {
         else {
             std::cout << espace4 << "\033[31mManqué!\033[0m" << std::endl << std::endl;
         }
+
+        //int time = 0;
+        //while (time <= 15) {
+        //    Sleep(1000);
+        //    time++;
+        //    std::cout << "Vous pouvez rejouer dans " << time << " secondes si l'adversaire ne joue pas." << std::endl;
+        //    system("cls");
+        //}
     }
     obj.incrementNbGames();
 }
@@ -401,9 +462,9 @@ void CoreGame::verifierBateauCoule(int ligne, int colonne, bool pourAdversaire) 
     }
 
     // Mettre à jour le compteur si un bateau a été coulé
-    if (bateauCoulé) {
+   /* if (bateauCoulé) {
         ++bateauxCoulés;
-    }
+    }*/
 }
 
 // obselete
@@ -412,18 +473,20 @@ void CoreGame::afficherBateauxCoules() const {
 }
 
 void CoreGame::envoyerAttaque(int ligne, int colonne) {
-    // Envoie les coordonnées de l'attaque
-    std::string messageAttaque = "ATTAQUE " + std::to_string(ligne) + " " + std::to_string(colonne);
-    __tcp->sendMessage(messageAttaque);
-
-    // Envoie l'état actuel de la grille
-    std::string etatGrille = serialisationJoueur();
-    __tcp->sendMessage(etatGrille);
+    try {
+        std::string etatGrille = serialisationAdversaire();
+        client->sendMessage(etatGrille);
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Erreur lors de l'envoi de l'attaque : " << e.what() << std::endl;
+        // Gestion de la reconnexion ou notification à l'utilisateur ici
+    }
 }
 
 
+
 void CoreGame::recevoirAttaque() {
-    std::string message = __tcp->receiveMessage();
+    std::string message = client->receiveMessage();
     std::istringstream iss(message);
     int ligne, colonne;
     iss >> ligne >> colonne;
@@ -432,7 +495,7 @@ void CoreGame::recevoirAttaque() {
     traiterAttaqueAdversaire(ligne, colonne);
 
     // Recevoir et désérialiser l'état de la grille de l'adversaire
-    std::string trameGrilleAdversaire = __tcp->receiveMessage();
+    std::string trameGrilleAdversaire = client->receiveMessage();
     deserialisationAdversaire(trameGrilleAdversaire);
 }
 

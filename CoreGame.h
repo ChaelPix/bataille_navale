@@ -1,4 +1,4 @@
-#ifndef _COREGAME_H
+ï»¿#ifndef _COREGAME_H
 #define _COREGAME_H
 #define SautaLaLigne std::cout<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl;
 #define espace "\t\t\t\t\t"
@@ -22,11 +22,9 @@
 #include <jdbc/cppconn/prepared_statement.h>
 
 
-class TCPClient;
-
 class CoreGame {
 public:
-    enum class typeCase { vide, bateau, touche, eau, erreur = 99};
+    enum class typeCase { vide, bateau, touche, eau, erreur = 99 };
     enum class typeBateau { PorteAvion = 5, Croiseur = 4, ContreTorpilleur = 3, Torpilleur = 2 };
     enum class boatTypes { PorteAvion = 5, Croiseur = 4, ContreTorpilleur = 3, Torpilleur = 2 };
     static const int nbLig = 10;
@@ -36,20 +34,25 @@ private:
     typeCase grille[nbLig][nbCol];
     typeCase grilleAdversaire[nbLig][nbCol];
     int nombreTotalBateaux; // obselete
-    int bateauxCoulés; //obselete
-    TCPClient* __tcp;
+    int bateauxCoulï¿½s; //obselete
+    TCPClient* client = nullptr;
 
 public:
+
+
+
     // Constructeur qui initialise la grille, par exemple avec des cases vides.
     CoreGame();
-
-    //// Retourne la case de la grille à la position spécifiée.
+    CoreGame(TCPClient* tcpClient);
+    //// Retourne la case de la grille ï¿½ la position spï¿½cifiï¿½e.
     //typeCase getCase(int ligne, int colonne) const;
 
-    //// Définit la case de la grille à la position spécifiée avec le type donné.
+    //// Dï¿½finit la case de la grille ï¿½ la position spï¿½cifiï¿½e avec le type donnï¿½.
     //void setCase(int ligne, int colonne, typeCase type);
 
     // Affiche la grille dans la console ou l'interface utilisateur.
+
+    void connexion();
     void afficheGrille() const;
 
     void afficherCaractereAvecCouleur(typeCase caseType, bool estGrilleAdversaire) const;
@@ -58,34 +61,34 @@ public:
     static std::pair<int, int> saisieJoueur();
 
     bool partiePerdu() const;
-    // Serialise l'état de la grille en chaîne de caractères.
+    // Serialise l'ï¿½tat de la grille en chaï¿½ne de caractï¿½res.
     std::string serialisationJoueur() const;
 
-    // Serialise l'état de la grille en chaîne de caractères de l'adversaire.
+    // Serialise l'ï¿½tat de la grille en chaï¿½ne de caractï¿½res de l'adversaire.
     std::string serialisationAdversaire() const;
 
-    // Deserialise l'état de la grille à partir d'une chaîne de caractères.
+    // Deserialise l'ï¿½tat de la grille ï¿½ partir d'une chaï¿½ne de caractï¿½res.
     bool deserialisation(const std::string& trame);
 
     bool deserialisationAdversaire(const std::string& trame);
 
     bool caseAdjacenteLibre(int ligne, int colonne, typeCase(*grilleCible)[nbCol]);
 
-    // Ajout de nouvelles méthodes publiques pour le déroulement du jeu
+    // Ajout de nouvelles mï¿½thodes publiques pour le dï¿½roulement du jeu
     void placerBateaux(bool pourAdversaire); // Pour placer les bateaux de l'IA et du joueur
 
     bool attaqueJoueur(int ligne, int colonne); // Pour que le joueur attaque l'IA
 
     void attaqueIA(); // Pour que l'IA attaque le joueur
 
-    void jouer(); // Pour démarrer la boucle de jeu
+    void jouer(); // Pour dï¿½marrer la boucle de jeu
 
-    bool estFinDuJeu(); // Pour vérifier si la partie est terminée
+    bool estFinDuJeu(); // Pour vï¿½rifier si la partie est terminï¿½e
 
-    // Nouvelle méthode pour vérifier et mettre à jour l'état du bateau coulé
+    // Nouvelle mï¿½thode pour vï¿½rifier et mettre ï¿½ jour l'ï¿½tat du bateau coulï¿½
     void verifierBateauCoule(int ligne, int colonne, bool grilleAdversaire);
 
-    // Méthode pour afficher le nombre de bateaux coulés
+    // Mï¿½thode pour afficher le nombre de bateaux coulï¿½s
     void afficherBateauxCoules() const;
 
     void setBonus();
