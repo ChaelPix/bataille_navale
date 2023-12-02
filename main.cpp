@@ -21,7 +21,7 @@ int main() {
     MouseManager mouseManager;
 
     /***************___BACKGROUND___***************/
-    AnimatedBackground gameBackground("ressources/UI/backgrounds/waterBg/Layer ", 59, 100, true, windowSize);
+    //AnimatedBackground gameBackground("ressources/UI/backgrounds/waterBg/Layer ", 59, 100, true, windowSize);
     //entitiesPtr.push_back(&gameBackground);
 
     /***************___GRID___***************/

@@ -72,6 +72,5 @@ bool Boat::isInGrid()
 		&& (pos.y > grid.playerGridPosition.y
 			&& pos.y + height < grid.playerGridPosition.y + grid.squareSize + grid.boatTolerance);
 
-	std::cout << " " << isInGrid;
 	return isInGrid;
 }
