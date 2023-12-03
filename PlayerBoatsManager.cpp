@@ -12,7 +12,37 @@ PlayerBoatsManager::PlayerBoatsManager(int bottomGridOffset)
 
 	this->rotateCooldown = 1000;
 
+	BoatSettings boatSettings;
+
+	for (int i = 0; i < 4; i++)
+	{
+		boatTextures[i].loadFromFile(boatSettings.boatTexturePaths[i]);
+	}
+
 	InstiantiateBoats(bottomGridOffset);
+}
+
+int PlayerBoatsManager::getTextureIndex(CoreGame::boatTypes type)
+{
+	int textureIndex;
+	switch (type)
+	{
+	case CoreGame::boatTypes::PorteAvion:
+		textureIndex = 0;
+		break;
+	case CoreGame::boatTypes::Croiseur:
+		textureIndex = 1;
+		break;
+	case  CoreGame::boatTypes::ContreTorpilleur:
+		textureIndex = 2;
+		break;
+	case  CoreGame::boatTypes::Torpilleur:
+		textureIndex = 3;
+		break;
+	default:
+		textureIndex = 0;
+	}
+	return textureIndex;
 }
 
 void PlayerBoatsManager::InstiantiateBoats(int bottomGridOffset)
@@ -29,6 +59,8 @@ void PlayerBoatsManager::InstiantiateBoats(int bottomGridOffset)
 		sf::Vector2f boatPos(gridSettings.playerGridPosition.x + totalSize * gridCellSize, gridSettings.playerGridPosition.y + bottomGridOffset * (gridSettings.nbPixels + 1));
 		boat.setPosition(boatPos.x, boatPos.y);
 		boat.setSpawnPos(boatPos);
+
+		boat.setTexture(&boatTextures[getTextureIndex(boatsType.at(i))]);
 
 		totalSize += boatTypeInt + 1;
 		boatsList.push_back(boat);

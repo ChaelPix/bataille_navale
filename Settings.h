@@ -34,3 +34,12 @@ struct MenuButtonsSettings {
     "ressources/UI/ui_menu_exitbutton_on.png"
     };
 };
+
+struct BoatSettings {
+    const std::string boatTexturePaths[4] = {
+   "ressources/UI/ui_boat_aircraftcarrier.png",
+   "ressources/UI/ui_boat_croisor.png",
+   "ressources/UI/ui_boat_antitorpillor.png",
+   "ressources/UI/ui_boat_destroyer.png"
+    };
+};

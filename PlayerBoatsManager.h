@@ -11,6 +11,7 @@ class PlayerBoatsManager
 private:
 	std::vector<CoreGame::boatTypes> boatsType;
 	std::vector<Boat> boatsList;
+	sf::Texture boatTextures[4];
 
 	Boat* selectedBoat = nullptr;
 	void InstiantiateBoats(int bottomGridOffset);
@@ -23,5 +24,8 @@ public:
 	PlayerBoatsManager(int bottomGridOffset = 50);
 	void draw(sf::RenderWindow& window);
 	void dragBoats(MouseManager &mouseManager);
+
+private:
+	int getTextureIndex(CoreGame::boatTypes type);
 };
 
