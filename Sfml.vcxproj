@@ -22,6 +22,7 @@
     <ClCompile Include="AnimatedBackground.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="BattleshipCore.cpp" />
+    <ClCompile Include="BattleshipServer.cpp" />
     <ClCompile Include="Boat.cpp" />
     <ClCompile Include="BsBDD.cpp" />
     <ClCompile Include="CoreGame.cpp" />
@@ -39,11 +40,14 @@
     <ClCompile Include="PlayerBoatsManager.cpp" />
     <ClCompile Include="SfmlWindow.cpp" />
     <ClCompile Include="TCPClient.cpp" />
+    <ClCompile Include="TCPServer.cpp" />
+    <ClCompile Include="TCPWinsocksMaster.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedBackground.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="BattleshipCore.h" />
+    <ClInclude Include="BattleshipServer.h" />
     <ClInclude Include="Boat.h" />
     <ClInclude Include="BsBDD.h" />
     <ClInclude Include="CoreGame.h" />
@@ -61,6 +65,8 @@
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SfmlWindow.h" />
     <ClInclude Include="TCPClient.h" />
+    <ClInclude Include="TCPServer.h" />
+    <ClInclude Include="TCPWinsocksMaster.h" />
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="localization\eng.json">

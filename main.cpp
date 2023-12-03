@@ -9,9 +9,13 @@ void ServerMod()
     ushort port = 12345;
 
     BattleshipServer server(port);
-    std::cout << "Serveur d\202marr\202 sur le port " << port << ". Appuyez sur Entr\202e pour arrêter..." << std::endl;
+    std::cout << "Serveur d\202marr\202 sur le port " << port << ". Entrez le mdp 1234 pour arrêter..." << std::endl;
 
-    std::cin.get();
+    std::string s  = "";
+
+    while (s != "1234")
+        std::cin >> s;
+
     server.closeSocket();
 }
 
