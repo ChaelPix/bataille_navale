@@ -40,6 +40,7 @@ public:
     }
 
     void setTexture(sf::Texture* texture) {
+        shapeTexture = *texture;
         shape.setTexture(texture);
     }
     

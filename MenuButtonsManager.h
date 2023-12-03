@@ -6,14 +6,16 @@
 class MenuButtonsManager
 {
 private:
-	std::vector<Entity*> buttons;
+	std::vector<EntityRectangle> buttons;
 
+	const int nbButtons = 3;
+	const int nbTextures = 6;
 	sf::Texture buttonsTextures[6];
 
 public:
 	MenuButtonsManager();
 
 	void drawButtons(sf::RenderWindow& window);
-	void CheckButtonHover(const MouseManager& mouse);
+	void CheckButtonHover(MouseManager& mouse);
 };
 
