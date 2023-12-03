@@ -25,14 +25,24 @@ struct MenuButtonsSettings {
     const sf::Vector2f buttonsStartPos = sf::Vector2f(990, 420);
     const int distanceBetweenButtons = 25;
 
-    const std::string buttonImagePaths[6] = {
+    const std::string buttonImagePaths[8] = {
     "ressources/UI/ui_menu_playbutton_off.png",
     "ressources/UI/ui_menu_playbutton_on.png",
     "ressources/UI/ui_menu_shopbutton_off.png",
     "ressources/UI/ui_menu_shopbutton_on.png",
     "ressources/UI/ui_menu_exitbutton_off.png",
+    "ressources/UI/ui_menu_exitbutton_on.png",
+    "ressources/UI/ui_menu_exitbutton_off.png",
     "ressources/UI/ui_menu_exitbutton_on.png"
     };
+
+
+    const sf::Vector2f matchmakingTxtPos = sf::Vector2f(150, 200);
+    const int matchmakingTxtFontSize = 120;
+};
+
+struct FontSettings {
+    const std::string fontPath = "ressources/fonts/AGENCYB.TTF";
 };
 
 struct BoatSettings {

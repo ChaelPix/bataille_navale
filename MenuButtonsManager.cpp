@@ -16,13 +16,26 @@ MenuButtonsManager::MenuButtonsManager()
 		buttons.push_back(EntityRectangle(menuButtonsSettings.buttonsSize, startPos, buttonsTextures[i * 2]));
 		startPos.y += menuButtonsSettings.buttonsSize.y + menuButtonsSettings.distanceBetweenButtons;
 	}
+
+	FontSettings fSettings;
+	font.loadFromFile(fSettings.fontPath);
+	matchmakingText.setFont(font);
+	matchmakingText.setPosition(menuButtonsSettings.matchmakingTxtPos);
+	matchmakingText.setCharacterSize(menuButtonsSettings.matchmakingTxtFontSize);
+
+	matchmakingText.setString("Matchmaking...");
 }
 
-void MenuButtonsManager::drawButtons(sf::RenderWindow& window)
+void MenuButtonsManager::draw(sf::RenderWindow& window)
 {
-	for (int i = 0; i < nbButtons; i++)
+	if (!isMatchMaking)
 	{
-		buttons.at(i).draw(window);
+		for (int i = 0; i < nbButtons; i++)
+			buttons.at(i).draw(window);	
+	}
+	else
+	{
+		window.draw(matchmakingText);
 	}
 }
 
@@ -33,6 +46,10 @@ void MenuButtonsManager::CheckButtonHover(MouseManager& mouse)
 		if (buttons.at(i).getShape().getGlobalBounds().contains(mouse.getClickPosition()))
 		{
 			buttons.at(i).setTexture(&buttonsTextures[1 + i * 2]);
+
+			if (mouse.isMouseClicked())
+				std::cout << "click!";
+
 		}
 		else
 		{

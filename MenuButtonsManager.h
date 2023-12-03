@@ -9,13 +9,18 @@ private:
 	std::vector<EntityRectangle> buttons;
 
 	const int nbButtons = 3;
-	const int nbTextures = 6;
-	sf::Texture buttonsTextures[6];
+	const int nbTextures = 8;
+	sf::Texture buttonsTextures[8];
+
+	sf::Font font;
+	sf::Text matchmakingText;
+
+	bool isMatchMaking = false;
 
 public:
 	MenuButtonsManager();
 
-	void drawButtons(sf::RenderWindow& window);
+	void draw(sf::RenderWindow& window);
 	void CheckButtonHover(MouseManager& mouse);
 };
 

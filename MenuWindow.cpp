@@ -30,5 +30,5 @@ void MenuWindow::Render()
     for (auto& entity : entitiesPtr)
         entity->draw(window);
 
-    menuButtonsManager.drawButtons(window);
+    menuButtonsManager.draw(window);
 }
