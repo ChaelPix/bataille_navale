@@ -13,3 +13,8 @@ struct GridSettings {
 
     const int boatTolerance = 25;
 };
+
+struct WindowSettings {
+    const sf::Vector2f gameWindowSize = sf::Vector2f(1600, 850);
+    const sf::Color bgColor = sf::Color::Black;
+};

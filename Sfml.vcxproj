@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedBackground.cpp" />
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="BattleshipCore.cpp" />
     <ClCompile Include="Boat.cpp" />
     <ClCompile Include="BsBDD.cpp" />
@@ -27,16 +28,20 @@
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityRectangle.cpp" />
+    <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="imagesRename.cpp" />
     <ClCompile Include="Localization.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MouseManager.cpp" />
     <ClCompile Include="PlayerBoatsManager.cpp" />
     <ClCompile Include="Settings.cpp" />
+    <ClCompile Include="SfmlWindow.cpp" />
     <ClCompile Include="TCPClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedBackground.h" />
+    <ClInclude Include="Application.h" />
     <ClInclude Include="BattleshipCore.h" />
     <ClInclude Include="Boat.h" />
     <ClInclude Include="BsBDD.h" />
@@ -44,12 +49,14 @@
     <ClInclude Include="Debug.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityRectangle.h" />
+    <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Localization.h" />
     <ClInclude Include="MouseManager.h" />
     <ClInclude Include="PlayerBoatsManager.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Settings.h" />
+    <ClInclude Include="SfmlWindow.h" />
     <ClInclude Include="TCPClient.h" />
   </ItemGroup>
   <ItemGroup>
