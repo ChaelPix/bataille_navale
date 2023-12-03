@@ -6,6 +6,7 @@
 #include "Settings.h"
 #include "AnimatedBackground.h"
 #include "MouseManager.h"
+#include "MenuButtonsManager.h"
 
 class MenuWindow : public SfmlWindow
 {
@@ -26,6 +27,8 @@ private:
 
     MouseManager mouseManager;
     AnimatedBackground* menuBackground;
+    MenuButtonsManager menuButtonsManager;
 
+    std::vector<Entity*> entitiesPtr;
 };
 

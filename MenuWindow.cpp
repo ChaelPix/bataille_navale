@@ -11,6 +11,8 @@ MenuWindow::MenuWindow(GameApplication& application)
 void MenuWindow::Initialize()
 {
     menuBackground = new AnimatedBackground("ressources/UI/backgrounds/menuBg/menu_", 100, 200, true, windowSettings.gameWindowSize);
+
+    entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
 }
 
 void MenuWindow::HandleEvents(sf::Event& event) {
@@ -25,6 +27,8 @@ void MenuWindow::Render()
 {
     menuBackground->draw(window);
 
-   /* for (auto& entity : entitiesPtr)
-        entity->draw(window);*/
+    for (auto& entity : entitiesPtr)
+        entity->draw(window);
+
+    menuButtonsManager.drawButtons(window);
 }

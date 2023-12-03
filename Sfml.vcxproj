@@ -33,10 +33,10 @@
     <ClCompile Include="imagesRename.cpp" />
     <ClCompile Include="Localization.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MenuButtonsManager.cpp" />
     <ClCompile Include="MenuWindow.cpp" />
     <ClCompile Include="MouseManager.cpp" />
     <ClCompile Include="PlayerBoatsManager.cpp" />
-    <ClCompile Include="Settings.cpp" />
     <ClCompile Include="SfmlWindow.cpp" />
     <ClCompile Include="TCPClient.cpp" />
   </ItemGroup>
@@ -53,6 +53,7 @@
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Localization.h" />
+    <ClInclude Include="MenuButtonsManager.h" />
     <ClInclude Include="MenuWindow.h" />
     <ClInclude Include="MouseManager.h" />
     <ClInclude Include="PlayerBoatsManager.h" />

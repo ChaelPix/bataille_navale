@@ -8,10 +8,27 @@ class EntityRectangle : public Entity {
 
 protected:
     sf::RectangleShape shape;
+    sf::Texture shapeTexture;
 
 public:
     EntityRectangle(const sf::Vector2f& size) {
         shape.setSize(size);
+    }
+    EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position) {
+        shape.setSize(size);
+        shape.setPosition(position);
+    }
+    EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, std::string texturePath) {
+        shape.setSize(size);
+        shape.setPosition(position);
+        shapeTexture.loadFromFile(texturePath);
+        setTexture(&(this->shapeTexture));
+    }
+    EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, sf::Texture texture) {
+        shape.setSize(size);
+        shape.setPosition(position);
+        shapeTexture = texture;
+        setTexture(&(this->shapeTexture));
     }
 
     virtual void draw(sf::RenderWindow& window) {

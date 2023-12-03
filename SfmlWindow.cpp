@@ -1,9 +1,7 @@
 #include "SfmlWindow.h"
 #include <iostream>
 SfmlWindow::SfmlWindow(const std::string& title, const sf::Vector2f& size)
-    : window(sf::RenderWindow(sf::VideoMode(size.x, size.y), title)) {
-    std::cout << size.x;
-}
+    : window(sf::RenderWindow(sf::VideoMode(size.x, size.y), title)) {}
 
 void SfmlWindow::Run() {
 
