@@ -3,7 +3,7 @@
 #include <memory>
 #include "SfmlWindow.h"
 #include "GameWindow.h"
-//#include "MenuWindow.h"
+#include "MenuWindow.h"
 
 class GameApplication {
 

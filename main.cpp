@@ -5,7 +5,7 @@
 
 int main() {
 
-    GameApplication game(GameApplication::State::Game);
+    GameApplication game;
     game.Run();
 
     return 0;

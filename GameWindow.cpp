@@ -12,7 +12,6 @@ GameWindow::GameWindow(GameApplication& application)
 
 void GameWindow::Initialize()
 {
-    //window.create(sf::VideoMode(windowSettings.gameWindowSize.x, windowSettings.gameWindowSize.y), "BattleShip");
     waterBackground = new AnimatedBackground("ressources/UI/backgrounds/waterBg/water_", 59, 100, true, windowSettings.gameWindowSize);
 }
 

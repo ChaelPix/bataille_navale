@@ -19,7 +19,7 @@ void GameApplication::ChangeState(State newState) {
     switch (currentState) 
     {
     case State::Menu:
-        //currentWindow = std::make_unique<MenuWindow>();
+        currentWindow = std::make_unique<MenuWindow>(*this);
         break;
     case State::Game:
         currentWindow = std::move(std::make_unique<GameWindow>(*this));
