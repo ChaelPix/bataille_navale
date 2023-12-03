@@ -31,7 +31,7 @@ void TCPServer::bindAndListen()
     }
 
     if (listen(idSocket, 1) == SOCKET_ERROR) {
-        throw std::runtime_error("Listene Failed");
+        throw std::runtime_error("Listen Failed");
     }
 }
 
@@ -73,12 +73,12 @@ void TCPServer::matchClientsForGame()
         SOCKET client1 = matchmakingQueue.front(); matchmakingQueue.pop();
         SOCKET client2 = matchmakingQueue.front(); matchmakingQueue.pop();
 
-        gameThreads[client1] = std::thread(&TCPServer::gameSession, this, client1, client2);
-        gameThreads[client2] = std::thread(&TCPServer::gameSession, this, client2, client1);
+        gameThreads[client1] = std::thread(&TCPServer::gameSession, this, client1, client2, false);
+        gameThreads[client2] = std::thread(&TCPServer::gameSession, this, client2, client1, true);
     }
 }
 
-void TCPServer::gameSession(SOCKET client1, SOCKET client2)
+void TCPServer::gameSession(SOCKET client1, SOCKET client2, bool isFirstPlayerToPlay)
 {
     const std::string message = "Adversaire trouvé Socket client 1 : " + std::to_string(client1) + " client 2 : " + std::to_string(client2);
     send(client2, message.c_str(), message.length(), 0);

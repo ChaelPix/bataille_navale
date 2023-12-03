@@ -2,7 +2,7 @@
 
 BattleshipServer::BattleshipServer(ushort serverPORT) : TCPServer(serverPORT) {}
 
-void BattleshipServer::gameSession(SOCKET client1, SOCKET client2)
+void BattleshipServer::gameSession(SOCKET client1, SOCKET client2, bool isFirstPlayerToPlay)
 {
     const std::string message = "Adversaire trouvé Socket client 1 : " + std::to_string(client1) + " client 2 : " + std::to_string(client2);
     send(client2, message.c_str(), message.length(), 0);

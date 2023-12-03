@@ -30,7 +30,7 @@ protected:
     std::condition_variable cvMatchmaking;
     std::unordered_map<SOCKET, std::thread> gameThreads;
 
-    virtual void gameSession(SOCKET client1, SOCKET client2);
+    virtual void gameSession(SOCKET client1, SOCKET client2, bool isFirstPlayerToPlay);
     virtual std::string processGameMessage(const std::string& message);
     virtual void matchClientsForGame();
 
