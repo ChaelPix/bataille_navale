@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "Application.h"
+#include "BattleshipServer.h"
 
 void ServerMod()
 {
@@ -49,7 +50,7 @@ int main() {
         default:
             launchMenu();
             break;
-        }
+    }
 
 
     return 0;
