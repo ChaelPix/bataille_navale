@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedBackground.cpp" />
+    <ClCompile Include="BattleshipCore.cpp" />
     <ClCompile Include="Boat.cpp" />
     <ClCompile Include="BsBDD.cpp" />
     <ClCompile Include="CoreGame.cpp" />
@@ -36,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedBackground.h" />
+    <ClInclude Include="BattleshipCore.h" />
     <ClInclude Include="Boat.h" />
     <ClInclude Include="BsBDD.h" />
     <ClInclude Include="CoreGame.h" />
