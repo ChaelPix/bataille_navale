@@ -27,6 +27,10 @@ void GameApplication::ChangeState(State newState) {
     currentState = newState;
     switch (currentState) 
     {
+        case State::Splash:
+            currentWindow.reset();
+            //currentWindow = (std::make_unique<SplashWindow>(*this));
+            break;
         case State::Menu:
             currentWindow.reset();
             currentWindow = std::make_unique<MenuWindow>(*this);

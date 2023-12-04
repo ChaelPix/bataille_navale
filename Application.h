@@ -11,6 +11,7 @@ class GameApplication {
 
 public:
     enum class State {
+        Splash,
         Menu,
         Game
     };
