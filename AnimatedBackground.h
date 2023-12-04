@@ -12,6 +12,7 @@ private :
 
 	int tick;
 	int step;
+	sf::Clock clock;
 
 public :
 	AnimatedBackground(std::string name, int nbImgs, int timer, bool doLoop, sf::Vector2f windowsSize);
