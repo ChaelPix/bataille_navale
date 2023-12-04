@@ -11,7 +11,7 @@ struct GridSettings {
     const sf::Vector2f playerGridPosition = sf::Vector2f(100, 200);
     const sf::Vector2f ennemyGridPosition = sf::Vector2f(700, 200);
 
-    const int boatTolerance = 25;
+    const int boatTolerance = 0;
 };
 
 struct WindowSettings {

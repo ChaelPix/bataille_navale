@@ -42,7 +42,9 @@ void Boat::OnRelease(bool isGrid)
 		rotate(0);
 		isRotated = false;
 		this->setPosition(spawnPos);
-	}	
+	}
+
+	setIsPlaced(isGrid);
 }
 
 bool Boat::isInGrid()
@@ -73,4 +75,14 @@ bool Boat::isInGrid()
 			&& pos.y + height < grid.playerGridPosition.y + grid.squareSize + grid.boatTolerance);
 
 	return isInGrid;
+}
+
+bool Boat::getIsPlaced()
+{
+	return isPlaced;
+}
+
+void Boat::setIsPlaced(bool isPlaced)
+{
+	this->isPlaced = isPlaced;
 }

@@ -13,6 +13,7 @@ GameWindow::GameWindow(GameApplication& application)
 void GameWindow::Initialize()
 {
     waterBackground = new AnimatedBackground("ressources/UI/backgrounds/waterBg/water_", 59, 100, true, windowSettings.gameWindowSize);
+    playerBoatsManager = new PlayerBoatsManager(&battleshipCore);
 }
 
 void GameWindow::HandleEvents(sf::Event& event) {
@@ -20,7 +21,7 @@ void GameWindow::HandleEvents(sf::Event& event) {
 }
 
 void GameWindow::Update() {
-    playerBoatsManager.dragBoats(mouseManager);
+    playerBoatsManager->dragBoats(mouseManager);
 }
 
 void GameWindow::Render()
@@ -29,7 +30,7 @@ void GameWindow::Render()
 
     gridPlayer.DrawGrid(window);
     gridEnemy.DrawGrid(window);
-    playerBoatsManager.draw(window);
+    playerBoatsManager->draw(window);
     for (auto& entity : entitiesPtr)
         entity->draw(window);
 }

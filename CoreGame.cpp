@@ -287,12 +287,17 @@ void CoreGame::placerBateaux(bool pourAdversaire) {
     const std::vector<int> taillesBateaux = { 3, 2, 4, 5 }; // Les bateaux disponible par joueurs, il doit y avoir un bateau avec 2 cases, 3 cases, 4 cases et enfin 5 cases selon wikipedia : https:// fr.wikipedia.org/wiki/Bataille_navale_(jeu)
 
     for (int tailleBateau : taillesBateaux) {
+
         bool placementValide = false;
+
         while (!placementValide) {
+
+            //placement random
             int direction = std::rand() % 2; // 0 pour horizontal, 1 pour vertical
             int ligne = std::rand() % nbLig;
             int colonne = std::rand() % nbCol;
 
+            //check placement
             placementValide = true;
             for (int i = 0; i < tailleBateau; ++i) {
                 int l = ligne + (direction == 0 ? 0 : i);
@@ -303,6 +308,7 @@ void CoreGame::placerBateaux(bool pourAdversaire) {
                 }
             }
 
+            //place le bateau
             if (placementValide) {
                 for (int i = 0; i < tailleBateau; ++i) {
                     int l = ligne + (direction == 0 ? 0 : i);

@@ -8,6 +8,7 @@ class GameApplication;
 #include "Settings.h"
 #include "AnimatedBackground.h"
 #include "MouseManager.h"
+#include "BattleshipCore.h"
 #include <vector>
 
 class GameWindow : public SfmlWindow {
@@ -33,9 +34,11 @@ private:
     AnimatedBackground* waterBackground;
 
     Grid gridPlayer, gridEnemy;
-    PlayerBoatsManager playerBoatsManager;
+    PlayerBoatsManager* playerBoatsManager;
 
     std::vector<Entity*> entitiesPtr;
+
+    BattleshipCore battleshipCore;
 };
 
 

@@ -13,6 +13,7 @@ private:
 	bool isRotated;
 	bool canBeRotated;
 	sf::Vector2f spawnPos;
+	bool isPlaced;
 
 public:
 
@@ -27,5 +28,8 @@ public:
 	void setSpawnPos(sf::Vector2f spawnPos);
 	void OnRelease(bool isGrid);
 	bool isInGrid();
+
+	bool getIsPlaced();
+	void setIsPlaced(bool isPlaced);
 };
 
