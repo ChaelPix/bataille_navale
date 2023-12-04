@@ -79,7 +79,9 @@ class CloudManager {
 
 private:
     sf::Texture cloudTexture;
+    sf::Texture cloudTextureAnimate;
     std::vector<EntityRectangle> cloudsStatic;
+    std::vector<EntityRectangle> cloudsStaticAnimate;
     std::vector<sf::Sprite> clouds;
     std::vector<sf::Sprite> RandomCloudsVector;
     CloudSettings cloudSettings;
@@ -88,12 +90,25 @@ public:
 
     CloudManager() {
         // Charger les textures et créer les sprites
-        cloudTexture.loadFromFile(cloudSettings.cloudImgPath);
+        cloudTexture.loadFromFile(cloudSettings.cloudImgPath2);
+        cloudTextureAnimate.loadFromFile(cloudSettings.cloudImgPath);
 
-        for (int i = 0; i < 40; i++) {
-            cloudsStatic.push_back(EntityRectangle(cloudSettings.cloudSize, cloudSettings.cloudPosition[i], cloudTexture, cloudSettings.anglesDegres[i], cloudSettings.Origin));
-            cloudsStatic.at(i).setTexture(&cloudTexture);
+        WindowSettings ws;
+        cloudsStatic.push_back(EntityRectangle(ws.gameWindowSize, sf::Vector2f(0, 0), cloudTexture));
+        cloudsStatic.at(0).setTexture(&cloudTexture);
+
+        for (int i = 0; i < 2; i++)
+        {
+            cloudsStaticAnimate.push_back(EntityRectangle(cloudSettings.cloudSize, cloudSettings.cloudPositionAnimate[i], cloudTextureAnimate, sf::Color(255, 255, 255, 172)));
+            cloudsStaticAnimate.at(i).setTexture(&cloudTextureAnimate);
         }
+
+
+
+        //for (int i = 0; i < 40; i++) {
+        //    cloudsStatic.push_back(EntityRectangle(cloudSettings.cloudSize, cloudSettings.cloudPosition[i], cloudTexture, cloudSettings.anglesDegres[i], cloudSettings.Origin));
+        //    cloudsStatic.at(i).setTexture(&cloudTexture);
+        //}
 
         //// Charger les textures et créer les sprites
         //for (int i = 0; i < 5; i++) {
@@ -112,15 +127,14 @@ public:
 
     void update() {
         // Mettre à jour la position des nuages mobiles
-        for (size_t i = 0; i < RandomCloudsVector.size(); i++) {
-            sf::Vector2f position = RandomCloudsVector[i].getPosition();
+        for (size_t i = 0; i < cloudsStaticAnimate.size(); i++) {
+            sf::Vector2f position = cloudsStaticAnimate[i].getPosition();
 
             // Logique de mouvement spécifique
-            if (position.x < -3000) {
-                int y = (rand() % 70) + 20;
-                RandomCloudsVector[i].setPosition(sf::Vector2f(1000, y));
+            if (position.x < -2500) {
+                cloudsStaticAnimate[i].setPosition(sf::Vector2f(1000, -400));
             }
-            RandomCloudsVector[i].move(-1.1, 0);
+            cloudsStaticAnimate[i].move(-0.025, 0);
 
         }
     }
@@ -132,6 +146,12 @@ public:
         {
             cloudsStatic.at(i).draw(window); 
         }
+        // Dessiner les nuages
+        for (int i = 0; i < cloudsStaticAnimate.size(); i++)
+        {
+            cloudsStaticAnimate.at(i).draw(window);
+        }
+        
         // Dessiner les nuages
  /*       for (auto& Randcloud : RandomCloudsVector) {
             Randcloud.draw(window);

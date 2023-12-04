@@ -28,8 +28,10 @@ void GameWindow::Render()
     waterBackground->draw(window);
     gridPlayer.DrawGrid(window);
     playerBoatsManager.draw(window);
+
     for (auto& entity : entitiesPtr)
         entity->draw(window);
     cloudManager->draw(window);
     gridEnemy.DrawGrid(window);
+
 }

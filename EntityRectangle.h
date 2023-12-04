@@ -31,6 +31,13 @@ public:
         shapeTexture = texture;
         setTexture(&(this->shapeTexture));
     }
+    EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, sf::Texture texture, sf::Color color) {
+        shape.setSize(size);
+        shape.setPosition(position);
+        shape.setFillColor(color);
+        shapeTexture = texture;
+        setTexture(&(this->shapeTexture));
+    }
     EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, sf::Texture texture, float angleDegres, const sf::Vector2f& origin) {
         shape.setSize(size);
         shape.setPosition(position);
@@ -63,6 +70,11 @@ public:
         shape.setPosition(sf::Vector2f(x, y));
     }
 
+    sf::Vector2f getPosition()
+    {
+        return shape.getPosition();
+    }
+
     void rotate(float angleTarget)
     {
         shape.setRotation(angleTarget);
@@ -71,6 +83,25 @@ public:
     void setOrigin(sf::Vector2f origin)
     {
         shape.setOrigin(origin);
+    }
+
+    void move(sf::Vector2f vel)
+    {
+        sf::Vector2f pos = shape.getPosition();
+        pos += vel;
+        shape.setPosition(pos);
+    }
+
+    void move(float velX, float velY)
+    {
+        sf::Vector2f pos = shape.getPosition();
+        pos += sf::Vector2f(velX, velY);
+        shape.setPosition(pos);
+    }
+
+    void setColor(sf::Color color)
+    {
+        shape.setFillColor(color);
     }
 
     sf::RectangleShape getShape()

@@ -6,7 +6,7 @@ struct GridSettings {
     const int squareSize = 500;
     const int nbPixels = 10;
     const int fps = 15;
-    const sf::Color lineColor = sf::Color(0, 0, 0, 75);
+    const sf::Color lineColor = sf::Color(0, 0, 0, 255);
 
     const sf::Vector2f playerGridPosition = sf::Vector2f(100, 200);
     const sf::Vector2f ennemyGridPosition = sf::Vector2f(700, 200);
@@ -43,8 +43,10 @@ struct MenuButtonsSettings {
 
 struct CloudSettings {
 
-    const sf::Vector2f cloudSize = sf::Vector2f(600, 600);
+    const sf::Vector2f cloudSize = sf::Vector2f(2500, 2500);
     const sf::Vector2f Origin = sf::Vector2f(cloudSize.x/ 2, cloudSize.y / 2);
+    float anglesDegresAnimate = 0;
+    const sf::Vector2f cloudPositionAnimate[2] = { sf::Vector2f(0, -400), sf::Vector2f(2100, -400) };
     float anglesDegres[40] = {
         15,
         58,
@@ -133,6 +135,7 @@ sf::Vector2f(826, 307),
     };
 
     const std::string cloudImgPath = "ressources/UI/cloud.png";
+    const std::string cloudImgPath2 = "ressources/UI/cloud2.png";
 
 };
 
