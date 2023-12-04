@@ -8,6 +8,7 @@ class GameApplication;
 #include "Settings.h"
 #include "AnimatedBackground.h"
 #include "MouseManager.h"
+#include "CloudManager.h"
 #include <vector>
 
 class GameWindow : public SfmlWindow {
@@ -24,6 +25,8 @@ protected:
     void Render() override;
 
 private:
+    CloudManager* cloudManager = new CloudManager();
+
     GameApplication* application;
 
     MouseManager mouseManager;
@@ -36,6 +39,7 @@ private:
     PlayerBoatsManager playerBoatsManager;
 
     std::vector<Entity*> entitiesPtr;
+
 };
 
 

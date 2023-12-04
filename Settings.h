@@ -6,7 +6,7 @@ struct GridSettings {
     const int squareSize = 500;
     const int nbPixels = 10;
     const int fps = 15;
-    const sf::Color lineColor = sf::Color(255, 255, 255, 75);
+    const sf::Color lineColor = sf::Color(0, 0, 0, 75);
 
     const sf::Vector2f playerGridPosition = sf::Vector2f(100, 200);
     const sf::Vector2f ennemyGridPosition = sf::Vector2f(700, 200);
@@ -39,6 +39,101 @@ struct MenuButtonsSettings {
 
     const sf::Vector2f matchmakingTxtPos = sf::Vector2f(150, 200);
     const int matchmakingTxtFontSize = 120;
+};
+
+struct CloudSettings {
+
+    const sf::Vector2f cloudSize = sf::Vector2f(600, 600);
+    const sf::Vector2f Origin = sf::Vector2f(cloudSize.x/ 2, cloudSize.y / 2);
+    float anglesDegres[40] = {
+        15,
+        58,
+        45,
+        25,
+        38,
+        46,
+        95,
+        71,
+        82,
+        5,
+        45,
+        285,
+        586,
+        142,
+        567,
+        156,
+        75,
+        665,
+        152,
+        574,
+        15,
+        58,
+        45,
+        25,
+        38,
+        46,
+        95,
+        71,
+        82,
+        5,
+        45,
+        285,
+        586,
+        142,
+        567,
+        156,
+        75,
+        665,
+        152,
+        574,
+    };
+    const sf::Vector2f cloudPosition[40] = {
+         sf::Vector2f(1500, 80),
+         sf::Vector2f(1448, 756),
+         sf::Vector2f(1246, 2),
+         sf::Vector2f(1472, 452),
+         sf::Vector2f(1528, 856),
+         sf::Vector2f(1329, 80),
+         sf::Vector2f(1483, 58),
+         sf::Vector2f(1327, 452),
+         sf::Vector2f(1272, 185),
+         sf::Vector2f(137, 681),
+         sf::Vector2f(1600, 80),
+         sf::Vector2f(1348, 624),
+         sf::Vector2f(1285, 2),
+         sf::Vector2f(1354, 284),
+         sf::Vector2f(1501, 146),
+         sf::Vector2f(1385, 146),
+         sf::Vector2f(1443, 158),
+         sf::Vector2f(1685, 274),
+         sf::Vector2f(1354, 345),
+         sf::Vector2f(1124, 457), //
+sf::Vector2f(783, 626),
+sf::Vector2f(910, 68),
+sf::Vector2f(855, 196),
+sf::Vector2f(970, 721),
+sf::Vector2f(803, 145),
+sf::Vector2f(1062, 417),
+sf::Vector2f(1251, 427),
+sf::Vector2f(1256, 11),
+sf::Vector2f(705, 87),
+sf::Vector2f(1287, 811),
+sf::Vector2f(1161, 333),
+sf::Vector2f(936, 847),
+sf::Vector2f(1175, 270),
+sf::Vector2f(949, 656),
+sf::Vector2f(1236, 352),
+sf::Vector2f(867, 96),
+sf::Vector2f(818, 699),
+sf::Vector2f(1143, 570),
+sf::Vector2f(1286, 538),
+sf::Vector2f(826, 307),
+
+
+    };
+
+    const std::string cloudImgPath = "ressources/UI/cloud.png";
+
 };
 
 struct FontSettings {
