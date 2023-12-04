@@ -21,14 +21,14 @@ private:
 	bool isMatchMaking = false;
 	int nbPoints;
 
-	void ButtonClickAction(int btnId);
+	bool ButtonClickAction(int btnId);
 	void updateMatchmakingTxt();
 
 public:
 	MenuButtonsManager();
 
 	void draw(sf::RenderWindow& window);
-	void CheckButtonHover(MouseManager& mouse);
+	bool CheckButtonHover(MouseManager& mouse);
 
 	bool getIsMatchMaking();
 };

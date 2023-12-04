@@ -13,6 +13,8 @@ void SfmlWindow::Run() {
             HandleEvents(event);
         }
         Update();
+        if (!running)
+            break;
         Render();
         window.display();
         window.clear(windowSettings.bgColor);

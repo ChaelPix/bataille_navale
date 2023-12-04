@@ -15,12 +15,12 @@ protected:
 
     sf::RenderWindow window;
     WindowSettings windowSettings;
+    bool running = true;
 public:
     SfmlWindow(const std::string& title, const sf::Vector2f& size);
 
     virtual ~SfmlWindow() = default;
 
     void Run();
-
 };
 

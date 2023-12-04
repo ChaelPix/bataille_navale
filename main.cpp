@@ -21,7 +21,7 @@ void ServerMod()
 
 void launchMenu()
 {
-    GameApplication game;
+    GameApplication game(GameApplication::State::Menu);
     game.Run();
 }
 

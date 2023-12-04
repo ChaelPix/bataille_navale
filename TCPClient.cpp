@@ -8,6 +8,7 @@ TCPClient::TCPClient(const std::string& serverIP, ushort serverPORT) : TCPWinsoc
 void TCPClient::init()
 {
 	connectToServer();
+    startReceiving();
 }
 
 void TCPClient::connectToServer()
@@ -22,4 +23,38 @@ void TCPClient::connectToServer()
     }
 }
 
+void TCPClient::startReceiving() {
+    receiveThread = std::thread(&TCPClient::receiveMessages, this);
+}
+
+void TCPClient::receiveMessages() {
+    while (receiving) {
+        std::string message = receiveMessage();
+        std::lock_guard<std::mutex> lock(queueMutex);
+        messageQueue.push(message);
+        cv.notify_one();
+    }
+}
+
+std::string TCPClient::getMessage() {
+    std::lock_guard<std::mutex> lock(queueMutex);
+    if (!messageQueue.empty()) {
+        std::string message = messageQueue.front();
+        messageQueue.pop();
+        return message;
+    }
+    return "";
+}
+
+
+void TCPClient::stopReceiving() {
+    receiving = false;
+    if (receiveThread.joinable()) {
+        receiveThread.join();
+    }
+}
+
+TCPClient::~TCPClient() {
+    stopReceiving();
+}
 

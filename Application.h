@@ -6,6 +6,7 @@
 #include "MenuWindow.h"
 #include "TCPClient.h"
 
+
 class GameApplication {
 
 public:
@@ -14,19 +15,22 @@ public:
         Game
     };
 
+    TCPClient* client;
 private:
     bool running = true;
     State currentState;
     std::unique_ptr<SfmlWindow> currentWindow;
-    TCPClient* client;
 
 public:
     GameApplication();
-    GameApplication(State state);
+    GameApplication(State state = State::Menu);
+    ~GameApplication();
 
     void Run();
 
     void ChangeState(State newState);
 
+    void CreateClient();
 
+    void Close();
 };

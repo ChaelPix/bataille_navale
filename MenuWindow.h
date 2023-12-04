@@ -12,6 +12,7 @@ class MenuWindow : public SfmlWindow
 {
 public:
     MenuWindow(GameApplication& application);
+    ~MenuWindow();
 
 protected:
     void Initialize() override;
