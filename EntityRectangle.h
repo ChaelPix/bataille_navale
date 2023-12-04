@@ -24,6 +24,13 @@ public:
         shapeTexture.loadFromFile(texturePath);
         setTexture(&(this->shapeTexture));
     }
+    EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, std::string texturePath, const sf::Vector2f& origin) {
+        shape.setSize(size);
+        shape.setPosition(position);
+        shapeTexture.loadFromFile(texturePath);
+        shape.setOrigin(origin);
+        setTexture(&(this->shapeTexture));
+    }
     EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, sf::Texture texture) {
         shape.setSize(size);
         shape.setPosition(position);
@@ -103,6 +110,11 @@ public:
     void setColor(sf::Color color)
     {
         shape.setFillColor(color);
+    }
+
+    sf::Color getColor() const {
+
+        return shape.getFillColor();
     }
 
     sf::RectangleShape getShape()

@@ -4,6 +4,7 @@
 #include "SfmlWindow.h"
 #include "GameWindow.h"
 #include "MenuWindow.h"
+#include "SplashWindow.h"
 #include "TCPClient.h"
 
 
