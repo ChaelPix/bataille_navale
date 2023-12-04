@@ -34,12 +34,17 @@ void SplashWindow::HandleEvents(sf::Event& event) {
 }
 
 void SplashWindow::Update() {
-
-    if (started)
+    if (started) {
+        application->ChangeState(GameApplication::State::Menu);
         return;
+    }
 
-    started = true;
     SplashAnim();
+
+    // Vérifier si les deux logos ont été affichés
+    if (L1 && L2) {
+        started = true;
+    }
 }
 
 void SplashWindow::Render() {
@@ -51,43 +56,37 @@ void SplashWindow::Render() {
     Logo.at(currentLogoIndex).draw(window);
 }
 
-void SplashWindow::SplashAnim()
-{
+void SplashWindow::SplashAnim() {
     float timeElapsed = clockSplash.getElapsedTime().asSeconds();
-    bool L1 = false; // logo 1 pas encore passé
-    bool L2 = false; // logo 2 pas encore passé
 
+    // Gérer le changement de logo
     if (timeElapsed >= 5.0f) {
         clockSplash.restart();
+        if (currentLogoIndex == 0) {
+            L1 = true;  // Marquer le premier logo comme affiché
+        }
+        if (currentLogoIndex == 1) {
+            L2 = true;  // Marquer le deuxième logo comme affiché
+        }
         currentLogoIndex = (currentLogoIndex + 1) % 2;
     }
 
-    // Calcul de l'opacité pour le fondu
+    // Gérer l'opacité pour le fondu
     float alpha;
     if (timeElapsed < fadeDuration) {
-        // Fondu entrant sur le nouveau logo
         alpha = (timeElapsed / fadeDuration) * 255;
     }
     else if (timeElapsed > 5.0f - fadeDuration) {
-        // Fondu sortant sur l'ancien logo
         alpha = ((5.0f - timeElapsed) / fadeDuration) * 255;
     }
     else {
-        // Opacité complète en dehors du fondu
         alpha = 255;
     }
 
-    // Application de l'opacité aux logos
+    // Appliquer l'opacité aux logos
     for (int i = 0; i < Logo.size(); i++) {
         sf::Color color = Logo[i].getColor();
         color.a = (i == currentLogoIndex) ? alpha : 255 - alpha;
         Logo[i].setColor(color);
-    }
-    L1 = true; // logo 1  passé
-    L2 = true; // logo 2 passé
-
-    if (L1 && L2) {
-        running = false;
-        application->ChangeState(GameApplication::State::Menu);
     }
 }

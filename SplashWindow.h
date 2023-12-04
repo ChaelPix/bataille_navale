@@ -37,4 +37,6 @@ private:
     sf::Clock clockSplash;  // Clock to measure elapsed time
     float fadeDuration = 1.0f; // Durée du fondu en secondes
     bool started;
+    bool L1 = false; 
+    bool L2 = false;
 };

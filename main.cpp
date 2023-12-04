@@ -41,31 +41,31 @@ void launchGame()
 int main() {
 
     std::cout << "[DEBUG] SELECT MENU: " << std::endl
-        << "[0] Splash Menu " << std::endl
-        << "[1] Main Menu " << std::endl
-        << "[2] Game menu " << std::endl
-        << "[3] Server Mod " << std::endl;
+        << "[1] Splash Menu " << std::endl
+        << "[2] Main Menu " << std::endl
+        << "[3] Game menu " << std::endl
+        << "[4] Server Mod " << std::endl;
 
     char x;
     std::cin >> x;
 
     switch (x)
     {
-        case '0':
+        case '1':
             launchSplash();
             break;
 
-        case '1':    
+        case '3':    
             launchGame();
             break;
 
-        case '2':
+        case '4':
             ServerMod();
             break;
 
-       /* default:
+        default:
             launchMenu();
-            break;*/
+            break;
     }
 
 

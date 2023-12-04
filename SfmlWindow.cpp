@@ -18,5 +18,15 @@ void SfmlWindow::Run() {
         Render();
         window.display();
         window.clear(windowSettings.bgColor);
+
+        //sf::Clock clock;
+        //// Attendre 1/60ème de seconde (60 FPS)
+        //sf::Time elapsedTime = clock.getElapsedTime();
+        //if (elapsedTime.asMilliseconds() < 16)
+        //{
+        //    sf::sleep(sf::milliseconds(16) - elapsedTime);
+        //}
+        //clock.restart();
+
     }
 }
