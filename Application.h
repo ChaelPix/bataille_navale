@@ -4,6 +4,7 @@
 #include "SfmlWindow.h"
 #include "GameWindow.h"
 #include "MenuWindow.h"
+#include "TCPClient.h"
 
 class GameApplication {
 
@@ -17,6 +18,7 @@ private:
     bool running = true;
     State currentState;
     std::unique_ptr<SfmlWindow> currentWindow;
+    TCPClient* client;
 
 public:
     GameApplication();

@@ -20,7 +20,16 @@ void MenuWindow::HandleEvents(sf::Event& event) {
 }
 
 void MenuWindow::Update() {
-    menuButtonsManager.CheckButtonHover(mouseManager);
+
+    if (!menuButtonsManager.getIsMatchMaking())
+    {
+        menuButtonsManager.CheckButtonHover(mouseManager);
+    }
+    else
+    {
+
+    }
+    
 }
 
 void MenuWindow::Render()

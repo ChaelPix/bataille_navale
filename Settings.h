@@ -32,8 +32,8 @@ struct MenuButtonsSettings {
     "ressources/UI/ui_menu_shopbutton_on.png",
     "ressources/UI/ui_menu_exitbutton_off.png",
     "ressources/UI/ui_menu_exitbutton_on.png",
-    "ressources/UI/ui_menu_exitbutton_off.png",
-    "ressources/UI/ui_menu_exitbutton_on.png"
+    "ressources/UI/ui_menu_cancelbutton_off.png",
+    "ressources/UI/ui_menu_cancelbutton_on.png"
     };
 
     const sf::Vector2f matchmakingTxtPos = sf::Vector2f(150, 200);

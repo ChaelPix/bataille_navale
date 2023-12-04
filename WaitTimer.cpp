@@ -2,6 +2,7 @@
 
 WaitTimer::WaitTimer(int timer)
 {
+	this->tick = 0;
 	this->timer = timer;
 }
 

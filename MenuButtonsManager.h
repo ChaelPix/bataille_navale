@@ -29,5 +29,7 @@ public:
 
 	void draw(sf::RenderWindow& window);
 	void CheckButtonHover(MouseManager& mouse);
+
+	bool getIsMatchMaking();
 };
 

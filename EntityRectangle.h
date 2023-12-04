@@ -28,6 +28,7 @@ public:
         shape.setSize(size);
         shape.setPosition(position);
         shapeTexture = texture;
+        std::cout << "text load\n";
         setTexture(&(this->shapeTexture));
     }
 

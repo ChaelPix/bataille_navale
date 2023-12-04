@@ -30,7 +30,8 @@ MenuButtonsManager::MenuButtonsManager()
 	sf::Vector2f matchmakingButPos = sf::Vector2f(
 		menuButtonsSettings.matchmakingTxtPos.x + matchmakingText.getGlobalBounds().width/2 - (menuButtonsSettings.buttonsSize.x * 0.75f / 2),
 		menuButtonsSettings.matchmakingTxtPos.y + matchmakingText.getGlobalBounds().height + menuButtonsSettings.distanceBetweenButtons );
-	buttons.push_back(EntityRectangle(menuButtonsSettings.buttonsSize * 0.75f, matchmakingButPos, buttonsTextures[7]));
+	buttons.push_back(EntityRectangle(menuButtonsSettings.buttonsSize * 0.75f, matchmakingButPos));
+	buttons.at(nbButtons).setTexture(&buttonsTextures[7]);
 
 	nbPoints = 0;
 
@@ -66,7 +67,6 @@ void MenuButtonsManager::draw(sf::RenderWindow& window)
 
 void MenuButtonsManager::ButtonClickAction(int btnId)
 {
-	
 	switch (btnId)
 	{
 	case 0:
@@ -74,16 +74,24 @@ void MenuButtonsManager::ButtonClickAction(int btnId)
 			return;
 
 		isMatchMaking = true;
+		break;
 		
+	case 2:
+
+		break;
+
+	case 3:
+		if (!isMatchMaking)
+			return;
+
+		isMatchMaking = false;
 		break;
 	}
 }
 
-
-
 void MenuButtonsManager::CheckButtonHover(MouseManager& mouse)
 {
-	for (int i = 0; i < nbButtons; i++)
+	for (int i = 0; i < nbButtons+1; i++)
 	{
 		if (buttons.at(i).getShape().getGlobalBounds().contains(mouse.getClickPosition()))
 		{
@@ -91,11 +99,15 @@ void MenuButtonsManager::CheckButtonHover(MouseManager& mouse)
 
 			if (mouse.isMouseClicked())
 				ButtonClickAction(i);
-
 		}
 		else
 		{
 			buttons.at(i).setTexture(&buttonsTextures[i * 2]);
 		}
 	}
+}
+
+bool MenuButtonsManager::getIsMatchMaking()
+{
+	return isMatchMaking;
 }
