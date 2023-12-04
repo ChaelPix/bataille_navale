@@ -42,6 +42,7 @@
     <ClCompile Include="TCPClient.cpp" />
     <ClCompile Include="TCPServer.cpp" />
     <ClCompile Include="TCPWinsocksMaster.cpp" />
+    <ClCompile Include="WaitTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedBackground.h" />
@@ -67,6 +68,7 @@
     <ClInclude Include="TCPClient.h" />
     <ClInclude Include="TCPServer.h" />
     <ClInclude Include="TCPWinsocksMaster.h" />
+    <ClInclude Include="WaitTimer.h" />
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="localization\eng.json">

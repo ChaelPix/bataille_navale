@@ -7,6 +7,7 @@
 #include "BattleshipCore.h"
 #include <SFML/Graphics.hpp>
 
+
 class PlayerBoatsManager
 {
 private:
@@ -22,6 +23,7 @@ private:
 	unsigned int cooldown;
 	bool isBoatInGrid = false;
 	bool isBoatPlacementOk = false;
+
 public:
 	PlayerBoatsManager(BattleshipCore* gameCore = nullptr, int bottomGridOffset = 50);
 	void draw(sf::RenderWindow& window);

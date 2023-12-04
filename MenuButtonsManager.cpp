@@ -1,6 +1,8 @@
 #include "MenuButtonsManager.h"
 #include <iostream>
 
+
+
 MenuButtonsManager::MenuButtonsManager()
 {
 	MenuButtonsSettings menuButtonsSettings;
@@ -23,7 +25,28 @@ MenuButtonsManager::MenuButtonsManager()
 	matchmakingText.setPosition(menuButtonsSettings.matchmakingTxtPos);
 	matchmakingText.setCharacterSize(menuButtonsSettings.matchmakingTxtFontSize);
 
-	matchmakingText.setString("Matchmaking...");
+	matchmakingText.setString("Matchmaking");
+
+	sf::Vector2f matchmakingButPos = sf::Vector2f(
+		menuButtonsSettings.matchmakingTxtPos.x + matchmakingText.getGlobalBounds().width/2 - (menuButtonsSettings.buttonsSize.x * 0.75f / 2),
+		menuButtonsSettings.matchmakingTxtPos.y + matchmakingText.getGlobalBounds().height + menuButtonsSettings.distanceBetweenButtons );
+	buttons.push_back(EntityRectangle(menuButtonsSettings.buttonsSize * 0.75f, matchmakingButPos, buttonsTextures[7]));
+
+	nbPoints = 0;
+
+	timer = new WaitTimer(menuButtonsSettings.matchmakingPointTimer);
+}
+
+void MenuButtonsManager::updateMatchmakingTxt()
+{
+	if (timer->update(true))
+	{
+		nbPoints = (nbPoints + 1) % 4;
+		std::string t = "Matchmaking";
+		for (int i = 0; i < nbPoints; i++)
+			t += ".";
+		matchmakingText.setString(t);
+	}
 }
 
 void MenuButtonsManager::draw(sf::RenderWindow& window)
@@ -34,10 +57,29 @@ void MenuButtonsManager::draw(sf::RenderWindow& window)
 			buttons.at(i).draw(window);	
 	}
 	else
-	{
+	{	
+		updateMatchmakingTxt();
 		window.draw(matchmakingText);
+		buttons.at(nbButtons).draw(window);
 	}
 }
+
+void MenuButtonsManager::ButtonClickAction(int btnId)
+{
+	
+	switch (btnId)
+	{
+	case 0:
+		if (isMatchMaking)
+			return;
+
+		isMatchMaking = true;
+		
+		break;
+	}
+}
+
+
 
 void MenuButtonsManager::CheckButtonHover(MouseManager& mouse)
 {
@@ -48,7 +90,7 @@ void MenuButtonsManager::CheckButtonHover(MouseManager& mouse)
 			buttons.at(i).setTexture(&buttonsTextures[1 + i * 2]);
 
 			if (mouse.isMouseClicked())
-				std::cout << "click!";
+				ButtonClickAction(i);
 
 		}
 		else

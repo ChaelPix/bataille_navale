@@ -38,6 +38,8 @@ struct MenuButtonsSettings {
 
     const sf::Vector2f matchmakingTxtPos = sf::Vector2f(150, 200);
     const int matchmakingTxtFontSize = 120;
+
+    const int matchmakingPointTimer = 500;
 };
 
 struct FontSettings {

@@ -2,10 +2,13 @@
 
 #include "EntityRectangle.h"
 #include "MouseManager.h"
+#include "WaitTimer.h"
 
 class MenuButtonsManager
 {
 private:
+	WaitTimer* timer;
+
 	std::vector<EntityRectangle> buttons;
 
 	const int nbButtons = 3;
@@ -16,6 +19,10 @@ private:
 	sf::Text matchmakingText;
 
 	bool isMatchMaking = false;
+	int nbPoints;
+
+	void ButtonClickAction(int btnId);
+	void updateMatchmakingTxt();
 
 public:
 	MenuButtonsManager();
