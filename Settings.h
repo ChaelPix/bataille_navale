@@ -11,7 +11,7 @@ struct GridSettings {
     const sf::Vector2f playerGridPosition = sf::Vector2f(100, 200);
     const sf::Vector2f ennemyGridPosition = sf::Vector2f(700, 200);
 
-    const int boatTolerance = 0;
+    const int boatTolerance = 15;
 };
 
 struct WindowSettings {
@@ -35,7 +35,6 @@ struct MenuButtonsSettings {
     "ressources/UI/ui_menu_exitbutton_off.png",
     "ressources/UI/ui_menu_exitbutton_on.png"
     };
-
 
     const sf::Vector2f matchmakingTxtPos = sf::Vector2f(150, 200);
     const int matchmakingTxtFontSize = 120;

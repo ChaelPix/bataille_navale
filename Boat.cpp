@@ -86,3 +86,14 @@ void Boat::setIsPlaced(bool isPlaced)
 {
 	this->isPlaced = isPlaced;
 }
+
+sf::Vector2f Boat::AnchoredPosition()
+{
+	GridSettings grid;
+	int gridSize = grid.squareSize / grid.nbPixels;
+
+	int anchoredX = shape.getPosition().x / gridSize;
+	int anchoredY = shape.getPosition().y / gridSize;
+
+	return sf::Vector2f(anchoredX, anchoredY);
+}

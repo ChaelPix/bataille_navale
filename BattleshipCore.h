@@ -18,8 +18,7 @@ public:
 	BattleshipCore();
 	bool isAdjacentCellFree(int row, int column, CellType(*targetGrid)[nbCol]);
 	bool canPlaceBoat(int row, int column, int boatSize, bool isRotated);
-	bool placeBoat(int row, int column, int boatSize, bool isRotated);
-	bool removeBoat(int row, int column, int boatSize, bool isRotated);
+	bool modifyBoat(int row, int column, int boatSize, bool isRotated, bool isPlacing);
 
 	std::string serialisationJoueur() const;
 };

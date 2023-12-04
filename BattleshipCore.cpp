@@ -44,30 +44,21 @@ bool BattleshipCore::canPlaceBoat(int row, int column, int boatSize, bool isRota
     return isPlacementValid;
 }
 
-bool BattleshipCore::placeBoat(int row, int column, int boatSize, bool isRotated)
+
+bool BattleshipCore::modifyBoat(int row, int column, int boatSize, bool isRotated, bool isPlacing)
 {
+    CellType newCellType = isPlacing ? CellType::boat : CellType::empty;
+
     for (int i = 0; i < boatSize; ++i) {
         int l = row - 4 + (isRotated == 0 ? 0 : i);
-        int c = column - 2 + (isRotated == 1 ? 0-1 : i);
-        playerGrid[l][c] = CellType::boat;
-       
+        int c = column - 2 + (isRotated == 1 ? 0 - 1 : i);
+        playerGrid[l][c] = newCellType;
     }
-    std::cout << serialisationJoueur();
 
+    std::cout << serialisationJoueur();
     return true;
 }
 
-bool BattleshipCore::removeBoat(int row, int column, int boatSize, bool isRotated)
-{
-    for (int i = 0; i < boatSize; ++i) {
-        int l = row - 4 + (isRotated == 0 ? 0 : i);
-        int c = column - 2 + (isRotated == 1 ? 0-1 : i);
-        playerGrid[l][c] = CellType::empty;
-    }
-    std::cout << serialisationJoueur();
-
-    return true;
-}
 
 std::string BattleshipCore::serialisationJoueur() const {
     std::string result;

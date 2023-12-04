@@ -90,13 +90,8 @@ void PlayerBoatsManager::dragBoats(MouseManager &mouseManager)
 			selectedBoat->OnRelease(isBoatPlacementOk);
 			if (isBoatPlacementOk)
 			{
-				GridSettings grid;
-				int gridSize = grid.squareSize / grid.nbPixels;
-
-				int anchoredX = selectedBoat->getShape().getPosition().x / gridSize;
-				int anchoredY = selectedBoat->getShape().getPosition().y / gridSize;
-
-				battleshipCore->placeBoat(anchoredY, anchoredX, static_cast<int>(selectedBoat->getBoatType()), selectedBoat->getIsRotated());
+				sf::Vector2f anchoredPos = selectedBoat->AnchoredPosition();
+				battleshipCore->modifyBoat(anchoredPos.y, anchoredPos.x, static_cast<int>(selectedBoat->getBoatType()), selectedBoat->getIsRotated(), true);
 			}
 		}
 
@@ -116,13 +111,8 @@ void PlayerBoatsManager::dragBoats(MouseManager &mouseManager)
 
 				if (selectedBoat->getIsPlaced())
 				{
-					GridSettings grid;
-					int gridSize = grid.squareSize / grid.nbPixels;
-
-					int anchoredX = selectedBoat->getShape().getPosition().x / gridSize;
-					int anchoredY = selectedBoat->getShape().getPosition().y / gridSize;
-
-					battleshipCore->removeBoat(anchoredY, anchoredX, static_cast<int>(selectedBoat->getBoatType()), selectedBoat->getIsRotated());
+					sf::Vector2f anchoredPos = selectedBoat->AnchoredPosition();
+					battleshipCore->modifyBoat(anchoredPos.y, anchoredPos.x, static_cast<int>(selectedBoat->getBoatType()), selectedBoat->getIsRotated(), false);
 				}
 
 				break;
@@ -141,11 +131,14 @@ void PlayerBoatsManager::dragBoats(MouseManager &mouseManager)
 			GridSettings grid;
 			int gridSize = grid.squareSize / grid.nbPixels;
 
-			int anchoredX = selectedBoat->getShape().getPosition().x / gridSize;
-			int anchoredY = selectedBoat->getShape().getPosition().y / gridSize;
-
-			selectedBoat->setPosition(anchoredX * gridSize, anchoredY * gridSize);
-			isBoatPlacementOk = battleshipCore->canPlaceBoat(anchoredY, anchoredX, static_cast<int>(selectedBoat->getBoatType()), selectedBoat->getIsRotated());
+			sf::Vector2f anchoredPos = selectedBoat->AnchoredPosition();
+			selectedBoat->setPosition(anchoredPos.x * gridSize, anchoredPos.y * gridSize);
+			isBoatPlacementOk = battleshipCore->canPlaceBoat(anchoredPos.y, anchoredPos.x, static_cast<int>(selectedBoat->getBoatType()), selectedBoat->getIsRotated());
+		}
+		else
+		{
+			isBoatPlacementOk = false;
+			isBoatInGrid = false;
 		}
 
 

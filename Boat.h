@@ -31,5 +31,7 @@ public:
 
 	bool getIsPlaced();
 	void setIsPlaced(bool isPlaced);
+
+	sf::Vector2f AnchoredPosition();
 };
 
