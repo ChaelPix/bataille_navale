@@ -25,6 +25,7 @@
     <ClCompile Include="BattleshipServer.cpp" />
     <ClCompile Include="Boat.cpp" />
     <ClCompile Include="BsBDD.cpp" />
+    <ClCompile Include="CloudManager.cpp" />
     <ClCompile Include="CoreGame.cpp" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -51,6 +52,7 @@
     <ClInclude Include="BattleshipServer.h" />
     <ClInclude Include="Boat.h" />
     <ClInclude Include="BsBDD.h" />
+    <ClInclude Include="CloudManager.h" />
     <ClInclude Include="CoreGame.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="Entity.h" />

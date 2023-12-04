@@ -9,6 +9,7 @@ class GameApplication;
 #include "AnimatedBackground.h"
 #include "MouseManager.h"
 #include "BattleshipCore.h"
+#include "CloudManager.h"
 #include <vector>
 
 class GameWindow : public SfmlWindow {
@@ -25,6 +26,8 @@ protected:
     void Render() override;
 
 private:
+    CloudManager* cloudManager = new CloudManager();
+
     GameApplication* application;
 
     MouseManager mouseManager;
