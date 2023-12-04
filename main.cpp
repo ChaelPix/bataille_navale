@@ -40,6 +40,7 @@ int main() {
 
     char x;
     std::cin >> x;
+    system("cls");
 
     switch (x)
     {

@@ -29,7 +29,6 @@ public:
         shape.setPosition(position);
 
         shapeTexture = texture;
-        std::cout << "text load\n";
         setTexture(&(this->shapeTexture));
     }
     EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, sf::Texture texture, sf::Color color) {

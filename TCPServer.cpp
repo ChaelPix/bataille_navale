@@ -133,9 +133,8 @@ std::string TCPServer::receiveMessageFromClient(SOCKET clientId)
 void TCPServer::closeSocket()
 {
     isServerOn = false;
-    cvMatchmaking.notify_all(); // Réveiller le thread s'il attend
+    cvMatchmaking.notify_all();
 
-    // Joindre les threads
     if (listenerThread.joinable()) {
         listenerThread.join();
     }
@@ -143,10 +142,8 @@ void TCPServer::closeSocket()
         matchThread.join();
     }
 
-    // Fermer le socket principal
     closesocket(idSocket);
 
-    // Joindre les threads de jeu
     for (auto& pair : gameThreads) {
         if (pair.second.joinable()) {
             pair.second.join();
@@ -157,9 +154,6 @@ void TCPServer::closeSocket()
 
 std::string TCPServer::processGameMessage(const std::string& message)
 {
-    // Code pour traiter le message
-    // Par exemple, analyser le message et mettre à jour l'état du jeu
-    // ...
 
-    return message; // Retourner la réponse traitée
+    return message; 
 }

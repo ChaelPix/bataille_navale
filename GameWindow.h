@@ -15,7 +15,7 @@ class GameApplication;
 class GameWindow : public SfmlWindow {
 public:
     GameWindow(GameApplication& application);
-
+    enum class GameState {Placing, Attacking, Waiting, Victory, Defeat};
 protected:
     void Initialize() override;
 
@@ -42,6 +42,9 @@ private:
     std::vector<Entity*> entitiesPtr;
 
     BattleshipCore battleshipCore;
+
+    sf::Clock timer;
+    GameState gameState;
 };
 
 
