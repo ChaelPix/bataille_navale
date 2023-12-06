@@ -19,20 +19,66 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AnimatedBackground.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="BattleshipCore.cpp" />
     <ClCompile Include="BattleshipServer.cpp" />
+    <ClCompile Include="Boat.cpp" />
+    <ClCompile Include="BsBDD.cpp" />
+    <ClCompile Include="CloudManager.cpp" />
+    <ClCompile Include="CoreGame.cpp" />
+    <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityRectangle.cpp" />
+    <ClCompile Include="EntityText.cpp" />
+    <ClCompile Include="EntityTextBox.cpp" />
+    <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="imagesRename.cpp" />
     <ClCompile Include="Localization.cpp" />
+    <ClCompile Include="LoginMenu.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MenuButtonsManager.cpp" />
+    <ClCompile Include="MenuWindow.cpp" />
+    <ClCompile Include="MouseManager.cpp" />
+    <ClCompile Include="PlayerBoatsManager.cpp" />
+    <ClCompile Include="SfmlWindow.cpp" />
+    <ClCompile Include="SplashWindow.cpp" />
     <ClCompile Include="TCPClient.cpp" />
     <ClCompile Include="TCPServer.cpp" />
     <ClCompile Include="TCPWinsocksMaster.cpp" />
+    <ClCompile Include="WaitTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimatedBackground.h" />
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="BattleshipCore.h" />
     <ClInclude Include="BattleshipServer.h" />
+    <ClInclude Include="Boat.h" />
+    <ClInclude Include="BsBDD.h" />
+    <ClInclude Include="CloudManager.h" />
+    <ClInclude Include="CoreGame.h" />
+    <ClInclude Include="Debug.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityRectangle.h" />
+    <ClInclude Include="EntityText.h" />
+    <ClInclude Include="EntityTextBox.h" />
+    <ClInclude Include="GameWindow.h" />
+    <ClInclude Include="Grid.h" />
     <ClInclude Include="Localization.h" />
+    <ClInclude Include="LoginMenu.h" />
+    <ClInclude Include="MenuButtonsManager.h" />
+    <ClInclude Include="MenuWindow.h" />
+    <ClInclude Include="MouseManager.h" />
+    <ClInclude Include="PlayerBoatsManager.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Settings.h" />
+    <ClInclude Include="SfmlWindow.h" />
+    <ClInclude Include="SplashWindow.h" />
     <ClInclude Include="TCPClient.h" />
     <ClInclude Include="TCPServer.h" />
     <ClInclude Include="TCPWinsocksMaster.h" />
+    <ClInclude Include="WaitTimer.h" />
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="localization\eng.json">
@@ -45,7 +91,25 @@
     </_EmbedManagedResourceFile>
   </ItemGroup>
   <ItemGroup>
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn-static.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn8-static.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn8.lib" />
     <Library Include="WS2_32.Lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn-9-vs14.dll">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\libcrypto-3-x64.dll">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\libssl-3-x64.dll">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+    <None Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn8-2-vs14.dll" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -107,9 +171,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>SqlLibs\boost_1_64_0\boost_1_64_0;SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>SqlLibs\boost_1_64_0\boost_1_64_0;SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\include;C:\Users\laurentr\source\repos\bataille_navale\SqlLibs\boost_1_64_0\boost_1_64_0;C:\Users\laurentr\source\repos\bataille_navale\SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -152,6 +218,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -169,6 +236,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

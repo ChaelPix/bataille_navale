@@ -19,8 +19,8 @@
     <Filter Include="Fichiers de ressources\localization">
       <UniqueIdentifier>{842012ea-308a-4a96-8e7d-aaa51e2f25ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers sources\Server">
-      <UniqueIdentifier>{930275f4-f8a2-42f7-9d23-42351ddaa724}</UniqueIdentifier>
+    <Filter Include="Fichiers sources\SFML">
+      <UniqueIdentifier>{c2709aa0-b1e7-441b-9d72-a9fd593518e1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,17 +30,86 @@
     <ClCompile Include="Localization.cpp">
       <Filter>Fichiers sources\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="TCPWinsocksMaster.cpp">
-      <Filter>Fichiers sources\Server</Filter>
+    <ClCompile Include="CoreGame.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BsBDD.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="TCPClient.cpp">
-      <Filter>Fichiers sources\Server</Filter>
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="TCPServer.cpp">
-      <Filter>Fichiers sources\Server</Filter>
+    <ClCompile Include="Boat.cpp">
+      <Filter>Fichiers sources\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Fichiers sources\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityRectangle.cpp">
+      <Filter>Fichiers sources\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedBackground.cpp">
+      <Filter>Fichiers sources\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Fichiers sources\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBoatsManager.cpp">
+      <Filter>Fichiers sources\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseManager.cpp">
+      <Filter>Fichiers sources\SFML</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BattleshipCore.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="BattleshipServer.cpp">
-      <Filter>Fichiers sources\Server</Filter>
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="CloudManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWindow.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="imagesRename.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuButtonsManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuWindow.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SfmlWindow.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPServer.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPWinsocksMaster.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="WaitTimer.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashWindow.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityText.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityTextBox.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginMenu.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -50,16 +119,85 @@
     <ClInclude Include="resource.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="TCPWinsocksMaster.h">
+    <ClInclude Include="CoreGame.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="BsBDD.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedBackground.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Boat.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityRectangle.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="TCPClient.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="TCPServer.h">
+    <ClInclude Include="PlayerBoatsManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleshipCore.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="BattleshipServer.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWindow.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuButtonsManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuWindow.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="SfmlWindow.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPServer.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPWinsocksMaster.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitTimer.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashWindow.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityText.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityTextBox.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginMenu.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -72,8 +210,26 @@
     <CopyFileToFolders Include="localization\eng.json">
       <Filter>Fichiers de ressources\localization</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn-9-vs14.dll">
+      <Filter>Fichiers de ressources</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\libcrypto-3-x64.dll">
+      <Filter>Fichiers de ressources</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\libssl-3-x64.dll">
+      <Filter>Fichiers de ressources</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn8.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn8-static.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn-static.lib" />
     <Library Include="WS2_32.Lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn8-2-vs14.dll">
+      <Filter>Fichiers de ressources</Filter>
+    </None>
   </ItemGroup>
 </Project>

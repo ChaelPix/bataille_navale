@@ -31,7 +31,7 @@ void TCPServer::bindAndListen()
     }
 
     if (listen(idSocket, 1) == SOCKET_ERROR) {
-        throw std::runtime_error("Listene Failed");
+        throw std::runtime_error("Listen Failed");
     }
 }
 
@@ -51,12 +51,17 @@ void TCPServer::acceptClients()
             SOCKET clientSocket = accept(idSocket, (struct sockaddr*)&adr_client, &addr_len);
           
             if (clientSocket != INVALID_SOCKET) {
-                idsClients.push_back(clientSocket);
-                {
-                    std::lock_guard<std::mutex> lock(matchmakingMutex);
-                    matchmakingQueue.push(clientSocket);
+                if (isSocketActive(clientSocket)) {
+                    idsClients.push_back(clientSocket);
+                    {
+                        std::lock_guard<std::mutex> lock(matchmakingMutex);
+                        matchmakingQueue.push(clientSocket);
+                    }
+                    cvMatchmaking.notify_one();
                 }
-                cvMatchmaking.notify_one();
+                else {
+                    closeClientSocket(clientSocket);
+                }
             }
         }
     }
@@ -73,14 +78,20 @@ void TCPServer::matchClientsForGame()
         SOCKET client1 = matchmakingQueue.front(); matchmakingQueue.pop();
         SOCKET client2 = matchmakingQueue.front(); matchmakingQueue.pop();
 
-        gameThreads[client1] = std::thread(&TCPServer::gameSession, this, client1, client2);
-        gameThreads[client2] = std::thread(&TCPServer::gameSession, this, client2, client1);
+        if (!isSocketActive(client1) || !isSocketActive(client2)) {
+            closeClientSocket(client1);
+            closeClientSocket(client2);
+            continue;
+        }
+
+        gameThreads[client1] = std::thread(&TCPServer::gameSession, this, client1, client2, false);
+        gameThreads[client2] = std::thread(&TCPServer::gameSession, this, client2, client1, true);
     }
 }
 
-void TCPServer::gameSession(SOCKET client1, SOCKET client2)
+void TCPServer::gameSession(SOCKET client1, SOCKET client2, bool isFirstPlayerToPlay)
 {
-    const std::string message = "Adversaire trouvé Socket client 1 : " + std::to_string(client1) + " client 2 : " + std::to_string(client2);
+    std::string message = "";
     send(client2, message.c_str(), message.length(), 0);
 
     try {
@@ -133,9 +144,8 @@ std::string TCPServer::receiveMessageFromClient(SOCKET clientId)
 void TCPServer::closeSocket()
 {
     isServerOn = false;
-    cvMatchmaking.notify_all(); // Réveiller le thread s'il attend
+    cvMatchmaking.notify_all();
 
-    // Joindre les threads
     if (listenerThread.joinable()) {
         listenerThread.join();
     }
@@ -143,10 +153,8 @@ void TCPServer::closeSocket()
         matchThread.join();
     }
 
-    // Fermer le socket principal
     closesocket(idSocket);
 
-    // Joindre les threads de jeu
     for (auto& pair : gameThreads) {
         if (pair.second.joinable()) {
             pair.second.join();
@@ -157,9 +165,13 @@ void TCPServer::closeSocket()
 
 std::string TCPServer::processGameMessage(const std::string& message)
 {
-    // Code pour traiter le message
-    // Par exemple, analyser le message et mettre à jour l'état du jeu
-    // ...
 
-    return "Réponse traitée"; // Retourner la réponse traitée
+    return message; 
+}
+
+bool TCPServer::isSocketActive(SOCKET clientSocket) {
+    char buffer;
+    int result = recv(clientSocket, &buffer, 1, MSG_PEEK);
+    if (result <= 0) return false; 
+    return true; 
 }

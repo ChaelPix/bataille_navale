@@ -1,44 +1,76 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#include "TCPClient.h"
+
+#include "Application.h"
 #include "BattleshipServer.h"
 
-#include <Windows.h>
+void ServerMod()
+{
+    ushort port = 12345;
+
+    BattleshipServer server(port);
+    std::cout << "Serveur d\202marr\202 sur le port " << port << ". Entrez le mdp 1234 pour arrêter..." << std::endl;
+
+    std::string s  = "";
+
+    while (s != "1234")
+        std::cin >> s;
+
+    server.closeSocket();
+}
+
+void launchSplash()
+{
+    GameApplication game(GameApplication::State::Splash);
+    game.Run();
+}
+
+void launchMenu()
+{
+    GameApplication game(GameApplication::State::Menu);
+    game.Run();
+}
+
+void launchGame()
+{
+    GameApplication game(GameApplication::State::Game);
+    game.Run();
+}
+
+
 int main() {
-    try {
-        ushort port = 12345;
-     /*   TCPServer server(port);
-        server.init();*/
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+    std::cout << "[DEBUG] SELECT MENU: " << std::endl
+        << "[1] Splash Menu " << std::endl
+        << "[2] Main Menu " << std::endl
+        << "[3] Game menu " << std::endl
+        << "[4] Server Mod " << std::endl;
 
-        BattleshipServer server(port);
+    char x;
+    std::cin >> x;
+    system("cls");
 
-        std::cout << "Serveur d\202marr\202 sur le port " << port << ". Appuyez sur Entr\202e pour arrêter..." << std::endl;
-        
-        Sleep(1000);
-        std::cout << "Cr\202ation Client 1 & 2" << std::endl;
+    switch (x)
+    {
+        case '1':
+            launchSplash();
+            return 0;
 
-        TCPClient tcpClient1("10.187.52.31", 12345);
-        TCPClient tcpClient2("10.187.52.31", 12345);
-        Sleep(1000);
-        std::cout << std::endl << tcpClient1.receiveMessage() << std::endl;
-        std::cout << std::endl << tcpClient2.receiveMessage() << std::endl;
-        Sleep(1000);
-        tcpClient1.sendMessage("bonjour 1");
-        tcpClient2.sendMessage("ok");
-        Sleep(1000);
-        std::cout << tcpClient1.receiveMessage() << std::endl;
-        std::cout << tcpClient2.receiveMessage() << std::endl;
-        Sleep(1000);
-        tcpClient1.closeSocket();
-        tcpClient2.closeSocket();
+        case '3':    
+            launchGame();
+            return 0 ;
 
-        server.closeSocket();
-        std::cout << "Serveur arret\202." << std::endl;
+        case '4':
+            ServerMod();
+            return 0;
+
+        default:
+            launchMenu();
+            return 0;
     }
-    catch (const std::exception& e) {
-        std::cerr << "Exception: " << e.what() << std::endl;
-        return 1;
-    }
+
 
     return 0;
 }
+
+
