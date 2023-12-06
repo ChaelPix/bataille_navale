@@ -28,6 +28,14 @@ void GameApplication::setClientStartFirst(bool isTrue)
     doClientStartFirst = isTrue;
 }
 
+bool GameApplication::isCorrectMessageType(std::string message, MessageType targetType)
+{
+    char firstLetter;
+    targetType == MessageType::Game ? firstLetter = 'G' : firstLetter = 'C';
+
+    return !message.empty() && message.at(0) == firstLetter;
+}
+
 void GameApplication::ChangeState(State newState) {
     currentState = newState;
     switch (currentState) 

@@ -38,7 +38,8 @@ void MenuWindow::Update() {
             application->CreateClient();
 
         std::string message = application->client->getMessage();
-        if (!message.empty() && (message == "GWait" || message == "GStart")) {
+        if (application->isCorrectMessageType(message))
+        {
             application->setClientStartFirst(message == "GStart");
             running = false;
             application->ChangeState(GameApplication::State::Game);

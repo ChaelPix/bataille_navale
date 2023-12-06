@@ -45,7 +45,8 @@ void GameWindow::Update() {
 
         std::string message = application->client->getMessage();
         std::cout << "Grille recue : \n" << message << std::endl;
-        if (!message.empty()) {
+        if (application->isCorrectMessageType()) 
+        {
             gameState = GameState::Attacking;
         }
 

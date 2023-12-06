@@ -15,6 +15,11 @@ public:
         Game
     };
 
+    enum class MessageType {
+        Game,
+        Chat
+    };
+
     TCPClient* client;
 private:
     bool running = true;
@@ -36,4 +41,6 @@ public:
     void Close();
 
     void setClientStartFirst(bool isTrue);
+
+    bool isCorrectMessageType(std::string message = "", MessageType targetType = MessageType::Game);
 };
