@@ -25,11 +25,16 @@ public:
     };
 
     TCPClient* client;
+
 private:
     bool running = true;
     State currentState;
     std::unique_ptr<SfmlWindow> currentWindow;
     bool doClientStartFirst;
+
+    sf::Font gameFont;
+
+    void Initialize();
 
 public:
     GameApplication();

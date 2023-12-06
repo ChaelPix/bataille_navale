@@ -13,6 +13,12 @@ GameApplication::~GameApplication()
     client->closeSocket();
 }
 
+void GameApplication::Initialize()
+{
+    FontSettings fontSettings;
+    gameFont.loadFromFile(fontSettings.fontPath);
+}
+
 void GameApplication::Run() {
     while (running) {
         currentWindow->Run();
