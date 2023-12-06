@@ -85,19 +85,7 @@ void PlayerBoatsManager::dragBoats(MouseManager &mouseManager)
 
 	if (!mouseManager.isMouseClicked())
 	{
-		if (selectedBoat != nullptr)
-		{
-			selectedBoat->OnRelease(isBoatPlacementOk);
-			if (isBoatPlacementOk)
-			{
-				sf::Vector2f anchoredPos = selectedBoat->AnchoredPosition();
-				battleshipCore->modifyBoat(anchoredPos.y, anchoredPos.x, static_cast<int>(selectedBoat->getBoatType()), selectedBoat->getIsRotated(), true);
-			}
-		}
-
-		isBoatPlacementOk = false;
-		selectedBoat = nullptr;
-		isBoatInGrid = false;
+		UnselectBoat();
 
 		return;
 	}
@@ -154,4 +142,44 @@ void PlayerBoatsManager::dragBoats(MouseManager &mouseManager)
 		
 	}
 
+}
+
+void PlayerBoatsManager::UnselectBoat()
+{
+	if (selectedBoat != nullptr)
+	{
+		selectedBoat->OnRelease(isBoatPlacementOk);
+		if (isBoatPlacementOk)
+		{
+			sf::Vector2f anchoredPos = selectedBoat->AnchoredPosition();
+			battleshipCore->modifyBoat(anchoredPos.y, anchoredPos.x, static_cast<int>(selectedBoat->getBoatType()), selectedBoat->getIsRotated(), true);
+			selectedBoat->setIsPlaced(true);
+		}
+	}
+
+	isBoatPlacementOk = false;
+	selectedBoat = nullptr;
+	isBoatInGrid = false;
+
+}
+
+void PlayerBoatsManager::RandomPlacement()
+{
+	for (int i = 0; i < boatsList.size(); i++)
+	{
+		if (!boatsList.at(i).getIsPlaced()) {
+			BattleshipCore::BoatInfo boatPlacement = battleshipCore->randomPlacing(static_cast<int>(boatsType.at(i)));
+			boatsList.at(i).setIsPlaced(true);
+
+			boatPlacement.isRotated ? boatsList.at(i).rotate(90) : boatsList.at(i).rotate(0);
+
+			boatsList.at(i).setRotated(boatPlacement.isRotated);
+
+			GridSettings grid;
+			int gridSize = grid.squareSize / grid.nbPixels;
+
+			boatsList.at(i).setPosition(grid.playerGridPosition.x + boatPlacement.column * gridSize, grid.playerGridPosition.y + boatPlacement.row * gridSize);
+		}
+
+	}
 }

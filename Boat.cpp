@@ -5,6 +5,7 @@ Boat::Boat(int id, CoreGame::boatTypes boatType, sf::Vector2f size, sf::Texture*
 	boatId = id;
 	this->boatType = boatType;
 	this->isRotated = false;
+	isPlaced = false;
 
 	if (texture != nullptr)
 		setTexture(texture);

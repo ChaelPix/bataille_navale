@@ -3,6 +3,11 @@
 
 BattleshipCore::BattleshipCore()
 {
+    NewGrid();
+}
+
+void BattleshipCore::NewGrid()
+{
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
             playerGrid[i][j] = CellType::empty;
@@ -35,8 +40,9 @@ bool BattleshipCore::canPlaceBoat(int row, int column, int boatSize, bool isRota
         int r = row - 4 + (isRotated == 0 ? 0 : i);
         int c = column - 2 + (isRotated == 1 ? 0-1 : i);
 
-        std::cout << "r : " << r << " c : " << c << std::endl;
+      
         if (r >= nbLig || c >= nbCol || playerGrid[r][c] != CellType::empty) {
+            std::cout << "r : " << r << " c : " << c << std::endl;
             isPlacementValid = false;
             break;
         }
@@ -57,6 +63,31 @@ bool BattleshipCore::modifyBoat(int row, int column, int boatSize, bool isRotate
 
     std::cout << serialisationJoueur();
     return true;
+}
+
+BattleshipCore::BoatInfo BattleshipCore::randomPlacing(int boatSize)
+{
+    bool isOk = false;
+
+    while (!isOk)
+    {
+        int dir = std::rand() % 2; // 0 pour horizontal, 1 pour vertical
+        int row = (std::rand() % nbLig);
+        int column = (std::rand() % nbCol);
+
+        if (canPlaceBoat(row + 4, column + 2, boatSize, dir == 1))
+        {
+            isOk = true;
+            modifyBoat(row + 4, column + 2, boatSize, dir == 1, true);
+
+            BoatInfo boatInfo;
+            boatInfo.row = row ;
+            boatInfo.column = column;
+            boatInfo.isRotated = dir == 1;
+
+            return boatInfo;
+        }
+    }
 }
 
 

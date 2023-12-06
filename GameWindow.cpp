@@ -31,9 +31,11 @@ void GameWindow::Update() {
 
         playerBoatsManager->dragBoats(mouseManager);
 
-        if (timer.getElapsedTime().asSeconds() >= 15.0f) {
-
-
+        std::cout << timer.getElapsedTime().asSeconds() << std::endl;
+        if (timer.getElapsedTime().asSeconds() >= 15) {
+            timer.restart();
+            playerBoatsManager->RandomPlacement();
+            gameState = GameState::Attacking;
         }
         break;
     }

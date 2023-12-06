@@ -29,6 +29,9 @@ public:
 	void draw(sf::RenderWindow& window);
 	void dragBoats(MouseManager &mouseManager);
 
+	void UnselectBoat();
+	void RandomPlacement();
+
 private:
 	int getTextureIndex(CoreGame::boatTypes type);
 };
