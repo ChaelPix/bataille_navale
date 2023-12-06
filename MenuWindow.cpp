@@ -19,6 +19,8 @@ void MenuWindow::Initialize()
     entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
     menuButtonsManager = new MenuButtonsManager(application->getGameFont());
 
+    textBoxtest = new EntityTextBox(sf::Vector2f(200, 300), nullptr, application->getGameFont());
+
     //objBDD.setPseudo("snir");
     //objBDD.displayPlayerInfo();
     //statInformation = objBDD.getStatsInfo();
@@ -30,7 +32,9 @@ void MenuWindow::HandleEvents(sf::Event& event) {
     mouseManager.update(event, window);
 }
 
-void MenuWindow::Update() {
+void MenuWindow::Update(sf::Event& event) {
+
+    textBoxtest->update(event);
 
     if (menuButtonsManager->CheckButtonHover(mouseManager))
     {
@@ -60,6 +64,11 @@ void MenuWindow::Render()
         entity->draw(window);
 
     menuButtonsManager->draw(window);
+    textBoxtest->draw(window);
+
+}
+
+/*
     if (!isLoad) {
 
         FontStat.loadFromFile(font.fontPath);
@@ -78,8 +87,7 @@ void MenuWindow::Render()
         name.setFillColor(sf::Color(204, 102, 0));
         name.setPosition(950, 120);
 
-        window.draw(stat); 
+        window.draw(stat);
         window.draw(name);
     }
-
-}
+*/

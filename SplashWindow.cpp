@@ -33,7 +33,7 @@ void SplashWindow::HandleEvents(sf::Event& event) {
    
 }
 
-void SplashWindow::Update() {
+void SplashWindow::Update(sf::Event& event) {
     if (started) {
         application->ChangeState(GameApplication::State::Menu);
         return;

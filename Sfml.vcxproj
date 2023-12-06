@@ -31,6 +31,7 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityRectangle.cpp" />
     <ClCompile Include="EntityText.cpp" />
+    <ClCompile Include="EntityTextBox.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="imagesRename.cpp" />
@@ -60,6 +61,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityRectangle.h" />
     <ClInclude Include="EntityText.h" />
+    <ClInclude Include="EntityTextBox.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Localization.h" />

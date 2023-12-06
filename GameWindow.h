@@ -21,7 +21,7 @@ protected:
 
     void HandleEvents(sf::Event& event) override;
 
-    void Update() override;
+    void Update(sf::Event& event) override;
 
     void Render() override;
 

@@ -23,7 +23,7 @@ void GameWindow::HandleEvents(sf::Event& event) {
     mouseManager.update(event, window);
 }
 
-void GameWindow::Update() {
+void GameWindow::Update(sf::Event &event) {
     
     //check Messages
     std::string message = "";

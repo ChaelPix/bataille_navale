@@ -40,6 +40,13 @@ EntityRectangle::EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& p
     setTexture(&(this->shapeTexture));
 }
 
+EntityRectangle::EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, sf::Color color)
+{
+    shape.setSize(size);
+    shape.setPosition(position);
+    shape.setFillColor(color);
+}
+
 EntityRectangle::EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, sf::Texture texture, float angleDegres, const sf::Vector2f& origin) {
     shape.setSize(size);
     shape.setPosition(position);
@@ -51,10 +58,6 @@ EntityRectangle::EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& p
 
 void EntityRectangle::draw(sf::RenderWindow& window) {
     window.draw(shape);
-}
-
-void EntityRectangle::update() {
-    // Mettre à jour la logique si nécessaire
 }
 
 void EntityRectangle::setTexture(sf::Texture* texture) {
@@ -104,4 +107,9 @@ sf::Color EntityRectangle::getColor() const {
 
 sf::RectangleShape EntityRectangle::getShape() {
     return shape;
+}
+
+sf::Vector2f EntityRectangle::getSize()
+{
+    return shape.getSize();
 }

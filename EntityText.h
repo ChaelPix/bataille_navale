@@ -11,6 +11,7 @@ protected:
 public:
     EntityText(sf::Font &font, int size, std::string text);
     EntityText(sf::Font &font, const sf::Vector2f position, const int size, std::string text);
+    EntityText(sf::Font& font, const sf::Vector2f position, const int size, sf::Color color);
 
     void SetText(std::string txt);
 
@@ -21,7 +22,6 @@ public:
 
     void SetColor(sf::Color color);
 
-    void update() override;
     void draw(sf::RenderWindow& window) override;
 
     sf::Text getText();

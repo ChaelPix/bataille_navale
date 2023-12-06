@@ -5,6 +5,8 @@ SfmlWindow::SfmlWindow(const std::string& title, const sf::Vector2f& size)
 
 void SfmlWindow::Run() {
 
+    sf::Clock frameClock;
+
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -12,21 +14,19 @@ void SfmlWindow::Run() {
                 window.close();
             HandleEvents(event);
         }
-        Update();
+        Update(event);
+
         if (!running)
             break;
+
+        window.clear(windowSettings.bgColor);
         Render();
         window.display();
-        window.clear(windowSettings.bgColor);
 
-        //sf::Clock clock;
-        //// Attendre 1/60ème de seconde (60 FPS)
-        //sf::Time elapsedTime = clock.getElapsedTime();
-        //if (elapsedTime.asMilliseconds() < 16)
-        //{
-        //    sf::sleep(sf::milliseconds(16) - elapsedTime);
-        //}
-        //clock.restart();
-
+        sf::Time frameTime = frameClock.restart();
+        sf::Time timePerFrame = sf::milliseconds(16); 
+        if (frameTime < timePerFrame) {
+            sf::sleep(timePerFrame - frameTime);
+        }
     }
 }

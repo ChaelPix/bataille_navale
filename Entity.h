@@ -7,11 +7,11 @@
 #include <SFML/Graphics.hpp>
 
 class Entity {
+
 public:
     virtual void draw(sf::RenderWindow& window) = 0;
-    virtual void update() = 0;
 
-    virtual ~Entity() {} 
+    virtual ~Entity() {};
 };
 
 #endif

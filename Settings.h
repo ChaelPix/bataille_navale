@@ -78,3 +78,13 @@ struct BoatSettings {
    "ressources/UI/ui_boat_destroyer.png"
     };
 };
+
+struct TextBoxSettings {
+    const sf::Vector2f textBoxSize = sf::Vector2f(300, 50);
+    const sf::Vector2f selectBoxSize = sf::Vector2f(300, 5);
+    const sf::Vector2f selectBoxOffset = sf::Vector2f(0, 5);
+    const sf::Color selectBoxColor = sf::Color::Blue;
+    const int maxCharacterSize = 40;
+    const int minCharacterSize = 3;
+    const int timeCooldownTyping = 75;
+};

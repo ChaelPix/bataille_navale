@@ -13,6 +13,13 @@ EntityText::EntityText(sf::Font& font, const sf::Vector2f position, const int si
 	SetCharacterSize(size);
 	SetText(text);
 }
+EntityText::EntityText(sf::Font& font, const sf::Vector2f position, const int size, sf::Color color)
+{
+	Text.setFont(font);
+	SetPosition(position);
+	SetCharacterSize(size);
+	SetColor(color);
+}
 void EntityText::SetText(std::string txt)
 {
 	Text.setString(txt);
@@ -36,10 +43,6 @@ void EntityText::SetCharacterSize(int size)
 void EntityText::SetColor(sf::Color color)
 {
 	Text.setFillColor(color);
-}
-
-void EntityText::update()
-{
 }
 
 void EntityText::draw(sf::RenderWindow& window)

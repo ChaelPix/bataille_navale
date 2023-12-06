@@ -17,10 +17,10 @@ public:
     EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, std::string texturePath, const sf::Vector2f& origin);
     EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, sf::Texture texture);
     EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, sf::Texture texture, sf::Color color);
+    EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, sf::Color color);
     EntityRectangle(const sf::Vector2f& size, const sf::Vector2f& position, sf::Texture texture, float angleDegres, const sf::Vector2f& origin);
 
     virtual void draw(sf::RenderWindow& window);
-    void update() override;
 
     void setTexture(sf::Texture* texture);
     void setPosition(sf::Vector2f position);
@@ -33,6 +33,7 @@ public:
     void setColor(sf::Color color);
     sf::Color getColor() const;
     sf::RectangleShape getShape();
+    sf::Vector2f getSize();
 };
 
 #endif
