@@ -19,6 +19,12 @@ void ServerMod()
     server.closeSocket();
 }
 
+void launchSplash()
+{
+    GameApplication game(GameApplication::State::Splash);
+    game.Run();
+}
+
 void launchMenu()
 {
     GameApplication game(GameApplication::State::Menu);
@@ -31,12 +37,14 @@ void launchGame()
     game.Run();
 }
 
+
 int main() {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     std::cout << "[DEBUG] SELECT MENU: " << std::endl
-        << "[0] Main Menu " << std::endl
-        << "[1] Game Menu " << std::endl
-        << "[2] Server Mod " << std::endl;
+        << "[1] Splash Menu " << std::endl
+        << "[2] Main Menu " << std::endl
+        << "[3] Game menu " << std::endl
+        << "[4] Server Mod " << std::endl;
 
     char x;
     std::cin >> x;
@@ -44,11 +52,15 @@ int main() {
 
     switch (x)
     {
-        case '1':    
+        case '1':
+            launchSplash();
+            break;
+
+        case '3':    
             launchGame();
             break;
 
-        case '2':
+        case '4':
             ServerMod();
             break;
 

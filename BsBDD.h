@@ -10,12 +10,13 @@
 #include <string>
 #include <vector>
 #include <sstream>
-#include <windows.h>
 #include <jdbc/cppconn/driver.h>
 #include <jdbc/cppconn/exception.h>
 #include <jdbc/cppconn/resultset.h>
 #include <jdbc/cppconn/statement.h>
 #include <jdbc/cppconn/prepared_statement.h>
+#include <iomanip>
+
 
 class BsBDD {
 
@@ -49,6 +50,7 @@ public:
     void displayPlayerInfo();
     bool isConnect();
     void getPlayerData();
+    std::string getStatsInfo();
 
     // Déclarations des méthodes getteurs
     std::string getId() const;

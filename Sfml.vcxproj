@@ -40,6 +40,7 @@
     <ClCompile Include="MouseManager.cpp" />
     <ClCompile Include="PlayerBoatsManager.cpp" />
     <ClCompile Include="SfmlWindow.cpp" />
+    <ClCompile Include="SplashWindow.cpp" />
     <ClCompile Include="TCPClient.cpp" />
     <ClCompile Include="TCPServer.cpp" />
     <ClCompile Include="TCPWinsocksMaster.cpp" />
@@ -67,6 +68,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SfmlWindow.h" />
+    <ClInclude Include="SplashWindow.h" />
     <ClInclude Include="TCPClient.h" />
     <ClInclude Include="TCPServer.h" />
     <ClInclude Include="TCPWinsocksMaster.h" />
