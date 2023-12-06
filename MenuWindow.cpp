@@ -24,6 +24,12 @@ void MenuWindow::HandleEvents(sf::Event& event) {
     mouseManager.update(event, window);
 }
 
+void MenuWindow::StatSQL() {
+
+  
+
+}
+
 void MenuWindow::Update() {
 
     if (menuButtonsManager.CheckButtonHover(mouseManager))
@@ -51,9 +57,20 @@ void MenuWindow::Update() {
 void MenuWindow::Render()
 {
     menuBackground->draw(window);
-
     for (auto& entity : entitiesPtr)
         entity->draw(window);
 
     menuButtonsManager.draw(window);
+
+    objBDD.registerUser("snir", "snir");
+    FontStat.loadFromFile(font.fontPath);
+
+    // Créer un texte
+    stat.setFont(FontStat);
+    stat.setString(objBDD.getStatsInfo());
+    stat.setCharacterSize(50); // en pixels
+    stat.setFillColor(sf::Color::White);
+    stat.setPosition(500, 500);
+    window.draw(stat);
+
 }

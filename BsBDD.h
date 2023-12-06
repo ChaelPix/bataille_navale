@@ -10,7 +10,6 @@
 #include <string>
 #include <vector>
 #include <sstream>
-#include <windows.h>
 #include <jdbc/cppconn/driver.h>
 #include <jdbc/cppconn/exception.h>
 #include <jdbc/cppconn/resultset.h>
@@ -30,7 +29,7 @@ private:
     std::string score;
     std::string nbGames;
     std::string nbLostGames;
-    std::string nbWonGames;
+    int nbWonGames;
     std::string idPlayers;
 
 public:
@@ -49,6 +48,7 @@ public:
     void displayPlayerInfo();
     bool isConnect();
     void getPlayerData();
+    std::string getStatsInfo();
 
     // Déclarations des méthodes getteurs
     std::string getId() const;

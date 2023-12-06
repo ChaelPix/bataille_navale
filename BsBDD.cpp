@@ -227,6 +227,19 @@ bool BsBDD::isConnect() {
     return true;
 }
 
+std::string BsBDD::getStatsInfo()
+{
+    //int Win = std::stoi(nbWonGames);
+    //int loss = std::stoi(nbLostGames);
+    std::string statInfo = "";
+    statInfo += "Victories: " + nbWonGames + "\n";
+    statInfo += "Defeat: " + nbLostGames + "\n";
+    //if (loss > 0) {
+    //    statInfo += "K/D: " + std::to_string(Win / loss) + "\n";
+    //}
+    return statInfo;
+}
+
 std::string BsBDD::getId() const {
     return id;
 }
