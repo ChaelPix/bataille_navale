@@ -1,5 +1,6 @@
 #pragma once
 
+#include <SFML/Graphics.hpp>
 #include <memory>
 #include "SfmlWindow.h"
 #include "GameWindow.h"
@@ -54,4 +55,6 @@ public:
 
     bool isCorrectMessageType(std::string message = "", MessageType targetType = MessageType::Game);
     MessageType getMessageType(std::string message);
+
+    sf::Font& getGameFont();
 };

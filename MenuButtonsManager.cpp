@@ -3,7 +3,7 @@
 
 
 
-MenuButtonsManager::MenuButtonsManager()
+MenuButtonsManager::MenuButtonsManager(sf::Font &font)
 {
 	MenuButtonsSettings menuButtonsSettings;
 
@@ -19,17 +19,11 @@ MenuButtonsManager::MenuButtonsManager()
 		startPos.y += menuButtonsSettings.buttonsSize.y + menuButtonsSettings.distanceBetweenButtons;
 	}
 
-	FontSettings fSettings;
-	font.loadFromFile(fSettings.fontPath);
-	matchmakingText.setFont(font);
-	matchmakingText.setPosition(menuButtonsSettings.matchmakingTxtPos);
-	matchmakingText.setCharacterSize(menuButtonsSettings.matchmakingTxtFontSize);
-
-	matchmakingText.setString("Matchmaking");
+	matchmakingText = new EntityText(font, menuButtonsSettings.matchmakingTxtPos, menuButtonsSettings.matchmakingTxtFontSize, "Matchmaking");
 
 	sf::Vector2f matchmakingButPos = sf::Vector2f(
-		menuButtonsSettings.matchmakingTxtPos.x + matchmakingText.getGlobalBounds().width/2 - (menuButtonsSettings.buttonsSize.x * 0.75f / 2),
-		menuButtonsSettings.matchmakingTxtPos.y + matchmakingText.getGlobalBounds().height + menuButtonsSettings.distanceBetweenButtons );
+		menuButtonsSettings.matchmakingTxtPos.x + 514/2 - (menuButtonsSettings.buttonsSize.x * 0.75f / 2),
+		menuButtonsSettings.matchmakingTxtPos.y + 115 + menuButtonsSettings.distanceBetweenButtons );
 	buttons.push_back(EntityRectangle(menuButtonsSettings.buttonsSize * 0.75f, matchmakingButPos));
 	buttons.at(nbButtons).setTexture(&buttonsTextures[7]);
 
@@ -46,7 +40,7 @@ void MenuButtonsManager::updateMatchmakingTxt()
 		std::string t = "Matchmaking";
 		for (int i = 0; i < nbPoints; i++)
 			t += ".";
-		matchmakingText.setString(t);
+		matchmakingText->SetText(t);
 	}
 }
 
@@ -60,7 +54,7 @@ void MenuButtonsManager::draw(sf::RenderWindow& window)
 	else
 	{	
 		updateMatchmakingTxt();
-		window.draw(matchmakingText);
+		matchmakingText->draw(window);
 		buttons.at(nbButtons).draw(window);
 	}
 }

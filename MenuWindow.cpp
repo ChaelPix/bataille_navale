@@ -17,33 +17,28 @@ void MenuWindow::Initialize()
 {
     menuBackground = new AnimatedBackground("ressources/UI/backgrounds/menuBg/menu_", 50, 28, true, windowSettings.menuWindowSize);
     entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
-    objBDD.setPseudo("snir");
-    objBDD.displayPlayerInfo();
-    statInformation = objBDD.getStatsInfo();
-    NameInformation = objBDD.getIdPlayers();
-    std::cout << statInformation << ":::::::::::::::"<< NameInformation;
+    menuButtonsManager = new MenuButtonsManager(application->getGameFont());
 
-
+    //objBDD.setPseudo("snir");
+    //objBDD.displayPlayerInfo();
+    //statInformation = objBDD.getStatsInfo();
+    //NameInformation = objBDD.getIdPlayers();
+    //std::cout << statInformation << ":::::::::::::::" << NameInformation;
 }
 
 void MenuWindow::HandleEvents(sf::Event& event) {
     mouseManager.update(event, window);
 }
 
-void MenuWindow::StatSQL() {
-
-
-}
-
 void MenuWindow::Update() {
 
-    if (menuButtonsManager.CheckButtonHover(mouseManager))
+    if (menuButtonsManager->CheckButtonHover(mouseManager))
     {
         running = false;
         application->Close();
     }
 
-    if (menuButtonsManager.getIsMatchMaking())
+    if (menuButtonsManager->getIsMatchMaking())
     {
         if (application->client == nullptr)
             application->CreateClient();
@@ -64,7 +59,7 @@ void MenuWindow::Render()
     for (auto& entity : entitiesPtr)
         entity->draw(window);
 
-    menuButtonsManager.draw(window);
+    menuButtonsManager->draw(window);
     if (!isLoad) {
 
         FontStat.loadFromFile(font.fontPath);

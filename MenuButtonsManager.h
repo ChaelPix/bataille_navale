@@ -3,6 +3,7 @@
 #include "EntityRectangle.h"
 #include "MouseManager.h"
 #include "WaitTimer.h"
+#include "EntityText.h"
 
 class MenuButtonsManager
 {
@@ -14,9 +15,7 @@ private:
 	const int nbButtons = 3;
 	const int nbTextures = 8;
 	sf::Texture buttonsTextures[8];
-
-	sf::Font font;
-	sf::Text matchmakingText;
+	EntityText* matchmakingText;
 
 	bool isMatchMaking = false;
 	int nbPoints;
@@ -25,7 +24,7 @@ private:
 	void updateMatchmakingTxt();
 
 public:
-	MenuButtonsManager();
+	MenuButtonsManager(sf::Font & font);
 
 	void draw(sf::RenderWindow& window);
 	bool CheckButtonHover(MouseManager& mouse);

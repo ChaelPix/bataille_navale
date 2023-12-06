@@ -9,7 +9,8 @@ protected:
     sf::Text Text;
 
 public:
-    EntityText(sf::Font &font, sf::Vector2f position, int size, std::string text);
+    EntityText(sf::Font &font, int size, std::string text);
+    EntityText(sf::Font &font, const sf::Vector2f position, const int size, std::string text);
 
     void SetText(std::string txt);
 
@@ -19,5 +20,13 @@ public:
     void SetCharacterSize(int size);
 
     void SetColor(sf::Color color);
+
+    void update() override;
+    void draw(sf::RenderWindow& window) override;
+
+    sf::Text getText();
+
+    float getWidth();
+    float getHeight();
 };
 

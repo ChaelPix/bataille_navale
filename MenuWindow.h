@@ -36,7 +36,7 @@ private:
     sf::Font FontStat;
     MouseManager mouseManager;
     AnimatedBackground* menuBackground;
-    MenuButtonsManager menuButtonsManager;
+    MenuButtonsManager* menuButtonsManager;
     std::string statInformation;
     std::string NameInformation;
     bool isLoad = false;
