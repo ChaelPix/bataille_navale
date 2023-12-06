@@ -54,19 +54,19 @@ int main() {
     {
         case '1':
             launchSplash();
-            break;
+            return 0;
 
         case '3':    
             launchGame();
-            break;
+            return 0 ;
 
         case '4':
             ServerMod();
-            break;
+            return 0;
 
         default:
             launchMenu();
-            break;
+            return 0;
     }
 
 

@@ -8,7 +8,7 @@
 #include "MouseManager.h"
 #include "MenuButtonsManager.h"
 #include "BsBDD.h"
-#include "EntityTextBox.h"
+#include "LoginMenu.h"
 
 class MenuWindow : public SfmlWindow
 {
@@ -35,7 +35,7 @@ private:
     MenuButtonsManager* menuButtonsManager;
     std::vector<Entity*> entitiesPtr;
 
-    EntityTextBox* textBoxtest;
+    LoginMenu* loginMenu;
 };
 
 /*

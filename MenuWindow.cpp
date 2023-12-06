@@ -19,7 +19,7 @@ void MenuWindow::Initialize()
     entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
     menuButtonsManager = new MenuButtonsManager(application->getGameFont());
 
-    textBoxtest = new EntityTextBox(sf::Vector2f(200, 300), nullptr, application->getGameFont());
+    loginMenu = new LoginMenu(application->getGameFont());
 
     //objBDD.setPseudo("snir");
     //objBDD.displayPlayerInfo();
@@ -34,7 +34,7 @@ void MenuWindow::HandleEvents(sf::Event& event) {
 
 void MenuWindow::Update(sf::Event& event) {
 
-    textBoxtest->update(event);
+    loginMenu->update(event, mouseManager);
 
     if (menuButtonsManager->CheckButtonHover(mouseManager))
     {
@@ -64,7 +64,7 @@ void MenuWindow::Render()
         entity->draw(window);
 
     menuButtonsManager->draw(window);
-    textBoxtest->draw(window);
+    loginMenu->draw(window);
 
 }
 

@@ -1,6 +1,6 @@
 #include "EntityTextBox.h"
 
-EntityTextBox::EntityTextBox(sf::Vector2f position, sf::Texture* texture, sf::Font &font)
+EntityTextBox::EntityTextBox(sf::Vector2f position, sf::Texture* texture, sf::Font &font, std::string description)
 {
 	isSelected = false;
 	inputText = "";
@@ -13,10 +13,15 @@ EntityTextBox::EntityTextBox(sf::Vector2f position, sf::Texture* texture, sf::Fo
 	selectedBackground = new EntityRectangle(textBoxSettings.selectBoxSize, position + textBoxSettings.selectBoxOffset + sf::Vector2f(0, textBoxSettings.textBoxSize.y), textBoxSettings.selectBoxColor);
 	
 	text = new EntityText(font, position, textBoxSettings.maxCharacterSize, sf::Color::Black);
+	defaultText = new EntityText(font, position, textBoxSettings.maxCharacterSize, textBoxSettings.defaultTextColor);
+	defaultText->SetText(description);
 }
 
 void EntityTextBox::update(sf::Event &event)
 {
+	if (!isSelected)
+		return;
+
     if (cooldown.getElapsedTime().asMilliseconds() >= textBoxSettings.timeCooldownTyping)
     {
 		cooldown.restart();
@@ -46,6 +51,27 @@ void EntityTextBox::update(sf::Event &event)
 void EntityTextBox::draw(sf::RenderWindow& window)
 {
 	textBackground->draw(window);
-	selectedBackground->draw(window);
+
+	if(isSelected)
+		selectedBackground->draw(window);
+
 	text->draw(window);
+
+	if (inputText.isEmpty())
+		defaultText->draw(window);
+}
+
+bool EntityTextBox::isOnTextBox(sf::Vector2f pos)
+{
+	return textBackground->getShape().getGlobalBounds().contains(pos);
+}
+
+std::string EntityTextBox::getText()
+{
+	return inputText;
+}
+
+void EntityTextBox::setSelected(bool isSelected)
+{
+	this->isSelected = isSelected;
 }

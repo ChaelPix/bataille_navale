@@ -80,11 +80,25 @@ struct BoatSettings {
 };
 
 struct TextBoxSettings {
-    const sf::Vector2f textBoxSize = sf::Vector2f(300, 50);
-    const sf::Vector2f selectBoxSize = sf::Vector2f(300, 5);
+    const sf::Vector2f textBoxSize = sf::Vector2f(500, 50);
+    const sf::Vector2f selectBoxSize = sf::Vector2f(500, 5);
     const sf::Vector2f selectBoxOffset = sf::Vector2f(0, 5);
     const sf::Color selectBoxColor = sf::Color::Blue;
+    const sf::Color defaultTextColor = sf::Color(124, 124, 124, 200);
     const int maxCharacterSize = 40;
     const int minCharacterSize = 3;
     const int timeCooldownTyping = 75;
+};
+
+struct LoginMenuSettings {
+    const sf::Vector2f usernameTextBoxPos = sf::Vector2f(200, 300);
+    const sf::Vector2f passwordTextBosPos = sf::Vector2f(200, 400);
+
+    const sf::Vector2f buttonSize = sf::Vector2f(228, 80);
+    const sf::Vector2f buttonPos = sf::Vector2f(200, 500);
+
+    const std::string buttonImagePaths[2] = {
+  "ressources/UI/ui_menu_playbutton_off.png",
+  "ressources/UI/ui_menu_playbutton_on.png"
+    };
 };
