@@ -15,6 +15,8 @@
 #include <jdbc/cppconn/resultset.h>
 #include <jdbc/cppconn/statement.h>
 #include <jdbc/cppconn/prepared_statement.h>
+#include <iomanip>
+
 
 class BsBDD {
 
@@ -29,7 +31,7 @@ private:
     std::string score;
     std::string nbGames;
     std::string nbLostGames;
-    int nbWonGames;
+    std::string nbWonGames;
     std::string idPlayers;
 
 public:

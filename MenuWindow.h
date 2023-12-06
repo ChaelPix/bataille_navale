@@ -32,11 +32,14 @@ private:
     FontSettings font;
     BsBDD objBDD;
     sf::Text stat; 
+    sf::Text name; 
     sf::Font FontStat;
     MouseManager mouseManager;
     AnimatedBackground* menuBackground;
     MenuButtonsManager menuButtonsManager;
-
+    std::string statInformation;
+    std::string NameInformation;
+    bool isLoad = false;
     std::vector<Entity*> entitiesPtr;
 };
 

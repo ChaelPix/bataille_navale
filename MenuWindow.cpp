@@ -17,6 +17,12 @@ void MenuWindow::Initialize()
 {
     menuBackground = new AnimatedBackground("ressources/UI/backgrounds/menuBg/menu_", 50, 28, true, windowSettings.menuWindowSize);
     entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
+    objBDD.setPseudo("snir");
+    objBDD.displayPlayerInfo();
+    statInformation = objBDD.getStatsInfo();
+    NameInformation = objBDD.getIdPlayers();
+    std::cout << statInformation << ":::::::::::::::"<< NameInformation;
+
 
 }
 
@@ -26,7 +32,6 @@ void MenuWindow::HandleEvents(sf::Event& event) {
 
 void MenuWindow::StatSQL() {
 
-  
 
 }
 
@@ -49,9 +54,7 @@ void MenuWindow::Update() {
             running = false;
             application->ChangeState(GameApplication::State::Game);
         }
-    }
-
-    
+    } 
 }
 
 void MenuWindow::Render()
@@ -61,16 +64,26 @@ void MenuWindow::Render()
         entity->draw(window);
 
     menuButtonsManager.draw(window);
+    if (!isLoad) {
 
-    objBDD.registerUser("snir", "snir");
-    FontStat.loadFromFile(font.fontPath);
+        FontStat.loadFromFile(font.fontPath);
 
-    // Créer un texte
-    stat.setFont(FontStat);
-    stat.setString(objBDD.getStatsInfo());
-    stat.setCharacterSize(50); // en pixels
-    stat.setFillColor(sf::Color::White);
-    stat.setPosition(500, 500);
-    window.draw(stat);
+        // Créer un texte
+        stat.setFont(FontStat);
+        stat.setString(statInformation);
+        stat.setCharacterSize(40); // en pixels
+        stat.setFillColor(sf::Color(192, 192, 192));
+        stat.setPosition(1023, 200);
+
+        // Créer un texte
+        name.setFont(FontStat);
+        name.setString("Welcome " + NameInformation);
+        name.setCharacterSize(65); // en pixels
+        name.setFillColor(sf::Color(204, 102, 0));
+        name.setPosition(950, 120);
+
+        window.draw(stat); 
+        window.draw(name);
+    }
 
 }

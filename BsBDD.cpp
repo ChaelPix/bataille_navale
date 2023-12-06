@@ -79,7 +79,10 @@ bool BsBDD::login(const std::string& idUser, const std::string& password) {
 
 
 bool BsBDD::registerUser(const std::string& idUser, const std::string& password) {
+    std::cout << espace << "debug" << std::endl;
     try {
+        std::cout << espace << "debug2" << std::endl;
+
         pstmt = con->prepareStatement("SELECT idPlayers FROM player WHERE idPlayers = ?");
         pstmt->setString(1, idUser);
         res = pstmt->executeQuery();
@@ -100,6 +103,8 @@ bool BsBDD::registerUser(const std::string& idUser, const std::string& password)
         pstmt->setString(1, idUser);
         pstmt->executeUpdate();
         this->userId = idUser; // Définir l'userId pour l'utilisateur connecté
+        std::cout << espace << "debug3" << std::endl;
+
         return true;
     }
     catch (sql::SQLException& e) {
@@ -208,6 +213,7 @@ void BsBDD::displayPlayerInfo() {
             this->nbGames = std::to_string(res->getInt("nbGames"));
             this->nbLostGames = std::to_string(res->getInt("nbLostGames"));
             this->nbWonGames = std::to_string(res->getInt("nbWonGames"));
+            this->idPlayers = std::to_string(res->getInt("idPlayers"));
         }
         else {
             std::cout << espace << "Aucune information trouv\202e pour l'utilisateur " << userId << "." << std::endl;
@@ -229,14 +235,22 @@ bool BsBDD::isConnect() {
 
 std::string BsBDD::getStatsInfo()
 {
-    //int Win = std::stoi(nbWonGames);
-    //int loss = std::stoi(nbLostGames);
+    float Win = std::stoi(nbWonGames);
+    float loss = std::stoi(nbLostGames);
+
+    double kdRatio = Win / loss;
+    std::ostringstream stream;
+    stream << std::fixed << std::setprecision(2) << kdRatio;
+    std::string kdRatioString = stream.str();
+
     std::string statInfo = "";
+    //statInfo += "Welcome " + userId + "\n";
+
     statInfo += "Victories: " + nbWonGames + "\n";
     statInfo += "Defeat: " + nbLostGames + "\n";
-    //if (loss > 0) {
-    //    statInfo += "K/D: " + std::to_string(Win / loss) + "\n";
-    //}
+    if (loss > 0) {
+        statInfo += "K/D: " + kdRatioString + "\n";
+    }
     return statInfo;
 }
 
@@ -261,5 +275,5 @@ std::string BsBDD::getNbWonGames() const {
 }
 
 std::string BsBDD::getIdPlayers() const {
-    return idPlayers;
+    return userId;
 }
