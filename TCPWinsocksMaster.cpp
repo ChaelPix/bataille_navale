@@ -66,3 +66,4 @@ void TCPWinsocksMaster::closeSocket()
 	closesocket(idSocket);
 }
 
+

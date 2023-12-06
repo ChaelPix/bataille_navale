@@ -41,6 +41,7 @@ public:
     void closeSocket() override;
     std::string receiveMessageFromClient(SOCKET clientId);
     virtual void acceptClients();
+    bool isSocketActive(SOCKET clientSocket);
 
 protected:
     void setupAddress();

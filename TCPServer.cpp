@@ -51,12 +51,17 @@ void TCPServer::acceptClients()
             SOCKET clientSocket = accept(idSocket, (struct sockaddr*)&adr_client, &addr_len);
           
             if (clientSocket != INVALID_SOCKET) {
-                idsClients.push_back(clientSocket);
-                {
-                    std::lock_guard<std::mutex> lock(matchmakingMutex);
-                    matchmakingQueue.push(clientSocket);
+                if (isSocketActive(clientSocket)) {
+                    idsClients.push_back(clientSocket);
+                    {
+                        std::lock_guard<std::mutex> lock(matchmakingMutex);
+                        matchmakingQueue.push(clientSocket);
+                    }
+                    cvMatchmaking.notify_one();
                 }
-                cvMatchmaking.notify_one();
+                else {
+                    closeClientSocket(clientSocket);
+                }
             }
         }
     }
@@ -72,6 +77,12 @@ void TCPServer::matchClientsForGame()
 
         SOCKET client1 = matchmakingQueue.front(); matchmakingQueue.pop();
         SOCKET client2 = matchmakingQueue.front(); matchmakingQueue.pop();
+
+        if (!isSocketActive(client1) || !isSocketActive(client2)) {
+            closeClientSocket(client1);
+            closeClientSocket(client2);
+            continue;
+        }
 
         gameThreads[client1] = std::thread(&TCPServer::gameSession, this, client1, client2, false);
         gameThreads[client2] = std::thread(&TCPServer::gameSession, this, client2, client1, true);
@@ -156,4 +167,11 @@ std::string TCPServer::processGameMessage(const std::string& message)
 {
 
     return message; 
+}
+
+bool TCPServer::isSocketActive(SOCKET clientSocket) {
+    char buffer;
+    int result = recv(clientSocket, &buffer, 1, MSG_PEEK);
+    if (result <= 0) return false; 
+    return true; 
 }
