@@ -41,6 +41,7 @@ public:
     void Close();
 
     void setClientStartFirst(bool isTrue);
+    bool getClientStartFirst();
 
     bool isCorrectMessageType(std::string message = "", MessageType targetType = MessageType::Game);
 };

@@ -25,6 +25,8 @@ void GameWindow::HandleEvents(sf::Event& event) {
 
 void GameWindow::Update() {
     
+    std::string message = "";
+
     switch (gameState)
     {
     case GameState::Placing:
@@ -43,13 +45,21 @@ void GameWindow::Update() {
 
     case GameState::WaitingGrid:
 
-        std::string message = application->client->getMessage();
-        std::cout << "Grille recue : \n" << message << std::endl;
-        if (application->isCorrectMessageType()) 
+        message = application->client->getMessage();
+        if (application->isCorrectMessageType(message)) 
         {
-            gameState = GameState::Attacking;
+            std::cout << "Grille recue : \n" << message << std::endl;
+            application->getClientStartFirst() ? gameState = GameState::Attacking : gameState = GameState::Waiting;
         }
 
+        break;
+
+    case GameState::Attacking:
+        std::cout << " you attack first !" << std::endl;
+        break;
+
+    case GameState::Waiting:
+        std::cout << "you have to wait your turn !" << std::endl;
         break;
     }
 

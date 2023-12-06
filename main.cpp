@@ -32,7 +32,7 @@ void launchGame()
 }
 
 int main() {
-
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
     std::cout << "[DEBUG] SELECT MENU: " << std::endl
         << "[0] Main Menu " << std::endl
         << "[1] Game Menu " << std::endl

@@ -81,7 +81,6 @@ void TCPServer::matchClientsForGame()
 void TCPServer::gameSession(SOCKET client1, SOCKET client2, bool isFirstPlayerToPlay)
 {
     std::string message = "";
-    isFirstPlayerToPlay ? message = "GStart" : message = "GWait";
     send(client2, message.c_str(), message.length(), 0);
 
     try {

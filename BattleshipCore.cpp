@@ -92,7 +92,7 @@ BattleshipCore::BoatInfo BattleshipCore::randomPlacing(int boatSize)
 
 
 std::string BattleshipCore::serializePlayerGrid() const {
-    std::string result;
+    std::string result = "G";
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
             switch (playerGrid[i][j]) {

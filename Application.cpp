@@ -28,6 +28,11 @@ void GameApplication::setClientStartFirst(bool isTrue)
     doClientStartFirst = isTrue;
 }
 
+bool GameApplication::getClientStartFirst()
+{
+    return doClientStartFirst;
+}
+
 bool GameApplication::isCorrectMessageType(std::string message, MessageType targetType)
 {
     char firstLetter;
