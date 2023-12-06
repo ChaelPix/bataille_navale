@@ -23,6 +23,11 @@ void GameApplication::Close() {
     running = false;
 }
 
+void GameApplication::setClientStartFirst(bool isTrue)
+{
+    doClientStartFirst = isTrue;
+}
+
 void GameApplication::ChangeState(State newState) {
     currentState = newState;
     switch (currentState) 

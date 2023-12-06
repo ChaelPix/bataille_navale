@@ -15,7 +15,7 @@ class GameApplication;
 class GameWindow : public SfmlWindow {
 public:
     GameWindow(GameApplication& application);
-    enum class GameState {Placing, Attacking, Waiting, Victory, Defeat};
+    enum class GameState {Placing, WaitingGrid, Attacking, Waiting, Victory, Defeat};
 protected:
     void Initialize() override;
 

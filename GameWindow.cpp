@@ -35,8 +35,20 @@ void GameWindow::Update() {
         if (timer.getElapsedTime().asSeconds() >= 15) {
             timer.restart();
             playerBoatsManager->RandomPlacement();
+
+            application->client->sendMessage(battleshipCore.serializePlayerGrid());
+            gameState = GameState::WaitingGrid;
+        }
+        break;
+
+    case GameState::WaitingGrid:
+
+        std::string message = application->client->getMessage();
+        std::cout << "Grille recue : \n" << message << std::endl;
+        if (!message.empty()) {
             gameState = GameState::Attacking;
         }
+
         break;
     }
 

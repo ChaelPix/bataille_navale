@@ -31,7 +31,7 @@ public:
 
 	BoatInfo randomPlacing(int boatSize);
 
-	std::string serialisationJoueur() const;
+	std::string serializePlayerGrid() const;
 
 	
 };

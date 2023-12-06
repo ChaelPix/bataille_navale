@@ -20,6 +20,7 @@ private:
     bool running = true;
     State currentState;
     std::unique_ptr<SfmlWindow> currentWindow;
+    bool doClientStartFirst;
 
 public:
     GameApplication();
@@ -33,4 +34,6 @@ public:
     void CreateClient();
 
     void Close();
+
+    void setClientStartFirst(bool isTrue);
 };

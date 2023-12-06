@@ -61,7 +61,7 @@ bool BattleshipCore::modifyBoat(int row, int column, int boatSize, bool isRotate
         playerGrid[l][c] = newCellType;
     }
 
-    std::cout << serialisationJoueur();
+    std::cout << serializePlayerGrid();
     return true;
 }
 
@@ -91,7 +91,7 @@ BattleshipCore::BoatInfo BattleshipCore::randomPlacing(int boatSize)
 }
 
 
-std::string BattleshipCore::serialisationJoueur() const {
+std::string BattleshipCore::serializePlayerGrid() const {
     std::string result;
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {

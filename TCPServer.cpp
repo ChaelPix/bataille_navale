@@ -80,7 +80,8 @@ void TCPServer::matchClientsForGame()
 
 void TCPServer::gameSession(SOCKET client1, SOCKET client2, bool isFirstPlayerToPlay)
 {
-    const std::string message = "Adversaire trouvé Socket client 1 : " + std::to_string(client1) + " client 2 : " + std::to_string(client2);
+    std::string message = "";
+    isFirstPlayerToPlay ? message = "GStart" : message = "GWait";
     send(client2, message.c_str(), message.length(), 0);
 
     try {
