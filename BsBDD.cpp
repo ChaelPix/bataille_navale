@@ -1,7 +1,7 @@
 #include "BsBDD.h"
 
 BsBDD::BsBDD() : userId("") {
-    connectToDB("tcp://10.187.52.4:3306", "batailleNavale", "batailleNavale");
+    //connectToDB("tcp://10.187.52.4:3306", "batailleNavale", "batailleNavale");
 }
 
 BsBDD::~BsBDD() {
@@ -189,6 +189,8 @@ void BsBDD::incrementNbWonGames() {
 }
 
 void BsBDD::displayPlayerInfo() {
+    return;
+
     if (userId.empty()) {
         std::cout << espace << "Aucun utilisateur connecté." << std::endl;
         return;
@@ -235,6 +237,8 @@ bool BsBDD::isConnect() {
 
 std::string BsBDD::getStatsInfo()
 {
+    return "";
+
     float Win = std::stoi(nbWonGames);
     float loss = std::stoi(nbLostGames);
 

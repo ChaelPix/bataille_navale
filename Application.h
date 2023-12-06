@@ -14,12 +14,14 @@ public:
     enum class State {
         Splash,
         Menu,
-        Game
+        Game,
     };
 
     enum class MessageType {
         Game,
-        Chat
+        Chat,
+        BattleGrid,
+        Unknown
     };
 
     TCPClient* client;
@@ -46,4 +48,5 @@ public:
     bool getClientStartFirst();
 
     bool isCorrectMessageType(std::string message = "", MessageType targetType = MessageType::Game);
+    MessageType getMessageType(std::string message);
 };

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <sstream>
 
 class BattleshipCore
 {
@@ -22,6 +23,8 @@ private:
 	CellType playerGrid[nbLig][nbCol];
 	CellType targetGrid[nbLig][nbCol];
 
+	bool hasReceivedOpponentGrid;
+
 public:
 	BattleshipCore();
 	void NewGrid();
@@ -33,6 +36,8 @@ public:
 
 	std::string serializePlayerGrid() const;
 
-	
+	bool getHasReceivedOpponentGrid() const;
+
+	void setTargetGrid(std::string grid);
 };
 

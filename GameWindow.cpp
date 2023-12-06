@@ -25,8 +25,21 @@ void GameWindow::HandleEvents(sf::Event& event) {
 
 void GameWindow::Update() {
     
+    //check Messages
     std::string message = "";
+    message = application->client->getMessage();
 
+    if (!message.empty())
+    {
+        switch (application->getMessageType(message))
+        {
+        case GameApplication::MessageType::BattleGrid:
+            battleshipCore.setTargetGrid(message);
+            break;
+        }
+    }
+   
+    //State Machine
     switch (gameState)
     {
     case GameState::Placing:
@@ -41,14 +54,14 @@ void GameWindow::Update() {
             application->client->sendMessage(battleshipCore.serializePlayerGrid());
             gameState = GameState::WaitingGrid;
         }
+
         break;
 
     case GameState::WaitingGrid:
 
-        message = application->client->getMessage();
-        if (application->isCorrectMessageType(message)) 
+        if (battleshipCore.getHasReceivedOpponentGrid()) 
         {
-            std::cout << "Grille recue : \n" << message << std::endl;
+            std::cout << "Opponent Grid Received : \n" << message << std::endl;
             application->getClientStartFirst() ? gameState = GameState::Attacking : gameState = GameState::Waiting;
         }
 

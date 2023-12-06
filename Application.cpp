@@ -41,6 +41,23 @@ bool GameApplication::isCorrectMessageType(std::string message, MessageType targ
     return !message.empty() && message.at(0) == firstLetter;
 }
 
+GameApplication::MessageType GameApplication::getMessageType(std::string message)
+{
+    switch (message.at(0))
+    {
+    case 'G':
+        return MessageType::Game;
+    case 'B':
+        return MessageType::BattleGrid;
+    case 'C':
+        return MessageType::Chat;
+    default :
+        return MessageType::Unknown;
+    }
+}
+
+
+
 void GameApplication::ChangeState(State newState) {
     currentState = newState;
     switch (currentState) 

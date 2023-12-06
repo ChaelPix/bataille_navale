@@ -3,6 +3,7 @@
 
 BattleshipCore::BattleshipCore()
 {
+    hasReceivedOpponentGrid = false;
     NewGrid();
 }
 
@@ -92,7 +93,7 @@ BattleshipCore::BoatInfo BattleshipCore::randomPlacing(int boatSize)
 
 
 std::string BattleshipCore::serializePlayerGrid() const {
-    std::string result = "G";
+    std::string result = "B";
     for (int i = 0; i < nbLig; ++i) {
         for (int j = 0; j < nbCol; ++j) {
             switch (playerGrid[i][j]) {
@@ -106,4 +107,41 @@ std::string BattleshipCore::serializePlayerGrid() const {
         result += "\n";
     }
     return result;
+}
+
+bool BattleshipCore::getHasReceivedOpponentGrid() const
+{
+    return hasReceivedOpponentGrid;
+}
+
+void BattleshipCore::setTargetGrid(std::string grid)
+{
+    grid.erase(0, 1); //remove msg identification ('B')
+
+    std::istringstream iss(grid);
+    std::string ligneTrame;
+    int numLigne = 0;
+
+    while (std::getline(iss, ligneTrame) && numLigne < nbLig) {
+
+        for (int numColonne = 0; numColonne < nbCol; ++numColonne) {
+            char caractere = ligneTrame[numColonne];
+            CellType caseType;
+
+            switch (caractere) {
+            case 'B': caseType = CellType::boat; break;
+            case 'T': caseType = CellType::hit; break;
+            case 'E': caseType = CellType::water; break;
+            case 'V': caseType = CellType::empty;
+            default:
+                caseType = CellType::empty;
+            }
+
+            targetGrid[numLigne][numColonne] = caseType;
+        }
+
+        ++numLigne;
+    }
+
+    hasReceivedOpponentGrid = true;
 }
