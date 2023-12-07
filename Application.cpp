@@ -12,7 +12,8 @@ GameApplication::GameApplication(State state) : currentState(state) {
 
 GameApplication::~GameApplication()
 {
-    client->closeSocket();
+    if(client != nullptr)
+        client->closeSocket();
 }
 
 void GameApplication::Initialize()
