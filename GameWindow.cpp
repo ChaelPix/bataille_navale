@@ -93,7 +93,6 @@ void GameWindow::Render()
     cloudManager->draw(window);
     gridEnemy.DrawGrid(window);
 
-    std::cout << "cursor call : " << std::endl;
     cursor->draw(window, mouseManager);
 
 }

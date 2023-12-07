@@ -26,6 +26,7 @@ public:
     virtual ~SfmlWindow() = default;
 
     void Run();
+    bool CheckAlive();
     void Stop();
 
     std::string wName = "sfml";

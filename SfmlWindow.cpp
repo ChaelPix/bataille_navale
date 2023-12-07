@@ -8,8 +8,10 @@ void SfmlWindow::Run() {
     //window.setFramerateLimit(60);
     //window.setVerticalSyncEnabled(true);
 
-    while (window.isOpen()) {
+    while (CheckAlive()) {
 
+        if (!CheckAlive())
+            break;
 
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -19,12 +21,7 @@ void SfmlWindow::Run() {
         }
         Update(event);
 
-        if (!running)
-            break;
-
-       // std::cout << wName << std::endl;
-
-        if (this == nullptr)
+        if (!CheckAlive())
             break;
 
         Render();
@@ -39,7 +36,15 @@ void SfmlWindow::Run() {
     }
 }
 
+bool SfmlWindow::CheckAlive()
+{
+    return running && window.isOpen() && this != nullptr;
+}
+
+
+
 void SfmlWindow::Stop()
 {
+    running = false;
     window.close();
 }

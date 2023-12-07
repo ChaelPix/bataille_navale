@@ -116,7 +116,7 @@ bool BattleshipCore::getHasReceivedOpponentGrid() const
 
 bool BattleshipCore::isTargetCellEmpty(int x, int y)
 {
-    return targetGrid[x][y] == CellType::empty;
+    return targetGrid[x][y] != CellType::hit;
 
 }
 

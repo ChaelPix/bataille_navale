@@ -22,9 +22,9 @@ void GameApplication::Initialize()
 }
 
 void GameApplication::Run() {
+
     while (running) {       
-        if(currentWindow != nullptr)
-            currentWindow->Run();
+       currentWindow->Run();
     }
 }
 
@@ -77,6 +77,7 @@ void GameApplication::ChangeState(State newState) {
 
     if (currentWindow != nullptr)
         currentWindow->Stop();
+
     currentWindow.reset();
 
     switch (currentState) 
