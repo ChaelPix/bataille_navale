@@ -21,6 +21,10 @@ protected:
     void Initialize() override;
 
     void HandleEvents(sf::Event& event) override;
+    
+    //TEST HUD
+    void SetupHud(const std::string& imagePath, const std::string& fontPath, const std::string& text);
+    void Hud();
 
     void Update(sf::Event& event) override;
 
@@ -48,6 +52,13 @@ private:
     GameState gameState;
 
     CursorCellSelector* cursor;
+
+    //TEST HUD
+    sf::Texture hudTexture;
+    sf::Sprite hudSprite;
+    sf::Font hudFont;
+    sf::Text hudText;
 };
 
 
+//"ressources/UI/hud_Player.png"   "ressources/fonts/AGENCYB.TTF"  "Player 1"
