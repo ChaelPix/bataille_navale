@@ -53,7 +53,7 @@ void TCPServer::acceptClients()
             if (clientSocket != INVALID_SOCKET) {
                 idsClients.push_back(clientSocket);
                 {
-                    std::cout << "Bonjour client";
+                    std::cout << "a Client is connected : " << clientSocket << std::endl;
                     std::lock_guard<std::mutex> lock(matchmakingMutex);
                     matchmakingQueue.push(clientSocket);
                 }
@@ -73,6 +73,8 @@ void TCPServer::matchClientsForGame()
 
         SOCKET client1 = matchmakingQueue.front(); matchmakingQueue.pop();
         SOCKET client2 = matchmakingQueue.front(); matchmakingQueue.pop();
+
+        std::cout << "Matchmaking made between : " << client1 << " and " << client2 << std::endl;
 
         gameThreads[client1] = std::thread(&TCPServer::gameSession, this, client1, client2, false);
         gameThreads[client2] = std::thread(&TCPServer::gameSession, this, client2, client1, true);

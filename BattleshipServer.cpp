@@ -7,7 +7,9 @@ void BattleshipServer::gameSession(SOCKET client1, SOCKET client2, bool isFirstP
     //first message
     std::string message = "";
     isFirstPlayerToPlay ? message = "GStart" : message = "GWait";
+    std::cout << "Sent to " << client2 << " " << message << std::endl;
     send(client2, message.c_str(), message.length(), 0);
+
     //GameLoop
     try {
 
@@ -22,6 +24,7 @@ void BattleshipServer::gameSession(SOCKET client1, SOCKET client2, bool isFirstP
                 break;
             }
 
+            std::cout << "Message received from " << client1 << " send to " << client2 << " containing : \n" << messageFromClient1 << std::endl;
             std::string response = processGameMessage(messageFromClient1);
             send(client2, response.c_str(), response.length(), 0);
         }
