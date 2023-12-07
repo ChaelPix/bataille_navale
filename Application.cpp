@@ -65,8 +65,7 @@ GameApplication::MessageType GameApplication::getMessageType(std::string message
 }
 
 sf::Font& GameApplication::getGameFont()
-{
-    
+{  
     return gameFont;
 }
 
@@ -95,6 +94,6 @@ void GameApplication::ChangeState(State newState) {
 
 void GameApplication::CreateClient()
 {
-   this->client = new TCPClient("127.0.0.1", 12345);
+   this->client = new TCPClient("10.187.52.31", 12345);
 }
 

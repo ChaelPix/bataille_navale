@@ -5,9 +5,15 @@ SfmlWindow::SfmlWindow(const std::string& title, const sf::Vector2f& size)
 
 void SfmlWindow::Run() {
 
+    sf::Time timePerFrame = sf::seconds(1.f / 60.f); // 60 FPS
     sf::Clock frameClock;
 
+    //window.setFramerateLimit(60);
+    //window.setVerticalSyncEnabled(true);
+
     while (window.isOpen()) {
+        sf::Time startTime = frameClock.getElapsedTime();
+
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
@@ -23,10 +29,10 @@ void SfmlWindow::Run() {
         Render();
         window.display();
 
-        sf::Time frameTime = frameClock.restart();
-        sf::Time timePerFrame = sf::milliseconds(16); 
-        if (frameTime < timePerFrame) {
-            sf::sleep(timePerFrame - frameTime);
-        }
+        //sf::Time usedTime = frameClock.getElapsedTime() - startTime;
+        //if (usedTime < timePerFrame) {
+        //    sf::sleep(timePerFrame - usedTime);
+        //}
+        //frameClock.restart();
     }
 }

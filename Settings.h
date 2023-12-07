@@ -93,9 +93,9 @@ struct TextBoxSettings {
 struct LoginMenuSettings {
     const sf::Vector2f usernameTextBoxPos = sf::Vector2f(200, 300);
     const sf::Vector2f passwordTextBosPos = sf::Vector2f(200, 400);
+    const sf::Vector2f buttonPos = sf::Vector2f(200, 500);
 
     const sf::Vector2f buttonSize = sf::Vector2f(228, 80);
-    const sf::Vector2f buttonPos = sf::Vector2f(200, 500);
 
     const std::string buttonImagePaths[2] = {
   "ressources/UI/ui_menu_playbutton_off.png",

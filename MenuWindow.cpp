@@ -34,7 +34,7 @@ void MenuWindow::HandleEvents(sf::Event& event) {
 
 void MenuWindow::Update(sf::Event& event) {
 
-    loginMenu->update(event, mouseManager);
+    //loginMenu->update(event, mouseManager);
 
     if (menuButtonsManager->CheckButtonHover(mouseManager))
     {
@@ -64,7 +64,7 @@ void MenuWindow::Render()
         entity->draw(window);
 
     menuButtonsManager->draw(window);
-    loginMenu->draw(window);
+    //loginMenu->draw(window);
 
 }
 

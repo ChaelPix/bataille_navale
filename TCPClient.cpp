@@ -41,6 +41,7 @@ std::string TCPClient::getMessage() {
     if (!messageQueue.empty()) {
         std::string message = messageQueue.front();
         messageQueue.pop();
+        
         return message;
     }
     return "";

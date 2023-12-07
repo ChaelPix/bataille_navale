@@ -8,7 +8,6 @@ void BattleshipServer::gameSession(SOCKET client1, SOCKET client2, bool isFirstP
     std::string message = "";
     isFirstPlayerToPlay ? message = "GStart" : message = "GWait";
     send(client2, message.c_str(), message.length(), 0);
-
     //GameLoop
     try {
 
