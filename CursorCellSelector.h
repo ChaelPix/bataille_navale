@@ -18,7 +18,7 @@ public:
 
 	CursorCellSelector(BattleshipCore &battleshipCore);
 
-	void draw(sf::RenderWindow window, MouseManager& mouse);
+	void draw(sf::RenderWindow& window, MouseManager& mouse);
 
 };
 

@@ -50,24 +50,7 @@ int main() {
     std::cin >> x;
     system("cls");
 
-    switch (x)
-    {
-        case '1':
-            launchSplash();
-            return 0;
-
-        case '3':    
-            launchGame();
-            return 0 ;
-
-        case '4':
-            ServerMod();
-            return 0;
-
-        default:
-            launchMenu();
-            return 0;
-    }
+    launchMenu();
 
 
     return 0;

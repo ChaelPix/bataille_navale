@@ -11,6 +11,7 @@ class GameApplication;
 #include "BattleshipCore.h"
 #include "CloudManager.h"
 #include <vector>
+#include "CursorCellSelector.h"
 
 class GameWindow : public SfmlWindow {
 public:
@@ -45,6 +46,8 @@ private:
 
     sf::Clock timer;
     GameState gameState;
+
+    CursorCellSelector* cursor;
 };
 
 

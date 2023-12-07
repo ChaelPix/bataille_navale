@@ -22,8 +22,9 @@ void GameApplication::Initialize()
 }
 
 void GameApplication::Run() {
-    while (running) {
-        currentWindow->Run();
+    while (running) {       
+        if(currentWindow != nullptr)
+            currentWindow->Run();
     }
 }
 
@@ -73,21 +74,26 @@ sf::Font& GameApplication::getGameFont()
 
 void GameApplication::ChangeState(State newState) {
     currentState = newState;
+
+    if (currentWindow != nullptr)
+        currentWindow->Stop();
+    currentWindow.reset();
+
     switch (currentState) 
     {
         case State::Splash:
-            currentWindow.reset();
+            
             currentWindow = std::make_unique<SplashWindow>(*this);
             break;
 
         case State::Menu:
-            currentWindow.reset();
             currentWindow = std::make_unique<MenuWindow>(*this);
+            currentWindow->wName = "menu";
             break;
 
         case State::Game:
-            currentWindow.reset();
             currentWindow = (std::make_unique<GameWindow>(*this));
+            currentWindow->wName = "game";
             break;
     }
 }

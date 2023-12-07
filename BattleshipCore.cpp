@@ -114,6 +114,12 @@ bool BattleshipCore::getHasReceivedOpponentGrid() const
     return hasReceivedOpponentGrid;
 }
 
+bool BattleshipCore::isTargetCellEmpty(int x, int y)
+{
+    return targetGrid[x][y] == CellType::empty;
+
+}
+
 void BattleshipCore::setTargetGrid(std::string grid)
 {
     grid.erase(0, 1); //remove msg identification ('B')
@@ -132,7 +138,7 @@ void BattleshipCore::setTargetGrid(std::string grid)
             case 'B': caseType = CellType::boat; break;
             case 'T': caseType = CellType::hit; break;
             case 'E': caseType = CellType::water; break;
-            case 'V': caseType = CellType::empty;
+            case 'V': 
             default:
                 caseType = CellType::empty;
             }

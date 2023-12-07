@@ -59,6 +59,9 @@ void MenuWindow::Update(sf::Event& event) {
 
 void MenuWindow::Render()
 {
+    if (!running)
+        return;
+
     menuBackground->draw(window);
     for (auto& entity : entitiesPtr)
         entity->draw(window);
