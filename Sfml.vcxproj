@@ -42,6 +42,7 @@
     <ClCompile Include="MenuWindow.cpp" />
     <ClCompile Include="MouseManager.cpp" />
     <ClCompile Include="PlayerBoatsManager.cpp" />
+    <ClCompile Include="SaveData.cpp" />
     <ClCompile Include="SfmlWindow.cpp" />
     <ClCompile Include="SplashWindow.cpp" />
     <ClCompile Include="TCPClient.cpp" />
@@ -72,6 +73,7 @@
     <ClInclude Include="MouseManager.h" />
     <ClInclude Include="PlayerBoatsManager.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SaveData.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SfmlWindow.h" />
     <ClInclude Include="SplashWindow.h" />

@@ -19,7 +19,7 @@ void MenuWindow::Initialize()
     entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
     menuButtonsManager = new MenuButtonsManager(application->getGameFont());
 
-    loginMenu = new LoginMenu(application->getGameFont());
+    loginMenu = new LoginMenu(application->getGameFont(), application->getBddObj());
 
     //objBDD.setPseudo("snir");
     //objBDD.displayPlayerInfo();
@@ -73,14 +73,14 @@ void MenuWindow::Render()
 
         FontStat.loadFromFile(font.fontPath);
 
-        // Créer un texte
+         Créer un texte
         stat.setFont(FontStat);
         stat.setString(statInformation);
         stat.setCharacterSize(40); // en pixels
         stat.setFillColor(sf::Color(192, 192, 192));
         stat.setPosition(1023, 200);
 
-        // Créer un texte
+         Créer un texte
         name.setFont(FontStat);
         name.setString("Welcome " + NameInformation);
         name.setCharacterSize(65); // en pixels

@@ -19,6 +19,7 @@ void GameApplication::Initialize()
 {
     FontSettings fontSettings;
     gameFont.loadFromFile(fontSettings.fontPath);
+    //objBDD->connectToDB("10.187.52.4", "snir", "snir");
 }
 
 void GameApplication::Run() {
@@ -39,6 +40,12 @@ void GameApplication::setClientStartFirst(bool isTrue)
 bool GameApplication::getClientStartFirst()
 {
     return doClientStartFirst;
+}
+
+BsBDD& GameApplication::getBddObj()
+{
+    objBDD = new BsBDD();
+    return *objBDD;
 }
 
 bool GameApplication::isCorrectMessageType(std::string message, MessageType targetType)
@@ -95,6 +102,6 @@ void GameApplication::ChangeState(State newState) {
 
 void GameApplication::CreateClient()
 {
-   this->client = new TCPClient("127.0.0.1", 12345);
+   this->client = new TCPClient("192.168.52.31", 12345);
 }
 

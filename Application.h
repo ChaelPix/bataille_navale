@@ -7,6 +7,7 @@
 #include "MenuWindow.h"
 #include "SplashWindow.h"
 #include "TCPClient.h"
+#include "BSBDD.h"
 
 
 class GameApplication {
@@ -32,7 +33,7 @@ private:
     State currentState;
     std::unique_ptr<SfmlWindow> currentWindow;
     bool doClientStartFirst;
-
+    BsBDD* objBDD;
     sf::Font gameFont;
 
     void Initialize();
@@ -52,6 +53,8 @@ public:
 
     void setClientStartFirst(bool isTrue);
     bool getClientStartFirst();
+
+    BsBDD& getBddObj();
 
     bool isCorrectMessageType(std::string message = "", MessageType targetType = MessageType::Game);
     MessageType getMessageType(std::string message);

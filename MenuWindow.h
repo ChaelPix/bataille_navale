@@ -28,7 +28,7 @@ protected:
 
 private:
     GameApplication* application;
-    BsBDD objBDD;
+    BsBDD* bdd;
 
     MouseManager mouseManager;
     AnimatedBackground* menuBackground;

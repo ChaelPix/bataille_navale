@@ -33,6 +33,7 @@ private:
     std::string nbLostGames;
     std::string nbWonGames;
     std::string idPlayers;
+    std::vector<std::string> vcase;
 
 public:
     BsBDD();
@@ -50,6 +51,8 @@ public:
     void displayPlayerInfo();
     bool isConnect();
     void getPlayerData();
+    void setAllData(std::vector<std::string>& vcase);
+    void getAllData(std::vector<std::string>&Vector);
     std::string getStatsInfo();
 
     // Déclarations des méthodes getteurs
