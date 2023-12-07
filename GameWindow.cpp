@@ -17,7 +17,7 @@ void GameWindow::Initialize()
 
     timer.restart();
     gameState = GameState::Placing;
-    cursor = new CursorCellSelector(battleshipCore);
+    cursor = new CursorCellSelector(battleshipCore, application->client);
 }
 
 void GameWindow::HandleEvents(sf::Event& event) {
@@ -37,9 +37,14 @@ void GameWindow::Update(sf::Event &event) {
         case GameApplication::MessageType::BattleGrid:
             battleshipCore.setTargetGrid(message);
             break;
+        case GameApplication::MessageType::Chat:
+            std::cout << "Message : " << message;
+        case GameApplication::MessageType::Game:
+            std::cout << "Attack : " << message;
         }
     }
    
+    CursorCellSelector::State attackState;
     //State Machine
     switch (gameState)
     {
@@ -69,11 +74,34 @@ void GameWindow::Update(sf::Event &event) {
         break;
 
     case GameState::Attacking:
-        std::cout << " you attack first !" << std::endl;
+        attackState = cursor->update(mouseManager);
+        switch (attackState)
+        {
+        case CursorCellSelector::State::Nothing:
+
+            break;
+
+        case CursorCellSelector::State::Attacked:
+            gameState = GameState::Waiting;
+            break;
+
+        case CursorCellSelector::State::Win:
+            std::cout << "WIN" << std::endl;
+            break;
+
+        case CursorCellSelector::State::ExtraTurn:
+
+            break;
+
+        default:
+
+            break;
+        }
+
         break;
 
     case GameState::Waiting:
-        std::cout << "you have to wait your turn !" << std::endl;
+        //std::cout << "you have to wait your turn !" << std::endl;
         break;
     }
 
@@ -93,6 +121,7 @@ void GameWindow::Render()
     cloudManager->draw(window);
     gridEnemy.DrawGrid(window);
 
-    cursor->draw(window, mouseManager);
+    if(gameState == GameState::Attacking)
+         cursor->draw(window);
 
 }

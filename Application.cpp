@@ -25,8 +25,10 @@ void GameApplication::Initialize()
 
 void GameApplication::Run() {
 
-    while (running) {       
-       currentWindow->Run();
+    while (running) {
+        if (currentWindow != nullptr) {
+            currentWindow->Run();
+        }
     }
 }
 
@@ -83,15 +85,14 @@ sf::Font& GameApplication::getGameFont()
 void GameApplication::ChangeState(State newState) {
     currentState = newState;
 
-    if (currentWindow != nullptr)
-        currentWindow->aliveFlag = std::make_shared<bool>(false);
+    if (currentWindow)
+        currentWindow = nullptr;
 
     currentWindow.reset();
 
     switch (currentState) 
     {
         case State::Splash:
-            
             currentWindow = std::make_unique<SplashWindow>(*this);
             break;
 

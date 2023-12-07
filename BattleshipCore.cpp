@@ -1,6 +1,16 @@
 #include "BattleshipCore.h"
 #include<iostream>
 
+bool BattleshipCore::areAllEnnemyBoatsDown()
+{
+    return enemyBoatDown >= 5;
+}
+
+bool BattleshipCore::areAllPlayerBoatsDown()
+{
+    return playerBoatsDown >= 5;
+}
+
 BattleshipCore::BattleshipCore()
 {
     hasReceivedOpponentGrid = false;
@@ -40,9 +50,8 @@ bool BattleshipCore::canPlaceBoat(int row, int column, int boatSize, bool isRota
     {
         int r = row - 4 + (isRotated == 0 ? 0 : i);
         int c = column - 2 + (isRotated == 1 ? 0-1 : i);
-
       
-        if (r >= nbLig || c >= nbCol || playerGrid[r][c] != CellType::empty) {
+        if (r >= nbLig || c >= nbCol || playerGrid[r][c] != CellType::empty && isAdjacentCellFree(r, c, playerGrid)) {
             std::cout << "r : " << r << " c : " << c << std::endl;
             isPlacementValid = false;
             break;
@@ -120,6 +129,11 @@ bool BattleshipCore::isTargetCellEmpty(int x, int y)
 
 }
 
+BattleshipCore::CellType BattleshipCore::getTargetCellType(int x, int y)
+{
+    return targetGrid[x][y];
+}
+
 void BattleshipCore::setTargetGrid(std::string grid)
 {
     grid.erase(0, 1); //remove msg identification ('B')
@@ -150,4 +164,61 @@ void BattleshipCore::setTargetGrid(std::string grid)
     }
 
     hasReceivedOpponentGrid = true;
+}
+
+std::string BattleshipCore::serializeAttack(float x, float y)
+{
+    return "Gx:" + std::to_string(x) + "y:" + std::to_string(y);
+}
+
+BattleshipCore::CellType BattleshipCore::deserializeAttack(std::string msg)
+{
+    int xPos = msg.find("x:");
+    int yPos = msg.find("y:");
+    std::string xStr = msg.substr(xPos + 2, yPos - (xPos + 2));
+    std::string yStr = msg.substr(yPos + 2);
+    int x = std::stoi(xStr);
+    int y = std::stoi(yStr);
+
+    return Attack(x, y, false);
+}
+
+BattleshipCore::CellType BattleshipCore::Attack(int x, int y, bool isOnOpponent) {
+
+    CellType(*grilleCible)[nbCol] = isOnOpponent ? targetGrid : playerGrid;
+
+    if (grilleCible[x][y] == CellType::boat)
+        grilleCible[x][y] = CellType::hit;
+    else 
+        grilleCible[x][y] = CellType::water;
+
+    return grilleCible[x][y];
+}
+
+bool BattleshipCore::CheckIfBoatDown(int x, int y, bool isOnOpponent) {
+    CellType(*grilleCible)[nbCol] = isOnOpponent ? targetGrid : playerGrid;
+
+    bool boatDown = true;
+
+    // 
+    for (int i = -1; i <= 1; ++i) {
+        for (int j = -1; j <= 1; ++j) {
+            int nearRow = x + i;
+            int nearColumn = y + j;
+
+            // 
+            if (nearRow >= 0 && nearRow < nbLig && nearColumn >= 0 && nearColumn < nbCol) {
+                if (grilleCible[nearRow][nearColumn] == CellType::boat) {
+                    boatDown = false;
+                    break;
+                }
+            }
+        }
+        if (!boatDown) break;
+    }
+
+    if (boatDown)
+        isOnOpponent ? enemyBoatDown++ : playerBoatsDown++;
+   
+    return boatDown;
 }
