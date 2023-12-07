@@ -24,6 +24,32 @@ void GameWindow::HandleEvents(sf::Event& event) {
     mouseManager.update(event, window);
 }
 
+//TEST HUD
+void GameWindow::SetupHud(const std::string& imagePath, const std::string& fontPath, const std::string& text) {
+    if (!hudTexture.loadFromFile(imagePath)) {
+        // Gérer l'erreur de chargement de l'image
+    }
+    hudSprite.setTexture(hudTexture);
+
+    if (!hudFont.loadFromFile(fontPath)) {
+        // Gérer l'erreur de chargement de la police
+    }
+    hudText.setFont(hudFont);
+    hudText.setString(text);
+    hudText.setCharacterSize(24); // Taille du texte
+    hudText.setFillColor(sf::Color::White); // Couleur du texte
+
+    // Positionner l'image et le texte
+    hudSprite.setPosition(0, 0); // Exemple de position
+    hudText.setPosition(10, 10); // Ajustez selon vos besoins
+}
+void GameWindow::Hud() {
+    //"ressources/UI/hud_Player.png"   "ressources/fonts/AGENCYB.TTF"  "Player 1"
+    SetupHud("ressources/UI/hud_Player.png", "ressources/fonts/AGENCYB.TTF", "Player 1");
+    window.draw(hudSprite);
+    window.draw(hudText);
+}
+
 void GameWindow::Update(sf::Event &event) {
     
     //check Messages
@@ -123,5 +149,8 @@ void GameWindow::Render()
 
     if(gameState == GameState::Attacking)
          cursor->draw(window);
+
+    //TEST HUD
+    Hud();
 
 }
