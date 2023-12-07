@@ -27,6 +27,7 @@
     <ClCompile Include="BsBDD.cpp" />
     <ClCompile Include="CloudManager.cpp" />
     <ClCompile Include="CoreGame.cpp" />
+    <ClCompile Include="CursorCellSelector.cpp" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityRectangle.cpp" />
@@ -59,6 +60,7 @@
     <ClInclude Include="BsBDD.h" />
     <ClInclude Include="CloudManager.h" />
     <ClInclude Include="CoreGame.h" />
+    <ClInclude Include="CursorCellSelector.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityRectangle.h" />

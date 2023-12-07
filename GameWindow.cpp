@@ -17,6 +17,7 @@ void GameWindow::Initialize()
 
     timer.restart();
     gameState = GameState::Placing;
+    cursor = new CursorCellSelector(battleshipCore);
 }
 
 void GameWindow::HandleEvents(sf::Event& event) {
@@ -91,5 +92,7 @@ void GameWindow::Render()
 
     cloudManager->draw(window);
     gridEnemy.DrawGrid(window);
+
+    cursor->draw(window, mouseManager);
 
 }

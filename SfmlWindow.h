@@ -17,11 +17,18 @@ protected:
     WindowSettings windowSettings;
     bool running = true;
     sf::Clock clock;
+
+    
+
 public:
     SfmlWindow(const std::string& title, const sf::Vector2f& size);
 
     virtual ~SfmlWindow() = default;
 
     void Run();
+    bool CheckAlive();
+    void Stop();
+
+    std::string wName = "sfml";
 };
 

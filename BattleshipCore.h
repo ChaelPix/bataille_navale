@@ -37,6 +37,7 @@ public:
 	std::string serializePlayerGrid() const;
 
 	bool getHasReceivedOpponentGrid() const;
+	bool isTargetCellEmpty(int x, int y);
 
 	void setTargetGrid(std::string grid);
 };

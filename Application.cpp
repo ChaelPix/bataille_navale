@@ -12,7 +12,8 @@ GameApplication::GameApplication(State state) : currentState(state) {
 
 GameApplication::~GameApplication()
 {
-    client->closeSocket();
+    if(client != nullptr)
+        client->closeSocket();
 }
 
 void GameApplication::Initialize()
@@ -23,8 +24,9 @@ void GameApplication::Initialize()
 }
 
 void GameApplication::Run() {
-    while (running) {
-        currentWindow->Run();
+
+    while (running) {       
+       currentWindow->Run();
     }
 }
 
@@ -72,8 +74,7 @@ GameApplication::MessageType GameApplication::getMessageType(std::string message
 }
 
 sf::Font& GameApplication::getGameFont()
-{
-    
+{  
     return gameFont;
 }
 
@@ -81,27 +82,35 @@ sf::Font& GameApplication::getGameFont()
 
 void GameApplication::ChangeState(State newState) {
     currentState = newState;
+
+    if (currentWindow != nullptr)
+        currentWindow->Stop();
+
+    currentWindow.reset();
+
     switch (currentState) 
     {
         case State::Splash:
-            currentWindow.reset();
+            
             currentWindow = std::make_unique<SplashWindow>(*this);
             break;
 
         case State::Menu:
-            currentWindow.reset();
             currentWindow = std::make_unique<MenuWindow>(*this);
+            currentWindow->wName = "menu";
             break;
 
         case State::Game:
-            currentWindow.reset();
             currentWindow = (std::make_unique<GameWindow>(*this));
+            currentWindow->wName = "game";
             break;
     }
 }
 
 void GameApplication::CreateClient()
 {
-   this->client = new TCPClient("192.168.52.31", 12345);
+
+   this->client = new TCPClient("10.187.52.31", 12345);
+
 }
 
