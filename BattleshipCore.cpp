@@ -102,13 +102,12 @@ BattleshipCore::BoatInfo BattleshipCore::randomPlacing(int boatSize)
 
 
 std::string BattleshipCore::serializePlayerGrid(bool isPlayer) {
-
     CellType(*grilleCible)[nbCol] = isPlayer ? playerGrid : targetGrid;
 
     std::string result = "B";
 
-    for (int i = 0; i < nbCol; ++i) {
-        for (int j = 0; j < nbLig; ++j) {
+    for (int i = 0; i < nbLig; i++) {
+        for (int j = 0; j < nbCol; j++) {  
             switch (grilleCible[i][j]) {
             case CellType::empty: result += 'V'; break;
             case CellType::boat: result += 'B'; break;
@@ -120,6 +119,7 @@ std::string BattleshipCore::serializePlayerGrid(bool isPlayer) {
     }
     return result;
 }
+
 
 bool BattleshipCore::getHasReceivedOpponentGrid() const
 {
@@ -141,29 +141,27 @@ void BattleshipCore::setTargetGrid(std::string grid)
 {
     grid.erase(0, 1); //remove msg identification ('B')
 
-    std::istringstream iss(grid);
-    std::string ligneTrame;
-    int numLigne = 0;
+    int l = 0, c = 0; 
 
-    while (std::getline(iss, ligneTrame) && numLigne < nbLig) {
-
-        for (int numColonne = 0; numColonne < nbCol; ++numColonne) {
-            char caractere = ligneTrame[numColonne];
-            CellType caseType;
-
-            switch (caractere) {
-            case 'B': caseType = CellType::boat; break;
-            case 'T': caseType = CellType::hit; break;
-            case 'E': caseType = CellType::water; break;
-            case 'V': 
-            default:
-                caseType = CellType::empty;
-            }
-
-            targetGrid[numLigne][numColonne] = caseType;
+    for (char caractere : grid) {
+        if (caractere == '\n') {
+            l++;
+            c = 0;
+            continue;
         }
 
-        ++numLigne;
+        CellType caseType;
+        switch (caractere) {
+        case 'B': caseType = CellType::boat; break;
+        case 'T': caseType = CellType::hit; break;
+        case 'E': caseType = CellType::water; break;
+        case 'V':
+        default:
+            caseType = CellType::empty; break;
+        }
+
+        targetGrid[l][c] = caseType;
+        c++;
     }
 
     hasReceivedOpponentGrid = true;
