@@ -24,24 +24,22 @@ void GameWindow::HandleEvents(sf::Event& event) {
     mouseManager.update(event, window);
 }
 
+<<<<<<< HEAD
 //TEST HUD
 void GameWindow::SetupHud(const std::string& imagePath, const std::string& fontPath, const std::string& text) {
     if (!hudTexture.loadFromFile(imagePath)) {
-        // Gérer l'erreur de chargement de l'image
     }
     hudSprite.setTexture(hudTexture);
 
     if (!hudFont.loadFromFile(fontPath)) {
-        // Gérer l'erreur de chargement de la police
     }
     hudText.setFont(hudFont);
     hudText.setString(text);
-    hudText.setCharacterSize(24); // Taille du texte
-    hudText.setFillColor(sf::Color::White); // Couleur du texte
+    hudText.setCharacterSize(24); 
+    hudText.setFillColor(sf::Color::White);
 
-    // Positionner l'image et le texte
-    hudSprite.setPosition(0, 0); // Exemple de position
-    hudText.setPosition(10, 10); // Ajustez selon vos besoins
+    hudSprite.setPosition(0, 0); 
+    hudText.setPosition(10, 10);
 }
 void GameWindow::Hud() {
     //"ressources/UI/hud_Player.png"   "ressources/fonts/AGENCYB.TTF"  "Player 1"
@@ -50,11 +48,14 @@ void GameWindow::Hud() {
     window.draw(hudText);
 }
 
+=======
+>>>>>>> 4e712d68832275d89235d2463257b68ab3da298d
 void GameWindow::Update(sf::Event &event) {
     
     //check Messages
     std::string message = "";
     message = application->client->getMessage();
+    BattleshipCore::CellType attackCell;
 
     if (!message.empty())
     {
@@ -65,8 +66,13 @@ void GameWindow::Update(sf::Event &event) {
             break;
         case GameApplication::MessageType::Chat:
             std::cout << "Message : " << message;
+            break;
         case GameApplication::MessageType::Game:
             std::cout << "Attack : " << message;
+            attackCell = battleshipCore.deserializeAttack(message);
+            std::cout << "Player Grid Attacked : \n" << battleshipCore.serializePlayerGrid(true).erase(0, 1) << std::endl;
+            gameState = GameState::Attacking;
+            break;
         }
     }
    
@@ -93,7 +99,7 @@ void GameWindow::Update(sf::Event &event) {
 
         if (battleshipCore.getHasReceivedOpponentGrid()) 
         {
-            std::cout << "Opponent Grid Received : \n" << message << std::endl;
+            std::cout << "Opponent Grid Received : \n" << battleshipCore.serializePlayerGrid(false) << std::endl;
             application->getClientStartFirst() ? gameState = GameState::Attacking : gameState = GameState::Waiting;
         }
 
@@ -101,6 +107,7 @@ void GameWindow::Update(sf::Event &event) {
 
     case GameState::Attacking:
         attackState = cursor->update(mouseManager);
+
         switch (attackState)
         {
         case CursorCellSelector::State::Nothing:
@@ -149,8 +156,5 @@ void GameWindow::Render()
 
     if(gameState == GameState::Attacking)
          cursor->draw(window);
-
-    //TEST HUD
-    Hud();
 
 }

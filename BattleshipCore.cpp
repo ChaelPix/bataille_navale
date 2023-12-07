@@ -51,7 +51,7 @@ bool BattleshipCore::canPlaceBoat(int row, int column, int boatSize, bool isRota
         int r = row - 4 + (isRotated == 0 ? 0 : i);
         int c = column - 2 + (isRotated == 1 ? 0-1 : i);
       
-        if (r >= nbLig || c >= nbCol || playerGrid[r][c] != CellType::empty && isAdjacentCellFree(r, c, playerGrid)) {
+        if (r >= nbLig || c >= nbCol || playerGrid[r][c] != CellType::empty || !isAdjacentCellFree(r, c, playerGrid)) {
             std::cout << "r : " << r << " c : " << c << std::endl;
             isPlacementValid = false;
             break;
@@ -101,19 +101,22 @@ BattleshipCore::BoatInfo BattleshipCore::randomPlacing(int boatSize)
 }
 
 
-std::string BattleshipCore::serializePlayerGrid() const {
+std::string BattleshipCore::serializePlayerGrid(bool isPlayer) {
+
+    CellType(*grilleCible)[nbCol] = isPlayer ? playerGrid : targetGrid;
+
     std::string result = "B";
-    for (int i = 0; i < nbLig; ++i) {
-        for (int j = 0; j < nbCol; ++j) {
-            switch (playerGrid[i][j]) {
+
+    for (int i = 0; i < nbCol; ++i) {
+        for (int j = 0; j < nbLig; ++j) {
+            switch (grilleCible[i][j]) {
             case CellType::empty: result += 'V'; break;
             case CellType::boat: result += 'B'; break;
             case CellType::hit: result += 'T'; break;
             case CellType::water: result += 'E'; break;
-            default: result += '?'; break;
             }
         }
-        result += "\n";
+        result += '\n';
     }
     return result;
 }
@@ -199,19 +202,18 @@ bool BattleshipCore::CheckIfBoatDown(int x, int y, bool isOnOpponent) {
     CellType(*grilleCible)[nbCol] = isOnOpponent ? targetGrid : playerGrid;
 
     bool boatDown = true;
+    for (int dir = -1; dir <= 1; dir += 2) { // dir = -1 pour gauche/haut, +1 pour droite/bas
+        for (int d = 0; d < nbLig; ++d) {
+            int checkX = x + dir * d;
+            int checkY = y + dir * d;
 
-    // 
-    for (int i = -1; i <= 1; ++i) {
-        for (int j = -1; j <= 1; ++j) {
-            int nearRow = x + i;
-            int nearColumn = y + j;
-
-            // 
-            if (nearRow >= 0 && nearRow < nbLig && nearColumn >= 0 && nearColumn < nbCol) {
-                if (grilleCible[nearRow][nearColumn] == CellType::boat) {
-                    boatDown = false;
-                    break;
-                }
+            if (checkX >= 0 && checkX < nbLig && grilleCible[checkX][y] == CellType::boat) {
+                boatDown = false;
+                break;
+            }
+            if (checkY >= 0 && checkY < nbCol && grilleCible[x][checkY] == CellType::boat) {
+                boatDown = false;
+                break;
             }
         }
         if (!boatDown) break;

@@ -5,9 +5,9 @@ bool CursorCellSelector::isOnEnnemyGrid(sf::Vector2f pos)
 	int gridSize = grid.squareSize / grid.nbPixels;
 
 	bool isInGrid = (pos.x > grid.ennemyGridPosition.x
-		&& pos.x < grid.ennemyGridPosition.x + grid.squareSize + grid.boatTolerance)
+		&& pos.x < grid.ennemyGridPosition.x + grid.squareSize)
 		&& (pos.y > grid.ennemyGridPosition.y
-		&& pos.y  < grid.ennemyGridPosition.y + grid.squareSize + grid.boatTolerance);
+		&& pos.y  < grid.ennemyGridPosition.y + grid.squareSize);
 
     doDraw = isInGrid;
 

@@ -18,18 +18,15 @@ protected:
     bool running = true;
     sf::Clock clock;
 
-    
-
 public:
     SfmlWindow(const std::string& title, const sf::Vector2f& size);
 
     virtual ~SfmlWindow() = default;
 
     void Run();
-    bool CheckAlive();
+    virtual bool CheckAlive();
     void Stop();
 
     std::string wName = "sfml";
-    std::shared_ptr<bool> aliveFlag;
 };
 
