@@ -30,5 +30,6 @@ public:
     void Stop();
 
     std::string wName = "sfml";
+    std::shared_ptr<bool> aliveFlag;
 };
 

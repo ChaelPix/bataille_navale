@@ -1,12 +1,10 @@
 #include "SfmlWindow.h"
 #include <iostream>
 SfmlWindow::SfmlWindow(const std::string& title, const sf::Vector2f& size)
-    : window(sf::VideoMode(size.x, size.y), title) {}
+    : window(sf::VideoMode(size.x, size.y), title), aliveFlag(std::make_shared<bool>(true)) {}
 
 void SfmlWindow::Run() {
 
-    //window.setFramerateLimit(60);
-    //window.setVerticalSyncEnabled(true);
 
     while (CheckAlive()) {
 
@@ -23,22 +21,16 @@ void SfmlWindow::Run() {
 
         if (!CheckAlive())
             break;
-
-        Render();
+        else
+           Render();
         window.display();
         window.clear(windowSettings.bgColor);
-
-        //sf::Time usedTime = frameClock.getElapsedTime() - startTime;
-        //if (usedTime < timePerFrame) {
-        //    sf::sleep(timePerFrame - usedTime);
-        //}
-        //frameClock.restart();
     }
 }
 
 bool SfmlWindow::CheckAlive()
 {
-    return running && window.isOpen() && this != nullptr;
+    return *aliveFlag && running && window.isOpen();
 }
 
 
