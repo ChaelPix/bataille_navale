@@ -38,7 +38,7 @@ public:
 
 	BoatInfo randomPlacing(int boatSize);
 
-	std::string serializePlayerGrid() const;
+	std::string serializePlayerGrid(bool isPlayer = true);
 
 	bool getHasReceivedOpponentGrid() const;
 	bool isTargetCellEmpty(int x, int y);

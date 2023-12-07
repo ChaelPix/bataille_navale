@@ -25,7 +25,8 @@ void GameApplication::Initialize()
 
 void GameApplication::Run() {
 
-    while (running) {
+    while (running) 
+    {
         if (currentWindow != nullptr) {
             currentWindow->Run();
         }
@@ -86,23 +87,25 @@ void GameApplication::ChangeState(State newState) {
     currentState = newState;
 
     if (currentWindow)
+    {
+        currentWindow->Stop();
         currentWindow = nullptr;
-
-    currentWindow.reset();
+    }
+        
 
     switch (currentState) 
     {
         case State::Splash:
-            currentWindow = std::make_unique<SplashWindow>(*this);
+            currentWindow = new SplashWindow(*this);
             break;
 
         case State::Menu:
-            currentWindow = std::make_unique<MenuWindow>(*this);
+            currentWindow = new MenuWindow(*this);
             currentWindow->wName = "menu";
             break;
 
         case State::Game:
-            currentWindow = (std::make_unique<GameWindow>(*this));
+            currentWindow = new GameWindow(*this);
             currentWindow->wName = "game";
             break;
     }

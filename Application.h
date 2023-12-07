@@ -31,7 +31,7 @@ public:
 private:
     bool running = true;
     State currentState;
-    std::unique_ptr<SfmlWindow> currentWindow;
+    SfmlWindow* currentWindow;
     bool doClientStartFirst;
     BsBDD* objBDD;
     sf::Font gameFont;

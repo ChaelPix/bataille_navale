@@ -29,6 +29,7 @@ void GameWindow::Update(sf::Event &event) {
     //check Messages
     std::string message = "";
     message = application->client->getMessage();
+    BattleshipCore::CellType attackCell;
 
     if (!message.empty())
     {
@@ -39,8 +40,13 @@ void GameWindow::Update(sf::Event &event) {
             break;
         case GameApplication::MessageType::Chat:
             std::cout << "Message : " << message;
+            break;
         case GameApplication::MessageType::Game:
             std::cout << "Attack : " << message;
+            attackCell = battleshipCore.deserializeAttack(message);
+            std::cout << "Player Grid Attacked : \n" << battleshipCore.serializePlayerGrid(true).erase(0, 1) << std::endl;
+            gameState = GameState::Attacking;
+            break;
         }
     }
    
@@ -67,7 +73,7 @@ void GameWindow::Update(sf::Event &event) {
 
         if (battleshipCore.getHasReceivedOpponentGrid()) 
         {
-            std::cout << "Opponent Grid Received : \n" << message << std::endl;
+            std::cout << "Opponent Grid Received : \n" << battleshipCore.serializePlayerGrid(false) << std::endl;
             application->getClientStartFirst() ? gameState = GameState::Attacking : gameState = GameState::Waiting;
         }
 
@@ -75,6 +81,7 @@ void GameWindow::Update(sf::Event &event) {
 
     case GameState::Attacking:
         attackState = cursor->update(mouseManager);
+
         switch (attackState)
         {
         case CursorCellSelector::State::Nothing:
