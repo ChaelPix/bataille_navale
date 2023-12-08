@@ -58,7 +58,7 @@ void CursorCellSelector::updateCursorSelection(const sf::Vector2f& mousePos)
 
 void CursorCellSelector::updateCursorColor()
 {
-    switch (battleshipCore->getTargetCellType(anchoredX, anchoredY))
+    switch (battleshipCore->getTargetCellType(anchoredY, anchoredX))
     {
     case BattleshipCore::CellType::hit:
     case BattleshipCore::CellType::water:
@@ -78,7 +78,7 @@ CursorCellSelector::State CursorCellSelector::handleAttack()
 
     client->sendMessage(battleshipCore->serializeAttack(anchoredX, anchoredY));
 
-    BattleshipCore::CellType attackResult = battleshipCore->Attack(anchoredX, anchoredY, true);
+    BattleshipCore::CellType attackResult = battleshipCore->Attack(anchoredY, anchoredX, true);
 
     //hit nothing
     if (attackResult == BattleshipCore::CellType::water) {
@@ -87,14 +87,14 @@ CursorCellSelector::State CursorCellSelector::handleAttack()
     }
 
     //hit a boat, check if down
-    if (battleshipCore->CheckIfBoatDown(anchoredX, anchoredY, true)) {
+    if (battleshipCore->CheckIfBoatDown(anchoredY, anchoredX, true)) {
         isBusy = false;
         return battleshipCore->areAllEnnemyBoatsDown() ? State::Win : State::ExtraTurn;
     }
 
     //only hit
     isBusy = false;
-    return State::Attacked;
+    return State::ExtraTurn;
 }
 
 

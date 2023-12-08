@@ -66,12 +66,17 @@ void BsBDD::connectToDB(const std::string& dbURI, const std::string& userName, c
 
 bool BsBDD::login(const std::string& idUser, const std::string& password) {
     try {
-        pstmt = con->prepareStatement("SELECT idPlayers FROM player WHERE idPlayers = ? AND mdp = ?");
+        pstmt = con->prepareStatement("SELECT mdp FROM player WHERE idPlayers = ? AND mdp = ?");
         pstmt->setString(1, idUser);
         pstmt->setString(2, password);
         res = pstmt->executeQuery();
 
         if (res->next()) {
+            this->mdp = res->getString("mdp");
+            std::cout << "IIIIIIIII " << mdp << " IIIIIIIII ";
+
+            // Plus besoin de vérifier à nouveau avec res->next()
+
             this->userId = idUser; // Définir l'userId pour l'utilisateur connecté
 
             pstmt = con->prepareStatement("SELECT * FROM playersData WHERE idPlayers = ?");
@@ -85,7 +90,8 @@ bool BsBDD::login(const std::string& idUser, const std::string& password) {
                 this->nbGames = std::to_string(res->getInt("nbGames"));
                 this->nbLostGames = std::to_string(res->getInt("nbLostGames"));
                 this->nbWonGames = std::to_string(res->getInt("nbWonGames"));
-                this->idPlayers = std::to_string(res->getInt("idPlayers"));
+                // this->idPlayers = std::to_string(res->getInt("idPlayers")); // Supprimé car idPlayers est une chaîne, pas un entier
+                setAllData();
             }
             return true;
         }
@@ -235,7 +241,6 @@ void BsBDD::displayPlayerInfo() {
             this->nbLostGames = std::to_string(res->getInt("nbLostGames"));
             this->nbWonGames = std::to_string(res->getInt("nbWonGames"));
             this->idPlayers = std::to_string(res->getInt("idPlayers"));
-            setAllData(this->vcase);
         }
         else {
             std::cout << espace << "Aucune information trouv\202e pour l'utilisateur " << userId << "." << std::endl;
@@ -255,7 +260,7 @@ bool BsBDD::isConnect() {
     return true;
 }
 
-void BsBDD::setAllData(std::vector<std::string>& vcase){
+void BsBDD::setAllData(){
     vcase.push_back(this->id);   
     vcase.push_back(this->score);
     vcase.push_back(this->nbGames);
@@ -266,15 +271,12 @@ void BsBDD::setAllData(std::vector<std::string>& vcase){
 
 void BsBDD::getAllData(std::vector<std::string>& Vector){
     
-    for (int i = 0; i < 6; i++)
-    {
-        Vector.push_back(this->vcase.at(i));
-    }
+    Vector.push_back(this->userId + "$");
+    Vector.push_back(this-> mdp);
 
-    for (int i = 0; i < 6; i++)
-    {
-        std::cout << Vector.at(i);
-    }
+    //for (int i = 0; i < vcase.size(); i++){ //incrémenter toute les valeurs
+    //    Vector.push_back(this->vcase.at(i) + "$");
+    //}
 }
 
 std::string BsBDD::getStatsInfo()
@@ -321,4 +323,32 @@ std::string BsBDD::getNbWonGames() const {
 
 std::string BsBDD::getIdPlayers() const {
     return userId;
+}
+
+std::string BsBDD::getmdp() const {
+    return mdp;
+}
+
+
+//setteur
+void BsBDD::setId(const std::string& newId) {
+    this->id = newId;
+}
+void BsBDD::setScore(const std::string& newScore) {
+    this->score = newScore;
+}
+void BsBDD::setNbGames(const std::string& newNbGames) {
+    this->nbGames = newNbGames;
+}
+void BsBDD::setNbLostGames(const std::string& newNbLostGames) {
+    this->nbLostGames = newNbLostGames;
+}
+void BsBDD::setNbWonGames(const std::string& newNbWonGames) {
+    this->nbWonGames = newNbWonGames;
+}
+void BsBDD::setIdPlayers(const std::string& newIdPlayers) {
+    this->userId = newIdPlayers;
+}
+void BsBDD::setMdp(const std::string& newMdp) {
+    this->mdp = newMdp;
 }

@@ -51,11 +51,12 @@ bool BattleshipCore::canPlaceBoat(int row, int column, int boatSize, bool isRota
         int r = row - 4 + (isRotated == 0 ? 0 : i);
         int c = column - 2 + (isRotated == 1 ? 0-1 : i);
       
-        if (r >= nbLig || c >= nbCol || playerGrid[r][c] != CellType::empty || !isAdjacentCellFree(r, c, playerGrid)) {
-            std::cout << "r : " << r << " c : " << c << std::endl;
+        if (r >= nbLig || c >= nbCol || c < 0 || r < 0 || playerGrid[r][c] != CellType::empty || !isAdjacentCellFree(r, c, playerGrid)) {         
             isPlacementValid = false;
             break;
         }
+
+        std::cout << "r : " << r << " c : " << c << std::endl;
     }
     return isPlacementValid;
 }
@@ -85,6 +86,9 @@ BattleshipCore::BoatInfo BattleshipCore::randomPlacing(int boatSize)
         int row = (std::rand() % nbLig);
         int column = (std::rand() % nbCol);
 
+        if (row < 0) row = 0;
+        if (column < 0) column = 0;
+
         if (canPlaceBoat(row + 4, column + 2, boatSize, dir == 1))
         {
             isOk = true;
@@ -102,13 +106,12 @@ BattleshipCore::BoatInfo BattleshipCore::randomPlacing(int boatSize)
 
 
 std::string BattleshipCore::serializePlayerGrid(bool isPlayer) {
-
     CellType(*grilleCible)[nbCol] = isPlayer ? playerGrid : targetGrid;
 
     std::string result = "B";
 
-    for (int i = 0; i < nbCol; ++i) {
-        for (int j = 0; j < nbLig; ++j) {
+    for (int i = 0; i < nbLig; i++) {
+        for (int j = 0; j < nbCol; j++) {  
             switch (grilleCible[i][j]) {
             case CellType::empty: result += 'V'; break;
             case CellType::boat: result += 'B'; break;
@@ -120,6 +123,7 @@ std::string BattleshipCore::serializePlayerGrid(bool isPlayer) {
     }
     return result;
 }
+
 
 bool BattleshipCore::getHasReceivedOpponentGrid() const
 {
@@ -141,29 +145,27 @@ void BattleshipCore::setTargetGrid(std::string grid)
 {
     grid.erase(0, 1); //remove msg identification ('B')
 
-    std::istringstream iss(grid);
-    std::string ligneTrame;
-    int numLigne = 0;
+    int l = 0, c = 0; 
 
-    while (std::getline(iss, ligneTrame) && numLigne < nbLig) {
-
-        for (int numColonne = 0; numColonne < nbCol; ++numColonne) {
-            char caractere = ligneTrame[numColonne];
-            CellType caseType;
-
-            switch (caractere) {
-            case 'B': caseType = CellType::boat; break;
-            case 'T': caseType = CellType::hit; break;
-            case 'E': caseType = CellType::water; break;
-            case 'V': 
-            default:
-                caseType = CellType::empty;
-            }
-
-            targetGrid[numLigne][numColonne] = caseType;
+    for (char caractere : grid) {
+        if (caractere == '\n') {
+            l++;
+            c = 0;
+            continue;
         }
 
-        ++numLigne;
+        CellType caseType;
+        switch (caractere) {
+        case 'B': caseType = CellType::boat; break;
+        case 'T': caseType = CellType::hit; break;
+        case 'E': caseType = CellType::water; break;
+        case 'V':
+        default:
+            caseType = CellType::empty; break;
+        }
+
+        targetGrid[l][c] = caseType;
+        c++;
     }
 
     hasReceivedOpponentGrid = true;
@@ -183,7 +185,7 @@ BattleshipCore::CellType BattleshipCore::deserializeAttack(std::string msg)
     int x = std::stoi(xStr);
     int y = std::stoi(yStr);
 
-    return Attack(x, y, false);
+    return Attack(y, x, false);
 }
 
 BattleshipCore::CellType BattleshipCore::Attack(int x, int y, bool isOnOpponent) {
@@ -202,25 +204,31 @@ bool BattleshipCore::CheckIfBoatDown(int x, int y, bool isOnOpponent) {
     CellType(*grilleCible)[nbCol] = isOnOpponent ? targetGrid : playerGrid;
 
     bool boatDown = true;
-    for (int dir = -1; dir <= 1; dir += 2) { // dir = -1 pour gauche/haut, +1 pour droite/bas
-        for (int d = 0; d < nbLig; ++d) {
-            int checkX = x + dir * d;
-            int checkY = y + dir * d;
 
-            if (checkX >= 0 && checkX < nbLig && grilleCible[checkX][y] == CellType::boat) {
-                boatDown = false;
-                break;
-            }
-            if (checkY >= 0 && checkY < nbCol && grilleCible[x][checkY] == CellType::boat) {
-                boatDown = false;
-                break;
-            }
-        }
-        if (!boatDown) break;
+    //bas
+    if (x > 0 && grilleCible[x - 1][y] == CellType::boat) {
+        boatDown = false;
     }
+
+    //haut
+    if (x < nbLig - 1 && grilleCible[x + 1][y] == CellType::boat) {
+        boatDown = false;
+    }
+
+    //gauche
+    if (y > 0 && grilleCible[x][y - 1] == CellType::boat) {
+        boatDown = false;
+    }
+
+    //droite
+    if (y < nbCol - 1 && grilleCible[x][y + 1] == CellType::boat) {
+        boatDown = false;
+    }
+
 
     if (boatDown)
         isOnOpponent ? enemyBoatDown++ : playerBoatsDown++;
    
     return boatDown;
 }
+

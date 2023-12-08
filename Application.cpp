@@ -20,7 +20,7 @@ void GameApplication::Initialize()
 {
     FontSettings fontSettings;
     gameFont.loadFromFile(fontSettings.fontPath);
-    //objBDD->connectToDB("10.187.52.4", "snir", "snir");
+    objBDD->connectToDB("10.187.52.4:3306", "batailleNavale", "batailleNavale");
 }
 
 void GameApplication::Run() {
@@ -86,8 +86,11 @@ sf::Font& GameApplication::getGameFont()
 void GameApplication::ChangeState(State newState) {
     currentState = newState;
 
+    sf::Vector2i windowPos = sf::Vector2i(0, 0);
+
     if (currentWindow)
     {
+        windowPos = currentWindow->GetWindowPosition();
         currentWindow->Stop();
         currentWindow = nullptr;
     }
@@ -96,16 +99,22 @@ void GameApplication::ChangeState(State newState) {
     switch (currentState) 
     {
         case State::Splash:
-            currentWindow = new SplashWindow(*this);
+            currentWindow = new SplashWindow(*this, windowPos);
             break;
 
         case State::Menu:
-            currentWindow = new MenuWindow(*this);
+            currentWindow = new MenuWindow(*this, windowPos);
             currentWindow->wName = "menu";
             break;
 
         case State::Game:
-            currentWindow = new GameWindow(*this);
+            WindowSettings wSets;
+            windowPos.x -= (wSets.gameWindowSize.x - wSets.menuWindowSize.x);
+            windowPos.y -= (wSets.gameWindowSize.y - wSets.menuWindowSize.y);
+            if (windowPos.x < 0) windowPos.x = 0;
+            if (windowPos.y < 0) windowPos.y = 0;
+
+            currentWindow = new GameWindow(*this, windowPos);
             currentWindow->wName = "game";
             break;
     }

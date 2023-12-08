@@ -1,8 +1,8 @@
 #include "SplashWindow.h"
 
-SplashWindow::SplashWindow(GameApplication& application)
+SplashWindow::SplashWindow(GameApplication& application, const sf::Vector2i& windowPos)
     :
-    SfmlWindow("BattleShip", WindowSettings().menuWindowSize),
+    SfmlWindow("BattleShip", WindowSettings().menuWindowSize, windowPos),
     application(&application)
 {
     Initialize();

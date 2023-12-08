@@ -7,8 +7,8 @@ class SaveData{
 private:
 
 public:
-
-	void saveDataIntoFile(std::vector<std::string>& VData);
+	void saveDataToFile(const std::vector<std::string>& dataVector, const std::string& filename);
+	std::vector<std::string> loadDataFromFile(const std::string& filename);
 
 };
 

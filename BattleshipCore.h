@@ -13,7 +13,7 @@ public:
 		bool isRotated;
 	};
 
-	enum class CellType { empty, boat, hit, water, error = 99 };
+	enum class CellType  { empty, boat, hit, water, error = 99 };
 private:
 	enum class boatTypes { PorteAvion = 5, Croiseur = 4, ContreTorpilleur = 3, Torpilleur = 2 };
 

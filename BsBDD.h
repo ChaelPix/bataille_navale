@@ -27,6 +27,7 @@ private:
     sql::ResultSet* res;
     std::string userId; 
 
+    std::string mdp;
     std::string id;
     std::string score;
     std::string nbGames;
@@ -51,7 +52,7 @@ public:
     void displayPlayerInfo();
     bool isConnect();
     void getPlayerData();
-    void setAllData(std::vector<std::string>& vcase);
+    void setAllData();
     void getAllData(std::vector<std::string>&Vector);
     std::string getStatsInfo();
 
@@ -62,4 +63,14 @@ public:
     std::string getNbLostGames() const;
     std::string getNbWonGames() const;
     std::string getIdPlayers() const;
+    std::string getmdp() const;
+
+    // Setters
+    void setId(const std::string& newId);
+    void setScore(const std::string& newScore);
+    void setNbGames(const std::string& newNbGames);
+    void setNbLostGames(const std::string& newNbLostGames);
+    void setNbWonGames(const std::string& newNbWonGames);
+    void setIdPlayers(const std::string& newIdPlayers);
+    void setMdp(const std::string& newMdp);
 };
