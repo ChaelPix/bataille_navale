@@ -28,7 +28,6 @@ protected:
 
 private:
     GameApplication* application;
-    BsBDD* bdd;
 
     MouseManager mouseManager;
     AnimatedBackground* menuBackground;
@@ -36,12 +35,15 @@ private:
     std::vector<Entity*> entitiesPtr;
 
     LoginMenu* loginMenu;
-};
-
-/*
 
     sf::Text stat;
     sf::Text name;
     sf::Font FontStat;
+
+    std::string statInformation;
+    std::string NameInformation;
+};
+
+
+
     
-*/

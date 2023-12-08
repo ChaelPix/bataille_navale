@@ -20,7 +20,7 @@ void GameApplication::Initialize()
 {
     FontSettings fontSettings;
     gameFont.loadFromFile(fontSettings.fontPath);
-    //objBDD->connectToDB("10.187.52.4", "snir", "snir");
+    objBDD->connectToDB("10.187.52.4:3306", "batailleNavale", "batailleNavale");
 }
 
 void GameApplication::Run() {

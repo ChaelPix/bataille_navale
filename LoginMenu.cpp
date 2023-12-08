@@ -12,11 +12,12 @@ LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD)
 	loginButton = new EntityRectangle(loginMenuSettings.buttonSize, loginMenuSettings.buttonPos, buttonTextures[0]);
 
 	bdd = &objBDD;
+	isBusy = false;
 }
 
 void LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
 {
-	if (isBusy)
+	if (isBusy || isLogged)
 		return;
 
 	bool isOnUsername = false;
@@ -42,9 +43,20 @@ void LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
 		if (mouseManager.isMouseClicked())
 		{
 			if (usernameTextBox->getText().empty() || passwordTextBox->getText().empty()) {
-				isBusy = true;
-				std::cout << "empty ";
-				LoginInvite();
+				//isBusy = true;
+				//std::cout << "empty ";
+				//LoginInvite();
+				DataVector.clear();
+				DataVector = svData.loadDataFromFile("data.txt");
+
+				bdd->setIdPlayers(DataVector[0]);
+				bdd->setMdp(DataVector[1]);
+				std::cout << "Login: " << bdd->getIdPlayers() << ", Mot de passe: " << bdd->getmdp() << std::endl;
+				// Affichage des données pour vérifier
+				for (size_t i = 0; i < DataVector.size(); i += 2) {
+					std::cout << "Login: " << DataVector[i] << ", Mot de passe: " << DataVector[i + 1] << std::endl;
+				}
+
 			}
 			else
 			{
@@ -74,6 +86,8 @@ void LoginMenu::draw(sf::RenderWindow& window)
 void LoginMenu::LoginInvite() {
 	std::cout << "Welcome invite.... ";
 	std::cout << bdd->getIdPlayers() << " ---------->" << bdd->getScore();
+	isLogged = true;
+
 }
 
 void LoginMenu::Login(){
@@ -82,9 +96,14 @@ void LoginMenu::Login(){
 	std::string id = usernameTextBox->getText();
 	std::string mdp = passwordTextBox->getText();
 	std::cout << id + mdp;
-	std::cout << std::endl << bdd->login(id, mdp) << std::endl;
-	std::cout << bdd->getIdPlayers() << " ---------->" << bdd->getScore();
+	bdd->login(id, mdp);
+	std::cout << bdd->getIdPlayers() << " ----------> " << bdd->getScore();
+	std::cout << " vector data be ";
 	bdd->getAllData(DataVector);
+	for (int i = 0; i < DataVector.size(); i++){
+		std::cout << DataVector.at(i);
+	}
+	svData.saveDataToFile(DataVector, "data.txt");
+	isLogged = true;
 }
-
 
