@@ -102,7 +102,8 @@ void GameWindow::Update(sf::Event &event) {
             break;
 
         case CursorCellSelector::State::ExtraTurn:
-
+            std::cout << "Extra turn !" << std::endl;
+            gameState = GameState::Attacking;
             break;
 
         default:
@@ -121,7 +122,7 @@ void GameWindow::Update(sf::Event &event) {
 
 void GameWindow::Render()
 {
-    waterBackground->draw(window);
+    //waterBackground->draw(window);
     gridPlayer.DrawGrid(window);
     playerBoatsManager->draw(window);
 
@@ -130,7 +131,7 @@ void GameWindow::Render()
     for (auto& entity : entitiesPtr)
         entity->draw(window);
 
-    cloudManager->draw(window);
+    //cloudManager->draw(window);
     gridEnemy.DrawGrid(window);
 
     if(gameState == GameState::Attacking)

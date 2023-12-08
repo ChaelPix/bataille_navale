@@ -55,13 +55,13 @@ void PlayerBoatsManager::InstiantiateBoats(int bottomGridOffset)
 	for (int i = 0; i < boatsType.size(); i++)
 	{
 		int boatTypeInt = static_cast<int>(boatsType.at(i));
-		Boat boat(i, boatsType.at(i), sf::Vector2f(gridCellSize * boatTypeInt, gridCellSize));
+		Boat boat(i, boatsType.at(i), sf::Vector2f(gridCellSize * boatTypeInt, gridCellSize), &boatTextures[getTextureIndex(boatsType.at(i))]);
 
 		sf::Vector2f boatPos(gridSettings.playerGridPosition.x + totalSize * gridCellSize, gridSettings.playerGridPosition.y + bottomGridOffset * (gridSettings.nbPixels + 1));
 		boat.setPosition(boatPos.x, boatPos.y);
 		boat.setSpawnPos(boatPos);
 
-		boat.setTexture(&boatTextures[getTextureIndex(boatsType.at(i))]);
+		//boat.setTexture(&boatTextures[getTextureIndex(boatsType.at(i))]);
 
 		totalSize += boatTypeInt + 1;
 		boatsList.push_back(boat);
