@@ -8,7 +8,9 @@ Boat::Boat(int id, CoreGame::boatTypes boatType, sf::Vector2f size, sf::Texture*
 	isPlaced = false;
 
 	if (texture != nullptr)
-		setTexture(texture);
+	{
+		//setTexture(texture);
+	}
 }
 
 int Boat::getBoatId()

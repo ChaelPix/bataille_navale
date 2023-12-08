@@ -19,13 +19,14 @@ protected:
     sf::Clock clock;
 
 public:
-    SfmlWindow(const std::string& title, const sf::Vector2f& size);
+    SfmlWindow(const std::string& title, const sf::Vector2f& size, const sf::Vector2i& windowPos);
 
     virtual ~SfmlWindow() = default;
 
     void Run();
     virtual bool CheckAlive();
     void Stop();
+    sf::Vector2i GetWindowPosition();
 
     std::string wName = "sfml";
 };

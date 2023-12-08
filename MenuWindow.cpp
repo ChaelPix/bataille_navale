@@ -1,8 +1,8 @@
 #include "MenuWindow.h"
 
-MenuWindow::MenuWindow(GameApplication& application)
+MenuWindow::MenuWindow(GameApplication& application, const sf::Vector2i& windowPos)
     :
-    SfmlWindow("BattleShip", WindowSettings().menuWindowSize),
+    SfmlWindow("BattleShip", WindowSettings().menuWindowSize, windowPos),
     application(&application)
 {
     Initialize();
@@ -67,7 +67,7 @@ void MenuWindow::Render()
     if (!running)
         return;
 
-    menuBackground->draw(window);
+    //menuBackground->draw(window);
     for (auto& entity : entitiesPtr)
         entity->draw(window);
 

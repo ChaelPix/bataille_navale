@@ -15,7 +15,7 @@ class GameApplication;
 
 class GameWindow : public SfmlWindow {
 public:
-    GameWindow(GameApplication& application);
+    GameWindow(GameApplication& application, const sf::Vector2i& windowPos);
     enum class GameState {Placing, WaitingGrid, Attacking, Waiting, Victory, Defeat};
 protected:
     void Initialize() override;

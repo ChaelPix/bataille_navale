@@ -13,7 +13,7 @@
 class MenuWindow : public SfmlWindow
 {
 public:
-    MenuWindow(GameApplication& application);
+    MenuWindow(GameApplication& application, const sf::Vector2i& windowPos);
     ~MenuWindow();
 
 
