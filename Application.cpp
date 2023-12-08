@@ -20,7 +20,7 @@ void GameApplication::Initialize()
 {
     FontSettings fontSettings;
     gameFont.loadFromFile(fontSettings.fontPath);
-    objBDD->connectToDB("10.187.52.4:3306", "batailleNavale", "batailleNavale");
+    //objBDD->connectToDB("10.187.52.4:3306", "batailleNavale", "batailleNavale");
 }
 
 void GameApplication::Run() {
@@ -106,6 +106,11 @@ void GameApplication::ChangeState(State newState) {
             currentWindow = new MenuWindow(*this, windowPos);
             currentWindow->wName = "menu";
             break;
+
+        //case State::Locker:
+        //    currentWindow = new LockerWindow(*this, windowPos);
+        //    currentWindow->wName = "menu";
+        //    break;
 
         case State::Game:
             WindowSettings wSets;

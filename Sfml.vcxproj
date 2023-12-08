@@ -37,6 +37,7 @@
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="imagesRename.cpp" />
     <ClCompile Include="Localization.cpp" />
+    <ClCompile Include="LockerWindow.cpp" />
     <ClCompile Include="LoginMenu.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuButtonsManager.cpp" />
@@ -70,6 +71,7 @@
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Localization.h" />
+    <ClInclude Include="LockerWindow.h" />
     <ClInclude Include="LoginMenu.h" />
     <ClInclude Include="MenuButtonsManager.h" />
     <ClInclude Include="MenuWindow.h" />

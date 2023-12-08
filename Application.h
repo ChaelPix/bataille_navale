@@ -17,6 +17,7 @@ public:
         Splash,
         Menu,
         Game,
+        Locker,
     };
 
     enum class MessageType {
