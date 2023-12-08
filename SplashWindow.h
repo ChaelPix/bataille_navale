@@ -13,7 +13,7 @@
 class SplashWindow : public SfmlWindow
 {
 public:
-    SplashWindow(GameApplication& application);
+    SplashWindow(GameApplication& application, const sf::Vector2i& windowPos);
     ~SplashWindow();
 
 protected:

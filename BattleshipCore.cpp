@@ -184,7 +184,7 @@ BattleshipCore::CellType BattleshipCore::deserializeAttack(std::string msg)
     return Attack(x, y, false);
 }
 
-BattleshipCore::CellType BattleshipCore::Attack(int x, int y, bool isOnOpponent) {
+BattleshipCore::CellType BattleshipCore::Attack(int y, int x, bool isOnOpponent) {
 
     CellType(*grilleCible)[nbCol] = isOnOpponent ? targetGrid : playerGrid;
 

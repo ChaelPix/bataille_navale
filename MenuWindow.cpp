@@ -1,8 +1,8 @@
 #include "MenuWindow.h"
 
-MenuWindow::MenuWindow(GameApplication& application)
+MenuWindow::MenuWindow(GameApplication& application, const sf::Vector2i& windowPos)
     :
-    SfmlWindow("BattleShip", WindowSettings().menuWindowSize),
+    SfmlWindow("BattleShip", WindowSettings().menuWindowSize, windowPos),
     application(&application)
 {
     Initialize();

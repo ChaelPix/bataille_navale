@@ -1,8 +1,8 @@
 #include "GameWindow.h"
 
-GameWindow::GameWindow(GameApplication& application)
+GameWindow::GameWindow(GameApplication& application, const sf::Vector2i& windowPos)
     : 
-    SfmlWindow("BattleShip", WindowSettings().gameWindowSize),
+    SfmlWindow("BattleShip", WindowSettings().gameWindowSize, windowPos),
     gridPlayer(gridSettings.nbPixels, gridSettings.squareSize, gridSettings.playerGridPosition, gridSettings.lineColor),
     gridEnemy(gridSettings.nbPixels, gridSettings.squareSize, gridSettings.ennemyGridPosition, gridSettings.lineColor),
     application(&application)
@@ -43,14 +43,19 @@ void GameWindow::Update(sf::Event &event) {
             break;
         case GameApplication::MessageType::Game:
             std::cout << "Attack : " << message;
+
             attackCell = battleshipCore.deserializeAttack(message);
-            std::cout << "Player Grid Attacked : \n" << battleshipCore.serializePlayerGrid(true).erase(0, 1) << std::endl;
+
+            std::cout << "\nPlayer Grid : \n" << battleshipCore.serializePlayerGrid(true).erase(0, 1) << std::endl;
+            std::cout << "Target Grid : \n" << battleshipCore.serializePlayerGrid(false).erase(0, 1) << std::endl;
+
             gameState = GameState::Attacking;
             break;
         }
     }
    
     CursorCellSelector::State attackState;
+
     //State Machine
     switch (gameState)
     {
