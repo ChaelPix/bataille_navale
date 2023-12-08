@@ -24,32 +24,6 @@ void GameWindow::HandleEvents(sf::Event& event) {
     mouseManager.update(event, window);
 }
 
-<<<<<<< HEAD
-//TEST HUD
-void GameWindow::SetupHud(const std::string& imagePath, const std::string& fontPath, const std::string& text) {
-    if (!hudTexture.loadFromFile(imagePath)) {
-    }
-    hudSprite.setTexture(hudTexture);
-
-    if (!hudFont.loadFromFile(fontPath)) {
-    }
-    hudText.setFont(hudFont);
-    hudText.setString(text);
-    hudText.setCharacterSize(24); 
-    hudText.setFillColor(sf::Color::White);
-
-    hudSprite.setPosition(0, 0); 
-    hudText.setPosition(10, 10);
-}
-void GameWindow::Hud() {
-    //"ressources/UI/hud_Player.png"   "ressources/fonts/AGENCYB.TTF"  "Player 1"
-    SetupHud("ressources/UI/hud_Player.png", "ressources/fonts/AGENCYB.TTF", "Player 1");
-    window.draw(hudSprite);
-    window.draw(hudText);
-}
-
-=======
->>>>>>> 4e712d68832275d89235d2463257b68ab3da298d
 void GameWindow::Update(sf::Event &event) {
     
     //check Messages
