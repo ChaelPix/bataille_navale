@@ -51,11 +51,12 @@ bool BattleshipCore::canPlaceBoat(int row, int column, int boatSize, bool isRota
         int r = row - 4 + (isRotated == 0 ? 0 : i);
         int c = column - 2 + (isRotated == 1 ? 0-1 : i);
       
-        if (r >= nbLig || c >= nbCol || playerGrid[r][c] != CellType::empty || !isAdjacentCellFree(r, c, playerGrid)) {
-            std::cout << "r : " << r << " c : " << c << std::endl;
+        if (r >= nbLig || c >= nbCol || c < 0 || r < 0 || playerGrid[r][c] != CellType::empty || !isAdjacentCellFree(r, c, playerGrid)) {         
             isPlacementValid = false;
             break;
         }
+
+        std::cout << "r : " << r << " c : " << c << std::endl;
     }
     return isPlacementValid;
 }
