@@ -169,6 +169,9 @@ void PlayerBoatsManager::RandomPlacement()
 	{
 		if (!boatsList.at(i).getIsPlaced()) {
 			BattleshipCore::BoatInfo boatPlacement = battleshipCore->randomPlacing(static_cast<int>(boatsType.at(i)));
+
+			std::cout << "random pos boat : " << i << " x: " << boatPlacement.row << " y: " << boatPlacement.column << std::endl;
+
 			boatsList.at(i).setIsPlaced(true);
 
 			boatPlacement.isRotated ? boatsList.at(i).rotate(90) : boatsList.at(i).rotate(0);

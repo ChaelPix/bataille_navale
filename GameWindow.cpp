@@ -46,10 +46,12 @@ void GameWindow::Update(sf::Event &event) {
 
             attackCell = battleshipCore.deserializeAttack(message);
 
-            std::cout << "\nPlayer Grid : \n" << battleshipCore.serializePlayerGrid(true).erase(0, 1) << std::endl;
-            std::cout << "Target Grid : \n" << battleshipCore.serializePlayerGrid(false).erase(0, 1) << std::endl;
+            if (battleshipCore.areAllPlayerBoatsDown())
+                gameState = GameState::Defeat;
 
-            gameState = GameState::Attacking;
+            if(attackCell != BattleshipCore::CellType::hit)
+                gameState = GameState::Attacking;
+
             break;
         }
     }

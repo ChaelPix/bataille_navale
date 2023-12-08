@@ -85,6 +85,9 @@ BattleshipCore::BoatInfo BattleshipCore::randomPlacing(int boatSize)
         int row = (std::rand() % nbLig);
         int column = (std::rand() % nbCol);
 
+        if (row < 0) row = 0;
+        if (column < 0) column = 0;
+
         if (canPlaceBoat(row + 4, column + 2, boatSize, dir == 1))
         {
             isOk = true;
