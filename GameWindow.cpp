@@ -19,6 +19,7 @@ void GameWindow::Initialize()
     gameState = GameState::Placing;
     cursor = new CursorCellSelector(battleshipCore, application->client);
     endPanel = new EndPanel();
+    gameVfx = new GameVfx();
 }
 
 void GameWindow::HandleEvents(sf::Event& event) {
@@ -31,6 +32,8 @@ void GameWindow::Update(sf::Event &event) {
     std::string message = "";
     message = application->client->getMessage();
     BattleshipCore::CellType attackCell;
+    sf::Vector2f MousePos;
+    BattleshipCore::AttackInfo attckPos;
 
     if (!message.empty())
     {
@@ -45,7 +48,8 @@ void GameWindow::Update(sf::Event &event) {
         case GameApplication::MessageType::Game:
             std::cout << "Attack : " << message;
 
-            attackCell = battleshipCore.deserializeAttack(message);
+            attckPos = battleshipCore.deserializeAttack(message);
+            attackCell = battleshipCore.Attack(attckPos.y, attckPos.x, false);
 
             if (battleshipCore.areAllPlayerBoatsDown())
             {
@@ -55,6 +59,9 @@ void GameWindow::Update(sf::Event &event) {
 
             if(attackCell != BattleshipCore::CellType::hit)
                 gameState = GameState::Attacking;
+
+            if (attackCell == BattleshipCore::CellType::water)
+                gameVfx->CreateMissCell(attckPos.x, attckPos.y, false);
 
             break;
         }
@@ -92,14 +99,16 @@ void GameWindow::Update(sf::Event &event) {
 
     case GameState::Attacking:
         attackState = cursor->update(mouseManager);
+        MousePos = cursor->getMouseGridPos(mouseManager);
 
         switch (attackState)
         {
         case CursorCellSelector::State::Nothing:
-
+           
             break;
 
         case CursorCellSelector::State::Attacked:
+            gameVfx->CreateMissCell(MousePos.x, MousePos.y, true);
             gameState = GameState::Waiting;
             break;
 
@@ -150,6 +159,8 @@ void GameWindow::Render()
 
     cloudManager->draw(window);
     gridEnemy.DrawGrid(window);
+
+    gameVfx->draw(window);
 
     if(gameState == GameState::Attacking)
          cursor->draw(window);

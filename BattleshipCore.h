@@ -13,6 +13,11 @@ public:
 		bool isRotated;
 	};
 
+	struct AttackInfo
+	{
+		int x;
+		int y;
+	};
 	enum class CellType  { empty, boat, hit, water, error = 99 };
 private:
 	enum class boatTypes { PorteAvion = 5, Croiseur = 4, ContreTorpilleur = 3, Torpilleur = 2 };
@@ -46,7 +51,7 @@ public:
 
 	void setTargetGrid(std::string grid);
 	std::string serializeAttack(float x, float y);
-	BattleshipCore::CellType deserializeAttack(std::string msg);
+	BattleshipCore::AttackInfo deserializeAttack(std::string msg);
 	bool CheckIfBoatDown(int x, int y, bool isOnOpponent, bool doCountAttack, int originX, int originY);
 	BattleshipCore::CellType Attack(int x, int y, bool isOnOpponent);
 

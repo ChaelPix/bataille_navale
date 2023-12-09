@@ -97,6 +97,16 @@ CursorCellSelector::State CursorCellSelector::handleAttack()
     return State::ExtraTurn;
 }
 
+sf::Vector2f CursorCellSelector::getMouseGridPos(MouseManager& mouse)
+{
+    int gridSize = grid.squareSize / grid.nbPixels;
+    sf::Vector2f mousePos = mouse.getClickPosition();
+    anchoredX = (mousePos.x - grid.ennemyGridPosition.x) / gridSize;
+    anchoredY = (mousePos.y - grid.ennemyGridPosition.y) / gridSize;
+
+    return sf::Vector2f(anchoredX, anchoredY);
+}
+
 
 void CursorCellSelector::draw(sf::RenderWindow& window)
 {

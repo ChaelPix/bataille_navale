@@ -37,6 +37,7 @@ public:
 
 	State update(MouseManager& mouse);
 	void draw(sf::RenderWindow& window);
+	sf::Vector2f getMouseGridPos(MouseManager& mouse);
 
 };
 
