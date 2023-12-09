@@ -96,7 +96,7 @@ void PlayerBoatsManager::dragBoats(MouseManager &mouseManager)
 		{
 			if (boatsList.at(i).getShape().getGlobalBounds().contains(mouseManager.getClickPosition())) {
 				selectedBoat = &boatsList.at(i);
-
+				selectedBoat->SetIsDrag(true);
 				if (selectedBoat->getIsPlaced())
 				{
 					sf::Vector2f anchoredPos = selectedBoat->AnchoredPosition();
@@ -122,9 +122,11 @@ void PlayerBoatsManager::dragBoats(MouseManager &mouseManager)
 			sf::Vector2f anchoredPos = selectedBoat->AnchoredPosition();
 			selectedBoat->setPosition(anchoredPos.x * gridSize, anchoredPos.y * gridSize);
 			isBoatPlacementOk = battleshipCore->canPlaceBoat(anchoredPos.y, anchoredPos.x, static_cast<int>(selectedBoat->getBoatType()), selectedBoat->getIsRotated());
+			selectedBoat->SetCanBeDrop(isBoatPlacementOk);
 		}
 		else
 		{
+			selectedBoat->SetCanBeDrop(false);
 			isBoatPlacementOk = false;
 			isBoatInGrid = false;
 		}
