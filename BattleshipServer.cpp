@@ -4,8 +4,17 @@ BattleshipServer::BattleshipServer(ushort serverPORT) : TCPServer(serverPORT) {}
 
 void BattleshipServer::gameSession(SOCKET client1, SOCKET client2, bool isFirstPlayerToPlay)
 {
-    auto sessionState = sessionManager.getSessionState(client1, client2);
-    if (!sessionState) return;
+    
+
+    std::shared_ptr <GameSessionState> sessionState;
+
+    if(isFirstPlayerToPlay)
+        sessionState = sessionManager.getSessionState(client2, client1);
+    else
+        sessionState = sessionManager.getSessionState(client1, client2);
+
+    if (!sessionState)
+        return;
 
     //first message
     std::string message = "";

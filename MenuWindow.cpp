@@ -86,7 +86,7 @@ void MenuWindow::Render()
     loginMenu->draw(window);
 
     //Créer un texte
-        stat.setFont(FontStat);
+    stat.setFont(FontStat);
     stat.setString(statInformation);
     stat.setCharacterSize(40); // en pixels
     stat.setFillColor(sf::Color(192, 192, 192));

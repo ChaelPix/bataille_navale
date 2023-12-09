@@ -83,6 +83,7 @@ void TCPServer::matchClientsForGame()
 
         std::cout << "Matchmaking made between : " << client1 << " and " << client2 << std::endl;
         sessionManager.createSession(client1, client2);
+        std::chrono::milliseconds dt1(100);
         gameThreads[client1] = std::thread(&TCPServer::gameSession, this, client1, client2, false);
         gameThreads[client2] = std::thread(&TCPServer::gameSession, this, client2, client1, true);
     }
