@@ -11,6 +11,20 @@ GameVfx::GameVfx()
 		attackTextures.push_back(t);
 	}
 
+	for (int i = 0; i < gameVfxSettings.nbEnemyFire; i++)
+	{
+		sf::Texture t; 
+		t.loadFromFile(gameVfxSettings.enemyFirePath + std::to_string(i) + ".png");
+		enemyFireTextures.push_back(t);
+	}
+
+	for (int i = 0; i < gameVfxSettings.nbPlayerFire; i++)
+	{
+		sf::Texture t; 
+		t.loadFromFile(gameVfxSettings.playerFirePath + std::to_string(i) + ".png");
+		playerFireTextures.push_back(t);
+	}
+
 	gridSize = gridSettings.squareSize / gridSettings.nbPixels;
 }
 
@@ -42,6 +56,20 @@ void GameVfx::CreateAttackCell(int x, int y, bool isEnnemy)
 	attacksAnimation.push_back(new AnimatedEntity(gameVfxSettings.attacksTimer, false, true, gameVfxSettings.attackTextureSize, entityPos, attackTextures));
 }
 
+void GameVfx::CreateFireCell(int x, int y, bool isEnnemy)
+{
+	sf::Vector2f pos = getGridPos(isEnnemy);
+	sf::Vector2f entityPos = getEntityPos(pos, x, y);
+	entityPos.x = entityPos.x - (gameVfxSettings.attackTextureSize.x / 4);
+	entityPos.y = entityPos.y - (gameVfxSettings.attackTextureSize.y / 4);
+
+	std::vector<sf::Texture>* textures;
+	isEnnemy ? textures = &enemyFireTextures : textures = &playerFireTextures;
+
+	entities.push_back(new AnimatedEntity(gameVfxSettings.fireTimer, true, false, gameVfxSettings.attackTextureSize, entityPos, *textures));
+
+	CreateAttackCell(x, y, isEnnemy);
+}
 
 void GameVfx::draw(sf::RenderWindow& window)
 {

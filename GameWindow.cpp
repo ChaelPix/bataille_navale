@@ -46,8 +46,9 @@ void GameWindow::Update(sf::Event &event) {
             std::cout << "Message : " << message;
             break;
         case GameApplication::MessageType::End:
+            if(gameState != GameState::End)
+                endPanel->Show(true);
             gameState = GameState::End;
-            endPanel->Show(true);
             break;
         case GameApplication::MessageType::Game:
             std::cout << "Attack : " << message;
@@ -61,8 +62,10 @@ void GameWindow::Update(sf::Event &event) {
                 endPanel->Show(false);
             }
 
-            if(attackCell != BattleshipCore::CellType::hit)
-                gameState = GameState::Attacking;
+            if (attackCell != BattleshipCore::CellType::hit)
+                gameState = GameState::Attacking;                
+            else
+                gameVfx->CreateFireCell(attckPos.x, attckPos.y, false);
 
             if (attackCell == BattleshipCore::CellType::water)
                 gameVfx->CreateMissCell(attckPos.x, attckPos.y, false);
@@ -111,12 +114,13 @@ void GameWindow::Update(sf::Event &event) {
            
             break;
 
-        case CursorCellSelector::State::Attacked:
+        case CursorCellSelector::State::Attacked:  
             gameVfx->CreateMissCell(MousePos.x, MousePos.y, true);
             gameState = GameState::Waiting;
             break;
 
         case CursorCellSelector::State::Win:
+            gameVfx->CreateFireCell(MousePos.x, MousePos.y, true);
             std::cout << "WIN" << std::endl;
             endPanel->Show(true);
             gameState = GameState::End;
@@ -124,6 +128,7 @@ void GameWindow::Update(sf::Event &event) {
 
         case CursorCellSelector::State::ExtraTurn:
             std::cout << "Extra turn !" << std::endl;
+            gameVfx->CreateFireCell(MousePos.x, MousePos.y, true);
             gameState = GameState::Attacking;
             break;
 

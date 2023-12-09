@@ -55,6 +55,8 @@ public:
 	bool CheckIfBoatDown(int x, int y, bool isOnOpponent, bool doCountAttack, int originX, int originY);
 	BattleshipCore::CellType Attack(int x, int y, bool isOnOpponent);
 
+	BattleshipCore::CellType getCaseCellType(int x, int y, bool isEnemy);
+
 	bool areAllEnnemyBoatsDown();
 	bool areAllPlayerBoatsDown();
 };

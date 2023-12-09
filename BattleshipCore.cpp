@@ -211,6 +211,12 @@ BattleshipCore::CellType BattleshipCore::Attack(int x, int y, bool isOnOpponent)
     return grilleCible[x][y];
 }
 
+BattleshipCore::CellType BattleshipCore::getCaseCellType(int x, int y, bool isEnemy)
+{
+    CellType(*grilleCible)[nbCol] = isEnemy ? targetGrid : playerGrid;
+    return  grilleCible[x][y];
+}
+
 bool BattleshipCore::CheckIfBoatDown(int x, int y, bool isOnOpponent, bool doCountAttack, int origX, int origY) {
     CellType(*grilleCible)[nbCol] = isOnOpponent ? targetGrid : playerGrid;
 
