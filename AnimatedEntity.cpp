@@ -2,15 +2,20 @@
 
 #include <iostream>
 
-AnimatedEntity::AnimatedEntity(std::string name, int nbImgs, int timer, bool doLoop, sf::Vector2f windowSize) : EntityRectangle(windowSize)
+
+
+AnimatedEntity::AnimatedEntity(std::string name, int nbImgs, int timer, bool doLoop, bool doDie, sf::Vector2f size, sf::Vector2f position) : EntityRectangle(size, position), refTextures(nullptr)
 {
 	this->pathName = name;
 	this->actualBgIndex = 0;
 	this->timer = timer;
 	this->doLoop = doLoop;
-
+	this->doDie = doDie;
+	isDead = false;
 	this->tick = 0;
 	this->step = 1;
+
+	useRefTextures = false;
 
 	for (int i = 0; i < nbImgs; i++)
 	{
@@ -23,25 +28,52 @@ AnimatedEntity::AnimatedEntity(std::string name, int nbImgs, int timer, bool doL
 	}
 }
 
+AnimatedEntity::AnimatedEntity(int timer, bool doLoop, bool doDie, sf::Vector2f size, sf::Vector2f position, std::vector<sf::Texture>& textures) : EntityRectangle(size, position), refTextures(&textures)
+{
+	this->actualBgIndex = 1;
+	this->timer = timer;
+	this->doLoop = doLoop;
+	this->doDie = doDie;
+	this->tick = 0;
+	this->step = 1;
+	isDead = false;
+
+	useRefTextures = true;
+	setTexture(&refTextures->at(0));
+}
+
 void AnimatedEntity::draw(sf::RenderWindow& window)
 {
+	if (isDead)
+		return;
+
 	window.draw(shape);
 
 	tick++;
-	if (tick < timer)
+	if (clock.getElapsedTime().asMilliseconds() < timer)
 		return;
 
+	clock.restart();
 	tick = 0;
-	EntityRectangle::setTexture(&bgImages.at(actualBgIndex));
 
+	std::vector<sf::Texture>* images;
+	useRefTextures ? images = refTextures : images = &bgImages;
+
+	EntityRectangle::setTexture(&images->at(actualBgIndex));
 	actualBgIndex += step;
 
-	if (actualBgIndex > 0 && actualBgIndex >= bgImages.size())
+	if (actualBgIndex > 0 && actualBgIndex >= images->size())
 	{
+		if (doDie)
+		{
+			isDead = true;
+			return;
+		}
+
 		if (doLoop)
 		{
 			step = -1;
-			actualBgIndex = bgImages.size() - 2;
+			actualBgIndex = images->size() - 2;
 		}else
 			actualBgIndex = 0;
 	}else if (actualBgIndex < 0)
@@ -49,6 +81,10 @@ void AnimatedEntity::draw(sf::RenderWindow& window)
 		step = 1;
 		actualBgIndex = 1;
 	}
-
-	
 }
+
+bool AnimatedEntity::getIsDead()
+{
+	return this->isDead;
+}
+

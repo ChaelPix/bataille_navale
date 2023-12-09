@@ -4,23 +4,35 @@ BattleshipServer::BattleshipServer(ushort serverPORT) : TCPServer(serverPORT) {}
 
 void BattleshipServer::gameSession(SOCKET client1, SOCKET client2, bool isFirstPlayerToPlay)
 {
+    
+
+    std::shared_ptr <GameSessionState> sessionState;
+
+    if(isFirstPlayerToPlay)
+        sessionState = sessionManager.getSessionState(client2, client1);
+    else
+        sessionState = sessionManager.getSessionState(client1, client2);
+
+    if (!sessionState)
+        return;
+
     //first message
     std::string message = "";
     isFirstPlayerToPlay ? message = "GStart" : message = "GWait";
     std::cout << "Sent to " << client2 << " " << message << std::endl;
-    send(client2, message.c_str(), message.length(), 0);
+    sendMessage(client2, message);
 
     //GameLoop
     try {
 
-        while (isServerOn) {
+        while (isServerOn && sessionState->isActive()) {
             std::string messageFromClient1 = receiveMessageFromClient(client1);
 
             // if client quit
             if (messageFromClient1.empty()) {
-
-                closeClientSocket(client1);
-                sendMessage(client2, "fin");
+                std::cout << "Someone leaves" << std::endl;
+                sessionState->disconnectClient(isFirstPlayerToPlay);
+                sendMessage(client2, "Fin");
                 break;
             }
 
@@ -35,12 +47,15 @@ void BattleshipServer::gameSession(SOCKET client1, SOCKET client2, bool isFirstP
         std::cerr << "Exception dans gameSession: " << e.what() << std::endl;
     }
 
-    //closing
-    std::cout << "Closing a Room" << std::endl;
-    std::chrono::milliseconds dt1(100);
-    std::this_thread::sleep_for(dt1);
-    closeClientSocket(client1);
-    closeClientSocket(client2);
+    if (sessionState->isActive()) {
+        std::cout << "Closing a Room" << std::endl;
+        sessionState->disconnectClient(isFirstPlayerToPlay);
+        if (!sessionState->isActive()) {
+            sessionManager.endSession(client1, client2);
+            closeClientSocket(client1);
+            closeClientSocket(client2);
+        }
+    }
 }
 
 

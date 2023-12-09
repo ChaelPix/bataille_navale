@@ -124,3 +124,12 @@ struct EndMenuSettings {
       "ressources/UI/ui_menu_exitbutton_on.png"
     };
 };
+
+struct GameVFXSettings
+{
+    const std::string missImagePath = "ressources/UI/ui_miss.png";
+
+    const int attacksTimer = 125;
+    const std::string attacksPath = "ressources/UI/vfx/vfx_attack";
+    const sf::Vector2f attackTextureSize = sf::Vector2f(112, 112);
+};

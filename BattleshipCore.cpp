@@ -178,7 +178,7 @@ std::string BattleshipCore::serializeAttack(float x, float y)
     return "Gx:" + std::to_string(x) + "y:" + std::to_string(y);
 }
 
-BattleshipCore::CellType BattleshipCore::deserializeAttack(std::string msg)
+BattleshipCore::AttackInfo BattleshipCore::deserializeAttack(std::string msg)
 {
     int xPos = msg.find("x:");
     int yPos = msg.find("y:");
@@ -187,9 +187,11 @@ BattleshipCore::CellType BattleshipCore::deserializeAttack(std::string msg)
     int x = std::stoi(xStr);
     int y = std::stoi(yStr);
 
-    CellType cellType = Attack(y, x, false);
-    CheckIfBoatDown(y, x, false, true, -1, -1);
-    return cellType;
+    AttackInfo pos;
+    pos.x = x;
+    pos.y = y;
+    return pos;
+ 
 }
 
 BattleshipCore::CellType BattleshipCore::Attack(int x, int y, bool isOnOpponent) {
@@ -197,9 +199,14 @@ BattleshipCore::CellType BattleshipCore::Attack(int x, int y, bool isOnOpponent)
     CellType(*grilleCible)[nbCol] = isOnOpponent ? targetGrid : playerGrid;
 
     if (grilleCible[x][y] == CellType::boat)
+    {
         grilleCible[x][y] = CellType::hit;
+
+        if (!isOnOpponent)
+            CheckIfBoatDown(x, y, false, true, -1, -1);
+    }
     else 
-        grilleCible[x][y] = CellType::water;
+        grilleCible[x][y] = CellType::water; 
 
     return grilleCible[x][y];
 }

@@ -11,6 +11,7 @@ class GameApplication;
 #include "BattleshipCore.h"
 #include "CloudManager.h"
 #include "EndPanel.h"
+#include "GameVfx.h"
 #include <vector>
 #include "CursorCellSelector.h"
 
@@ -50,6 +51,7 @@ private:
 
     CursorCellSelector* cursor;
     EndPanel* endPanel;
+    GameVfx* gameVfx;
 };
 
 
