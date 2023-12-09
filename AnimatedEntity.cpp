@@ -1,8 +1,8 @@
-#include "AnimatedBackground.h"
+#include "AnimatedEntity.h"
 
 #include <iostream>
 
-AnimatedBackground::AnimatedBackground(std::string name, int nbImgs, int timer, bool doLoop, sf::Vector2f windowSize) : EntityRectangle(windowSize)
+AnimatedEntity::AnimatedEntity(std::string name, int nbImgs, int timer, bool doLoop, sf::Vector2f windowSize) : EntityRectangle(windowSize)
 {
 	this->pathName = name;
 	this->actualBgIndex = 0;
@@ -23,7 +23,7 @@ AnimatedBackground::AnimatedBackground(std::string name, int nbImgs, int timer, 
 	}
 }
 
-void AnimatedBackground::draw(sf::RenderWindow& window)
+void AnimatedEntity::draw(sf::RenderWindow& window)
 {
 	window.draw(shape);
 

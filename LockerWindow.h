@@ -4,7 +4,7 @@
 //#include "Application.h"
 //
 //#include "Settings.h"
-//#include "AnimatedBackground.h"
+//#include "AnimatedEntity.h"
 //#include "MouseManager.h"
 //#include "MenuButtonsManager.h"
 //#include "BsBDD.h"
@@ -30,7 +30,7 @@
 //    GameApplication application;
 //
 //    MouseManager mouseManager;
-//    AnimatedBackground* menuBackground;
+//    AnimatedEntity* menuBackground;
 //    MenuButtonsManager* menuButtonsManager;
 //    std::vector<Entity*> entitiesPtr;
 //

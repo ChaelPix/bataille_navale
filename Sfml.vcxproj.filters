@@ -51,7 +51,7 @@
     <ClCompile Include="EntityRectangle.cpp">
       <Filter>Fichiers sources\SFML</Filter>
     </ClCompile>
-    <ClCompile Include="AnimatedBackground.cpp">
+    <ClCompile Include="AnimatedEntity.cpp">
       <Filter>Fichiers sources\SFML</Filter>
     </ClCompile>
     <ClCompile Include="Grid.cpp">
@@ -137,7 +137,7 @@
     <ClInclude Include="BsBDD.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="AnimatedBackground.h">
+    <ClInclude Include="AnimatedEntity.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Boat.h">

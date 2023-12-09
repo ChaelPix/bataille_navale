@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AnimatedBackground.cpp" />
+    <ClCompile Include="AnimatedEntity.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="BattleshipCore.cpp" />
     <ClCompile Include="BattleshipServer.cpp" />
@@ -54,7 +54,7 @@
     <ClCompile Include="WaitTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AnimatedBackground.h" />
+    <ClInclude Include="AnimatedEntity.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="BattleshipCore.h" />
     <ClInclude Include="BattleshipServer.h" />

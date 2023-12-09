@@ -4,7 +4,7 @@
 #include "Application.h"
 
 #include "Settings.h"
-#include "AnimatedBackground.h"
+#include "AnimatedEntity.h"
 #include "MouseManager.h"
 #include "MenuButtonsManager.h"
 

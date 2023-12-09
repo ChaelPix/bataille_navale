@@ -6,7 +6,7 @@ class GameApplication;
 #include "PlayerBoatsManager.h"
 #include "Grid.h"
 #include "Settings.h"
-#include "AnimatedBackground.h"
+#include "AnimatedEntity.h"
 #include "MouseManager.h"
 #include "BattleshipCore.h"
 #include "CloudManager.h"
@@ -36,7 +36,7 @@ private:
     GridSettings gridSettings;
     WindowSettings windowSettings;
 
-    AnimatedBackground* waterBackground;
+    AnimatedEntity* waterBackground;
 
     Grid gridPlayer, gridEnemy;
     PlayerBoatsManager* playerBoatsManager;
