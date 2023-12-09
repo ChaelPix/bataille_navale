@@ -15,9 +15,10 @@ private:
 	std::vector<AnimatedEntity*> attacksAnimation;
 
 	sf::Texture missTexture;
-	sf::Texture attackTextures[4];
+	std::vector<sf::Texture> attackTextures;
 
 	sf::Vector2f getGridPos(bool isEnnemy);
+	sf::Vector2f getEntityPos(sf::Vector2f gridPos, int x, int y);
 
 public:
 

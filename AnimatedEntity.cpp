@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+
+
 AnimatedEntity::AnimatedEntity(std::string name, int nbImgs, int timer, bool doLoop, bool doDie, sf::Vector2f size, sf::Vector2f position) : EntityRectangle(size, position), refTextures(nullptr)
 {
 	this->pathName = name;
@@ -9,7 +11,7 @@ AnimatedEntity::AnimatedEntity(std::string name, int nbImgs, int timer, bool doL
 	this->timer = timer;
 	this->doLoop = doLoop;
 	this->doDie = doDie;
-
+	isDead = false;
 	this->tick = 0;
 	this->step = 1;
 
@@ -28,14 +30,16 @@ AnimatedEntity::AnimatedEntity(std::string name, int nbImgs, int timer, bool doL
 
 AnimatedEntity::AnimatedEntity(int timer, bool doLoop, bool doDie, sf::Vector2f size, sf::Vector2f position, std::vector<sf::Texture>& textures) : EntityRectangle(size, position), refTextures(&textures)
 {
-	this->actualBgIndex = 0;
+	this->actualBgIndex = 1;
 	this->timer = timer;
 	this->doLoop = doLoop;
 	this->doDie = doDie;
 	this->tick = 0;
 	this->step = 1;
+	isDead = false;
 
 	useRefTextures = true;
+	setTexture(&refTextures->at(0));
 }
 
 void AnimatedEntity::draw(sf::RenderWindow& window)
@@ -46,16 +50,16 @@ void AnimatedEntity::draw(sf::RenderWindow& window)
 	window.draw(shape);
 
 	tick++;
-	if (tick < timer)
+	if (clock.getElapsedTime().asMilliseconds() < timer)
 		return;
 
+	clock.restart();
 	tick = 0;
 
-	std::vector<sf::Texture>* images = nullptr;
-	useRefTextures ? images = &bgImages : images = refTextures;
+	std::vector<sf::Texture>* images;
+	useRefTextures ? images = refTextures : images = &bgImages;
 
 	EntityRectangle::setTexture(&images->at(actualBgIndex));
-
 	actualBgIndex += step;
 
 	if (actualBgIndex > 0 && actualBgIndex >= images->size())

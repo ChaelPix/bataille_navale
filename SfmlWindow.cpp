@@ -29,9 +29,8 @@ void SfmlWindow::Run() {
 
     //fps test
     sf::Time elapsedTime = clock.getElapsedTime();
-    if (elapsedTime.asMilliseconds() < 1)
-    {
-        sf::sleep(sf::milliseconds(1) - elapsedTime);
+    if (elapsedTime.asMilliseconds() < 2) {
+        sf::sleep(sf::milliseconds(2) - elapsedTime);
     }
     clock.restart();
 
