@@ -30,13 +30,12 @@ bool EndPanel::isLeaveButtonClicked(MouseManager mouse)
 
 	if (leaveButton->getShape().getGlobalBounds().contains(mouse.getClickPosition()))
 	{
-		std::cout << "In Button\n";
-		endImage->setTexture(&buttonTextures[1]);
+		leaveButton->setTexture(&buttonTextures[1]);
 		return mouse.isMouseClicked();
 	}
 	else
 	{
-		endImage->setTexture(&buttonTextures[0]);
+		leaveButton->setTexture(&buttonTextures[0]);
 		return false;
 	}
 

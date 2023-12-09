@@ -29,10 +29,27 @@ void TCPClient::startReceiving() {
 
 void TCPClient::receiveMessages() {
     while (receiving) {
-        std::string message = receiveMessage();
-        std::lock_guard<std::mutex> lock(queueMutex);
-        messageQueue.push(message);
-        cv.notify_one();
+        fd_set readfds;
+        FD_ZERO(&readfds);
+        FD_SET(idSocket, &readfds);
+
+        struct timeval timeout;
+        timeout.tv_sec = 1;
+
+        int result = select(idSocket + 1, &readfds, NULL, NULL, &timeout);
+
+        if (result == 0) {
+            continue;
+        }
+        else if (result == -1) {
+            break;
+        }
+        else {
+            std::string message = receiveMessage();
+            std::lock_guard<std::mutex> lock(queueMutex);
+            messageQueue.push(message);
+            cv.notify_one();
+        }
     }
 }
 
@@ -49,6 +66,7 @@ std::string TCPClient::getMessage() {
 
 
 void TCPClient::stopReceiving() {
+    std::cout << "stopReceiving" << std::endl;
     receiving = false;
     if (receiveThread.joinable()) {
         receiveThread.join();
@@ -56,6 +74,9 @@ void TCPClient::stopReceiving() {
 }
 
 TCPClient::~TCPClient() {
+    std::cout << "Dans Destructeur" << std::endl;
     stopReceiving();
+    std::cout << "DClose Destructeyr" << std::endl;
+    closeSocket();
 }
 

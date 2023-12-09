@@ -59,7 +59,10 @@ void MenuWindow::Update(sf::Event& event) {
             running = false;
             application->ChangeState(GameApplication::State::Game);
         }
-    } 
+    }
+    else if(application->client != nullptr){
+        application->DeleteClient();
+    }
 }
 
 void MenuWindow::Render()

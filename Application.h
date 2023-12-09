@@ -49,6 +49,7 @@ public:
     void ChangeState(State newState);
 
     void CreateClient();
+    void DeleteClient();
 
     void Close();
 

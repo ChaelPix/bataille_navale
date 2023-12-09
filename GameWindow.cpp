@@ -106,6 +106,7 @@ void GameWindow::Update(sf::Event &event) {
         case CursorCellSelector::State::Win:
             std::cout << "WIN" << std::endl;
             endPanel->Show(true);
+            gameState = GameState::End;
             break;
 
         case CursorCellSelector::State::ExtraTurn:
@@ -128,6 +129,8 @@ void GameWindow::Update(sf::Event &event) {
         if (endPanel->isLeaveButtonClicked(mouseManager))
         {
             std::cout << "LEAVE" << std::endl;
+            application->DeleteClient();
+            application->ChangeState(GameApplication::State::Menu);
         }
         break;
     }
