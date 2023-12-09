@@ -169,6 +169,7 @@ void PlayerBoatsManager::RandomPlacement()
 {
 	for (int i = 0; i < boatsList.size(); i++)
 	{
+		boatsList.at(i).SetIsDrag(false);
 		if (!boatsList.at(i).getIsPlaced()) {
 			BattleshipCore::BoatInfo boatPlacement = battleshipCore->randomPlacing(static_cast<int>(boatsType.at(i)));
 
