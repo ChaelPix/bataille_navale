@@ -15,7 +15,7 @@ MenuWindow::~MenuWindow()
 
 void MenuWindow::Initialize()
 {
-    menuBackground = new AnimatedEntity("ressources/UI/backgrounds/menuBg/menu_", 50, 28, true, false, windowSettings.menuWindowSize);
+    menuBackground = new AnimatedEntity("ressources/UI/backgrounds/menuBg/menu_", 50, 28, true, false, windowSettings.menuWindowSize, sf::Vector2f(0, 0));
     entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
     menuButtonsManager = new MenuButtonsManager(application->getGameFont());
 

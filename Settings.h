@@ -128,4 +128,6 @@ struct EndMenuSettings {
 struct GameVFXSettings
 {
     const std::string missImagePath = "ressources/UI/ui_miss.png";
+
+    const std::string attacksPath = "ressources/UI/vfx/vfx_attack";
 };
