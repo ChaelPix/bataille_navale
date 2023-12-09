@@ -124,3 +124,8 @@ struct EndMenuSettings {
       "ressources/UI/ui_menu_exitbutton_on.png"
     };
 };
+
+struct GameVFXSettings
+{
+    const std::string missImagePath = "ressources/UI/ui_miss.png";
+};
