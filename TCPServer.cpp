@@ -71,8 +71,15 @@ void TCPServer::matchClientsForGame()
 
         if (!isServerOn) break;
 
+
         SOCKET client1 = matchmakingQueue.front(); matchmakingQueue.pop();
+        if (!isClientConnected(client1)) continue; 
+
         SOCKET client2 = matchmakingQueue.front(); matchmakingQueue.pop();
+        if (!isClientConnected(client2)) {
+            matchmakingQueue.push(client1);
+            continue;
+        }
 
         std::cout << "Matchmaking made between : " << client1 << " and " << client2 << std::endl;
 
@@ -124,11 +131,7 @@ std::string TCPServer::receiveMessageFromClient(SOCKET clientId)
 {
     uint trameLenght = recv(clientId, trame_lect, DIMMAX, 0);
 
-    if (trameLenght == 0) {
-        handleClientDisconnection(clientId);
-        return std::string(); 
-    }
-    else if (trameLenght > 0 && trameLenght < DIMMAX) {
+    if (trameLenght > 0 && trameLenght < DIMMAX) {
         trame_lect[trameLenght] = '\0';
         return std::string(trame_lect);
     }
@@ -172,20 +175,12 @@ bool TCPServer::isSocketActive(SOCKET clientSocket) {
     return true; 
 }
 
-void TCPServer::handleClientDisconnection(SOCKET clientId)
+bool TCPServer::isClientConnected(SOCKET clientSocket)
 {
-    closesocket(clientId);
-   
-    std::lock_guard<std::mutex> lock(matchmakingMutex);
-    std::queue<SOCKET> tempQueue;
+    sendMessage(clientSocket, "matchmaking");
+    std::string s = receiveMessageFromClient(clientSocket);
+    std::cout << "CheckClient connected : " << s << std::endl;
 
-    while (!matchmakingQueue.empty()) {
-        SOCKET currentClient = matchmakingQueue.front();
-        matchmakingQueue.pop();
-        if (currentClient != clientId) {
-            tempQueue.push(currentClient);
-        }
-    }
-
-    std::swap(matchmakingQueue, tempQueue);
+    return s != "";
 }
+

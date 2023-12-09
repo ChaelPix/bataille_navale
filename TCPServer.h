@@ -46,8 +46,8 @@ protected:
     void setupAddress();
     void bindAndListen();
     void closeClientSocket(SOCKET clientSocket);
-    void handleClientDisconnection(SOCKET clientId);
-    
+    bool isClientConnected(SOCKET clientId);
+
 };
 
 #endif

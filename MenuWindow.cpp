@@ -53,6 +53,13 @@ void MenuWindow::Update(sf::Event& event) {
             application->CreateClient();
 
         std::string message = application->client->getMessage();
+        if (message == "matchmaking")
+        {
+            std::cout << "Got Matchmaking from server ";
+            application->client->sendMessage("OK");
+        }
+            
+
         if (application->isCorrectMessageType(message))
         {
             application->setClientStartFirst(message == "GStart");
