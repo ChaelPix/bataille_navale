@@ -104,12 +104,14 @@ struct EndMenuSettings {
     const sf::Vector2f panelSize = sf::Vector2f(1300, 850);
     const sf::Color panelColor = sf::Color(0, 0, 0, 200);
 
-    const sf::Vector2f textPosition = sf::Vector2f(200, 300);
-    const int textCharacterSize = 40;
-    const std::string winText = "YOU WIN!";
-    const std::string looseText = "YOU LOOSE!";
-    const sf::Color textColor = sf::Color(255, 255, 255, 255);
+    //const sf::Vector2f textPosition = sf::Vector2f(200, 300);
+    //const int textCharacterSize = 40;
+    //const std::string winText = "YOU WIN!";
+    //const std::string looseText = "YOU LOOSE!";
+    //const sf::Color textColor = sf::Color(255, 255, 255, 255);
 
+    const sf::Vector2f imagePos = sf::Vector2f(400, 100);
+    const sf::Vector2f imageSize = sf::Vector2f(250, 250);
     const std::string endImagesPath[2] = {
       "ressources/UI/ui_victory.png",
       "ressources/UI/ui_loose.png"
