@@ -43,11 +43,11 @@ public:
 
 
         //TEST EXPLOSION
-        explosionTestTexture.loadFromFile("ressources/UI/expl2.png");
-        explosionTestVector.push_back(EntityRectangle(sf::Vector2f(80, 80), sf::Vector2f(780, 430), explosionTestTexture, sf::Color(255, 255, 255, 172)));
-        explosionTestVector.at(0).setTexture(&explosionTestTexture);
-        explosionOpacity = 255; // Valeur initiale de l'opacité
-        opacityChangeSpeed = cloudSettings.explodeOpacitySpeed; // Ajustez cette valeur pour changer la vitesse de pulsation
+        //explosionTestTexture.loadFromFile("ressources/UI/expl2.png");
+        //explosionTestVector.push_back(EntityRectangle(sf::Vector2f(80, 80), sf::Vector2f(780, 430), explosionTestTexture, sf::Color(255, 255, 255, 172)));
+        //explosionTestVector.at(0).setTexture(&explosionTestTexture);
+        //explosionOpacity = 255; // Valeur initiale de l'opacité
+        //opacityChangeSpeed = cloudSettings.explodeOpacitySpeed; // Ajustez cette valeur pour changer la vitesse de pulsation
     }
 
     void update() {
@@ -83,7 +83,7 @@ public:
         update();
 
         //TEST EXPLOSION
-        explosionTestVector.at(0).draw(window);
+       //explosionTestVector.at(0).draw(window);
 
         // Dessiner les nuages
         for (int i = 0; i < cloudsStatic.size(); i++)

@@ -1,8 +1,8 @@
 #include "SplashWindow.h"
 
-SplashWindow::SplashWindow(GameApplication& application)
+SplashWindow::SplashWindow(GameApplication& application, const sf::Vector2i& windowPos)
     :
-    SfmlWindow("BattleShip", WindowSettings().menuWindowSize),
+    SfmlWindow("BattleShip", WindowSettings().menuWindowSize, windowPos),
     application(&application)
 {
     Initialize();
@@ -27,6 +27,7 @@ void SplashWindow::Initialize()
         Logo.push_back(EntityRectangle(sf::Vector2f(350, 350), sf::Vector2f(666, 374), splashObj.SplashImgPath[i], sf::Vector2f(175, 175)));
         Logo.at(i).setTexture(&SplashTexture[i]);
     }
+
 }
 
 void SplashWindow::HandleEvents(sf::Event& event) {

@@ -24,6 +24,7 @@ public:
 
     void setTexture(sf::Texture* texture);
     void setPosition(sf::Vector2f position);
+    void setSize(sf::Vector2f size);
     void setPosition(float x, float y);
     sf::Vector2f getPosition();
     void rotate(float angleTarget);

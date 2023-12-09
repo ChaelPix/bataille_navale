@@ -1,7 +1,7 @@
 #pragma once
 #include "EntityRectangle.h"
 
-class AnimatedBackground : public EntityRectangle
+class AnimatedEntity : public EntityRectangle
 {
 private :
 	std::string pathName;
@@ -15,7 +15,7 @@ private :
 	sf::Clock clock;
 
 public :
-	AnimatedBackground(std::string name, int nbImgs, int timer, bool doLoop, sf::Vector2f windowsSize);
+	AnimatedEntity(std::string name, int nbImgs, int timer, bool doLoop, sf::Vector2f windowsSize);
 
 	virtual void draw(sf::RenderWindow& window);
 };

@@ -15,6 +15,12 @@ private:
 	sf::Vector2f spawnPos;
 	bool isPlaced;
 
+	EntityRectangle* indicator;
+	GridSettings grid;
+	int gridSize;
+	bool canBeDrop;
+	bool isDragged;
+
 public:
 
 	Boat(int id, CoreGame::boatTypes boatType, sf::Vector2f size, sf::Texture* texture = nullptr);
@@ -33,5 +39,10 @@ public:
 	void setIsPlaced(bool isPlaced);
 
 	sf::Vector2f AnchoredPosition();
+
+	void draw(sf::RenderWindow& window) override;
+
+	void SetCanBeDrop(bool action);
+	void SetIsDrag(bool action);
 };
 

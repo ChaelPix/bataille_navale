@@ -69,6 +69,11 @@ void EntityRectangle::setPosition(sf::Vector2f position) {
     shape.setPosition(position);
 }
 
+void EntityRectangle::setSize(sf::Vector2f size)
+{
+    shape.setSize(size);
+}
+
 void EntityRectangle::setPosition(float x, float y) {
     shape.setPosition(sf::Vector2f(x, y));
 }

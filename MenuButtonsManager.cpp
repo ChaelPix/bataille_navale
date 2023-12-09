@@ -79,6 +79,7 @@ bool MenuButtonsManager::ButtonClickAction(int btnId)
 			return false;
 
 		isMatchMaking = false;
+
 		break;
 	}
 

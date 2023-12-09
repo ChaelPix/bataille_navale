@@ -4,7 +4,7 @@
 #include "Application.h"
 
 #include "Settings.h"
-#include "AnimatedBackground.h"
+#include "AnimatedEntity.h"
 #include "MouseManager.h"
 #include "MenuButtonsManager.h"
 
@@ -13,7 +13,7 @@
 class SplashWindow : public SfmlWindow
 {
 public:
-    SplashWindow(GameApplication& application);
+    SplashWindow(GameApplication& application, const sf::Vector2i& windowPos);
     ~SplashWindow();
 
 protected:

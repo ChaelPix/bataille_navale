@@ -51,17 +51,13 @@ void TCPServer::acceptClients()
             SOCKET clientSocket = accept(idSocket, (struct sockaddr*)&adr_client, &addr_len);
           
             if (clientSocket != INVALID_SOCKET) {
-                if (isSocketActive(clientSocket)) {
-                    idsClients.push_back(clientSocket);
-                    {
-                        std::lock_guard<std::mutex> lock(matchmakingMutex);
-                        matchmakingQueue.push(clientSocket);
-                    }
-                    cvMatchmaking.notify_one();
+                idsClients.push_back(clientSocket);
+                {
+                    std::cout << "a Client is connected : " << clientSocket << std::endl;
+                    std::lock_guard<std::mutex> lock(matchmakingMutex);
+                    matchmakingQueue.push(clientSocket);
                 }
-                else {
-                    closeClientSocket(clientSocket);
-                }
+                cvMatchmaking.notify_one();
             }
         }
     }
@@ -78,11 +74,7 @@ void TCPServer::matchClientsForGame()
         SOCKET client1 = matchmakingQueue.front(); matchmakingQueue.pop();
         SOCKET client2 = matchmakingQueue.front(); matchmakingQueue.pop();
 
-        if (!isSocketActive(client1) || !isSocketActive(client2)) {
-            closeClientSocket(client1);
-            closeClientSocket(client2);
-            continue;
-        }
+        std::cout << "Matchmaking made between : " << client1 << " and " << client2 << std::endl;
 
         gameThreads[client1] = std::thread(&TCPServer::gameSession, this, client1, client2, false);
         gameThreads[client2] = std::thread(&TCPServer::gameSession, this, client2, client1, true);
@@ -132,7 +124,11 @@ std::string TCPServer::receiveMessageFromClient(SOCKET clientId)
 {
     uint trameLenght = recv(clientId, trame_lect, DIMMAX, 0);
 
-    if (trameLenght > 0 && trameLenght < DIMMAX) {
+    if (trameLenght == 0) {
+        handleClientDisconnection(clientId);
+        return std::string(); 
+    }
+    else if (trameLenght > 0 && trameLenght < DIMMAX) {
         trame_lect[trameLenght] = '\0';
         return std::string(trame_lect);
     }
@@ -174,4 +170,22 @@ bool TCPServer::isSocketActive(SOCKET clientSocket) {
     int result = recv(clientSocket, &buffer, 1, MSG_PEEK);
     if (result <= 0) return false; 
     return true; 
+}
+
+void TCPServer::handleClientDisconnection(SOCKET clientId)
+{
+    closesocket(clientId);
+   
+    std::lock_guard<std::mutex> lock(matchmakingMutex);
+    std::queue<SOCKET> tempQueue;
+
+    while (!matchmakingQueue.empty()) {
+        SOCKET currentClient = matchmakingQueue.front();
+        matchmakingQueue.pop();
+        if (currentClient != clientId) {
+            tempQueue.push(currentClient);
+        }
+    }
+
+    std::swap(matchmakingQueue, tempQueue);
 }

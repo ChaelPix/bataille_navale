@@ -13,8 +13,8 @@ public:
 		bool isRotated;
 	};
 
+	enum class CellType  { empty, boat, hit, water, error = 99 };
 private:
-	enum class CellType { empty, boat, hit, water, error = 99 };
 	enum class boatTypes { PorteAvion = 5, Croiseur = 4, ContreTorpilleur = 3, Torpilleur = 2 };
 
 	static const int nbLig = 10;
@@ -24,6 +24,10 @@ private:
 	CellType targetGrid[nbLig][nbCol];
 
 	bool hasReceivedOpponentGrid;
+	int playerBoatsDown = 0;
+	int enemyBoatDown = 0;
+
+	
 
 public:
 	BattleshipCore();
@@ -34,10 +38,19 @@ public:
 
 	BoatInfo randomPlacing(int boatSize);
 
-	std::string serializePlayerGrid() const;
+	std::string serializePlayerGrid(bool isPlayer = true);
 
 	bool getHasReceivedOpponentGrid() const;
+	bool isTargetCellEmpty(int x, int y);
+	CellType getTargetCellType(int x, int y);
 
 	void setTargetGrid(std::string grid);
+	std::string serializeAttack(float x, float y);
+	BattleshipCore::CellType deserializeAttack(std::string msg);
+	bool CheckIfBoatDown(int x, int y, bool isOnOpponent, bool doCountAttack, int originX, int originY);
+	BattleshipCore::CellType Attack(int x, int y, bool isOnOpponent);
+
+	bool areAllEnnemyBoatsDown();
+	bool areAllPlayerBoatsDown();
 };
 

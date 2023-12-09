@@ -6,16 +6,18 @@ class GameApplication;
 #include "PlayerBoatsManager.h"
 #include "Grid.h"
 #include "Settings.h"
-#include "AnimatedBackground.h"
+#include "AnimatedEntity.h"
 #include "MouseManager.h"
 #include "BattleshipCore.h"
 #include "CloudManager.h"
+#include "EndPanel.h"
 #include <vector>
+#include "CursorCellSelector.h"
 
 class GameWindow : public SfmlWindow {
 public:
-    GameWindow(GameApplication& application);
-    enum class GameState {Placing, WaitingGrid, Attacking, Waiting, Victory, Defeat};
+    GameWindow(GameApplication& application, const sf::Vector2i& windowPos);
+    enum class GameState {Placing, WaitingGrid, Attacking, Waiting, End};
 protected:
     void Initialize() override;
 
@@ -34,7 +36,7 @@ private:
     GridSettings gridSettings;
     WindowSettings windowSettings;
 
-    AnimatedBackground* waterBackground;
+    AnimatedEntity* waterBackground;
 
     Grid gridPlayer, gridEnemy;
     PlayerBoatsManager* playerBoatsManager;
@@ -45,6 +47,9 @@ private:
 
     sf::Clock timer;
     GameState gameState;
+
+    CursorCellSelector* cursor;
+    EndPanel* endPanel;
 };
 
 

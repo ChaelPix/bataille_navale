@@ -1,8 +1,8 @@
 #include "GameWindow.h"
 
-GameWindow::GameWindow(GameApplication& application)
+GameWindow::GameWindow(GameApplication& application, const sf::Vector2i& windowPos)
     : 
-    SfmlWindow("BattleShip", WindowSettings().gameWindowSize),
+    SfmlWindow("BattleShip", WindowSettings().gameWindowSize, windowPos),
     gridPlayer(gridSettings.nbPixels, gridSettings.squareSize, gridSettings.playerGridPosition, gridSettings.lineColor),
     gridEnemy(gridSettings.nbPixels, gridSettings.squareSize, gridSettings.ennemyGridPosition, gridSettings.lineColor),
     application(&application)
@@ -12,11 +12,13 @@ GameWindow::GameWindow(GameApplication& application)
 
 void GameWindow::Initialize()
 {
-    waterBackground = new AnimatedBackground("ressources/UI/backgrounds/waterBg/water_", 59, 100, true, windowSettings.gameWindowSize);
+    waterBackground = new AnimatedEntity("ressources/UI/backgrounds/waterBg/water_", 59, 100, true, windowSettings.gameWindowSize);
     playerBoatsManager = new PlayerBoatsManager(&battleshipCore);
 
     timer.restart();
     gameState = GameState::Placing;
+    cursor = new CursorCellSelector(battleshipCore, application->client);
+    endPanel = new EndPanel();
 }
 
 void GameWindow::HandleEvents(sf::Event& event) {
@@ -28,6 +30,7 @@ void GameWindow::Update(sf::Event &event) {
     //check Messages
     std::string message = "";
     message = application->client->getMessage();
+    BattleshipCore::CellType attackCell;
 
     if (!message.empty())
     {
@@ -36,9 +39,29 @@ void GameWindow::Update(sf::Event &event) {
         case GameApplication::MessageType::BattleGrid:
             battleshipCore.setTargetGrid(message);
             break;
+        case GameApplication::MessageType::Chat:
+            std::cout << "Message : " << message;
+            break;
+        case GameApplication::MessageType::Game:
+            std::cout << "Attack : " << message;
+
+            attackCell = battleshipCore.deserializeAttack(message);
+
+            if (battleshipCore.areAllPlayerBoatsDown())
+            {
+                gameState = GameState::End;
+                endPanel->Show(false);
+            }
+
+            if(attackCell != BattleshipCore::CellType::hit)
+                gameState = GameState::Attacking;
+
+            break;
         }
     }
    
+    CursorCellSelector::State attackState;
+
     //State Machine
     switch (gameState)
     {
@@ -61,18 +84,54 @@ void GameWindow::Update(sf::Event &event) {
 
         if (battleshipCore.getHasReceivedOpponentGrid()) 
         {
-            std::cout << "Opponent Grid Received : \n" << message << std::endl;
+            std::cout << "Opponent Grid Received : \n" << battleshipCore.serializePlayerGrid(false) << std::endl;
             application->getClientStartFirst() ? gameState = GameState::Attacking : gameState = GameState::Waiting;
         }
 
         break;
 
     case GameState::Attacking:
-        std::cout << " you attack first !" << std::endl;
+        attackState = cursor->update(mouseManager);
+
+        switch (attackState)
+        {
+        case CursorCellSelector::State::Nothing:
+
+            break;
+
+        case CursorCellSelector::State::Attacked:
+            gameState = GameState::Waiting;
+            break;
+
+        case CursorCellSelector::State::Win:
+            std::cout << "WIN" << std::endl;
+            endPanel->Show(true);
+            gameState = GameState::End;
+            break;
+
+        case CursorCellSelector::State::ExtraTurn:
+            std::cout << "Extra turn !" << std::endl;
+            gameState = GameState::Attacking;
+            break;
+
+        default:
+
+            break;
+        }
+
         break;
 
     case GameState::Waiting:
-        std::cout << "you have to wait your turn !" << std::endl;
+        //std::cout << "you have to wait your turn !" << std::endl;
+        break;
+
+    case GameState::End:
+        if (endPanel->isLeaveButtonClicked(mouseManager))
+        {
+            std::cout << "LEAVE" << std::endl;
+            application->DeleteClient();
+            application->ChangeState(GameApplication::State::Menu);
+        }
         break;
     }
 
@@ -92,4 +151,8 @@ void GameWindow::Render()
     cloudManager->draw(window);
     gridEnemy.DrawGrid(window);
 
+    if(gameState == GameState::Attacking)
+         cursor->draw(window);
+
+    endPanel->draw(window);
 }

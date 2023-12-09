@@ -4,7 +4,7 @@
 #include "Application.h"
 
 #include "Settings.h"
-#include "AnimatedBackground.h"
+#include "AnimatedEntity.h"
 #include "MouseManager.h"
 #include "MenuButtonsManager.h"
 #include "BsBDD.h"
@@ -13,7 +13,7 @@
 class MenuWindow : public SfmlWindow
 {
 public:
-    MenuWindow(GameApplication& application);
+    MenuWindow(GameApplication& application, const sf::Vector2i& windowPos);
     ~MenuWindow();
 
 
@@ -28,20 +28,22 @@ protected:
 
 private:
     GameApplication* application;
-    BsBDD objBDD;
 
     MouseManager mouseManager;
-    AnimatedBackground* menuBackground;
+    AnimatedEntity* menuBackground;
     MenuButtonsManager* menuButtonsManager;
     std::vector<Entity*> entitiesPtr;
 
     LoginMenu* loginMenu;
-};
-
-/*
 
     sf::Text stat;
     sf::Text name;
     sf::Font FontStat;
+
+    std::string statInformation;
+    std::string NameInformation;
+};
+
+
+
     
-*/

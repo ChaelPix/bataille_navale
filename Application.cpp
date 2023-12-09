@@ -12,18 +12,24 @@ GameApplication::GameApplication(State state) : currentState(state) {
 
 GameApplication::~GameApplication()
 {
-    client->closeSocket();
+    if(client != nullptr)
+        client->closeSocket();
 }
 
 void GameApplication::Initialize()
 {
     FontSettings fontSettings;
     gameFont.loadFromFile(fontSettings.fontPath);
+    //objBDD->connectToDB("10.187.52.4:3306", "batailleNavale", "batailleNavale");
 }
 
 void GameApplication::Run() {
-    while (running) {
-        currentWindow->Run();
+
+    while (running) 
+    {
+        if (currentWindow != nullptr) {
+            currentWindow->Run();
+        }
     }
 }
 
@@ -39,6 +45,12 @@ void GameApplication::setClientStartFirst(bool isTrue)
 bool GameApplication::getClientStartFirst()
 {
     return doClientStartFirst;
+}
+
+BsBDD& GameApplication::getBddObj()
+{
+    objBDD = new BsBDD();
+    return *objBDD;
 }
 
 bool GameApplication::isCorrectMessageType(std::string message, MessageType targetType)
@@ -65,8 +77,7 @@ GameApplication::MessageType GameApplication::getMessageType(std::string message
 }
 
 sf::Font& GameApplication::getGameFont()
-{
-    
+{  
     return gameFont;
 }
 
@@ -74,27 +85,57 @@ sf::Font& GameApplication::getGameFont()
 
 void GameApplication::ChangeState(State newState) {
     currentState = newState;
+
+    sf::Vector2i windowPos = sf::Vector2i(0, 0);
+
+    if (currentWindow)
+    {
+        windowPos = currentWindow->GetWindowPosition();
+        currentWindow->Stop();
+        currentWindow = nullptr;
+    }
+        
+
     switch (currentState) 
     {
         case State::Splash:
-            currentWindow.reset();
-            currentWindow = std::make_unique<SplashWindow>(*this);
+            currentWindow = new SplashWindow(*this, windowPos);
             break;
 
         case State::Menu:
-            currentWindow.reset();
-            currentWindow = std::make_unique<MenuWindow>(*this);
+            currentWindow = new MenuWindow(*this, windowPos);
+            currentWindow->wName = "menu";
             break;
 
+        //case State::Locker:
+        //    currentWindow = new LockerWindow(*this, windowPos);
+        //    currentWindow->wName = "menu";
+        //    break;
+
         case State::Game:
-            currentWindow.reset();
-            currentWindow = (std::make_unique<GameWindow>(*this));
+            WindowSettings wSets;
+            windowPos.x -= (wSets.gameWindowSize.x - wSets.menuWindowSize.x);
+            windowPos.y -= (wSets.gameWindowSize.y - wSets.menuWindowSize.y);
+            if (windowPos.x < 0) windowPos.x = 0;
+            if (windowPos.y < 0) windowPos.y = 0;
+
+            currentWindow = new GameWindow(*this, windowPos);
+            currentWindow->wName = "game";
             break;
     }
 }
 
 void GameApplication::CreateClient()
 {
+  // this->client = new TCPClient("10.187.52.31", 12345);
    this->client = new TCPClient("127.0.0.1", 12345);
+
+}
+
+void GameApplication::DeleteClient()
+{
+    //client->sendMessage("SLEAVE");
+    delete this->client;
+    this->client = nullptr;
 }
 

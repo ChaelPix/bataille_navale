@@ -42,11 +42,11 @@ public:
     std::string receiveMessageFromClient(SOCKET clientId);
     virtual void acceptClients();
     bool isSocketActive(SOCKET clientSocket);
-
 protected:
     void setupAddress();
     void bindAndListen();
     void closeClientSocket(SOCKET clientSocket);
+    void handleClientDisconnection(SOCKET clientId);
     
 };
 
