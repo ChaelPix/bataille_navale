@@ -57,15 +57,16 @@ void MenuWindow::Update(sf::Event& event) {
         {
             std::cout << "Got Matchmaking from server ";
             application->client->sendMessage("OK");
+            return;
         }
             
-
         if (application->isCorrectMessageType(message))
         {
             application->setClientStartFirst(message == "GStart");
             running = false;
             application->ChangeState(GameApplication::State::Game);
         }
+
     }
     else if(application->client != nullptr){
         application->DeleteClient();

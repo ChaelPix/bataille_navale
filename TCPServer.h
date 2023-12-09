@@ -9,6 +9,7 @@
 #include <mutex>
 #include <unordered_map>
 #include <chrono>
+#include "SessionManager.h"
 
 class TCPServer : public TCPWinsocksMaster
 {
@@ -34,6 +35,7 @@ protected:
     virtual std::string processGameMessage(const std::string& message);
     virtual void matchClientsForGame();
 
+    SessionManager sessionManager;
 public:
 
     virtual void init() override;

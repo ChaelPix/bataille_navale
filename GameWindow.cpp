@@ -45,6 +45,10 @@ void GameWindow::Update(sf::Event &event) {
         case GameApplication::MessageType::Chat:
             std::cout << "Message : " << message;
             break;
+        case GameApplication::MessageType::End:
+            gameState = GameState::End;
+            endPanel->Show(true);
+            break;
         case GameApplication::MessageType::Game:
             std::cout << "Attack : " << message;
 
@@ -76,7 +80,7 @@ void GameWindow::Update(sf::Event &event) {
 
         playerBoatsManager->dragBoats(mouseManager);
 
-        std::cout << timer.getElapsedTime().asSeconds() << std::endl;
+        //std::cout << timer.getElapsedTime().asSeconds() << std::endl;
         if (timer.getElapsedTime().asSeconds() >= 15) {
             timer.restart();
             playerBoatsManager->RandomPlacement();
