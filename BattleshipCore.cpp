@@ -199,12 +199,14 @@ BattleshipCore::CellType BattleshipCore::Attack(int x, int y, bool isOnOpponent)
     CellType(*grilleCible)[nbCol] = isOnOpponent ? targetGrid : playerGrid;
 
     if (grilleCible[x][y] == CellType::boat)
+    {
         grilleCible[x][y] = CellType::hit;
-    else 
-        grilleCible[x][y] = CellType::water;
 
-    if(!isOnOpponent)
-        CheckIfBoatDown(x, y, false, true, -1, -1);
+        if (!isOnOpponent)
+            CheckIfBoatDown(x, y, false, true, -1, -1);
+    }
+    else 
+        grilleCible[x][y] = CellType::water; 
 
     return grilleCible[x][y];
 }
