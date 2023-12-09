@@ -9,7 +9,7 @@ bool BattleshipCore::areAllEnnemyBoatsDown()
 
 bool BattleshipCore::areAllPlayerBoatsDown()
 {
-    std::cout << "Player boat : " << enemyBoatDown << std::endl;
+    std::cout << "Player boat : " << playerBoatsDown << std::endl;
     return playerBoatsDown >= 5;
 }
 
@@ -187,7 +187,9 @@ BattleshipCore::CellType BattleshipCore::deserializeAttack(std::string msg)
     int x = std::stoi(xStr);
     int y = std::stoi(yStr);
 
-    return Attack(y, x, false);
+    CellType cellType = Attack(y, x, false);
+    CheckIfBoatDown(y, x, false, true, -1, -1);
+    return cellType;
 }
 
 BattleshipCore::CellType BattleshipCore::Attack(int x, int y, bool isOnOpponent) {

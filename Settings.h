@@ -43,7 +43,6 @@ struct MenuButtonsSettings {
 };
 
 struct CloudSettings {
-
     const sf::Vector2f cloudSize = sf::Vector2f(2500, 2500);
     const sf::Vector2f Origin = sf::Vector2f(cloudSize.x/ 2, cloudSize.y / 2);
     float anglesDegresAnimate = 0;
@@ -57,13 +56,10 @@ struct CloudSettings {
     };
 
 struct SplashSettings {
-
     const std::string SplashImgPath[2] = {
         "ressources/logo/logo_stein.png",
         "ressources/logo/logo_chaelPix.png",
     };
-   
-
 };
 
 struct FontSettings {
@@ -93,12 +89,36 @@ struct TextBoxSettings {
 struct LoginMenuSettings {
     const sf::Vector2f usernameTextBoxPos = sf::Vector2f(200, 300);
     const sf::Vector2f passwordTextBosPos = sf::Vector2f(200, 400);
+
     const sf::Vector2f buttonPos = sf::Vector2f(200, 500);
-
     const sf::Vector2f buttonSize = sf::Vector2f(228, 80);
-
     const std::string buttonImagePaths[2] = {
-  "ressources/UI/ui_menu_playbutton_off.png",
-  "ressources/UI/ui_menu_playbutton_on.png"
+      "ressources/UI/ui_menu_playbutton_off.png",
+      "ressources/UI/ui_menu_playbutton_on.png"
+    };
+};
+
+
+struct EndMenuSettings {
+
+    const sf::Vector2f panelSize = sf::Vector2f(1300, 850);
+    const sf::Color panelColor = sf::Color(0, 0, 0, 200);
+
+    const sf::Vector2f textPosition = sf::Vector2f(200, 300);
+    const int textCharacterSize = 40;
+    const std::string winText = "YOU WIN!";
+    const std::string looseText = "YOU LOOSE!";
+    const sf::Color textColor = sf::Color(255, 255, 255, 255);
+
+    const std::string endImagesPath[2] = {
+      "ressources/UI/ui_victory.png",
+      "ressources/UI/ui_loose.png"
+    };
+
+    const sf::Vector2f buttonPos = sf::Vector2f(200, 500);
+    const sf::Vector2f buttonSize = sf::Vector2f(228, 80);
+    const std::string buttonImagePaths[2] = {
+      "ressources/UI/ui_menu_exitbutton_off.png",
+      "ressources/UI/ui_menu_exitbutton_on.png"
     };
 };

@@ -47,7 +47,10 @@ void GameWindow::Update(sf::Event &event) {
             attackCell = battleshipCore.deserializeAttack(message);
 
             if (battleshipCore.areAllPlayerBoatsDown())
+            {
                 gameState = GameState::Defeat;
+                std::cout << "YOU LOOSE" << std::endl;
+            }
 
             if(attackCell != BattleshipCore::CellType::hit)
                 gameState = GameState::Attacking;
@@ -120,7 +123,7 @@ void GameWindow::Update(sf::Event &event) {
         break;
 
     case GameState::Defeat:
-        std::cout << "YOU LOOSE" << std::endl;
+        
         break;
     }
 
