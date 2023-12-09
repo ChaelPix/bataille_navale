@@ -87,7 +87,7 @@ CursorCellSelector::State CursorCellSelector::handleAttack()
     }
 
     //hit a boat, check if down
-    if (battleshipCore->CheckIfBoatDown(anchoredY, anchoredX, true)) {
+    if (battleshipCore->CheckIfBoatDown(anchoredY, anchoredX, true, true, -1, -1)) {
         isBusy = false;
         return battleshipCore->areAllEnnemyBoatsDown() ? State::Win : State::ExtraTurn;
     }

@@ -3,11 +3,13 @@
 
 bool BattleshipCore::areAllEnnemyBoatsDown()
 {
+    std::cout << "Ennemy boat : " << enemyBoatDown << std::endl;
     return enemyBoatDown >= 5;
 }
 
 bool BattleshipCore::areAllPlayerBoatsDown()
 {
+    std::cout << "Player boat : " << enemyBoatDown << std::endl;
     return playerBoatsDown >= 5;
 }
 
@@ -200,35 +202,46 @@ BattleshipCore::CellType BattleshipCore::Attack(int x, int y, bool isOnOpponent)
     return grilleCible[x][y];
 }
 
-bool BattleshipCore::CheckIfBoatDown(int x, int y, bool isOnOpponent) {
+bool BattleshipCore::CheckIfBoatDown(int x, int y, bool isOnOpponent, bool doCountAttack, int origX, int origY) {
     CellType(*grilleCible)[nbCol] = isOnOpponent ? targetGrid : playerGrid;
 
-    bool boatDown = true;
-
-    //bas
-    if (x > 0 && grilleCible[x - 1][y] == CellType::boat) {
-        boatDown = false;
+    //Check if there is a boat cell, or a hit cell which is not the cell that calls the recursive method
+    // top
+    if (x > 0 && ((grilleCible[x - 1][y] == CellType::boat) 
+        || (grilleCible[x - 1][y] == CellType::hit 
+            && !(x - 1 == origX && y == origY) 
+            && !CheckIfBoatDown(x - 1, y, isOnOpponent, false, x, y)))) {
+        return false;
     }
 
-    //haut
-    if (x < nbLig - 1 && grilleCible[x + 1][y] == CellType::boat) {
-        boatDown = false;
+    // down
+    if (x < nbLig - 1 && ((grilleCible[x + 1][y] == CellType::boat) 
+        || (grilleCible[x + 1][y] == CellType::hit 
+            && !(x + 1 == origX && y == origY) 
+            && !CheckIfBoatDown(x + 1, y, isOnOpponent, false, x, y)))) {
+        return false;
     }
 
-    //gauche
-    if (y > 0 && grilleCible[x][y - 1] == CellType::boat) {
-        boatDown = false;
+    // left
+    if (y > 0 && ((grilleCible[x][y - 1] == CellType::boat) 
+        || (grilleCible[x][y - 1] == CellType::hit 
+            && !(x == origX && y - 1 == origY) 
+            && !CheckIfBoatDown(x, y - 1, isOnOpponent, false, x, y)))) {
+        return false;
     }
 
-    //droite
-    if (y < nbCol - 1 && grilleCible[x][y + 1] == CellType::boat) {
-        boatDown = false;
+    // right
+    if (y < nbCol - 1 && ((grilleCible[x][y + 1] == CellType::boat) 
+        || (grilleCible[x][y + 1] == CellType::hit 
+            && !(x == origX && y + 1 == origY) 
+            && !CheckIfBoatDown(x, y + 1, isOnOpponent, false, x, y)))) {
+        return false;
     }
 
-
-    if (boatDown)
+    if (doCountAttack)
         isOnOpponent ? enemyBoatDown++ : playerBoatsDown++;
-   
-    return boatDown;
+
+    return true;
 }
+
 

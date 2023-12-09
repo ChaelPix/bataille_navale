@@ -47,7 +47,7 @@ public:
 	void setTargetGrid(std::string grid);
 	std::string serializeAttack(float x, float y);
 	BattleshipCore::CellType deserializeAttack(std::string msg);
-	bool CheckIfBoatDown(int x, int y, bool isOnOpponent);
+	bool CheckIfBoatDown(int x, int y, bool isOnOpponent, bool doCountAttack, int originX, int originY);
 	BattleshipCore::CellType Attack(int x, int y, bool isOnOpponent);
 
 	bool areAllEnnemyBoatsDown();

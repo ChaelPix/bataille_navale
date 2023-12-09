@@ -118,13 +118,17 @@ void GameWindow::Update(sf::Event &event) {
     case GameState::Waiting:
         //std::cout << "you have to wait your turn !" << std::endl;
         break;
+
+    case GameState::Defeat:
+        std::cout << "YOU LOOSE" << std::endl;
+        break;
     }
 
 }
 
 void GameWindow::Render()
 {
-    //waterBackground->draw(window);
+    waterBackground->draw(window);
     gridPlayer.DrawGrid(window);
     playerBoatsManager->draw(window);
 
@@ -133,7 +137,7 @@ void GameWindow::Render()
     for (auto& entity : entitiesPtr)
         entity->draw(window);
 
-    //cloudManager->draw(window);
+    cloudManager->draw(window);
     gridEnemy.DrawGrid(window);
 
     if(gameState == GameState::Attacking)
