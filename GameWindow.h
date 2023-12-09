@@ -10,13 +10,14 @@ class GameApplication;
 #include "MouseManager.h"
 #include "BattleshipCore.h"
 #include "CloudManager.h"
+#include "EndPanel.h"
 #include <vector>
 #include "CursorCellSelector.h"
 
 class GameWindow : public SfmlWindow {
 public:
     GameWindow(GameApplication& application, const sf::Vector2i& windowPos);
-    enum class GameState {Placing, WaitingGrid, Attacking, Waiting, Victory, Defeat};
+    enum class GameState {Placing, WaitingGrid, Attacking, Waiting, End};
 protected:
     void Initialize() override;
 
@@ -48,6 +49,7 @@ private:
     GameState gameState;
 
     CursorCellSelector* cursor;
+    EndPanel* endPanel;
 };
 
 

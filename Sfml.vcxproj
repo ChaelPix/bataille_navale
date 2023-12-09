@@ -29,6 +29,7 @@
     <ClCompile Include="CoreGame.cpp" />
     <ClCompile Include="CursorCellSelector.cpp" />
     <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="EndPanel.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityRectangle.cpp" />
     <ClCompile Include="EntityText.cpp" />
@@ -63,6 +64,7 @@
     <ClInclude Include="CoreGame.h" />
     <ClInclude Include="CursorCellSelector.h" />
     <ClInclude Include="Debug.h" />
+    <ClInclude Include="EndPanel.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityCircle.h" />
     <ClInclude Include="EntityRectangle.h" />

@@ -18,6 +18,7 @@ void GameWindow::Initialize()
     timer.restart();
     gameState = GameState::Placing;
     cursor = new CursorCellSelector(battleshipCore, application->client);
+    endPanel = new EndPanel();
 }
 
 void GameWindow::HandleEvents(sf::Event& event) {
@@ -48,8 +49,8 @@ void GameWindow::Update(sf::Event &event) {
 
             if (battleshipCore.areAllPlayerBoatsDown())
             {
-                gameState = GameState::Defeat;
-                std::cout << "YOU LOOSE" << std::endl;
+                gameState = GameState::End;
+                endPanel->Show(false);
             }
 
             if(attackCell != BattleshipCore::CellType::hit)
@@ -104,6 +105,7 @@ void GameWindow::Update(sf::Event &event) {
 
         case CursorCellSelector::State::Win:
             std::cout << "WIN" << std::endl;
+            endPanel->Show(true);
             break;
 
         case CursorCellSelector::State::ExtraTurn:
@@ -122,8 +124,11 @@ void GameWindow::Update(sf::Event &event) {
         //std::cout << "you have to wait your turn !" << std::endl;
         break;
 
-    case GameState::Defeat:
-        
+    case GameState::End:
+        if (endPanel->isLeaveButtonClicked(mouseManager))
+        {
+            std::cout << "LEAVE" << std::endl;
+        }
         break;
     }
 
@@ -146,4 +151,5 @@ void GameWindow::Render()
     if(gameState == GameState::Attacking)
          cursor->draw(window);
 
+    endPanel->draw(window);
 }

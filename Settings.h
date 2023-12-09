@@ -111,13 +111,13 @@ struct EndMenuSettings {
     //const sf::Color textColor = sf::Color(255, 255, 255, 255);
 
     const sf::Vector2f imagePos = sf::Vector2f(400, 100);
-    const sf::Vector2f imageSize = sf::Vector2f(250, 250);
+    const sf::Vector2f imageSize = sf::Vector2f(512, 512);
     const std::string endImagesPath[2] = {
-      "ressources/UI/ui_victory.png",
-      "ressources/UI/ui_loose.png"
+      "ressources/UI/ui_defeat.png",
+      "ressources/UI/ui_victory.png"
     };
 
-    const sf::Vector2f buttonPos = sf::Vector2f(200, 500);
+    const sf::Vector2f buttonPos = sf::Vector2f(542, 700);
     const sf::Vector2f buttonSize = sf::Vector2f(228, 80);
     const std::string buttonImagePaths[2] = {
       "ressources/UI/ui_menu_exitbutton_off.png",
