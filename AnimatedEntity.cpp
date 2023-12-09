@@ -2,12 +2,13 @@
 
 #include <iostream>
 
-AnimatedEntity::AnimatedEntity(std::string name, int nbImgs, int timer, bool doLoop, sf::Vector2f windowSize) : EntityRectangle(windowSize)
+AnimatedEntity::AnimatedEntity(std::string name, int nbImgs, int timer, bool doLoop, bool doDie, sf::Vector2f windowSize) : EntityRectangle(windowSize)
 {
 	this->pathName = name;
 	this->actualBgIndex = 0;
 	this->timer = timer;
 	this->doLoop = doLoop;
+	this->doDie = doDie;
 
 	this->tick = 0;
 	this->step = 1;
@@ -25,6 +26,9 @@ AnimatedEntity::AnimatedEntity(std::string name, int nbImgs, int timer, bool doL
 
 void AnimatedEntity::draw(sf::RenderWindow& window)
 {
+	if (isDead)
+		return;
+
 	window.draw(shape);
 
 	tick++;
@@ -38,6 +42,12 @@ void AnimatedEntity::draw(sf::RenderWindow& window)
 
 	if (actualBgIndex > 0 && actualBgIndex >= bgImages.size())
 	{
+		if (doDie)
+		{
+			isDead = true;
+			return;
+		}
+
 		if (doLoop)
 		{
 			step = -1;
@@ -49,6 +59,10 @@ void AnimatedEntity::draw(sf::RenderWindow& window)
 		step = 1;
 		actualBgIndex = 1;
 	}
-
-	
 }
+
+bool AnimatedEntity::getIsDead()
+{
+	return this->isDead;
+}
+
