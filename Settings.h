@@ -130,7 +130,7 @@ struct GameVFXSettings
     const std::string missImagePath = "ressources/UI/ui_miss.png";
 
     const int attacksTimer = 125;
-    const int fireTimer = 75;
+    const int fireTimer = 350;
     const std::string attacksPath = "ressources/UI/vfx/vfx_attack";
     const int nbEnemyFire = 2;
     const std::string enemyFirePath = "ressources/UI/vfx/vfx_ennemyFire";
