@@ -20,6 +20,24 @@ struct WindowSettings {
     const sf::Color bgColor = sf::Color::Black;
 };
 
+struct GameMenuSettings {
+
+    const WindowSettings ws;
+    const sf::Vector2f timerBgSize = sf::Vector2f(523, 179);
+    sf::Vector2f timerBgPos = sf::Vector2f(ws.gameWindowSize.x / 2 - timerBgSize.x / 2, 0);
+    const std::string timerbgPath = "ressources/UI/ui_timer_bg.png";
+
+    const int timerTxtSize = 75;
+    sf::Vector2f txtCenter = sf::Vector2f(ws.gameWindowSize.x / 2, 0);
+
+    const int nbTurnSize = 35;
+    const int gameInfoTxtSize = 35;
+    const sf::Color txtColor = sf::Color(200, 200, 200);
+   /* sf::Vector2f nbTurnpos = sf::Vector2f(ws.gameWindowSize.x / 2, 0);
+    sf::Vector2f gameInfoTxtpos = sf::Vector2f(ws.gameWindowSize.x / 2, 0);*/
+
+};
+
 struct MenuButtonsSettings {
     const sf::Vector2f buttonsSize = sf::Vector2f(228, 80);
     const sf::Vector2f buttonsStartPos = sf::Vector2f(990, 420);

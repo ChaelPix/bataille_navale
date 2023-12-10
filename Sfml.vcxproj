@@ -35,6 +35,7 @@
     <ClCompile Include="EntityText.cpp" />
     <ClCompile Include="EntityTextBox.cpp" />
     <ClCompile Include="GameChat.cpp" />
+    <ClCompile Include="GameInfoPanel.cpp" />
     <ClCompile Include="GameSessionState.cpp" />
     <ClCompile Include="GameVfx.cpp" />
     <ClCompile Include="GameWindow.cpp" />
@@ -75,6 +76,7 @@
     <ClInclude Include="EntityText.h" />
     <ClInclude Include="EntityTextBox.h" />
     <ClInclude Include="GameChat.h" />
+    <ClInclude Include="GameInfoPanel.h" />
     <ClInclude Include="GameSessionState.h" />
     <ClInclude Include="GameVfx.h" />
     <ClInclude Include="GameWindow.h" />

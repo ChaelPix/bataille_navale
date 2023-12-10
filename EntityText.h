@@ -16,6 +16,7 @@ public:
 
     void SetText(std::string txt);
     void SetTextAndCenter(std::string txt);
+    void SetTextAndCenterX(std::string txt);
 
     void SetPosition(sf::Vector2f position);
     void SetPosition(float posX, float posY);
