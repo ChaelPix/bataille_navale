@@ -59,14 +59,11 @@ void GameVfx::CreateAttackCell(int x, int y, bool isEnnemy)
 void GameVfx::CreateFireCell(int x, int y, bool isEnnemy)
 {
 	sf::Vector2f pos = getGridPos(isEnnemy);
-	sf::Vector2f entityPos = getEntityPos(pos, x, y);
-	entityPos.x = entityPos.x - (gameVfxSettings.attackTextureSize.x / 4);
-	entityPos.y = entityPos.y - (gameVfxSettings.attackTextureSize.y / 4);
 
 	std::vector<sf::Texture>* textures;
 	isEnnemy ? textures = &enemyFireTextures : textures = &playerFireTextures;
 
-	entities.push_back(new AnimatedEntity(gameVfxSettings.fireTimer, true, false, gameVfxSettings.attackTextureSize, entityPos, *textures));
+	entities.push_back(new AnimatedEntity(gameVfxSettings.fireTimer, true, false, sf::Vector2f(gridSize, gridSize), getEntityPos(pos, x, y), *textures));
 
 	CreateAttackCell(x, y, isEnnemy);
 }
