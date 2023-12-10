@@ -22,7 +22,7 @@ void MenuWindow::Initialize()
     }
     else
     {
-        menuBackground = new AnimatedEntity("ressources/UI/backgrounds/menuBg/menu_", 50, 28, true, false, windowSettings.menuWindowSize, sf::Vector2f(0, 0));
+        menuBackground = new AnimatedEntity("ressources/UI/backgrounds/menuBg/menu_", 50, 70, true, false, windowSettings.menuWindowSize, sf::Vector2f(0, 0));
         playerPicture = new EntityCircle(50, sf::Vector2f(windowSettings.menuWindowSize.x - 135, 5));
     }    
 

@@ -41,8 +41,8 @@ void LockerWindow::Initialize()
 
 
 
-      for (int i = 0; i < 9; i++){
-          textInfo.push_back(new EntityText(LckSettings.font, LckSettings.textPosition, LckSettings.characterSize, LckSettings.sectionName[i]));
+      for (int i = 0; i < 10; i++){
+          textInfo.push_back(new EntityText(LckSettings.font, LckSettings.textPosition[i], LckSettings.characterSize, LckSettings.sectionName[i]));
       }
 
     // Chargement et configuration des textures et sprites des boutons
@@ -63,11 +63,11 @@ void LockerWindow::Initialize()
     exitButtonSprite.setPosition(sf::Vector2f(2, 2));
     exitButtonSprite.setScale(sf::Vector2f(0.5, 0.5));
 
-    for (int i = 0; i < 9; ++i) {
-        std::string key = "section" + std::to_string(i + 1);
+    for (int i = 0; i < 10; ++i) {
+        std::string key = "section" + std::to_string(i);
         lockerSection[key] = false;
     }
-    lockerSection["section1"] = true;
+    lockerSection["section0"] = true;
     //la section 1 va de 0 a 4, ce qui vaux l = 5 boucle, l pour loop, les sections ressemblent donc a ça: [0-4], [5-8], [9-10], [11-17], [18-22], [23-27], [28-30], [31-38]
 
     // Définitions des marges et taille des images
@@ -128,7 +128,7 @@ void LockerWindow::HandleEvents(sf::Event& event) {
 
             // Vérifier le clic sur le bouton précédent
             if (buttonPrevSprite.getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
-                currentSectionIndex = std::max(0, currentSectionIndex - 1); // Ne pas aller en dessous de 0
+                currentSectionIndex = std::max(-1, currentSectionIndex - 1); // Ne pas aller en dessous de 0
                 UpdateSectionState();
             }
             // Vérifier le clic sur le bouton suivant
@@ -160,7 +160,10 @@ void LockerWindow::UpdateSectionState() {
 
 void LockerWindow::LockerManagement() {
 
-    if (lockerSection["section1"]) {
+    if (lockerSection["section0"]) {
+        p = 0; l = 5, s = 0;
+    }
+    else if (lockerSection["section1"]) {
         p = 0; l = 5, s = 1;
     }
     else if (lockerSection["section2"]) {
@@ -181,13 +184,22 @@ void LockerWindow::LockerManagement() {
     else if (lockerSection["section9"])
         p = 40, l = 8, s = 9;
 
-    for (int i = p; i < p + l; ++i) {
-        if (i < entitiesPtr.size()) {
-            entitiesPtr.at(i)->draw(window);
+    if (lockerSection["section1"] || lockerSection["section2"] ||
+        lockerSection["section3"] || lockerSection["section4"] ||
+        lockerSection["section5"] || lockerSection["section6"] ||
+        lockerSection["section7"] || lockerSection["section8"] ||
+        lockerSection["section9"]) {
+        for (int i = p; i < p + l; ++i) {
+            if (i < entitiesPtr.size()) {
+                entitiesPtr.at(i)->draw(window);
+            }
         }
+        textInfo.at(s - 1)->draw(window);
     }
 
-    textInfo.at(s - 1)->draw(window);
+    if (lockerSection["section0"])
+    textInfo.at(9)->draw(window);
+
 
 }
 
@@ -245,9 +257,15 @@ void LockerWindow::Render()
     sf::Time deltaTime = clock.restart();
     UpdatePos(deltaTime);
 
-    // Dessiner les boutons
-    window.draw(buttonPrevSprite);
-    window.draw(buttonNextSprite);
+    // Dessiner le bouton précédent uniquement si pas dans la première section
+    if (currentSectionIndex > -1) {
+        window.draw(buttonPrevSprite);
+    }
+
+    // Dessiner le bouton suivant uniquement si pas dans la dernière section
+    if (currentSectionIndex < 8) {
+        window.draw(buttonNextSprite);
+    }
     window.draw(exitButtonSprite);
 
     if (imageSelected) {

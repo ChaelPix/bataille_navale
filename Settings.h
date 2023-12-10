@@ -210,7 +210,7 @@ struct LockerSettings {
         for (int i = 0; i < nbImages; i++)
             path[i] = "ressources/profilPictures/caractere" + std::to_string(i + 1) + ".jpg";
     }
-    std::string sectionName[9] = {
+    std::string sectionName[10] = {
         "   Air forces",
         "Tactical armies",
         "Pilot in command",
@@ -220,9 +220,21 @@ struct LockerSettings {
         "   Hostages",
         "   Soldiers",
         "   Specials",
+        "This place is your locker, you can change clothes whenever you like"
     };
 
-    const sf::Vector2f textPosition = sf::Vector2f(580, 5);
+    const sf::Vector2f textPosition[10] = {
+        sf::Vector2f(580, 5), 
+        sf::Vector2f(580, 5), 
+        sf::Vector2f(580, 5), 
+        sf::Vector2f(580, 5), 
+        sf::Vector2f(580, 5), 
+        sf::Vector2f(580, 5), 
+        sf::Vector2f(580, 5), 
+        sf::Vector2f(580, 5), 
+        sf::Vector2f(580, 5), 
+        sf::Vector2f(250, 260), 
+    };
     const int characterSize = 40;
 
     const sf::Vector2f startTextPos = sf::Vector2f(300, 500);

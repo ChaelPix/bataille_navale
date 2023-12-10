@@ -61,7 +61,7 @@ private:
     //bouton
     sf::Texture buttonPrevTexture, buttonNextTexture, exitButtonTexture;
     sf::Sprite buttonPrevSprite, buttonNextSprite, exitButtonSprite;
-    int currentSectionIndex = 0;
+    int currentSectionIndex = -1;
     sf::Vector2f buttonPosition;
 
     //Music
