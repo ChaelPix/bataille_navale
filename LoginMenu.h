@@ -15,11 +15,13 @@ private:
 	EntityTextBox* usernameTextBox;
 	EntityTextBox* passwordTextBox;
 	EntityRectangle* loginButton;
+	EntityRectangle* background;
 	EntityText* textInfo;
 	EntityText* startText;
 
 
 	sf::Texture buttonTextures[2];
+	sf::Texture bgtexture;
 	BsBDD* bdd;
 	SaveData objData;
 	LoginMenuSettings loginMenuSettings;
@@ -30,7 +32,7 @@ private:
 	bool& hasClicked;
 
 	std::vector<std::string> dataVector;
-	void Login();
+	void Login(std::string id, std::string mdp);
 	void LoginInvite();
 
 	float opacite = 255.0f;

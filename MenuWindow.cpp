@@ -21,7 +21,8 @@ void MenuWindow::Initialize()
 
     loginMenu = new LoginMenu(application->getGameFont(), application->getBddObj(), application->getHasLogged());
 
-    FontStat = application->getGameFont();
+    MenuServerInfoTextSettings ts;
+    serverInfoTxt = new EntityText(application->getGameFont(), ts.textPosition, ts.characterSize, sf::Color::Red);
 }
 
 void MenuWindow::HandleEvents(sf::Event& event) {
@@ -42,7 +43,18 @@ void MenuWindow::HandleMatchmaking()
     if (menuButtonsManager->getIsMatchMaking())
     {
         if (application->client == nullptr)
-            application->CreateClient();
+        {
+            if (!application->CreateClient())
+            {
+                serverInfoTxt->SetText("Server is Inactive");
+                menuButtonsManager->setIsMatchMaking(false);
+                return;
+            }
+            else
+            {
+                serverInfoTxt->SetText("");
+            }
+        }
 
         std::string message = application->client->getMessage();
         if (message == "matchmaking")
@@ -88,8 +100,9 @@ void MenuWindow::Render()
             entity->draw(window);
 
         menuButtonsManager->draw(window);
-        window.draw(stat);
-        window.draw(name);
+        serverInfoTxt->draw(window);
+       /* window.draw(stat);
+        window.draw(name);*/
     }
     
 }

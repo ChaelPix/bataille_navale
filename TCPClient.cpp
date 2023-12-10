@@ -2,12 +2,20 @@
 
 TCPClient::TCPClient(const std::string& serverIP, ushort serverPORT) : TCPWinsocksMaster(serverPORT), serverIP(serverIP)
 {
-	init();
+    try
+    {
+        connectToServer();    
+        init();
+    }
+    catch (const std::runtime_error& e)
+    {
+        throw std::runtime_error(e.what());
+    }
+	   
 }
 
 void TCPClient::init()
-{
-	connectToServer();
+{	
     startReceiving();
 }
 

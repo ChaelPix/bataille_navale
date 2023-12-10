@@ -52,7 +52,7 @@ public:
 
     void ChangeState(State newState);
 
-    void CreateClient();
+    bool CreateClient();
     void DeleteClient();
 
     void Close();

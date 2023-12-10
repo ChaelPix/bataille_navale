@@ -42,6 +42,12 @@ struct MenuButtonsSettings {
     const int matchmakingPointTimer = 500;
 };
 
+struct MenuServerInfoTextSettings
+{
+    const sf::Vector2f textPosition = sf::Vector2f(50, 650);
+    const int characterSize = 50;
+};
+
 struct CloudSettings {
     const sf::Vector2f cloudSize = sf::Vector2f(2500, 2500);
     const sf::Vector2f Origin = sf::Vector2f(cloudSize.x/ 2, cloudSize.y / 2);
@@ -87,17 +93,21 @@ struct TextBoxSettings {
 };
 
 struct LoginMenuSettings {
-    const sf::Vector2f usernameTextBoxPos = sf::Vector2f(200, 300);
-    const sf::Vector2f passwordTextBosPos = sf::Vector2f(200, 400);
+    const sf::Vector2f usernameTextBoxPos = sf::Vector2f(400, 300);
+    const sf::Vector2f passwordTextBosPos = sf::Vector2f(400, 400);
 
-    const sf::Vector2f buttonPos = sf::Vector2f(200, 500);
+    const sf::Vector2f backgroundMenuPos = sf::Vector2f(350, 150);
+    const sf::Vector2f backgroundMenuSize = sf::Vector2f(600, 500);
+    const std::string backgroundMenuPath = "ressources/UI/ui_menuBg.png";
+
+    const sf::Vector2f buttonPos = sf::Vector2f(530, 500);
     const sf::Vector2f buttonSize = sf::Vector2f(228, 80);
     const std::string buttonImagePaths[2] = {
-      "ressources/UI/ui_menu_playbutton_off.png",
-      "ressources/UI/ui_menu_playbutton_on.png"
+      "ressources/UI/ui_menu_loginbutton_off.png",
+      "ressources/UI/ui_menu_loginbutton_on.png"
     };
 
-    const sf::Vector2f textPosition = sf::Vector2f(200, 200);
+    const sf::Vector2f textPosition = sf::Vector2f(400, 200);
     const int characterSize = 40;
 
     const sf::Vector2f startTextPos = sf::Vector2f(300, 500);

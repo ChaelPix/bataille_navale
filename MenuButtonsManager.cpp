@@ -112,3 +112,8 @@ bool MenuButtonsManager::getIsMatchMaking()
 {
 	return isMatchMaking;
 }
+
+void MenuButtonsManager::setIsMatchMaking(bool action)
+{
+	isMatchMaking = action;
+}

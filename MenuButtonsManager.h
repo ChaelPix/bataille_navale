@@ -30,5 +30,6 @@ public:
 	bool CheckButtonHover(MouseManager& mouse);
 
 	bool getIsMatchMaking();
+	void setIsMatchMaking(bool action);
 };
 

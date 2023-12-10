@@ -36,15 +36,14 @@ private:
     AnimatedEntity* menuBackground;
     MenuButtonsManager* menuButtonsManager;
     std::vector<Entity*> entitiesPtr;
+    EntityText* serverInfoTxt;
 
     LoginMenu* loginMenu;
 
-    sf::Text stat;
+   /* sf::Text stat;
     sf::Text name;
-    sf::Font FontStat;
-
     std::string statInformation;
-    std::string NameInformation;
+    std::string nameInformation;*/
 
     LoginMenu::MenuState menuState;
 };

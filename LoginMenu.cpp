@@ -10,7 +10,10 @@ LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD, bool& hasClicked) : hasClick
 		buttonTextures[i].loadFromFile(loginMenuSettings.buttonImagePaths[i]);
 	
 	loginButton = new EntityRectangle(loginMenuSettings.buttonSize, loginMenuSettings.buttonPos, buttonTextures[0]);
-	textInfo = new EntityText(font, loginMenuSettings.textPosition, loginMenuSettings.characterSize, "DEBUG TEXT");
+	textInfo = new EntityText(font, loginMenuSettings.textPosition, loginMenuSettings.characterSize, "Login Menu");
+
+	bgtexture.loadFromFile(loginMenuSettings.backgroundMenuPath);
+	background = new EntityRectangle(loginMenuSettings.backgroundMenuSize, loginMenuSettings.backgroundMenuPos, bgtexture);
 
 	bdd = &objBDD;
 	isBusy = false;
@@ -29,6 +32,8 @@ bool LoginMenu::checkForSaveFile()
 
 	bdd->setIdPlayers(dataVector.at(0));
 	bdd->setMdp(dataVector.at(1));
+
+	Login(dataVector.at(0), dataVector.at(1));
 
 	return true;
 }
@@ -50,7 +55,9 @@ LoginMenu::MenuState LoginMenu::update(sf::Event& event, MouseManager& mouseMana
 
 
 	if (isLogged)
+	{
 		return LoginMenu::MenuState::OnMenu;
+	}
 
 	if (isBusy)
 		return LoginMenu::MenuState::LoginBDD;
@@ -84,7 +91,7 @@ LoginMenu::MenuState LoginMenu::update(sf::Event& event, MouseManager& mouseMana
 			else
 			{
 				isBusy = true;
-				Login();
+				Login(usernameTextBox->getText(), passwordTextBox->getText());
 			}	
 		}
 	}
@@ -108,6 +115,7 @@ void LoginMenu::draw(sf::RenderWindow& window, LoginMenu::MenuState state)
 	}
 	else if(state == LoginMenu::MenuState::LoginBDD)
 	{
+		background->draw(window);
 		usernameTextBox->draw(window);
 		passwordTextBox->draw(window);
 		loginButton->draw(window);
@@ -124,7 +132,7 @@ void LoginMenu::LoginInvite() {
 	isLogged = true;	
 }
 
-void LoginMenu::Login(){
+void LoginMenu::Login(std::string id, std::string mdp){
 
 	std::cout << "Login.... ";
 	textInfo->SetText("Login...");
@@ -136,9 +144,6 @@ void LoginMenu::Login(){
 		LoginInvite();
 		return;
 	}
-
-	std::string id = usernameTextBox->getText();
-	std::string mdp = passwordTextBox->getText();
 
 	if (bdd->isUserDoesNotExist(id))
 	{
