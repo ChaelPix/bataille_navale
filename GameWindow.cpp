@@ -157,6 +157,8 @@ void GameWindow::Update(sf::Event &event) {
 
 void GameWindow::Render()
 {
+    bool isMouseOnEnemyGrid = gridEnemy.isMouseOnGrid(mouseManager);
+
     waterBackground->draw(window);
     gridPlayer.DrawGrid(window);
     playerBoatsManager->draw(window);
@@ -166,10 +168,15 @@ void GameWindow::Render()
     for (auto& entity : entitiesPtr)
         entity->draw(window);
 
-    cloudManager->draw(window);
-    gridEnemy.DrawGrid(window);
-
     gameVfx->draw(window);
+
+    if(!isMouseOnEnemyGrid)
+        gridEnemy.DrawGrid(window);
+
+    cloudManager->draw(window);
+   
+    if (isMouseOnEnemyGrid)
+        gridEnemy.DrawGrid(window);
 
     if(gameState == GameState::Attacking)
          cursor->draw(window);
