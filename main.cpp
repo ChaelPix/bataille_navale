@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
+
 #include "Application.h"
 #include "BattleshipServer.h"
 

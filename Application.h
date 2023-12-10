@@ -82,4 +82,5 @@ public:
     
     std::vector<sf::Texture>& getMenuBg();
     std::vector<sf::Texture>& getGameBg();
+    std::vector<sf::Texture>& getCharactersImgs();
 };

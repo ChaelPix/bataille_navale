@@ -18,6 +18,7 @@ GameApplication::~GameApplication()
 
 void GameApplication::Initialize()
 {
+    objBDD = new BsBDD();
     FontSettings fontSettings;
     gameFont.loadFromFile(fontSettings.fontPath);
     hasLogged = false;
@@ -75,7 +76,6 @@ bool GameApplication::getClientStartFirst()
 
 BsBDD& GameApplication::getBddObj()
 {
-    objBDD = new BsBDD();
     return *objBDD;
 }
 
@@ -133,8 +133,10 @@ std::vector<sf::Texture>& GameApplication::getGameBg()
 {
     return gameBg;
 }
-
-
+std::vector<sf::Texture>& GameApplication::getCharactersImgs()
+{
+    return charactersPictures;
+}
 
 void GameApplication::ChangeState(State newState) {
     currentState = newState;

@@ -35,6 +35,7 @@ private:
     std::string nbLostGames;
     std::string nbWonGames;
     std::string idPlayers;
+    int idPicture;
     std::vector<std::string> vcase;
 
     bool isConnected;

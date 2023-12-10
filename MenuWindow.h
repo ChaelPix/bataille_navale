@@ -5,6 +5,7 @@
 
 #include "Settings.h"
 #include "AnimatedEntity.h"
+#include "EntityCircle.h"
 #include "MouseManager.h"
 #include "MenuButtonsManager.h"
 #include "BsBDD.h"
@@ -37,6 +38,8 @@ private:
     MenuButtonsManager* menuButtonsManager;
     std::vector<Entity*> entitiesPtr;
     EntityText* serverInfoTxt;
+
+    EntityCircle* test;
 
     LoginMenu* loginMenu;
 

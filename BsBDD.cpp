@@ -8,6 +8,7 @@ BsBDD::BsBDD() : userId("") {
     this->nbLostGames = "0";
     this->nbWonGames = "0";
     this->idPlayers = "898989";
+    this->idPicture = 0;
 }
 
 BsBDD::~BsBDD() {

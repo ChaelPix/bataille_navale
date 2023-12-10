@@ -132,9 +132,10 @@ void LoginMenu::draw(sf::RenderWindow& window, LoginMenu::MenuState state)
 }
 
 void LoginMenu::LoginInvite() {
-
+	
 	std::cout << "Welcome invite.... ";
-	bdd->setIsConnected(false);
+	if (bdd != nullptr)
+		bdd->setIsConnected(false);
 
 	isLogged = true;	
 }

@@ -10,6 +10,7 @@ public:
     EntityCircle(const int& size) {
         shape.setRadius(size);
     }
+
     EntityCircle(const int& size, const sf::Vector2f& position) {
         shape.setRadius(size);
         shape.setPosition(position);
