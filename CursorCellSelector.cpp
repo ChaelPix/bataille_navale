@@ -14,7 +14,7 @@ bool CursorCellSelector::isOnEnnemyGrid(sf::Vector2f pos)
 	return isInGrid;
 }
 
-CursorCellSelector::CursorCellSelector(BattleshipCore& battleshipCore, TCPClient* client)
+CursorCellSelector::CursorCellSelector(BattleshipCore& battleshipCore, TCPClient* client, GameVfx* vfx)
 {
 	this->client = client;
 	this->canHit = false;
@@ -24,6 +24,7 @@ CursorCellSelector::CursorCellSelector(BattleshipCore& battleshipCore, TCPClient
 	int gridSize = grid.squareSize / grid.nbPixels;
 
 	cursor = new EntityRectangle(sf::Vector2f(gridSize, gridSize), sf::Vector2f(0, 0), sf::Color(0, 255, 0, 125));
+    this->vfx = vfx;
 }
 
 
@@ -88,6 +89,7 @@ CursorCellSelector::State CursorCellSelector::handleAttack()
 
     //hit a boat, check if down
     if (battleshipCore->CheckIfBoatDown(anchoredY, anchoredX, true, true, -1, -1)) {
+        vfx->SinkBoatEffect(anchoredX, anchoredY);
         isBusy = false;
         return battleshipCore->areAllEnnemyBoatsDown() ? State::Win : State::ExtraTurn;
     }

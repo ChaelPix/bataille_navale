@@ -17,9 +17,9 @@ void GameWindow::Initialize()
 
     timer.restart();
     gameState = GameState::Placing;
-    cursor = new CursorCellSelector(battleshipCore, application->client);
     endPanel = new EndPanel();
     gameVfx = new GameVfx();
+    cursor = new CursorCellSelector(battleshipCore, application->client, gameVfx);
     gameInfoPanel = new GameInfoPanel(application->getGameFont());
     gameInfoPanel->updateGameInfo("Place your Boats!");
 }
@@ -136,8 +136,10 @@ void GameWindow::handleGameState() {
 
             case CursorCellSelector::State::Attacked:
                 gameVfx->CreateMissCell(MousePos.x, MousePos.y, true);
+               
                 gameInfoPanel->updateTurn(++nbTurn);
                 gameInfoPanel->updateGameInfo("Enemy Turn");
+
                 gameState = GameState::Waiting;
                 timer.restart();
                 break;
@@ -150,10 +152,11 @@ void GameWindow::handleGameState() {
                 break;
 
             case CursorCellSelector::State::ExtraTurn:
-                std::cout << "Extra turn !" << std::endl;
                 gameVfx->CreateFireCell(MousePos.x, MousePos.y, true);
+
                 gameInfoPanel->updateTurn(++nbTurn);
                 gameState = GameState::Attacking;
+
                 timer.restart();
                 break;
 

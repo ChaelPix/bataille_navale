@@ -4,6 +4,7 @@
 #include "MouseManager.h"
 #include "BattleshipCore.h"
 #include "TCPClient.h"
+#include "GameVfx.h"
 
 class CursorCellSelector
 {
@@ -20,6 +21,7 @@ private:
 	BattleshipCore* battleshipCore;
 	GridSettings grid;
 	TCPClient* client;
+	GameVfx* vfx;
 
 	int anchoredX;
 	int anchoredY;
@@ -33,7 +35,7 @@ private:
 	State handleAttack();
 public:
 
-	CursorCellSelector(BattleshipCore &battleshipCore, TCPClient* client);
+	CursorCellSelector(BattleshipCore &battleshipCore, TCPClient* client, GameVfx* vfx);
 
 	State update(MouseManager& mouse);
 	void draw(sf::RenderWindow& window);
