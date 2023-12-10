@@ -14,23 +14,29 @@ LockerWindow::~LockerWindow()
 
 void LockerWindow::Initialize()
 {
-    //menuBackground = new AnimatedEntity("ressources/UI/backgrounds/menuBg/menu_", 50, 28, true, windowSettings.menuWindowSize);
-    // 
+      menuBackground = new AnimatedEntity("ressources/UI/backgrounds/menuBg/menu_", 50, 70, true, false, windowSettings.menuWindowSize, sf::Vector2f(0, 0));
+
     //entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
     //menuButtonsManager = new MenuButtonsManager(application->getGameFont());
     // Boucle pour initialiser 8 clés à 'true'
 
+      for (int i = 0; i < 9; i++){
+          textInfo.push_back(new EntityText(LckSettings.font, LckSettings.textPosition, LckSettings.characterSize, LckSettings.sectionName[i]));
+      }
+
     // Chargement et configuration des textures et sprites des boutons
-    if (!buttonPrevTexture.loadFromFile("ressources/UI/ui_menu_playbutton_on.png") ||
-        !buttonNextTexture.loadFromFile("ressources/UI/ui_menu_playbutton_on.png")) {
+    if (!buttonPrevTexture.loadFromFile("ressources/UI/ui_locker_previousbutton_on.png") ||
+        !buttonNextTexture.loadFromFile("ressources/UI/ui_locker_nextbutton_on.png")) {
         std::cout << "error loading: ressources/UI/ui_menu_playbutton_on.png" << std::endl;
     }
 
     buttonPrevSprite.setTexture(buttonPrevTexture);
-    buttonPrevSprite.setPosition(sf::Vector2f(50, 374));
+    buttonPrevSprite.setPosition(sf::Vector2f(50, 370));
+    buttonPrevSprite.setScale(sf::Vector2f(0.5, 0.5));
 
     buttonNextSprite.setTexture(buttonNextTexture);
-    buttonNextSprite.setPosition(sf::Vector2f(950, 374));
+    buttonNextSprite.setPosition(sf::Vector2f(1220, 370));
+    buttonNextSprite.setScale(sf::Vector2f(0.5, 0.5));
 
     for (int i = 0; i < 9; ++i) {
         std::string key = "section" + std::to_string(i + 1);
@@ -43,7 +49,7 @@ void LockerWindow::Initialize()
     float new_image_width = 304.8f;  // Largeur de l'image après la mise à l'échelle
     float new_image_height = 304.8f; // Hauteur de l'image après la mise à l'échelle
     float margin_each_side = 27.8f;  // Marge sur les côtés
-    float margin_each_top_bottom = 49.8f; // Marge en haut et en bas
+    float margin_each_top_bottom = 65.8f; // Marge en haut et en bas
 
     // Tableau indiquant l'indice de début de chaque section
     int section_starts[] = { 0, 5, 9, 13, 19, 23, 29, 32, 40 };
@@ -103,31 +109,34 @@ void LockerWindow::UpdateSectionState() {
 void LockerWindow::LockerManagement() {
 
     if (lockerSection["section1"]) {
-        p = 0; l = 5;
+        p = 0; l = 5, s = 1;
     }
     else if (lockerSection["section2"]) {
-        p = 5; l = 4;
+        p = 5; l = 4, s = 2;
     } 
     else if (lockerSection["section3"])
-        p = 9, l = 3;
+        p = 9, l = 3, s = 3;
     else if (lockerSection["section4"])
-        p = 13, l = 6;
+        p = 13, l = 6, s = 4;
     else if (lockerSection["section5"])
-        p = 19, l = 4;
+        p = 19, l = 4, s = 5;
     else if (lockerSection["section6"])
-        p = 23, l = 6;
+        p = 23, l = 6, s = 6;
     else if (lockerSection["section7"])
-        p = 29, l = 3;
+        p = 29, l = 3, s = 7;
     else if (lockerSection["section8"])
-        p = 32, l = 8;
+        p = 32, l = 8, s = 8;
     else if (lockerSection["section9"])
-        p = 40, l = 8;
+        p = 40, l = 8, s = 9;
 
     for (int i = p; i < p + l; ++i) {
         if (i < entitiesPtr.size()) {
             entitiesPtr.at(i)->draw(window);
         }
     }
+
+    textInfo.at(s - 1)->draw(window);
+
 }
 
 
@@ -162,7 +171,7 @@ void LockerWindow::debug() {
 
 void LockerWindow::Render()
 {
-
+    menuBackground->draw(window);
     if (!running)
         return;
 
@@ -171,5 +180,4 @@ void LockerWindow::Render()
     // Dessiner les boutons
     window.draw(buttonPrevSprite);
     window.draw(buttonNextSprite);
-
 }

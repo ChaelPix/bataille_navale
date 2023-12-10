@@ -10,6 +10,8 @@
 #include "EntityRectangle.h"
 #include "BsBDD.h"
 #include "LoginMenu.h"
+#include "EntityText.h"
+#include "EntityTextBox.h"
 
 
 class LockerWindow : public SfmlWindow
@@ -37,17 +39,20 @@ protected:
 private:
     GameApplication* application;
     LockerSettings LckSettings;
+    FontSettings Fontonj;
     MouseManager mouseManager;
     AnimatedEntity* menuBackground;
     MenuButtonsManager* menuButtonsManager;
     std::vector<EntityRectangle*> entitiesPtr;
+    std::vector<EntityText*> textInfo;
     std::vector<sf::Texture*> PictureCases;
     std::map<std::string, bool> lockerSection;
-    int l, p;
+    int l, p, s;
     sf::Texture buttonPrevTexture, buttonNextTexture;
     sf::Sprite buttonPrevSprite, buttonNextSprite;
     int currentSectionIndex = 0;
     sf::Vector2f buttonPosition;
+
 };
 
 
