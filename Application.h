@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <memory>
+#include <thread>
 #include "SfmlWindow.h"
 #include "GameWindow.h"
 #include "MenuWindow.h"
@@ -41,11 +42,15 @@ private:
 
     std::vector<sf::Texture> menuBg;
     std::vector<sf::Texture> gameBg;
+    std::vector<sf::Texture> charactersPictures;
 
     bool hasLogged;
     bool areImagesOk;
 
     void Initialize();
+    void LoadImages();
+
+    std::thread imageLoadingThread;
 
 public:
     GameApplication();
@@ -74,7 +79,7 @@ public:
     bool& getHasLogged();
     void setHasLogged(bool action);
     bool getAreImagesOk();
-
+    
     std::vector<sf::Texture>& getMenuBg();
     std::vector<sf::Texture>& getGameBg();
 };

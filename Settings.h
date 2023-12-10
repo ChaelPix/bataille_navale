@@ -206,6 +206,6 @@ struct LockerSettings {
 
     LockerSettings() {
         for (int i = 0; i < nbImages; i++)
-            path[i] = "ressources/profilPictures/caractere" + std::to_string(i + 1) + ".png";
+            path[i] = "ressources/profilPictures/caractere" + std::to_string(i + 1) + ".jpg";
     }
 };

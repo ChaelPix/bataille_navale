@@ -22,20 +22,31 @@ void GameApplication::Initialize()
     gameFont.loadFromFile(fontSettings.fontPath);
     hasLogged = false;
     areImagesOk = false;
+
+    imageLoadingThread = std::thread(&GameApplication::LoadImages, this);
+}
+
+void GameApplication::LoadImages() {
     BackgroundSettings bg;
-    for (int i = 0; i < bg.nbMenuImgs; i++)
-    {
+    for (int i = 0; i < bg.nbMenuImgs; i++) {
         sf::Texture t;
-        t.loadFromFile(bg.menupath + std::to_string(i+1) + ".jpg");
+        t.loadFromFile(bg.menupath + std::to_string(i + 1) + ".jpg");
         menuBg.push_back(t);
     }
-    for (int i = 0; i < bg.nbGameImgs; i++)
-    {
+    for (int i = 0; i < bg.nbGameImgs; i++) {
         sf::Texture t;
-        t.loadFromFile(bg.gamepath + std::to_string(i+1) + ".jpg");
+        t.loadFromFile(bg.gamepath + std::to_string(i + 1) + ".jpg");
         gameBg.push_back(t);
     }
+
     areImagesOk = true;
+
+    LockerSettings lck;
+    for (int i = 0; i < lck.nbImages; i++) {
+        sf::Texture t;
+        t.loadFromFile(lck.path[i]);
+        charactersPictures.push_back(t);
+    }
 }
 
 void GameApplication::Run() {
@@ -136,7 +147,6 @@ void GameApplication::ChangeState(State newState) {
         currentWindow->Stop();
         currentWindow = nullptr;
     }
-        
 
     switch (currentState) 
     {
@@ -145,6 +155,10 @@ void GameApplication::ChangeState(State newState) {
             break;
 
         case State::Menu:
+            if (!hasLogged && imageLoadingThread.joinable())
+            {
+                imageLoadingThread.join();
+            }
             currentWindow = new MenuWindow(*this, windowPos);
             currentWindow->wName = "menu";
             break;
