@@ -26,6 +26,15 @@ struct GameSettings
     const int timeToPlay = 10;
 };
 
+struct BackgroundSettings
+{
+    const int nbMenuImgs = 50;
+    const int nbGameImgs = 59;
+
+    const std::string menupath = "ressources/UI/backgrounds/menuBg/menu_";
+    const std::string gamepath = "ressources/UI/backgrounds/waterBg/water_";
+};
+
 struct GameMenuSettings {
 
     const WindowSettings ws;

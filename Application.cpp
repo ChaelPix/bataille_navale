@@ -21,7 +21,21 @@ void GameApplication::Initialize()
     FontSettings fontSettings;
     gameFont.loadFromFile(fontSettings.fontPath);
     hasLogged = false;
-    //objBDD->connectToDB("10.187.52.4:3306", "batailleNavale", "batailleNavale");
+    areImagesOk = false;
+    BackgroundSettings bg;
+    for (int i = 0; i < bg.nbMenuImgs; i++)
+    {
+        sf::Texture t;
+        t.loadFromFile(bg.menupath + std::to_string(i+1) + ".jpg");
+        menuBg.push_back(t);
+    }
+    for (int i = 0; i < bg.nbGameImgs; i++)
+    {
+        sf::Texture t;
+        t.loadFromFile(bg.gamepath + std::to_string(i+1) + ".jpg");
+        gameBg.push_back(t);
+    }
+    areImagesOk = true;
 }
 
 void GameApplication::Run() {
@@ -92,6 +106,21 @@ bool& GameApplication::getHasLogged()
 void GameApplication::setHasLogged(bool action)
 {
     hasLogged = action;
+}
+
+bool GameApplication::getAreImagesOk()
+{
+    return areImagesOk;
+}
+
+std::vector<sf::Texture>& GameApplication::getMenuBg()
+{
+    return menuBg;
+}
+
+std::vector<sf::Texture>& GameApplication::getGameBg()
+{
+    return gameBg;
 }
 
 

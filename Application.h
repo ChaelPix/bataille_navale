@@ -39,7 +39,11 @@ private:
     BsBDD* objBDD;
     sf::Font gameFont;
 
+    std::vector<sf::Texture> menuBg;
+    std::vector<sf::Texture> gameBg;
+
     bool hasLogged;
+    bool areImagesOk;
 
     void Initialize();
 
@@ -69,4 +73,8 @@ public:
 
     bool& getHasLogged();
     void setHasLogged(bool action);
+    bool getAreImagesOk();
+
+    std::vector<sf::Texture>& getMenuBg();
+    std::vector<sf::Texture>& getGameBg();
 };

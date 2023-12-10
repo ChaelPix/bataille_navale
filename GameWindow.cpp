@@ -12,7 +12,7 @@ GameWindow::GameWindow(GameApplication& application, const sf::Vector2i& windowP
 
 void GameWindow::Initialize()
 {
-    waterBackground = new AnimatedEntity("ressources/UI/backgrounds/waterBg/water_", 59, 100, true, false, windowSettings.gameWindowSize, sf::Vector2f(0, 0));
+    waterBackground = new AnimatedEntity(100, true, false, windowSettings.gameWindowSize, sf::Vector2f(0, 0), application->getGameBg());
     playerBoatsManager = new PlayerBoatsManager(&battleshipCore);
 
     timer.restart();
