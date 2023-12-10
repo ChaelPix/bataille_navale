@@ -86,9 +86,9 @@ bool MenuButtonsManager::ButtonClickAction(int btnId)
 	return false;
 }
 
-bool MenuButtonsManager::CheckButtonHover(MouseManager& mouse)
+int MenuButtonsManager::CheckButtonHover(MouseManager& mouse)
 {
-	bool doClose = false;
+	int buttonClick = 0;
 
 	for (int i = 0; i < nbButtons+1; i++)
 	{
@@ -97,7 +97,10 @@ bool MenuButtonsManager::CheckButtonHover(MouseManager& mouse)
 			buttons.at(i).setTexture(&buttonsTextures[1 + i * 2]);
 
 			if (mouse.isMouseClicked())
-				doClose = ButtonClickAction(i);
+			{
+				ButtonClickAction(i);
+				buttonClick = i;
+			}
 		}
 		else
 		{
@@ -105,7 +108,7 @@ bool MenuButtonsManager::CheckButtonHover(MouseManager& mouse)
 		}
 	}
 
-	return doClose;
+	return buttonClick;
 }
 
 bool MenuButtonsManager::getIsMatchMaking()

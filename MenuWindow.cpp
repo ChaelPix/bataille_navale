@@ -92,10 +92,16 @@ void MenuWindow::HandleMatchmaking()
 
 void MenuWindow::CheckExitButton()
 {
-    if (menuButtonsManager->CheckButtonHover(mouseManager))
+    int id = menuButtonsManager->CheckButtonHover(mouseManager);
+    if (id == 2)
     {
         running = false;
         application->Close();
+    }
+    else if (id == 1)
+    {
+        running = false;
+        application->ChangeState(GameApplication::State::Locker);
     }
 }
 

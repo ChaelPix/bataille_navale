@@ -163,16 +163,15 @@ void GameApplication::ChangeState(State newState) {
 
         case State::Menu:
             if (!hasLogged && imageLoadingThread.joinable())
-            {
                 imageLoadingThread.join();
-            }
+            
             currentWindow = new MenuWindow(*this, windowPos);
             currentWindow->wName = "menu";
             break;
 
         case State::Locker:
             currentWindow = new LockerWindow(*this, windowPos);
-            currentWindow->wName = "menu";
+            currentWindow->wName = "lck";
             break;
 
         case State::Game:

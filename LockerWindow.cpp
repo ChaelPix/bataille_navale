@@ -231,10 +231,13 @@ void LockerWindow::debug() {
 
 void LockerWindow::Render()
 {
-    Background->draw(window);
-
     if (!running)
+    {
+        music.stop();
         return;
+    }
+
+    Background->draw(window);
     LockerManagement();
 
     //movement
