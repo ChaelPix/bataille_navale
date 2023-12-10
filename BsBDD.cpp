@@ -57,18 +57,35 @@ void BsBDD::setPseudo(std::string name) {
     this->userId = name;
 }
 
+#include <thread>
+#include <future>
+
 bool BsBDD::connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password) {
-    try {
-        driver = get_driver_instance();
-        con = driver->connect(dbURI, userName, password);
-        con->setSchema("batailleNavale_b");
-        return true; 
+    std::promise<bool> connectPromise;
+    auto connectFuture = connectPromise.get_future();
+
+    std::thread connectThread([&]() {
+        try {
+            driver = get_driver_instance();
+            con = driver->connect(dbURI, userName, password);
+            con->setSchema("batailleNavale_b");
+            connectPromise.set_value(true);
+        }
+        catch (sql::SQLException& e) {
+            std::cerr << "Can't connect to bdd : " << e.what() << std::endl;
+            connectPromise.set_value(false);
+        }
+    });
+
+    if (connectFuture.wait_for(std::chrono::seconds(2)) == std::future_status::timeout) {
+        connectThread.detach(); 
+        return false;
     }
-    catch (sql::SQLException& e) {
-        std::cerr << "Can't connect to bdd : " << e.what() << std::endl;
-        return false; 
-    }
+
+    connectThread.join(); 
+    return connectFuture.get();
 }
+
 
 
 bool BsBDD::login(const std::string& idUser, const std::string& password) {

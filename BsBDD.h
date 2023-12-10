@@ -16,7 +16,8 @@
 #include <jdbc/cppconn/statement.h>
 #include <jdbc/cppconn/prepared_statement.h>
 #include <iomanip>
-
+#include <thread>
+#include <future>
 
 class BsBDD {
 

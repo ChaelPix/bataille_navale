@@ -127,6 +127,8 @@ void LoginMenu::LoginInvite() {
 void LoginMenu::Login(){
 
 	std::cout << "Login.... ";
+	textInfo->SetText("Login...");
+
 	bool isConnected = bdd->connectToDB("10.187.52.4", "batailleNavale", "batailleNavale");
 
 	if (!isConnected)
@@ -137,8 +139,6 @@ void LoginMenu::Login(){
 
 	std::string id = usernameTextBox->getText();
 	std::string mdp = passwordTextBox->getText();
-
-	textInfo->SetText("Login...");
 
 	if (bdd->isUserDoesNotExist(id))
 	{
