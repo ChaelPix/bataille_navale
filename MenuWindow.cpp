@@ -142,8 +142,8 @@ void MenuWindow::InitPlayerInfo()
     s[0] = "     " + bdd.getId();
     s[1] = "Score: " + bdd.getScore();
     s[2] = "Games Played: " + bdd.getNbGames();
-    s[3] = "  - Victories: " + bdd.getNbWonGames();
-    s[4] = "  - Defeats: " + bdd.getNbLostGames();
+    s[3] = "Victories: " + bdd.getNbWonGames();
+    s[4] = "Defeats: " + bdd.getNbLostGames();
     s[5] = "K/D: " + bdd.getRatio();
 
     for (int i = 0; i < 6; i++)
