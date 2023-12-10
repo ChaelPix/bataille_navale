@@ -168,7 +168,7 @@ struct LoginMenuSettings {
 
 struct EndMenuSettings {
 
-    const sf::Vector2f panelSize = sf::Vector2f(1300, 850);
+    const sf::Vector2f panelSize = sf::Vector2f(1600, 850);
     const sf::Color panelColor = sf::Color(0, 0, 0, 200);
 
     const sf::Vector2f imagePos = sf::Vector2f(400, 100);
@@ -178,12 +178,16 @@ struct EndMenuSettings {
       "ressources/UI/ui_victory.png"
     };
 
-    const sf::Vector2f buttonPos = sf::Vector2f(542, 700);
+    const sf::Vector2f buttonPos = sf::Vector2f(542, 800);
     const sf::Vector2f buttonSize = sf::Vector2f(228, 80);
     const std::string buttonImagePaths[2] = {
       "ressources/UI/ui_menu_exitbutton_off.png",
       "ressources/UI/ui_menu_exitbutton_on.png"
     };
+
+    const int scoreSize = 50;
+    const sf::Vector2f scorePos = sf::Vector2f(542, 700);
+
 };
 
 struct GameVFXSettings
@@ -237,6 +241,15 @@ struct PlayerHUDSettings {
 
     const sf::Vector2f hudSize = sf::Vector2f(1600, 213);
 
+    const int nameSize = 40;
+    const int kdSize = 20;
+    const int scoreSize = 30;
 
+    const int pictureSize = 70;
+    const sf::Vector2f picturePos = sf::Vector2f(0, 25);
+
+    const sf::Color nameColor = sf::Color(255, 255, 255);
+    const sf::Color kdColor = sf::Color(75, 75, 75);
+    const sf::Color scoreColor = sf::Color(200, 200, 200);
 
 };
