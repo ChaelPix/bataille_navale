@@ -21,16 +21,7 @@ void MenuWindow::Initialize()
 
     loginMenu = new LoginMenu(application->getGameFont(), application->getBddObj(), application->getHasLogged());
 
-   // objBDD = application->getBddObj();
-
- 
-
-    application->getBddObj().setPseudo("c");
     FontStat = application->getGameFont();
-    application->getBddObj().displayPlayerInfo();
-    statInformation = application->getBddObj().getStatsInfo();
-    NameInformation = application->getBddObj().getIdPlayers();
-    std::cout << statInformation << ":::::::::::::::" << NameInformation;
 }
 
 void MenuWindow::HandleEvents(sf::Event& event) {
@@ -39,14 +30,15 @@ void MenuWindow::HandleEvents(sf::Event& event) {
 
 void MenuWindow::Update(sf::Event& event) {
 
-    loginMenu->update(event, mouseManager);
+    menuState = loginMenu->update(event, mouseManager);
 
-    if (menuButtonsManager->CheckButtonHover(mouseManager))
-    {
-        running = false;
-        application->Close();
-    }
+    
+    CheckExitButton();
+    HandleMatchmaking();
+}
 
+void MenuWindow::HandleMatchmaking()
+{
     if (menuButtonsManager->getIsMatchMaking())
     {
         if (application->client == nullptr)
@@ -59,7 +51,7 @@ void MenuWindow::Update(sf::Event& event) {
             application->client->sendMessage("OK");
             return;
         }
-            
+
         if (application->isCorrectMessageType(message))
         {
             application->setClientStartFirst(message == "GStart");
@@ -68,8 +60,17 @@ void MenuWindow::Update(sf::Event& event) {
         }
 
     }
-    else if(application->client != nullptr){
+    else if (application->client != nullptr) {
         application->DeleteClient();
+    }
+}
+
+void MenuWindow::CheckExitButton()
+{
+    if (menuButtonsManager->CheckButtonHover(mouseManager))
+    {
+        running = false;
+        application->Close();
     }
 }
 
@@ -79,27 +80,19 @@ void MenuWindow::Render()
         return;
 
     menuBackground->draw(window);
-    for (auto& entity : entitiesPtr)
-        entity->draw(window);
+    loginMenu->draw(window, menuState);
 
-    menuButtonsManager->draw(window);
-    loginMenu->draw(window);
+    if (menuState == LoginMenu::MenuState::OnMenu)
+    {
+        for (auto& entity : entitiesPtr)
+            entity->draw(window);
 
-    //Créer un texte
-    stat.setFont(FontStat);
-    stat.setString(statInformation);
-    stat.setCharacterSize(40); // en pixels
-    stat.setFillColor(sf::Color(192, 192, 192));
-    stat.setPosition(1023, 200);
-
-    //Créer un texte
-        name.setFont(FontStat);
-    name.setString("Welcome " + NameInformation);
-    name.setCharacterSize(65); // en pixels
-    name.setFillColor(sf::Color(204, 102, 0));
-    name.setPosition(950, 120);
-
-    window.draw(stat);
-    window.draw(name);
+        menuButtonsManager->draw(window);
+        window.draw(stat);
+        window.draw(name);
+    }
+    
 }
+
+
 

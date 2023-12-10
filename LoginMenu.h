@@ -8,6 +8,9 @@
 
 class LoginMenu
 {
+public :
+	enum class MenuState {WaitClick, LoginBDD, OnMenu};
+
 private:
 	EntityTextBox* usernameTextBox;
 	EntityTextBox* passwordTextBox;
@@ -39,7 +42,7 @@ public:
 	LoginMenu(sf::Font& font, BsBDD& objBDD, bool& hasClicked);
 
 	bool checkForSaveFile();
-	void update(sf::Event& event, MouseManager &mouseManager);
-	void draw(sf::RenderWindow& window);	
+	MenuState update(sf::Event& event, MouseManager &mouseManager);
+	void draw(sf::RenderWindow& window, LoginMenu::MenuState state);
 };
 

@@ -10,7 +10,7 @@ LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD, bool& hasClicked) : hasClick
 		buttonTextures[i].loadFromFile(loginMenuSettings.buttonImagePaths[i]);
 	
 	loginButton = new EntityRectangle(loginMenuSettings.buttonSize, loginMenuSettings.buttonPos, buttonTextures[0]);
-	textInfo = new EntityText(font, loginMenuSettings.textPosition, loginMenuSettings.characterSize, "Wrong Password.");
+	textInfo = new EntityText(font, loginMenuSettings.textPosition, loginMenuSettings.characterSize, "DEBUG TEXT");
 
 	bdd = &objBDD;
 	isBusy = false;
@@ -33,20 +33,27 @@ bool LoginMenu::checkForSaveFile()
 	return true;
 }
 
-void LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
+LoginMenu::MenuState LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
 {
 	if (!hasClicked)
 	{
 		updateBlink();
 		startText->SetColor(sf::Color(255, 255, 255, opacite));
 		if (mouseManager.isMouseClicked())
+		{
 			hasClicked = true;
-		return;
+			return LoginMenu::MenuState::LoginBDD;
+		}
+
+		return LoginMenu::MenuState::WaitClick;
 	}
 
 
-	if (isBusy || isLogged)
-		return;
+	if (isLogged)
+		return LoginMenu::MenuState::OnMenu;
+
+	if (isBusy)
+		return LoginMenu::MenuState::LoginBDD;
 
 	bool isOnUsername = false;
 	bool isOnPassword = false;
@@ -89,13 +96,17 @@ void LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
 
 	usernameTextBox->setSelected(isOnUsername);
 	passwordTextBox->setSelected(isOnPassword);
+
+	return LoginMenu::MenuState::LoginBDD;
 }
 
-void LoginMenu::draw(sf::RenderWindow& window)
+void LoginMenu::draw(sf::RenderWindow& window, LoginMenu::MenuState state)
 {
-	if(!hasClicked)
+	if (!hasClicked)
+	{
 		startText->draw(window);
-	else
+	}
+	else if(state == LoginMenu::MenuState::LoginBDD)
 	{
 		usernameTextBox->draw(window);
 		passwordTextBox->draw(window);

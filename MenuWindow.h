@@ -24,6 +24,9 @@ protected:
 
     void Update(sf::Event& event) override;
 
+    void HandleMatchmaking();
+    void CheckExitButton();
+
     void Render() override;
 
 private:
@@ -42,6 +45,8 @@ private:
 
     std::string statInformation;
     std::string NameInformation;
+
+    LoginMenu::MenuState menuState;
 };
 
 
