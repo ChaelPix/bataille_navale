@@ -57,8 +57,8 @@ private:
     int section_starts[9] = { 0, 5, 9, 12, 19, 23, 29, 32, 40 };
 
     //bouton
-    sf::Texture buttonPrevTexture, buttonNextTexture;
-    sf::Sprite buttonPrevSprite, buttonNextSprite;
+    sf::Texture buttonPrevTexture, buttonNextTexture, exitButtonTexture;
+    sf::Sprite buttonPrevSprite, buttonNextSprite, exitButtonSprite;
     int currentSectionIndex = 0;
     sf::Vector2f buttonPosition;
 
