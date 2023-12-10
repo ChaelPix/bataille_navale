@@ -80,6 +80,7 @@ void LockerWindow::Initialize()
     //int section_starts[] = { 0, 5, 9, 12, 19, 23, 29, 32, 40 };
 
     // Boucle sur toutes les images
+    charactersImgs = &application->getCharactersImgs();
     for (int i = 0; i < 48; ++i) {
         // Trouvez la section actuelle en fonction de l'indice 'i'
         int section = 0;
@@ -95,7 +96,7 @@ void LockerWindow::Initialize()
         float pos_y = (index_in_section / 4) * (new_image_height + margin_each_top_bottom) + margin_each_top_bottom;
 
         // Ajoutez la nouvelle entité à la fin du vecteur
-        entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(280, 280), sf::Vector2f(pos_x, pos_y), LckSettings.path[i]));
+        entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(280, 280), sf::Vector2f(pos_x, pos_y), charactersImgs->at(i)));
     }
     
 }

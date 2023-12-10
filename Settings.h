@@ -232,3 +232,11 @@ struct LockerSettings {
     std::string valideTextureImgPath = "ressources/UI/valide.png";
 
 };
+
+struct PlayerHUDSettings {
+
+    const sf::Vector2f hudSize = sf::Vector2f(1600, 213);
+
+
+
+};
