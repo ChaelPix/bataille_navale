@@ -34,13 +34,13 @@ void GameInfoPanel::updateTurn(int turn)
 {
 	std::string s = "Turn " + std::to_string(turn);
 	turnTxt->SetTextAndCenterX(s);
-	turnTxt->SetPosition(gameMenuSettings.txtCenter);
+	turnTxt->SetPosition(gameMenuSettings.txtCenter + sf::Vector2f(0, 75));
 }
 
 void GameInfoPanel::updateGameInfo(std::string info)
 {
 	infoTxt->SetTextAndCenterX(info);
-	infoTxt->SetPosition(gameMenuSettings.txtCenter);
+	infoTxt->SetPosition(gameMenuSettings.txtCenter + sf::Vector2f(0, 135));
 }
 
 void GameInfoPanel::draw(sf::RenderWindow& window)

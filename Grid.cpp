@@ -40,9 +40,6 @@ bool Grid::isMouseOnGrid(MouseManager mouse)
 {
 	sf::Vector2f pos = mouse.getClickPosition();
 
-	std::cout << "mouse : " << pos.x << ":" << pos.y << std::endl;
-	std::cout << "window : " << startGridPos.x << ":" << startGridPos.y << ":" << startGridPos.x + gridSize << ":" << startGridPos.y + gridSize << std::endl;
-
 	return (pos.x >= startGridPos.x && pos.x <= startGridPos.x + gridSize
 		&& pos.y >= startGridPos.y && pos.y <= startGridPos.y + gridSize);
 }

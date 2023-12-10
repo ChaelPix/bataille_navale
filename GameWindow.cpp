@@ -20,6 +20,8 @@ void GameWindow::Initialize()
     cursor = new CursorCellSelector(battleshipCore, application->client);
     endPanel = new EndPanel();
     gameVfx = new GameVfx();
+    gameInfoPanel = new GameInfoPanel(application->getGameFont());
+    gameInfoPanel->updateGameInfo("Place your Boats!");
 }
 
 void GameWindow::HandleEvents(sf::Event& event) {
@@ -55,6 +57,7 @@ void GameWindow::processMessages() {
 
                 /*----------Enemy Attack----------*/
             case GameApplication::MessageType::Game:
+                gameInfoPanel->updateTurn(++nbTurn);
                 std::cout << "Attack : " << message;
                 BattleshipCore::AttackInfo attckPos = battleshipCore.deserializeAttack(message);
                 BattleshipCore::CellType attackCell = battleshipCore.Attack(attckPos.y, attckPos.x, false);
@@ -65,9 +68,12 @@ void GameWindow::processMessages() {
                     endPanel->Show(false);
                 }
 
-                //if oponent hits
+                //if oponent no hits
                 if (attackCell != BattleshipCore::CellType::hit)
+                {
+                    gameInfoPanel->updateGameInfo("Your Turn");
                     gameState = GameState::Attacking;
+                }
                 else
                     gameVfx->CreateFireCell(attckPos.x, attckPos.y, false);
 
@@ -83,12 +89,14 @@ void GameWindow::processMessages() {
 void GameWindow::handleGameState() {
     CursorCellSelector::State attackState;
     sf::Vector2f MousePos;
+    float time = timer.getElapsedTime().asSeconds();
 
     switch (gameState) {
             /*----------Placing----------*/
         case GameState::Placing:
-            playerBoatsManager->dragBoats(mouseManager);
-            if (timer.getElapsedTime().asSeconds() >= 15) {
+            playerBoatsManager->dragBoats(mouseManager); 
+            gameInfoPanel->updateTimer(time);
+            if (time >= 15) {
                 timer.restart();
                 playerBoatsManager->RandomPlacement();
                 application->client->sendMessage(battleshipCore.serializePlayerGrid());
@@ -99,7 +107,18 @@ void GameWindow::handleGameState() {
     case GameState::WaitingGrid:
             if (battleshipCore.getHasReceivedOpponentGrid()) {
                 std::cout << "Opponent Grid Received : \n" << battleshipCore.serializePlayerGrid(false) << std::endl;
-                gameState = application->getClientStartFirst() ? GameState::Attacking : GameState::Waiting;
+                if (application->getClientStartFirst())
+                {
+                    gameState = GameState::Attacking;
+                    gameInfoPanel->updateGameInfo("Your Turn");
+                }
+                else
+                {
+                    gameState = GameState::Waiting;
+                    gameInfoPanel->updateGameInfo("Enemy Turn");
+                }
+       
+                gameInfoPanel->updateTurn(nbTurn);
             }
             break;
 
@@ -114,6 +133,8 @@ void GameWindow::handleGameState() {
 
             case CursorCellSelector::State::Attacked:
                 gameVfx->CreateMissCell(MousePos.x, MousePos.y, true);
+                gameInfoPanel->updateTurn(++nbTurn);
+                gameInfoPanel->updateGameInfo("Enemy Turn");
                 gameState = GameState::Waiting;
                 break;
 
@@ -127,6 +148,7 @@ void GameWindow::handleGameState() {
             case CursorCellSelector::State::ExtraTurn:
                 std::cout << "Extra turn !" << std::endl;
                 gameVfx->CreateFireCell(MousePos.x, MousePos.y, true);
+                gameInfoPanel->updateTurn(++nbTurn);
                 gameState = GameState::Attacking;
                 break;
 
@@ -177,5 +199,6 @@ void GameWindow::Render()
     if(gameState == GameState::Attacking)
          cursor->draw(window);
 
+    gameInfoPanel->draw(window);
     endPanel->draw(window);
 }
