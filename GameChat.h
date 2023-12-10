@@ -18,7 +18,6 @@ private:
 
 	WindowSettings windowSettings;
 
-
 public:
 
 	GameChat(TCPClient* client);
