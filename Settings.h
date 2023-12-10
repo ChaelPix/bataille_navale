@@ -130,11 +130,15 @@ struct GameVFXSettings
     const std::string missImagePath = "ressources/UI/ui_miss.png";
 
     const int attacksTimer = 125;
-    const int fireTimer = 350;
     const std::string attacksPath = "ressources/UI/vfx/vfx_attack";
+
+    const int fireTimer = 350;
+
     const int nbEnemyFire = 2;
     const std::string enemyFirePath = "ressources/UI/vfx/vfx_ennemyFire";
+
     const int nbPlayerFire = 8;
     const std::string playerFirePath = "ressources/UI/vfx/vfx_playerFire";
+
     const sf::Vector2f attackTextureSize = sf::Vector2f(112, 112);
 };
