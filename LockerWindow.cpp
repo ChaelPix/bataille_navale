@@ -14,23 +14,50 @@ LockerWindow::~LockerWindow()
 
 void LockerWindow::Initialize()
 {
-    //menuBackground = new AnimatedEntity("ressources/UI/backgrounds/menuBg/menu_", 50, 28, true, windowSettings.menuWindowSize);
-    // 
     //entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
     //menuButtonsManager = new MenuButtonsManager(application->getGameFont());
     // Boucle pour initialiser 8 clés à 'true'
 
+    //Music
+    if (!music.openFromFile("ressources/UI/sfx/sfx_boatLocker.wav")) {
+    }
+    music.play();
+    music.setLoop(true);
+
+    BackgroundTexture.loadFromFile(LckSettings.backgroundImgPath);
+    Background = new EntityRectangle(ws.gameWindowSize, sf::Vector2f(0, 0), BackgroundTexture);
+
+    validPos = sf::Vector2f(100, 100);
+
+    //img valide
+    valideTexture.loadFromFile(LckSettings.valideTextureImgPath);
+    valide = new EntityRectangle(sf::Vector2f(30, 30), validPos, valideTexture);
+
+
+    //movement
+    initialPosition = sf::Vector2f(0, 0); // Replace with actual initial position
+    swaySpeed = 1.0f;                     // Replace with desired speed
+    swayMagnitude = 10.0f;                // Replace with desired magnitude
+
+
+
+      for (int i = 0; i < 9; i++){
+          textInfo.push_back(new EntityText(LckSettings.font, LckSettings.textPosition, LckSettings.characterSize, LckSettings.sectionName[i]));
+      }
+
     // Chargement et configuration des textures et sprites des boutons
-    if (!buttonPrevTexture.loadFromFile("ressources/UI/ui_menu_playbutton_on.png") ||
-        !buttonNextTexture.loadFromFile("ressources/UI/ui_menu_playbutton_on.png")) {
+    if (!buttonPrevTexture.loadFromFile("ressources/UI/ui_locker_previousbutton_on.png") ||
+        !buttonNextTexture.loadFromFile("ressources/UI/ui_locker_nextbutton_on.png")) {
         std::cout << "error loading: ressources/UI/ui_menu_playbutton_on.png" << std::endl;
     }
 
     buttonPrevSprite.setTexture(buttonPrevTexture);
-    buttonPrevSprite.setPosition(sf::Vector2f(50, 374));
+    buttonPrevSprite.setPosition(sf::Vector2f(50, 370));
+    buttonPrevSprite.setScale(sf::Vector2f(0.5, 0.5));
 
     buttonNextSprite.setTexture(buttonNextTexture);
-    buttonNextSprite.setPosition(sf::Vector2f(950, 374));
+    buttonNextSprite.setPosition(sf::Vector2f(1220, 370));
+    buttonNextSprite.setScale(sf::Vector2f(0.5, 0.5));
 
     for (int i = 0; i < 9; ++i) {
         std::string key = "section" + std::to_string(i + 1);
@@ -43,10 +70,10 @@ void LockerWindow::Initialize()
     float new_image_width = 304.8f;  // Largeur de l'image après la mise à l'échelle
     float new_image_height = 304.8f; // Hauteur de l'image après la mise à l'échelle
     float margin_each_side = 27.8f;  // Marge sur les côtés
-    float margin_each_top_bottom = 49.8f; // Marge en haut et en bas
+    float margin_each_top_bottom = 65.8f; // Marge en haut et en bas
 
     // Tableau indiquant l'indice de début de chaque section
-    int section_starts[] = { 0, 5, 9, 13, 19, 23, 29, 32, 40 };
+    //int section_starts[] = { 0, 5, 9, 12, 19, 23, 29, 32, 40 };
 
     // Boucle sur toutes les images
     for (int i = 0; i < 48; ++i) {
@@ -74,6 +101,25 @@ void LockerWindow::HandleEvents(sf::Event& event) {
     if (event.type == sf::Event::MouseButtonPressed) {
         if (event.mouseButton.button == sf::Mouse::Left) {
             sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+            
+            for (int i = p; i < p + l; ++i) {
+                if (i < entitiesPtr.size()) {
+                    auto entity = entitiesPtr.at(i);
+                    if (entity->getShape().getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
+                        pictureChoose = i; 
+                        std::cout << "Image " << i << " cliquée" << std::endl;
+
+                        // Mettre à jour validPos avec la position de l'image cliquée
+                        validPos = entity->getPosition(); // Assurez-vous que votre entité a une méthode getPosition()
+
+                        // Mettre à jour la position de l'entité 'valide' avec la nouvelle position
+                        valide->setPosition(validPos);
+                        imageSelected = true;
+                        break;
+                    }
+                }
+            }
+
 
             // Vérifier le clic sur le bouton précédent
             if (buttonPrevSprite.getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
@@ -85,6 +131,7 @@ void LockerWindow::HandleEvents(sf::Event& event) {
                 currentSectionIndex = std::min(8, currentSectionIndex + 1); // Ne pas dépasser 8
                 UpdateSectionState();
             }
+            
         }
     }
 }
@@ -103,36 +150,48 @@ void LockerWindow::UpdateSectionState() {
 void LockerWindow::LockerManagement() {
 
     if (lockerSection["section1"]) {
-        p = 0; l = 5;
+        p = 0; l = 5, s = 1;
     }
     else if (lockerSection["section2"]) {
-        p = 5; l = 4;
+        p = 5; l = 4, s = 2;
     } 
     else if (lockerSection["section3"])
-        p = 9, l = 3;
+        p = 9, l = 3, s = 3;
     else if (lockerSection["section4"])
-        p = 13, l = 6;
+        p = 12, l = 7, s = 4;
     else if (lockerSection["section5"])
-        p = 19, l = 4;
+        p = 19, l = 4, s = 5;
     else if (lockerSection["section6"])
-        p = 23, l = 6;
+        p = 23, l = 6, s = 6;
     else if (lockerSection["section7"])
-        p = 29, l = 3;
+        p = 29, l = 3, s = 7;
     else if (lockerSection["section8"])
-        p = 32, l = 8;
+        p = 32, l = 8, s = 8;
     else if (lockerSection["section9"])
-        p = 40, l = 8;
+        p = 40, l = 8, s = 9;
 
     for (int i = p; i < p + l; ++i) {
         if (i < entitiesPtr.size()) {
             entitiesPtr.at(i)->draw(window);
         }
     }
+
+    textInfo.at(s - 1)->draw(window);
+
 }
 
 
 void LockerWindow::Update(sf::Event& event) {
     
+}
+
+//movement
+void LockerWindow::UpdatePos(sf::Time deltaTime) {
+    static float time = 0.0f;
+    time += deltaTime.asSeconds();
+
+    float swayAmount = sin(time * swaySpeed) * swayMagnitude;
+    Background->setPosition(initialPosition + sf::Vector2f(swayAmount, 0));
 }
 
 void LockerWindow::debug() {
@@ -162,14 +221,29 @@ void LockerWindow::debug() {
 
 void LockerWindow::Render()
 {
+    Background->draw(window);
 
     if (!running)
         return;
-
     LockerManagement();
+
+    //movement
+    sf::Time deltaTime = clock.restart();
+    UpdatePos(deltaTime);
 
     // Dessiner les boutons
     window.draw(buttonPrevSprite);
     window.draw(buttonNextSprite);
+
+    if (imageSelected) {
+        int sectionStartIndex = section_starts[currentSectionIndex];
+        int sectionEndIndex = (currentSectionIndex < 8) ? section_starts[currentSectionIndex + 1] - 1 : 47;
+
+        if (pictureChoose >= sectionStartIndex && pictureChoose <= sectionEndIndex) {
+            valide->draw(window);
+        }
+        // Pas de réinitialisation de imageSelected ici
+    }
+
 
 }

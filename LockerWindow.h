@@ -2,6 +2,7 @@
 
 #include "SfmlWindow.h"
 #include "Application.h"
+#include <SFML/Audio.hpp>
 
 #include "Settings.h"
 #include "AnimatedEntity.h"
@@ -10,6 +11,8 @@
 #include "EntityRectangle.h"
 #include "BsBDD.h"
 #include "LoginMenu.h"
+#include "EntityText.h"
+#include "EntityTextBox.h"
 
 
 class LockerWindow : public SfmlWindow
@@ -17,7 +20,6 @@ class LockerWindow : public SfmlWindow
 public:
     LockerWindow(GameApplication& application, const sf::Vector2i& windowPos);
     ~LockerWindow();
-
 
 protected:
     void Initialize() override;
@@ -30,6 +32,8 @@ protected:
 
     void Update(sf::Event& event) override;
 
+    void UpdatePos(sf::Time deltaTime);
+
     void debug();
 
     void Render() override;
@@ -37,17 +41,41 @@ protected:
 private:
     GameApplication* application;
     LockerSettings LckSettings;
+    FontSettings Fontonj;
     MouseManager mouseManager;
-    AnimatedEntity* menuBackground;
     MenuButtonsManager* menuButtonsManager;
     std::vector<EntityRectangle*> entitiesPtr;
+    EntityRectangle* Background;
+    EntityRectangle* valide;
+    WindowSettings ws;
+    sf::Texture BackgroundTexture;
+    sf::Texture valideTexture;
+    std::vector<EntityText*> textInfo;
     std::vector<sf::Texture*> PictureCases;
     std::map<std::string, bool> lockerSection;
-    int l, p;
+    int l, p, s;
+    int section_starts[9] = { 0, 5, 9, 12, 19, 23, 29, 32, 40 };
+
+    //bouton
     sf::Texture buttonPrevTexture, buttonNextTexture;
     sf::Sprite buttonPrevSprite, buttonNextSprite;
     int currentSectionIndex = 0;
     sf::Vector2f buttonPosition;
+
+    //Music
+    sf::Music music;
+
+    //movement
+    sf::Vector2f initialPosition; // Stores the initial position of the background
+    float swaySpeed;              // How fast the background moves back and forth
+    float swayMagnitude;          // The range of the sway movement
+    sf::Clock clock;
+
+    int pictureChoose;
+
+    sf::Vector2f validPos;
+    bool imageSelected = false;
+
 };
 
 

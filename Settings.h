@@ -203,9 +203,32 @@ struct LockerSettings {
 
     const int nbImages = 48;
     std::string path[48];
+    sf::Font font;
 
     LockerSettings() {
+        font.loadFromFile("ressources/fonts/AGENCYB.TTF");
         for (int i = 0; i < nbImages; i++)
             path[i] = "ressources/profilPictures/caractere" + std::to_string(i + 1) + ".jpg";
     }
+    std::string sectionName[9] = {
+        "   air forces",
+        "Tactical armies",
+        "pilot in command",
+        "     crews",
+        "force of armies",
+        "   miliary",
+        "   hostages",
+        "   soldiers",
+        "   specials",
+    };
+
+    const sf::Vector2f textPosition = sf::Vector2f(580, 5);
+    const int characterSize = 40;
+
+    const sf::Vector2f startTextPos = sf::Vector2f(300, 500);
+    const int startTextCharacterSize = 72;
+
+    std::string backgroundImgPath = "ressources/UI/backgroundLocker2.png";
+    std::string valideTextureImgPath = "ressources/UI/valide.png";
+
 };
