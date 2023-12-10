@@ -13,6 +13,22 @@ LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD)
 
 	bdd = &objBDD;
 	isBusy = false;
+
+	checkForSaveFile();
+}
+
+bool LoginMenu::checkForSaveFile()
+{
+	dataVector.clear();
+	dataVector = svData.loadDataFromFile("data.txt");
+
+	if (dataVector.at(0) == "")
+		return false;
+
+	bdd->setIdPlayers(dataVector.at(0));
+	bdd->setMdp(dataVector.at(1));
+
+	return true;
 }
 
 void LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
@@ -42,21 +58,9 @@ void LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
 
 		if (mouseManager.isMouseClicked())
 		{
-			if (usernameTextBox->getText().empty() || passwordTextBox->getText().empty()) {
-				//isBusy = true;
-				//std::cout << "empty ";
-				//LoginInvite();
-				DataVector.clear();
-				DataVector = svData.loadDataFromFile("data.txt");
-
-				bdd->setIdPlayers(DataVector[0]);
-				bdd->setMdp(DataVector[1]);
-				std::cout << "Login: " << bdd->getIdPlayers() << ", Mot de passe: " << bdd->getmdp() << std::endl;
-				// Affichage des données pour vérifier
-				for (size_t i = 0; i < DataVector.size(); i += 2) {
-					std::cout << "Login: " << DataVector[i] << ", Mot de passe: " << DataVector[i + 1] << std::endl;
-				}
-
+			if (usernameTextBox->getText().empty() && passwordTextBox->getText().empty()) {
+				isBusy = true;
+				LoginInvite();
 			}
 			else
 			{
@@ -84,26 +88,52 @@ void LoginMenu::draw(sf::RenderWindow& window)
 }
 
 void LoginMenu::LoginInvite() {
-	std::cout << "Welcome invite.... ";
-	std::cout << bdd->getIdPlayers() << " ---------->" << bdd->getScore();
-	isLogged = true;
 
+	std::cout << "Welcome invite.... ";
+	bdd->setIsConnected(false);
+
+	isLogged = true;	
 }
 
 void LoginMenu::Login(){
+
 	std::cout << "Login.... ";
-	bdd->connectToDB("10.187.52.4", "batailleNavale", "batailleNavale");
+	bool isConnected = bdd->connectToDB("10.187.52.4", "batailleNavale", "batailleNavale");
+
+	if (!isConnected)
+	{
+		LoginInvite();
+		return;
+	}
+
 	std::string id = usernameTextBox->getText();
 	std::string mdp = passwordTextBox->getText();
-	std::cout << id + mdp;
-	bdd->login(id, mdp);
-	std::cout << bdd->getIdPlayers() << " ----------> " << bdd->getScore();
-	std::cout << " vector data be ";
-	bdd->getAllData(DataVector);
-	for (int i = 0; i < DataVector.size(); i++){
-		std::cout << DataVector.at(i);
+
+	textInfo->SetText("Login...");
+
+	if (bdd->isUserDoesNotExist(id))
+	{
+		bdd->registerUser(id, mdp);	
+	} 
+	else if (bdd->isUserExistsButWrongPassword(id, mdp))
+	{
+		textInfo->SetText("Wrong Password.");
+		isBusy = false;
+		return;
 	}
-	svData.saveDataToFile(DataVector, "data.txt");
+	else
+	{
+		if (!bdd->login(id, mdp))
+		{
+			textInfo->SetText("Error, please retry.");
+			isBusy = false;
+			return;
+		}
+	}
+
+	bdd->getAllData(dataVector);
+	svData.saveDataToFile(dataVector, "data.txt");
 	isLogged = true;
+
 }
 

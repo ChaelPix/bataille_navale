@@ -36,16 +36,18 @@ private:
     std::string idPlayers;
     std::vector<std::string> vcase;
 
+    bool isConnected;
+
 public:
     BsBDD();
     ~BsBDD();
 
     void Connexion();
     void setPseudo(std::string name);
-    void connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password);
+    bool connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password);
     bool login(const std::string& idPlayer, const std::string& password);
     bool registerUser(const std::string& idUser, const std::string& password);
-    void BonusWin();
+    void BonusWin(int nbPoints = 100);
     void incrementNbGames();
     void incrementNbLostGames();
     void incrementNbWonGames();
@@ -56,6 +58,9 @@ public:
     void getAllData(std::vector<std::string>&Vector);
     std::string getStatsInfo();
 
+    bool isUserExistsButWrongPassword(const std::string& idUser, const std::string& password);
+    bool isUserDoesNotExist(const std::string& idUser);
+
     // Déclarations des méthodes getteurs
     std::string getId() const;
     std::string getScore() const;
@@ -64,6 +69,10 @@ public:
     std::string getNbWonGames() const;
     std::string getIdPlayers() const;
     std::string getmdp() const;
+
+    bool getIsConnected();
+    void setIsConnected(bool action);
+    
 
     // Setters
     void setId(const std::string& newId);

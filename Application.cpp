@@ -20,6 +20,7 @@ void GameApplication::Initialize()
 {
     FontSettings fontSettings;
     gameFont.loadFromFile(fontSettings.fontPath);
+    isLogged = false;
     //objBDD->connectToDB("10.187.52.4:3306", "batailleNavale", "batailleNavale");
 }
 

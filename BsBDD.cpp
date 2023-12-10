@@ -57,12 +57,19 @@ void BsBDD::setPseudo(std::string name) {
     this->userId = name;
 }
 
-void BsBDD::connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password) {
-    driver = get_driver_instance();
-    con = driver->connect(dbURI, userName, password);
-    con->setSchema("batailleNavale_b");
-    std::cout << "Dans CNECCT";
+bool BsBDD::connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password) {
+    try {
+        driver = get_driver_instance();
+        con = driver->connect(dbURI, userName, password);
+        con->setSchema("batailleNavale_b");
+        return true; 
+    }
+    catch (sql::SQLException& e) {
+        std::cerr << "Can't connect to bdd : " << e.what() << std::endl;
+        return false; 
+    }
 }
+
 
 bool BsBDD::login(const std::string& idUser, const std::string& password) {
     try {
@@ -104,6 +111,28 @@ bool BsBDD::login(const std::string& idUser, const std::string& password) {
     }
 }
 
+bool BsBDD::isUserExistsButWrongPassword(const std::string& idUser, const std::string& password) {
+
+    pstmt = con->prepareStatement("SELECT mdp FROM player WHERE idPlayers = ?");
+    pstmt->setString(1, idUser);
+    res = pstmt->executeQuery();
+
+    if (res->next()) {
+        std::string dbPassword = res->getString("mdp");
+        return dbPassword != password;
+    }
+    return false; 
+}
+
+bool BsBDD::isUserDoesNotExist(const std::string& idUser) {
+
+    pstmt = con->prepareStatement("SELECT mdp FROM player WHERE idPlayers = ?");
+    pstmt->setString(1, idUser);
+    res = pstmt->executeQuery();
+
+    return !res->next(); 
+}
+
 
 bool BsBDD::registerUser(const std::string& idUser, const std::string& password) {
     std::cout << espace << "debug" << std::endl;
@@ -140,16 +169,15 @@ bool BsBDD::registerUser(const std::string& idUser, const std::string& password)
     return false;
 }
 
-void BsBDD::BonusWin() {
+void BsBDD::BonusWin(int nbPoints) {
 
-    if (userId.empty()) {
+    if (!isConnected) {
         std::cout << espace << "Aucun utilisateur connect\202." << std::endl;
         return;
     }
 
     try {
-        // Mise à jour du score dans la table 'playersData'
-        pstmt = con->prepareStatement("UPDATE playersData SET score = score + 100 WHERE idPlayers = ?");
+        pstmt = con->prepareStatement("UPDATE playersData SET score = score + " + std::to_string(nbPoints) + " WHERE idPlayers = ? ");
         pstmt->setString(1, userId);
         pstmt->executeUpdate();
 
@@ -162,7 +190,7 @@ void BsBDD::BonusWin() {
 
 
 void BsBDD::incrementNbGames() {
-    if (userId.empty()) {
+    if (!isConnected) {
         std::cout << espace << "Aucun utilisateur connect\202." << std::endl;
         return;
     }
@@ -180,7 +208,7 @@ void BsBDD::incrementNbGames() {
 }
 
 void BsBDD::incrementNbLostGames() {
-    if (userId.empty()) {
+    if (!isConnected) {
         std::cout << espace << "Aucun utilisateur connect\202." << std::endl;
         return;
     }
@@ -198,7 +226,7 @@ void BsBDD::incrementNbLostGames() {
 }
 
 void BsBDD::incrementNbWonGames() {
-    if (userId.empty()) {
+    if (!isConnected) {
         std::cout << espace << "Aucun utilisateur connect\202." << std::endl;
         return;
     }
@@ -217,7 +245,7 @@ void BsBDD::incrementNbWonGames() {
 
 void BsBDD::displayPlayerInfo() {
 
-    if (userId.empty()) {
+    if (!isConnected) {
         std::cout << espace << "Aucun utilisateur connecté." << std::endl;
         return;
     }
@@ -272,7 +300,7 @@ void BsBDD::setAllData(){
 void BsBDD::getAllData(std::vector<std::string>& Vector){
     
     Vector.push_back(this->userId + "$");
-    Vector.push_back(this-> mdp);
+    Vector.push_back(this->mdp);
 
     //for (int i = 0; i < vcase.size(); i++){ //incrémenter toute les valeurs
     //    Vector.push_back(this->vcase.at(i) + "$");
@@ -301,6 +329,7 @@ std::string BsBDD::getStatsInfo()
     return statInfo;
 }
 
+#pragma region Getter/Setter
 std::string BsBDD::getId() const {
     return id;
 }
@@ -329,6 +358,16 @@ std::string BsBDD::getmdp() const {
     return mdp;
 }
 
+bool BsBDD::getIsConnected()
+{
+    return isConnected;
+}
+
+void BsBDD::setIsConnected(bool action)
+{
+    isConnected = action;
+}
+
 
 //setteur
 void BsBDD::setId(const std::string& newId) {
@@ -352,3 +391,5 @@ void BsBDD::setIdPlayers(const std::string& newIdPlayers) {
 void BsBDD::setMdp(const std::string& newMdp) {
     this->mdp = newMdp;
 }
+
+#pragma endregion

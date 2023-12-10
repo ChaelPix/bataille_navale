@@ -39,6 +39,8 @@ private:
     BsBDD* objBDD;
     sf::Font gameFont;
 
+    bool isLogged;
+
     void Initialize();
 
 public:

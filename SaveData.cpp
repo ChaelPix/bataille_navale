@@ -33,6 +33,8 @@ std::vector<std::string> SaveData::loadDataFromFile(const std::string& filename)
     else {
         // Gestion de l'erreur si le fichier ne peut pas être ouvert
         std::cerr << "Impossible d'ouvrir le fichier pour la lecture." << std::endl;
+        loginsAndPasswords.push_back("");
+        loginsAndPasswords.push_back("");
     }
 
     return loginsAndPasswords;
