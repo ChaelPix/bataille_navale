@@ -37,6 +37,12 @@ void launchGame()
     game.Run();
 }
 
+void launchLocker()
+{
+    GameApplication game(GameApplication::State::Locker);
+    game.Run();
+}
+
 
 int main() {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
@@ -62,6 +68,10 @@ int main() {
 
         case '4':
             ServerMod();
+            return 0;
+
+        case '5':
+            launchLocker();
             return 0;
 
         default:

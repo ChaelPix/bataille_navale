@@ -107,10 +107,10 @@ void GameApplication::ChangeState(State newState) {
             currentWindow->wName = "menu";
             break;
 
-        //case State::Locker:
-        //    currentWindow = new LockerWindow(*this, windowPos);
-        //    currentWindow->wName = "menu";
-        //    break;
+        case State::Locker:
+            currentWindow = new LockerWindow(*this, windowPos);
+            currentWindow->wName = "menu";
+            break;
 
         case State::Game:
             WindowSettings wSets;

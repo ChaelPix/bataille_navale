@@ -6,6 +6,7 @@
 #include "GameWindow.h"
 #include "MenuWindow.h"
 #include "SplashWindow.h"
+#include "LockerWindow.h"
 #include "TCPClient.h"
 #include "BSBDD.h"
 

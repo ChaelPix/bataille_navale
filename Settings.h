@@ -124,3 +124,14 @@ struct EndMenuSettings {
       "ressources/UI/ui_menu_exitbutton_on.png"
     };
 };
+
+struct LockerSettings {
+
+    const int nbImages = 48;
+    std::string path[48];
+
+    LockerSettings() {
+        for (int i = 0; i < nbImages; i++)
+            path[i] = "ressources/profilPictures/caractere" + std::to_string(i + 1) + ".png";
+    }
+};
