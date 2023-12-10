@@ -14,7 +14,8 @@ LockerWindow::~LockerWindow()
 
 void LockerWindow::Initialize()
 {
-    menuBackground = new AnimatedEntity("ressources/UI/backgrounds/menuBg/menu_", 50, 28, true, windowSettings.menuWindowSize);
+    //menuBackground = new AnimatedEntity("ressources/UI/backgrounds/menuBg/menu_", 50, 28, true, windowSettings.menuWindowSize);
+    // 
     //entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
     //menuButtonsManager = new MenuButtonsManager(application->getGameFont());
     // Boucle pour initialiser 8 clés à 'true'

@@ -104,12 +104,6 @@ struct EndMenuSettings {
     const sf::Vector2f panelSize = sf::Vector2f(1300, 850);
     const sf::Color panelColor = sf::Color(0, 0, 0, 200);
 
-    //const sf::Vector2f textPosition = sf::Vector2f(200, 300);
-    //const int textCharacterSize = 40;
-    //const std::string winText = "YOU WIN!";
-    //const std::string looseText = "YOU LOOSE!";
-    //const sf::Color textColor = sf::Color(255, 255, 255, 255);
-
     const sf::Vector2f imagePos = sf::Vector2f(400, 100);
     const sf::Vector2f imageSize = sf::Vector2f(512, 512);
     const std::string endImagesPath[2] = {
@@ -123,6 +117,19 @@ struct EndMenuSettings {
       "ressources/UI/ui_menu_exitbutton_off.png",
       "ressources/UI/ui_menu_exitbutton_on.png"
     };
+};
+
+struct GameVFXSettings
+{
+    const std::string missImagePath = "ressources/UI/ui_miss.png";
+    const int attacksTimer = 125;
+    const std::string attacksPath = "ressources/UI/vfx/vfx_attack";
+    const int fireTimer = 350;
+    const int nbEnemyFire = 2;
+    const std::string enemyFirePath = "ressources/UI/vfx/vfx_ennemyFire";
+    const int nbPlayerFire = 8;
+    const std::string playerFirePath = "ressources/UI/vfx/vfx_playerFire";
+    const sf::Vector2f attackTextureSize = sf::Vector2f(112, 112);
 };
 
 struct LockerSettings {
