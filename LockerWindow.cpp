@@ -47,7 +47,7 @@ void LockerWindow::Initialize()
 
     // Chargement et configuration des textures et sprites des boutons
     if (!buttonPrevTexture.loadFromFile("ressources/UI/ui_locker_previousbutton_on.png") ||
-        !buttonNextTexture.loadFromFile("ressources/UI/ui_locker_nextbutton_on.png")) {
+        !buttonNextTexture.loadFromFile("ressources/UI/ui_locker_nextbutton_on.png") || !exitButtonTexture.loadFromFile("ressources/UI/ui_locker_backbutton_on.png")) {
         std::cout << "error loading: ressources/UI/ui_menu_playbutton_on.png" << std::endl;
     }
 
@@ -58,6 +58,10 @@ void LockerWindow::Initialize()
     buttonNextSprite.setTexture(buttonNextTexture);
     buttonNextSprite.setPosition(sf::Vector2f(1220, 370));
     buttonNextSprite.setScale(sf::Vector2f(0.5, 0.5));
+
+    exitButtonSprite.setTexture(exitButtonTexture);
+    exitButtonSprite.setPosition(sf::Vector2f(2, 2));
+    exitButtonSprite.setScale(sf::Vector2f(0.5, 0.5));
 
     for (int i = 0; i < 9; ++i) {
         std::string key = "section" + std::to_string(i + 1);
@@ -130,6 +134,12 @@ void LockerWindow::HandleEvents(sf::Event& event) {
             else if (buttonNextSprite.getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
                 currentSectionIndex = std::min(8, currentSectionIndex + 1); // Ne pas dépasser 8
                 UpdateSectionState();
+            }
+            // Vérifier le clic sur le bouton suivant
+            else if (exitButtonSprite.getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
+                currentSectionIndex = std::min(8, currentSectionIndex + 1);
+                running = false;
+                application->ChangeState(GameApplication::State::Menu);
             }
             
         }
@@ -234,6 +244,7 @@ void LockerWindow::Render()
     // Dessiner les boutons
     window.draw(buttonPrevSprite);
     window.draw(buttonNextSprite);
+    window.draw(exitButtonSprite);
 
     if (imageSelected) {
         int sectionStartIndex = section_starts[currentSectionIndex];

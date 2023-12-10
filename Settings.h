@@ -178,15 +178,15 @@ struct LockerSettings {
             path[i] = "ressources/profilPictures/caractere" + std::to_string(i + 1) + ".png";
     }
     std::string sectionName[9] = {
-        "   air forces",
+        "   Air forces",
         "Tactical armies",
-        "pilot in command",
-        "     crews",
-        "force of armies",
-        "   miliary",
-        "   hostages",
-        "   soldiers",
-        "   specials",
+        "Pilot in command",
+        "     Crews",
+        "Force of armies",
+        "   Military",
+        "   Hostages",
+        "   Soldiers",
+        "   Specials",
     };
 
     const sf::Vector2f textPosition = sf::Vector2f(580, 5);
