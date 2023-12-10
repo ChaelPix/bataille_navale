@@ -34,6 +34,9 @@
     <ClCompile Include="EntityRectangle.cpp" />
     <ClCompile Include="EntityText.cpp" />
     <ClCompile Include="EntityTextBox.cpp" />
+    <ClCompile Include="GameChat.cpp" />
+    <ClCompile Include="GameSessionState.cpp" />
+    <ClCompile Include="GameVfx.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="imagesRename.cpp" />
@@ -46,6 +49,7 @@
     <ClCompile Include="MouseManager.cpp" />
     <ClCompile Include="PlayerBoatsManager.cpp" />
     <ClCompile Include="SaveData.cpp" />
+    <ClCompile Include="SessionManager.cpp" />
     <ClCompile Include="SfmlWindow.cpp" />
     <ClCompile Include="SplashWindow.cpp" />
     <ClCompile Include="TCPClient.cpp" />
@@ -70,6 +74,9 @@
     <ClInclude Include="EntityRectangle.h" />
     <ClInclude Include="EntityText.h" />
     <ClInclude Include="EntityTextBox.h" />
+    <ClInclude Include="GameChat.h" />
+    <ClInclude Include="GameSessionState.h" />
+    <ClInclude Include="GameVfx.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="Localization.h" />
@@ -81,6 +88,7 @@
     <ClInclude Include="PlayerBoatsManager.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SaveData.h" />
+    <ClInclude Include="SessionManager.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SfmlWindow.h" />
     <ClInclude Include="SplashWindow.h" />

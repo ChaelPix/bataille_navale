@@ -71,6 +71,8 @@ GameApplication::MessageType GameApplication::getMessageType(std::string message
         return MessageType::BattleGrid;
     case 'C':
         return MessageType::Chat;
+    case 'F':
+        return MessageType::End;
     default :
         return MessageType::Unknown;
     }

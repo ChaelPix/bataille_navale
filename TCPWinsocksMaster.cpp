@@ -39,7 +39,7 @@ std::string TCPWinsocksMaster::receiveMessage()
 {
 	uint trameLenght = recv(idSocket, trame_lect, DIMMAX, 0);
 
-	if (trameLenght > DIMMAX)
+	if (trameLenght > DIMMAX || trameLenght == 0)
 		return "";
 
 	trame_lect[trameLenght] = '\0';

@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "MouseManager.h"
 
 class Grid
 {
@@ -18,5 +19,6 @@ public:
 	Grid(int nbPixels, int gridSize, sf::Vector2f startPos, sf::Color lineColor);
 
 	void DrawGrid(sf::RenderWindow& window);
+	bool isMouseOnGrid(MouseManager mouse);
 };
 

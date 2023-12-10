@@ -15,7 +15,7 @@ MenuWindow::~MenuWindow()
 
 void MenuWindow::Initialize()
 {
-    menuBackground = new AnimatedEntity("ressources/UI/backgrounds/menuBg/menu_", 50, 28, true, windowSettings.menuWindowSize);
+    menuBackground = new AnimatedEntity("ressources/UI/backgrounds/menuBg/menu_", 50, 28, true, false, windowSettings.menuWindowSize, sf::Vector2f(0, 0));
     entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
     menuButtonsManager = new MenuButtonsManager(application->getGameFont());
 
@@ -53,12 +53,20 @@ void MenuWindow::Update(sf::Event& event) {
             application->CreateClient();
 
         std::string message = application->client->getMessage();
+        if (message == "matchmaking")
+        {
+            std::cout << "Got Matchmaking from server ";
+            application->client->sendMessage("OK");
+            return;
+        }
+            
         if (application->isCorrectMessageType(message))
         {
             application->setClientStartFirst(message == "GStart");
             running = false;
             application->ChangeState(GameApplication::State::Game);
         }
+
     }
     else if(application->client != nullptr){
         application->DeleteClient();
@@ -70,7 +78,7 @@ void MenuWindow::Render()
     if (!running)
         return;
 
-    //menuBackground->draw(window);
+    menuBackground->draw(window);
     for (auto& entity : entitiesPtr)
         entity->draw(window);
 
@@ -78,7 +86,7 @@ void MenuWindow::Render()
     loginMenu->draw(window);
 
     //Créer un texte
-        stat.setFont(FontStat);
+    stat.setFont(FontStat);
     stat.setString(statInformation);
     stat.setCharacterSize(40); // en pixels
     stat.setFillColor(sf::Color(192, 192, 192));
