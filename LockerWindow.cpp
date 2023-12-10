@@ -22,14 +22,14 @@ void LockerWindow::Initialize()
     // Chargement et configuration des textures et sprites des boutons
     if (!buttonPrevTexture.loadFromFile("ressources/UI/ui_menu_playbutton_on.png") ||
         !buttonNextTexture.loadFromFile("ressources/UI/ui_menu_playbutton_on.png")) {
-        // Gérer l'erreur de chargement
+        std::cout << "error loading: ressources/UI/ui_menu_playbutton_on.png" << std::endl;
     }
 
     buttonPrevSprite.setTexture(buttonPrevTexture);
-    buttonPrevSprite.setPosition(sf::Vector2f(50, 374)); // Position du bouton précédent
+    buttonPrevSprite.setPosition(sf::Vector2f(50, 374));
 
     buttonNextSprite.setTexture(buttonNextTexture);
-    buttonNextSprite.setPosition(sf::Vector2f(950, 374)); // Position du bouton suivant
+    buttonNextSprite.setPosition(sf::Vector2f(950, 374));
 
     for (int i = 0; i < 9; ++i) {
         std::string key = "section" + std::to_string(i + 1);
@@ -69,7 +69,6 @@ void LockerWindow::Initialize()
 }
 
 void LockerWindow::HandleEvents(sf::Event& event) {
-    // ... (autres événements)
 
     if (event.type == sf::Event::MouseButtonPressed) {
         if (event.mouseButton.button == sf::Mouse::Left) {

@@ -46,7 +46,7 @@ private:
     int l, p;
     sf::Texture buttonPrevTexture, buttonNextTexture;
     sf::Sprite buttonPrevSprite, buttonNextSprite;
-    int currentSectionIndex = 0; // Index de la section actuelle
+    int currentSectionIndex = 0;
     sf::Vector2f buttonPosition;
 };
 
