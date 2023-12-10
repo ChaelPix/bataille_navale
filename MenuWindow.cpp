@@ -101,10 +101,43 @@ void MenuWindow::Render()
 
         menuButtonsManager->draw(window);
         serverInfoTxt->draw(window);
-       /* window.draw(stat);
-        window.draw(name);*/
+
+        if (playerInfosText.empty())
+            InitPlayerInfo();
+        else
+            for (int i = 0; i < playerInfosText.size(); i++)
+                playerInfosText.at(i)->draw(window);
+
     }
     
+}
+
+void MenuWindow::InitPlayerInfo()
+{
+    PlayerInfoSettings ps;
+
+    std::string s[6];
+
+    s[0] = "     " + application->getBddObj().getId();
+    s[1] = "Score: " + application->getBddObj().getScore();
+    s[2] = "Games Played: " + application->getBddObj().getNbGames();
+    s[3] = "  - Victories: " + application->getBddObj().getNbWonGames();
+    s[4] = "  - Defeats: " + application->getBddObj().getNbLostGames();
+    s[5] = "K/D: " + application->getBddObj().getRatio();
+
+    for (int i = 0; i < 6; i++)
+    {
+        sf::Vector2f pos = sf::Vector2f(ps.textPosition.x + ps.textOffset.x * i, ps.textPosition.y + ps.textOffset.y * i);
+        int characterSize = ps.characterSize;
+
+        if (i == 0) 
+            characterSize += 10;
+        else
+            pos.y += 10;
+        playerInfosText.push_back(new EntityText(application->getGameFont(), pos, characterSize, s[i], ps.textColors[i]));
+    }
+
+   
 }
 
 

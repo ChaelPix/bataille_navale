@@ -48,6 +48,24 @@ struct MenuServerInfoTextSettings
     const int characterSize = 50;
 };
 
+struct PlayerInfoSettings {
+
+    const int characterSize = 39;
+
+    const sf::Vector2f textPosition = sf::Vector2f(1000, 110);
+    const sf::Vector2f textOffset = sf::Vector2f(0, 40);
+
+    const sf::Color textColors[6] =
+    {
+        sf::Color(192, 192, 192),
+        sf::Color(204, 102, 0),
+        sf::Color(180, 180, 180),
+        sf::Color(0, 150, 0),
+        sf::Color(150, 0, 0),
+        sf::Color(192, 192, 192)
+    };
+};
+
 struct CloudSettings {
     const sf::Vector2f cloudSize = sf::Vector2f(2500, 2500);
     const sf::Vector2f Origin = sf::Vector2f(cloudSize.x/ 2, cloudSize.y / 2);

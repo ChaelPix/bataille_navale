@@ -12,6 +12,7 @@ public:
     EntityText(sf::Font &font, int size, std::string text);
     EntityText(sf::Font &font, const sf::Vector2f position, const int size, std::string text);
     EntityText(sf::Font& font, const sf::Vector2f position, const int size, sf::Color color);
+    EntityText(sf::Font& font, const sf::Vector2f position, const int size, std::string text, sf::Color color);
 
     void SetText(std::string txt);
     void SetTextAndCenter(std::string txt);

@@ -2,7 +2,7 @@
 
 BsBDD::BsBDD() : userId("") {
     //connectToDB("tcp://10.187.52.4:3306", "batailleNavale", "batailleNavale");
-    this->id = "invite";
+    this->id = "Guest";
     this->score = "0";
     this->nbGames = "0";
     this->nbLostGames = "0";
@@ -373,6 +373,23 @@ std::string BsBDD::getIdPlayers() const {
 
 std::string BsBDD::getmdp() const {
     return mdp;
+}
+
+std::string BsBDD::getRatio() {
+    float win = std::stoi(nbWonGames);
+    float defeats = std::stoi(nbLostGames);
+
+    float kdRatio = win;
+    if(defeats != 0)
+        kdRatio = win / defeats;
+
+    std::ostringstream stream;
+    stream << std::fixed << std::setprecision(2) << kdRatio;
+    std::string kdRatioString = stream.str();
+
+    std::string statInfo = "";
+
+    return kdRatioString;
 }
 
 bool BsBDD::getIsConnected()

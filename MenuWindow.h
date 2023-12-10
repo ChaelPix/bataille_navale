@@ -40,12 +40,10 @@ private:
 
     LoginMenu* loginMenu;
 
-   /* sf::Text stat;
-    sf::Text name;
-    std::string statInformation;
-    std::string nameInformation;*/
-
     LoginMenu::MenuState menuState;
+
+    std::vector<EntityText*> playerInfosText;
+    void InitPlayerInfo();
 };
 
 

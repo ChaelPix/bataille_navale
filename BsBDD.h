@@ -70,6 +70,7 @@ public:
     std::string getNbWonGames() const;
     std::string getIdPlayers() const;
     std::string getmdp() const;
+    std::string getRatio();
 
     bool getIsConnected();
     void setIsConnected(bool action);
