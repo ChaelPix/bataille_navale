@@ -21,11 +21,13 @@ LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD, bool& hasClicked) : hasClick
 	if (!hasClicked)
 	{
 		startText = new EntityText(font, loginMenuSettings.startTextPos, loginMenuSettings.startTextCharacterSize, "Left Click to begin your voyage");
-		checkForSaveFile();
 	}
 	else
 		isLogged = true;
+
+	checkForSaveFile();
 }
+
 
 bool LoginMenu::checkForSaveFile()
 {

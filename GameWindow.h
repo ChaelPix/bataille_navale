@@ -52,6 +52,9 @@ private:
     CursorCellSelector* cursor;
     EndPanel* endPanel;
     GameVfx* gameVfx;
+
+    void processMessages();
+    void handleGameState();
 };
 
 

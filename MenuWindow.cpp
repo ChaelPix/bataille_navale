@@ -117,13 +117,14 @@ void MenuWindow::InitPlayerInfo()
     PlayerInfoSettings ps;
 
     std::string s[6];
+    BsBDD& bdd = application->getBddObj();
 
-    s[0] = "     " + application->getBddObj().getId();
-    s[1] = "Score: " + application->getBddObj().getScore();
-    s[2] = "Games Played: " + application->getBddObj().getNbGames();
-    s[3] = "  - Victories: " + application->getBddObj().getNbWonGames();
-    s[4] = "  - Defeats: " + application->getBddObj().getNbLostGames();
-    s[5] = "K/D: " + application->getBddObj().getRatio();
+    s[0] = "     " + bdd.getId();
+    s[1] = "Score: " + bdd.getScore();
+    s[2] = "Games Played: " + bdd.getNbGames();
+    s[3] = "  - Victories: " + bdd.getNbWonGames();
+    s[4] = "  - Defeats: " + bdd.getNbLostGames();
+    s[5] = "K/D: " + bdd.getRatio();
 
     for (int i = 0; i < 6; i++)
     {
