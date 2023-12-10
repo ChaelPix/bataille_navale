@@ -20,7 +20,7 @@ void GameApplication::Initialize()
 {
     FontSettings fontSettings;
     gameFont.loadFromFile(fontSettings.fontPath);
-    isLogged = false;
+    hasLogged = false;
     //objBDD->connectToDB("10.187.52.4:3306", "batailleNavale", "batailleNavale");
 }
 
@@ -82,6 +82,16 @@ GameApplication::MessageType GameApplication::getMessageType(std::string message
 sf::Font& GameApplication::getGameFont()
 {  
     return gameFont;
+}
+
+bool& GameApplication::getHasLogged()
+{
+    return hasLogged;
+}
+
+void GameApplication::setHasLogged(bool action)
+{
+    hasLogged = action;
 }
 
 

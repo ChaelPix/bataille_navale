@@ -19,7 +19,7 @@ void MenuWindow::Initialize()
     entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
     menuButtonsManager = new MenuButtonsManager(application->getGameFont());
 
-    loginMenu = new LoginMenu(application->getGameFont(), application->getBddObj());
+    loginMenu = new LoginMenu(application->getGameFont(), application->getBddObj(), application->getHasLogged());
 
    // objBDD = application->getBddObj();
 

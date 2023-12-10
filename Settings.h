@@ -96,6 +96,12 @@ struct LoginMenuSettings {
       "ressources/UI/ui_menu_playbutton_off.png",
       "ressources/UI/ui_menu_playbutton_on.png"
     };
+
+    const sf::Vector2f textPosition = sf::Vector2f(200, 200);
+    const int characterSize = 40;
+
+    const sf::Vector2f startTextPos = sf::Vector2f(300, 500);
+    const int startTextCharacterSize = 72;
 };
 
 

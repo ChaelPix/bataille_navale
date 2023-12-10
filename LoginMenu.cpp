@@ -1,7 +1,7 @@
 #include "LoginMenu.h"
 
 
-LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD)
+LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD, bool& hasClicked) : hasClicked(hasClicked)
 {
 	usernameTextBox = new EntityTextBox(loginMenuSettings.usernameTextBoxPos, nullptr, font, "Username");
 	passwordTextBox = new EntityTextBox(loginMenuSettings.passwordTextBosPos, nullptr, font, "Password");
@@ -10,10 +10,12 @@ LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD)
 		buttonTextures[i].loadFromFile(loginMenuSettings.buttonImagePaths[i]);
 	
 	loginButton = new EntityRectangle(loginMenuSettings.buttonSize, loginMenuSettings.buttonPos, buttonTextures[0]);
+	textInfo = new EntityText(font, loginMenuSettings.textPosition, loginMenuSettings.characterSize, "Wrong Password.");
 
 	bdd = &objBDD;
 	isBusy = false;
 
+	startText = new EntityText(font, loginMenuSettings.startTextPos, loginMenuSettings.startTextCharacterSize, "Left Click to begin your voyage");
 	checkForSaveFile();
 }
 
@@ -33,6 +35,16 @@ bool LoginMenu::checkForSaveFile()
 
 void LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
 {
+	if (!hasClicked)
+	{
+		updateBlink();
+		startText->SetColor(sf::Color(255, 255, 255, opacite));
+		if (mouseManager.isMouseClicked())
+			hasClicked = true;
+		return;
+	}
+
+
 	if (isBusy || isLogged)
 		return;
 
@@ -68,7 +80,6 @@ void LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
 				Login();
 			}	
 		}
-
 	}
 	else if (isOnButton)
 	{
@@ -82,9 +93,16 @@ void LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
 
 void LoginMenu::draw(sf::RenderWindow& window)
 {
-	usernameTextBox->draw(window);
-	passwordTextBox->draw(window);
-	loginButton->draw(window);
+	if(!hasClicked)
+		startText->draw(window);
+	else
+	{
+		usernameTextBox->draw(window);
+		passwordTextBox->draw(window);
+		loginButton->draw(window);
+		textInfo->draw(window);
+	}
+
 }
 
 void LoginMenu::LoginInvite() {
@@ -137,3 +155,19 @@ void LoginMenu::Login(){
 
 }
 
+void LoginMenu::updateBlink() {
+	if (increasing) {
+		opacite += blinkSpeed;
+		if (opacite >= 255.0f) {
+			opacite = 255.0f;
+			increasing = false;
+		}
+	}
+	else {
+		opacite -= blinkSpeed;
+		if (opacite <= 0.0f) {
+			opacite = 0.0f;
+			increasing = true;
+		}
+	}
+}

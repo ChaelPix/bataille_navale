@@ -39,7 +39,7 @@ private:
     BsBDD* objBDD;
     sf::Font gameFont;
 
-    bool isLogged;
+    bool hasLogged;
 
     void Initialize();
 
@@ -66,4 +66,7 @@ public:
     MessageType getMessageType(std::string message);
 
     sf::Font& getGameFont();
+
+    bool& getHasLogged();
+    void setHasLogged(bool action);
 };

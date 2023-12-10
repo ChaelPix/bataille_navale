@@ -13,6 +13,7 @@ private:
 	EntityTextBox* passwordTextBox;
 	EntityRectangle* loginButton;
 	EntityText* textInfo;
+	EntityText* startText;
 
 
 	sf::Texture buttonTextures[2];
@@ -23,14 +24,19 @@ private:
 	bool isLogged = false;
 	bool isOnButton = false;
 	bool isBusy;
+	bool& hasClicked;
 
 	std::vector<std::string> dataVector;
 	void Login();
 	void LoginInvite();
 
+	float opacite = 255.0f;
+	bool increasing = true;
+	const float blinkSpeed = .5;
+	void updateBlink();
 public:
 
-	LoginMenu(sf::Font& font, BsBDD& objBDD); //à ajuster selon la bdd
+	LoginMenu(sf::Font& font, BsBDD& objBDD, bool& hasClicked);
 
 	bool checkForSaveFile();
 	void update(sf::Event& event, MouseManager &mouseManager);

@@ -25,6 +25,12 @@ void EntityText::SetText(std::string txt)
 	Text.setString(txt);
 }
 
+void EntityText::SetTextAndCenter(std::string txt)
+{
+	SetText(txt);
+	Text.setOrigin(sf::Vector2f(Text.getLocalBounds().width / 2, Text.getLocalBounds().height / 2));
+}
+
 void EntityText::SetPosition(sf::Vector2f position)
 {
 	Text.setPosition(position);
