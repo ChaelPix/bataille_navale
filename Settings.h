@@ -20,6 +20,12 @@ struct WindowSettings {
     const sf::Color bgColor = sf::Color::Black;
 };
 
+struct GameSettings
+{
+    const int timeToPlaceBoat = 15;
+    const int timeToPlay = 10;
+};
+
 struct GameMenuSettings {
 
     const WindowSettings ws;

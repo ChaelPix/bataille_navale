@@ -20,7 +20,7 @@ private:
 public:
 		GameInfoPanel(sf::Font& font);
 
-		void updateTimer(float time);
+		void updateTimer(float time, int max);
 		void updateTurn(int turn);
 		void updateGameInfo(std::string info);
 

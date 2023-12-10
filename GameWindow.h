@@ -38,6 +38,7 @@ private:
     MouseManager mouseManager;
     GridSettings gridSettings;
     WindowSettings windowSettings;
+    GameSettings gameSettings;
 
     AnimatedEntity* waterBackground;
 

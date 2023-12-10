@@ -16,9 +16,9 @@ GameInfoPanel::GameInfoPanel(sf::Font& font)
 	toDraw.push_back(infoTxt);
 }
 
-void GameInfoPanel::updateTimer(float time)
+void GameInfoPanel::updateTimer(float time, int max)
 {
-	float timeRemaining = 15 - time;
+	float timeRemaining = max - time;
 	int seconds = static_cast<int>(timeRemaining);
 	int milliseconds = static_cast<int>((timeRemaining - seconds) * 1000);
 

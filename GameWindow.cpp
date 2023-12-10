@@ -58,6 +58,7 @@ void GameWindow::processMessages() {
                 /*----------Enemy Attack----------*/
             case GameApplication::MessageType::Game:
                 gameInfoPanel->updateTurn(++nbTurn);
+                timer.restart();
                 std::cout << "Attack : " << message;
                 BattleshipCore::AttackInfo attckPos = battleshipCore.deserializeAttack(message);
                 BattleshipCore::CellType attackCell = battleshipCore.Attack(attckPos.y, attckPos.x, false);
@@ -90,13 +91,14 @@ void GameWindow::handleGameState() {
     CursorCellSelector::State attackState;
     sf::Vector2f MousePos;
     float time = timer.getElapsedTime().asSeconds();
+    if(gameState != GameState::End)
+        gameInfoPanel->updateTimer(time, gameState == GameState::Placing ? gameSettings.timeToPlaceBoat : gameSettings.timeToPlay);
 
     switch (gameState) {
             /*----------Placing----------*/
         case GameState::Placing:
             playerBoatsManager->dragBoats(mouseManager); 
-            gameInfoPanel->updateTimer(time);
-            if (time >= 15) {
+            if (time >= gameSettings.timeToPlaceBoat) {
                 timer.restart();
                 playerBoatsManager->RandomPlacement();
                 application->client->sendMessage(battleshipCore.serializePlayerGrid());
@@ -119,6 +121,7 @@ void GameWindow::handleGameState() {
                 }
        
                 gameInfoPanel->updateTurn(nbTurn);
+                timer.restart();
             }
             break;
 
@@ -136,6 +139,7 @@ void GameWindow::handleGameState() {
                 gameInfoPanel->updateTurn(++nbTurn);
                 gameInfoPanel->updateGameInfo("Enemy Turn");
                 gameState = GameState::Waiting;
+                timer.restart();
                 break;
 
             case CursorCellSelector::State::Win:
@@ -150,16 +154,29 @@ void GameWindow::handleGameState() {
                 gameVfx->CreateFireCell(MousePos.x, MousePos.y, true);
                 gameInfoPanel->updateTurn(++nbTurn);
                 gameState = GameState::Attacking;
+                timer.restart();
                 break;
 
             default:
                 break;
             }
+
+        if (time >= gameSettings.timeToPlay) {
+            gameInfoPanel->updateGameInfo("Enemy Turn");
+            timer.restart();
+            gameState = GameState::Waiting;
+            gameInfoPanel->updateTurn(++nbTurn);
+        }
         break;
 
         /*----------WaitingAttack----------*/
     case GameState::Waiting:
-       
+        if (time >= gameSettings.timeToPlay) {
+            gameInfoPanel->updateGameInfo("Your Turn");
+            timer.restart();
+            gameState = GameState::Attacking;
+            gameInfoPanel->updateTurn(++nbTurn);
+        }
         break;
 
         /*----------END----------*/
