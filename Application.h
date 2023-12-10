@@ -38,7 +38,7 @@ private:
     bool doClientStartFirst;
     BsBDD* objBDD;
     sf::Font gameFont;
-
+    int idPicture;
     bool hasLogged;
 
     void Initialize();

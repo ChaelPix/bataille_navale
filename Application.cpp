@@ -21,6 +21,7 @@ void GameApplication::Initialize()
     FontSettings fontSettings;
     gameFont.loadFromFile(fontSettings.fontPath);
     hasLogged = false;
+    objBDD = new BsBDD();
     //objBDD->connectToDB("10.187.52.4:3306", "batailleNavale", "batailleNavale");
 }
 
@@ -50,7 +51,6 @@ bool GameApplication::getClientStartFirst()
 
 BsBDD& GameApplication::getBddObj()
 {
-    objBDD = new BsBDD();
     return *objBDD;
 }
 

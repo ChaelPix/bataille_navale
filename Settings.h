@@ -195,4 +195,7 @@ struct LockerSettings {
     const sf::Vector2f startTextPos = sf::Vector2f(300, 500);
     const int startTextCharacterSize = 72;
 
+    std::string backgroundImgPath = "ressources/UI/backgroundLocker2.png";
+    std::string valideTextureImgPath = "ressources/UI/valide.png";
+
 };
