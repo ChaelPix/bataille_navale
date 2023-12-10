@@ -53,6 +53,8 @@ private:
     std::vector<EntityText*> textInfo;
     std::vector<sf::Texture*> PictureCases;
     std::map<std::string, bool> lockerSection;
+    std::vector<sf::Texture>* charactersImgs;
+
     int l, p, s;
     int section_starts[9] = { 0, 5, 9, 12, 19, 23, 29, 32, 40 };
 
