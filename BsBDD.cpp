@@ -402,9 +402,14 @@ void BsBDD::setIsConnected(bool action)
 {
     isConnected = action;
 }
-
+int BsBDD::getIdPicture() {
+    return this->idPicture;
+}
 
 //setteur
+void BsBDD::setIdPicture(int id) {
+    this->idPicture = id;
+}
 void BsBDD::setId(const std::string& newId) {
     this->id = newId;
 }

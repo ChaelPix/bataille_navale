@@ -76,6 +76,8 @@ public:
     bool getIsConnected();
     void setIsConnected(bool action);
     
+    int getIdPicture();
+    void setIdPicture(int id);
 
     // Setters
     void setId(const std::string& newId);

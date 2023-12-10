@@ -138,6 +138,11 @@ std::vector<sf::Texture>& GameApplication::getCharactersImgs()
     return charactersPictures;
 }
 
+sf::Texture& GameApplication::getChoosenPicture()
+{
+    return charactersPictures.at(getBddObj().getIdPicture());
+}
+
 void GameApplication::ChangeState(State newState) {
     currentState = newState;
 

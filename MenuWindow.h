@@ -39,7 +39,7 @@ private:
     std::vector<Entity*> entitiesPtr;
     EntityText* serverInfoTxt;
 
-    EntityCircle* test;
+    EntityCircle* playerPicture;
 
     LoginMenu* loginMenu;
 
