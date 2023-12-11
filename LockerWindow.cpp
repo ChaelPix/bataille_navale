@@ -144,7 +144,8 @@ void LockerWindow::HandleEvents(sf::Event& event) {
                 running = false;
                 application->ChangeState(GameApplication::State::Menu);
                 bdd->setIdPicture(pictureChoose);
-                bdd->saveToText();
+                if(bdd->getIdPlayers() != "Guest")
+                    bdd->saveToText();
             }
         }
     }
