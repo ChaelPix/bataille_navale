@@ -166,7 +166,7 @@ void LoginMenu::Login(std::string id, std::string mdp){
 			return;
 		}
 	}
-
+	bdd->setMdp(mdp);
 	bdd->setIsConnected(true);
 	bdd->getAllData(dataVector);
 	svData.saveDataToFile(dataVector, "data.txt", false);
