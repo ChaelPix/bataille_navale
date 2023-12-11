@@ -254,20 +254,20 @@ struct PlayerHUDSettings {
     const sf::Vector2f hudSize = sf::Vector2f(1600, 213);
     const std::string hudPath = "ressources/UI/ui_playersPanel.png";
 
-    const int nameSize = 40;
-    const int kdSize = 20;
+    const int nameSize = 80;
+    const int kdSize = 25;
     const int scoreSize = 30;
 
     const int pictureSize = 70;
-    const sf::Vector2f picturePos = sf::Vector2f(0, 25);
+    const sf::Vector2f picturePos = sf::Vector2f(25, 25);
 
     const sf::Color nameColor = sf::Color(255, 255, 255);
-    const sf::Color kdColor = sf::Color(75, 75, 75);
+    const sf::Color kdColor = sf::Color(100, 100, 100);
     const sf::Color scoreColor = sf::Color(200, 200, 200);
 
-    const sf::Vector2f namePos = sf::Vector2f(0, 25);
-    const sf::Vector2f kdPos = sf::Vector2f(0, 25);
-    const sf::Vector2f scorePos = sf::Vector2f(0, 25);
+    const sf::Vector2f namePos = sf::Vector2f(180, 0);
+    const sf::Vector2f scorePos = sf::Vector2f(180, 120);
+    const sf::Vector2f kdPos = sf::Vector2f(180, 80);
 
 };
 

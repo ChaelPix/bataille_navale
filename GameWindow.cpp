@@ -222,7 +222,7 @@ void GameWindow::CreateHud(std::string& enemyInfoMessage)
     picture = std::stoi(tokens[3]);
 
     playerHud = new PlayerHud(application->getGameFont(), false, application->getBddObj().getIdPlayers(), application->getBddObj().getRatio(), application->getBddObj().getScore(), application->getChoosenPicture());
-    enemyHud = new PlayerHud(application->getGameFont(), false, id, ratio, score, application->getCharactersImgs().at(picture));
+    enemyHud = new PlayerHud(application->getGameFont(), true, id, ratio, score, application->getCharactersImgs().at(picture));
     isHudOk = true;
 }
 
