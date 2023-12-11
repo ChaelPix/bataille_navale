@@ -16,7 +16,10 @@ void SfmlWindow::Run() {
 
     while (window.pollEvent(event)) {
         if (event.type == sf::Event::Closed)
+        {
             window.close();
+            exit(0);
+        }
 
         HandleEvents(event);
     }

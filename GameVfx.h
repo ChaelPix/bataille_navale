@@ -22,6 +22,7 @@ private:
 	std::vector<sf::Texture> enemyFireTextures;
 	std::vector<sf::Texture> enemyFireBTextures;
 	std::vector<sf::Texture> playerFireTextures;
+	std::vector<sf::Texture> missTextures;
 
 	sf::Vector2f getGridPos(bool isEnnemy);
 	sf::Vector2f getEntityPos(sf::Vector2f gridPos, int x, int y);
@@ -31,6 +32,7 @@ public:
 
 	GameVfx();
 	void CreateMissCell(int x, int y, bool isEnnemy);
+	void CreateMissAttackCell(int x, int y, bool isEnnemy);
 	void CreateAttackCell(int x, int y, bool isEnnemy);
 	void CreateFireCell(int x, int y, bool isEnnemy);
 	void draw(sf::RenderWindow &window);

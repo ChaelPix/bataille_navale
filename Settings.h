@@ -200,6 +200,9 @@ struct GameVFXSettings
     const std::string enemyFirePath = "ressources/UI/vfx/vfx_ennemyFire";
     const int nbPlayerFire = 8;
     const std::string playerFirePath = "ressources/UI/vfx/vfx_playerFire";
+    const int nbMiss = 3;
+    const std::string attackMissPath = "ressources/UI/vfx/vfx_Miss_";
+
     const sf::Vector2f attackTextureSize = sf::Vector2f(112, 112);
 };
 
@@ -284,6 +287,7 @@ struct sfxSettings {
     std::string pathDefeat = "ressources/UI/sfx/sfx_defeat.wav";
     std::string pathVoicVictory = "ressources/UI/sfx/sfx_congratulation_voice.wav";
     std::string pathVoicDefeat = "ressources/UI/sfx/sfx_defeat_voice.wav";
+    std::string pathWater = "ressources/UI/sfx/sfx_water-explosion.wav";
     const sf::Vector2f namePos = sf::Vector2f(0, 25);
     const sf::Vector2f kdPos = sf::Vector2f(0, 25);
     const sf::Vector2f scorePos = sf::Vector2f(0, 25);

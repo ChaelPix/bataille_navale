@@ -24,6 +24,9 @@ SfxManager::SfxManager() {
     if (buffer.loadFromFile(settings.pathVoicDefeat)) {
         sfxVector.push_back(buffer);
     }
+    if (buffer.loadFromFile(settings.pathWater)) {
+        sfxVector.push_back(buffer);
+    }
 
     //// Initialisation of sf::Sound object with SoundBuffers
     //for (auto& buffer : sfxVector) {
@@ -73,6 +76,7 @@ void SfxManager::PlayMusic(bgm bgm)
         break;
     case bgm::game:
         currentMusic = &GameMusic;
+        currentMusic->setVolume(50);
         break;
     case bgm::locker:
         currentMusic = &LockerMusic;

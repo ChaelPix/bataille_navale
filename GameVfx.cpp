@@ -32,6 +32,13 @@ GameVfx::GameVfx()
 		enemyFireBTextures.push_back(t);
 	}
 
+	for (int i = 0; i < gameVfxSettings.nbMiss; i++)
+	{
+		sf::Texture t;
+		t.loadFromFile(gameVfxSettings.attackMissPath + std::to_string(i) + ".png");
+		missTextures.push_back(t);
+	}
+
 	gridSize = gridSettings.squareSize / gridSettings.nbPixels;
 }
 
@@ -52,7 +59,16 @@ void GameVfx::CreateMissCell(int x, int y, bool isEnnemy)
 
 	entities.push_back(new EntityRectangle(sf::Vector2f(gridSize, gridSize), getEntityPos(pos, x, y), missTexture));
 	entitiesPos.push_back(sf::Vector2f(-10, -10));
-	CreateAttackCell(x, y, isEnnemy);
+	CreateMissAttackCell(x, y, isEnnemy);
+}
+
+void GameVfx::CreateMissAttackCell(int x, int y, bool isEnnemy)
+{
+	sf::Vector2f pos = getGridPos(isEnnemy);
+	sf::Vector2f entityPos = getEntityPos(pos, x, y);
+	entityPos.x = entityPos.x - (gameVfxSettings.attackTextureSize.x / 4);
+	entityPos.y = entityPos.y - (gameVfxSettings.attackTextureSize.y / 4);
+	attacksAnimation.push_back(new AnimatedEntity(gameVfxSettings.attacksTimer, false, true, gameVfxSettings.attackTextureSize, entityPos, missTextures));
 }
 
 void GameVfx::CreateAttackCell(int x, int y, bool isEnnemy)
