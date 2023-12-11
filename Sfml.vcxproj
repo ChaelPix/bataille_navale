@@ -49,6 +49,7 @@
     <ClCompile Include="MenuWindow.cpp" />
     <ClCompile Include="MouseManager.cpp" />
     <ClCompile Include="PlayerBoatsManager.cpp" />
+    <ClCompile Include="PlayerHud.cpp" />
     <ClCompile Include="SaveData.cpp" />
     <ClCompile Include="SessionManager.cpp" />
     <ClCompile Include="SfmlWindow.cpp" />
@@ -89,6 +90,7 @@
     <ClInclude Include="MenuWindow.h" />
     <ClInclude Include="MouseManager.h" />
     <ClInclude Include="PlayerBoatsManager.h" />
+    <ClInclude Include="PlayerHud.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SaveData.h" />
     <ClInclude Include="SessionManager.h" />

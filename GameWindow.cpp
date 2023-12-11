@@ -22,6 +22,9 @@ void GameWindow::Initialize()
     cursor = new CursorCellSelector(battleshipCore, application->client, gameVfx);
     gameInfoPanel = new GameInfoPanel(application->getGameFont());
     gameInfoPanel->updateGameInfo("Place your Boats!");
+
+    std::string playerInfo = "P" + application->getBddObj().getIdPlayers() + "$" + application->getBddObj().getRatio() + "$" + application->getBddObj().getScore() + "$" + std::to_string(application->getBddObj().getIdPicture());
+    application->client->sendMessage(playerInfo);
 }
 
 void GameWindow::HandleEvents(sf::Event& event) {
@@ -38,6 +41,12 @@ void GameWindow::processMessages() {
 
     if (!message.empty()) {
         switch (application->getMessageType(message)) {
+                /*----------Receive Enemy Info----------*/
+            case GameApplication::MessageType::PlayerInfo:
+                std::cout << "Player Info : " << message;
+                CreateHud(message);
+                break;
+
                 /*----------Receive Grid----------*/
             case GameApplication::MessageType::BattleGrid:
                 battleshipCore.setTargetGrid(message);
@@ -193,11 +202,35 @@ void GameWindow::handleGameState() {
     }
 }
 
+void GameWindow::CreateHud(std::string& enemyInfoMessage)
+{
+    std::string id;
+    std::string ratio;
+    std::string score;
+    int picture;
+
+    std::stringstream ss(enemyInfoMessage.erase(0, 1));
+    std::string item;
+    std::vector<std::string> tokens;
+    while (std::getline(ss, item, '$')) {
+        tokens.push_back(item);
+    }
+
+    id = tokens[0];
+    ratio = tokens[1];
+    score = tokens[2];
+    picture = std::stoi(tokens[3]);
+
+    playerHud = new PlayerHud(application->getGameFont(), false, application->getBddObj().getIdPlayers(), application->getBddObj().getRatio(), application->getBddObj().getScore(), application->getChoosenPicture());
+    enemyHud = new PlayerHud(application->getGameFont(), false, id, ratio, score, application->getCharactersImgs().at(picture));
+    isHudOk = true;
+}
+
 void GameWindow::Render()
 {
     bool isMouseOnEnemyGrid = gridEnemy.isMouseOnGrid(mouseManager);
 
-    waterBackground->draw(window);
+   //waterBackground->draw(window);
     gridPlayer.DrawGrid(window);
     playerBoatsManager->draw(window);
 
@@ -206,12 +239,12 @@ void GameWindow::Render()
     for (auto& entity : entitiesPtr)
         entity->draw(window);
 
-    gameVfx->draw(window);
+    //gameVfx->draw(window);
 
     if(!isMouseOnEnemyGrid)
         gridEnemy.DrawGrid(window);
 
-    cloudManager->draw(window);
+    //cloudManager->draw(window);
    
     if (isMouseOnEnemyGrid)
         gridEnemy.DrawGrid(window);
@@ -220,5 +253,10 @@ void GameWindow::Render()
          cursor->draw(window);
 
     gameInfoPanel->draw(window);
+    if(isHudOk)
+    {
+        playerHud->draw(window);
+        enemyHud->draw(window);
+    }
     endPanel->draw(window);
 }
