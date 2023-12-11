@@ -1,6 +1,6 @@
 #include "EndPanel.h"
 
-EndPanel::EndPanel()
+EndPanel::EndPanel(sf::Font& font)
 {
 	for (int i = 0; i < 2; i++)
 	{
@@ -12,14 +12,19 @@ EndPanel::EndPanel()
 	leaveButton = new EntityRectangle(endMenuSettings.buttonSize, endMenuSettings.buttonPos, buttonTextures[0]);
 	panel = new EntityRectangle(endMenuSettings.panelSize, sf::Vector2f(0, 0), endMenuSettings.panelColor);
 	doShow = false;
+
+	scoreText = new EntityText(font, endMenuSettings.scorePos, endMenuSettings.scoreSize, "", sf::Color(225, 225, 0));
 }
 
-void EndPanel::Show(bool isVictory)
+void EndPanel::Show(bool isVictory, int score, int wonPoints)
 {
 	int id = 0;
 	if (isVictory) id = 1;
 
 	endImage->setTexture(&imagesTextures[id]);
+	scoreText->SetTextAndCenter("Score: " + std::to_string(score) + "\n" + "Points Won: " + std::to_string(wonPoints) + "\nNew Score: " + std::to_string(score + wonPoints));
+	scoreText->SetPosition(endMenuSettings.scorePos);
+
 	doShow = true;
 }
 
@@ -49,4 +54,5 @@ void EndPanel::draw(sf::RenderWindow& window)
 	panel->draw(window);
 	endImage->draw(window);
 	leaveButton->draw(window);
+	scoreText->draw(window);
 }

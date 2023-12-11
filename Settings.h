@@ -6,7 +6,7 @@ struct GridSettings {
     const int squareSize = 500;
     const int nbPixels = 10;
     const int fps = 15;
-    const sf::Color lineColor = sf::Color(255, 255, 255, 255);
+    const sf::Color lineColor = sf::Color(0, 0, 0, 255);
 
     const sf::Vector2f playerGridPosition = sf::Vector2f(100, 200);
     const sf::Vector2f ennemyGridPosition = sf::Vector2f(700, 200);
@@ -171,22 +171,22 @@ struct EndMenuSettings {
     const sf::Vector2f panelSize = sf::Vector2f(1600, 850);
     const sf::Color panelColor = sf::Color(0, 0, 0, 200);
 
-    const sf::Vector2f imagePos = sf::Vector2f(400, 100);
+    const sf::Vector2f imagePos = sf::Vector2f(400, 50);
     const sf::Vector2f imageSize = sf::Vector2f(512, 512);
     const std::string endImagesPath[2] = {
       "ressources/UI/ui_defeat.png",
       "ressources/UI/ui_victory.png"
     };
 
-    const sf::Vector2f buttonPos = sf::Vector2f(542, 800);
+    const sf::Vector2f buttonPos = sf::Vector2f(542, 700);
     const sf::Vector2f buttonSize = sf::Vector2f(228, 80);
     const std::string buttonImagePaths[2] = {
       "ressources/UI/ui_menu_exitbutton_off.png",
       "ressources/UI/ui_menu_exitbutton_on.png"
     };
 
-    const int scoreSize = 50;
-    const sf::Vector2f scorePos = sf::Vector2f(542, 700);
+    const int scoreSize = 35;
+    const sf::Vector2f scorePos = sf::Vector2f(800, 600);
 
 };
 
@@ -262,7 +262,7 @@ struct PlayerHUDSettings {
     const sf::Vector2f picturePos = sf::Vector2f(25, 25);
 
     const sf::Color nameColor = sf::Color(255, 255, 255);
-    const sf::Color kdColor = sf::Color(100, 100, 100);
+    const sf::Color kdColor = sf::Color(180, 180, 180);
     const sf::Color scoreColor = sf::Color(200, 200, 200);
 
     const sf::Vector2f namePos = sf::Vector2f(180, 0);

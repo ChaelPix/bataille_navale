@@ -65,6 +65,7 @@ private:
     void handleGameState();
 
     void CreateHud(std::string& enemyInfoMessage);
+    void OnEnd(bool isWin);
 };
 
 

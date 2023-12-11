@@ -17,7 +17,7 @@ void GameWindow::Initialize()
 
     timer.restart();
     gameState = GameState::Placing;
-    endPanel = new EndPanel();
+    endPanel = new EndPanel(application->getGameFont());
     gameVfx = new GameVfx();
     cursor = new CursorCellSelector(battleshipCore, application->client, gameVfx);
     gameInfoPanel = new GameInfoPanel(application->getGameFont());
@@ -60,7 +60,7 @@ void GameWindow::processMessages() {
                 /*----------Enemy Disconnected----------*/
             case GameApplication::MessageType::End:
                 if (gameState != GameState::End)
-                    endPanel->Show(true);
+                    OnEnd(true);
                 gameState = GameState::End;
                 break;
 
@@ -74,8 +74,8 @@ void GameWindow::processMessages() {
 
                 //if loose
                 if (battleshipCore.areAllPlayerBoatsDown()) {
-                    gameState = GameState::End;
-                    endPanel->Show(false);
+                    gameState = GameState::End;                
+                    OnEnd(false);
                 }
 
                 //if oponent no hits
@@ -156,7 +156,7 @@ void GameWindow::handleGameState() {
             case CursorCellSelector::State::Win:
                 gameVfx->CreateFireCell(MousePos.x, MousePos.y, true);
                 std::cout << "WIN" << std::endl;
-                endPanel->Show(true);
+                OnEnd(true);
                 gameState = GameState::End;
                 break;
 
@@ -226,11 +226,22 @@ void GameWindow::CreateHud(std::string& enemyInfoMessage)
     isHudOk = true;
 }
 
+void GameWindow::OnEnd(bool isWin)
+{
+    battleshipCore.SaveEndGame(isWin, application->getBddObj());
+
+    int score = battleshipCore.getEnemyBoatSunk() * 50;
+    if (isWin)
+        score += 250;
+
+    endPanel->Show(isWin, std::stoi(application->getBddObj().getScore()), score);
+}
+
 void GameWindow::Render()
 {
     bool isMouseOnEnemyGrid = gridEnemy.isMouseOnGrid(mouseManager);
 
-   //waterBackground->draw(window);
+    waterBackground->draw(window);
     gridPlayer.DrawGrid(window);
     playerBoatsManager->draw(window);
 
@@ -239,12 +250,12 @@ void GameWindow::Render()
     for (auto& entity : entitiesPtr)
         entity->draw(window);
 
-    //gameVfx->draw(window);
+    gameVfx->draw(window);
 
     if(!isMouseOnEnemyGrid)
         gridEnemy.DrawGrid(window);
 
-    //cloudManager->draw(window);
+    cloudManager->draw(window);
    
     if (isMouseOnEnemyGrid)
         gridEnemy.DrawGrid(window);
