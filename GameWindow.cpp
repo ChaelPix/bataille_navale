@@ -86,7 +86,10 @@ void GameWindow::processMessages() {
                 }
                 else {
                     gameVfx->CreateFireCell(attckPos.x, attckPos.y, false);
-                    application->fxobj->creatSfx(SfxManager::sfx::explosion);
+                    application->fxobj->createSfx(SfxManager::sfx::explosion);
+                    if (battleshipCore.CheckIfBoatDown(attckPos.y, attckPos.x, false, false, -1, -1))
+                        application->fxobj->createSfx(SfxManager::sfx::sinkBoat);
+
                 }
 
                 //if he missed
@@ -160,6 +163,7 @@ void GameWindow::handleGameState() {
                 std::cout << "WIN" << std::endl;
                 OnEnd(true);
                 gameState = GameState::End;
+                application->fxobj->createSfx(SfxManager::sfx::explosion);
                 break;
 
             case CursorCellSelector::State::ExtraTurn:
@@ -234,7 +238,14 @@ void GameWindow::OnEnd(bool isWin)
 
     int score = battleshipCore.getEnemyBoatSunk() * 50;
     if (isWin)
+    {
         score += 250;
+        application->fxobj->createSfx(SfxManager::sfx::victory);
+        application->fxobj->createSfx(SfxManager::sfx::voiceVictory);
+    }
+    else
+        application->fxobj->createSfx(SfxManager::sfx::defeat);
+
 
     endPanel->Show(isWin, std::stoi(application->getBddObj().getScore()), score);
 }
