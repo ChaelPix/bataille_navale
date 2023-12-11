@@ -26,7 +26,8 @@ void GameInfoPanel::updateTimer(float time, int max)
 	timeStream << std::setw(2) << std::setfill('0') << seconds << ":"
 		<< std::setw(2) << std::setfill('0') << milliseconds;
 
-	timerTxt->SetTextAndCenterX(timeStream.str());
+	timerTxt->SetText(timeStream.str());
+	std::cout << "fdh : " << timerTxt->getText().getGlobalBounds().width << std::endl;
 	timerTxt->SetPosition(gameMenuSettings.txtCenter);
 }
 
