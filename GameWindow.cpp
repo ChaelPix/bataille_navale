@@ -2,7 +2,7 @@
 
 GameWindow::GameWindow(GameApplication& application, const sf::Vector2i& windowPos)
     : 
-    SfmlWindow("BattleShip", WindowSettings().gameWindowSize, windowPos, *application.fxobj),
+    SfmlWindow("BattleShip", WindowSettings().gameWindowSize, windowPos),
     gridPlayer(gridSettings.nbPixels, gridSettings.squareSize, gridSettings.playerGridPosition, gridSettings.lineColor),
     gridEnemy(gridSettings.nbPixels, gridSettings.squareSize, gridSettings.ennemyGridPosition, gridSettings.lineColor),
     application(&application)
@@ -32,7 +32,6 @@ void GameWindow::HandleEvents(sf::Event& event) {
 }
 
 void GameWindow::Update(sf::Event& event) {
-    sfxManager.update();
     processMessages();
     handleGameState();
 }

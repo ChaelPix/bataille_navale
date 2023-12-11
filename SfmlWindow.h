@@ -18,9 +18,8 @@ protected:
     WindowSettings windowSettings;
     bool running = true;
     sf::Clock clock;
-    SfxManager& sfxManager;
 public:
-    SfmlWindow(const std::string& title, const sf::Vector2f& size, const sf::Vector2i& windowPos, SfxManager& sfxManager);
+    SfmlWindow(const std::string& title, const sf::Vector2f& size, const sf::Vector2i& windowPos);
 
     virtual ~SfmlWindow() = default;
 

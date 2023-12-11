@@ -51,22 +51,14 @@ void SfxManager::createSfx(sfx type) {
     sfxs.at(sfxs.size() - 1).play();
 }
 
-void SfxManager::update() {
-    //for (int i = 0; i < sfxs.size(); i++)
-    //{
-    //    if(sfxs.at(i).getStatus() != sf::Sound::Playing)
-    //}
-    for (auto it = sfxs.begin(); it != sfxs.end(); ) {
-        if (it->getStatus() != sf::Sound::Playing) {
-            it = sfxs.erase(it); 
-        }
-        else {
-            ++it;
-        }
-    }
+void SfxManager::clear()
+{
+    sfxs.clear();
 }
 
 void SfxManager::PlayMusic(bgm bgm)
 {
 
 }
+
+

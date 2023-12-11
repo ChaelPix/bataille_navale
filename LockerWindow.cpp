@@ -2,7 +2,7 @@
 
 LockerWindow::LockerWindow(GameApplication& application, const sf::Vector2i& windowPos)
     :
-    SfmlWindow("BattleShip locker", WindowSettings().menuWindowSize, windowPos, *application.fxobj), application(&application)
+    SfmlWindow("BattleShip locker", WindowSettings().menuWindowSize, windowPos), application(&application)
 {
     Initialize();
 }
@@ -208,7 +208,7 @@ void LockerWindow::LockerManagement() {
 
 
 void LockerWindow::Update(sf::Event& event) {
-    sfxManager.update();
+
 }
 
 //movement

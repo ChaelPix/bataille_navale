@@ -28,6 +28,6 @@ public:
 	SfxManager();
 	void createSfx(sfx type);
 	void PlayMusic(bgm bgm);
-	void update();
+	void clear();
 };
 
