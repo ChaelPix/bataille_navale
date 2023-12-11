@@ -23,8 +23,8 @@ void LockerWindow::Initialize()
     //Music
     if (!music.openFromFile("ressources/UI/sfx/sfx_boatLocker.wav")) {
     }
-    //music.play();
-    //music.setLoop(true);
+    music.play();
+    music.setLoop(true);
 
     BackgroundTexture.loadFromFile(LckSettings.backgroundImgPath);
     Background = new EntityRectangle(ws.gameWindowSize, sf::Vector2f(0, 0), BackgroundTexture);
