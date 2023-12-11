@@ -245,6 +245,7 @@ void GameWindow::OnEnd(bool isWin)
     }
     else
         application->fxobj->createSfx(SfxManager::sfx::defeat);
+        application->fxobj->setSfxVolume(200);
 
 
     endPanel->Show(isWin, std::stoi(application->getBddObj().getScore()), score);

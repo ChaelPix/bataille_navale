@@ -7,8 +7,8 @@
 
 class SfxManager{
 public:
-	enum class sfx { click, explosion, sinkBoat, victory, defeat,  voiceVictory};
-	enum class bgm { menu };
+	enum class sfx { click, explosion, sinkBoat, victory, defeat,  voiceVictory, voiceDefeat};
+	enum class bgm { menu, game, locker};
 
 private:
 
@@ -29,5 +29,7 @@ public:
 	void createSfx(sfx type);
 	void PlayMusic(bgm bgm);
 	void clear();
+	void setSfxVolume(float volume);
+	void setMusicLoop(bgm bgmType, bool loop);
 };
 

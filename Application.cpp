@@ -182,8 +182,8 @@ void GameApplication::ChangeState(State newState) {
         windowPos = currentWindow->GetWindowPosition();
         currentWindow->Stop();
         currentWindow = nullptr;
+          fxobj->clear();
     }
-    fxobj->clear();
 
     switch (currentState) 
     {

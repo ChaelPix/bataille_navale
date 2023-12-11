@@ -21,6 +21,9 @@ SfxManager::SfxManager() {
     if (buffer.loadFromFile(settings.pathVoicVictory)) {
         sfxVector.push_back(buffer);
     }
+    if (buffer.loadFromFile(settings.pathVoicDefeat)) {
+        sfxVector.push_back(buffer);
+    }
 
     //// Initialisation of sf::Sound object with SoundBuffers
     //for (auto& buffer : sfxVector) {
@@ -58,7 +61,58 @@ void SfxManager::clear()
 
 void SfxManager::PlayMusic(bgm bgm)
 {
+    // Arrêter la musique actuelle si elle est en train de jouer
+    if (currentMusic && currentMusic->getStatus() == sf::Music::Playing) {
+        currentMusic->stop();
+    }
 
+    // Jouer la nouvelle musique en fonction du paramètre bgm
+    switch (bgm) {
+    case bgm::menu:
+        currentMusic = &BackgroundMusic;
+        break;
+    case bgm::game:
+        currentMusic = &GameMusic;
+        break;
+    case bgm::locker:
+        currentMusic = &LockerMusic;
+        break;
+    default:
+        // Gestion d'un cas non prévu
+        currentMusic = nullptr;
+        return;
+    }
+
+    // Jouer la musique sélectionnée
+    if (currentMusic) {
+        currentMusic->play();
+    }
 }
 
 
+void SfxManager::setSfxVolume(float volume) {
+    for (auto& sound : sfxs) {
+        sound.setVolume(volume);
+    }
+}
+
+void SfxManager::setMusicLoop(bgm bgmType, bool loop) {
+    sf::Music* music = nullptr;
+    switch (bgmType) {
+    case bgm::menu:
+        music = &BackgroundMusic;
+        break;
+    case bgm::game:
+        music = &GameMusic;
+        break;
+    case bgm::locker:
+        music = &LockerMusic;
+        break;
+    default:
+        return;
+    }
+
+    if (music) {
+        music->setLoop(loop);
+    }
+}

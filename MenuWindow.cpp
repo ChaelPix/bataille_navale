@@ -15,6 +15,9 @@ MenuWindow::~MenuWindow()
 
 void MenuWindow::Initialize()
 {
+    application->fxobj->PlayMusic(SfxManager::bgm::menu);
+    application->fxobj->setMusicLoop(SfxManager::bgm::menu, true);
+
     if (application->getAreImagesOk())
     {
         menuBackground = new AnimatedEntity(70, true, false, windowSettings.menuWindowSize, sf::Vector2f(0, 0), application->getMenuBg());
@@ -86,6 +89,7 @@ void MenuWindow::HandleMatchmaking()
             application->setClientStartFirst(message == "GStart");
             running = false;
             application->ChangeState(GameApplication::State::Game);
+            application->fxobj->PlayMusic(SfxManager::bgm::game);
         }
 
     }
@@ -101,11 +105,14 @@ void MenuWindow::CheckExitButton()
     {
         running = false;
         application->Close();
+        application->fxobj->PlayMusic(SfxManager::bgm::game);
     }
     else if (id == 1)
     {
         running = false;
         application->ChangeState(GameApplication::State::Locker);
+        application->fxobj->PlayMusic(SfxManager::bgm::locker);
+        application->fxobj->setMusicLoop(SfxManager::bgm::locker, true);
     }
 }
 

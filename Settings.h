@@ -283,6 +283,7 @@ struct sfxSettings {
     std::string pathVictory = "ressources/UI/sfx/sfx_victory.wav";
     std::string pathDefeat = "ressources/UI/sfx/sfx_defeat.wav";
     std::string pathVoicVictory = "ressources/UI/sfx/sfx_congratulation_voice.wav";
+    std::string pathVoicDefeat = "ressources/UI/sfx/sfx_defeat_voice.wav";
     const sf::Vector2f namePos = sf::Vector2f(0, 25);
     const sf::Vector2f kdPos = sf::Vector2f(0, 25);
     const sf::Vector2f scorePos = sf::Vector2f(0, 25);

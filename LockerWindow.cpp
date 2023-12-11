@@ -19,12 +19,11 @@ void LockerWindow::Initialize()
     // Boucle pour initialiser 8 clés à 'true'
 
     bdd = &application->getBddObj();
-
-    //Music
-    if (!music.openFromFile("ressources/UI/sfx/sfx_boatLocker.wav")) {
-    }
-    music.play();
-    music.setLoop(true);
+    ////Music
+    //if (!music.openFromFile("ressources/UI/sfx/sfx_boatLocker.wav")) {
+    //}
+    //music.play();
+    //music.setLoop(true);
 
     BackgroundTexture.loadFromFile(LckSettings.backgroundImgPath);
     Background = new EntityRectangle(ws.gameWindowSize, sf::Vector2f(0, 0), BackgroundTexture);
@@ -119,6 +118,7 @@ void LockerWindow::HandleEvents(sf::Event& event) {
                         // Mettre à jour validPos avec la position de l'image cliquée
                         validPos = entity->getPosition(); // Assurez-vous que votre entité a une méthode getPosition()
                         application->fxobj->createSfx(SfxManager::sfx::click);
+                        application->fxobj->setSfxVolume(100);
                         // Mettre à jour la position de l'entité 'valide' avec la nouvelle position
                         valide->setPosition(validPos);
                         imageSelected = true;
