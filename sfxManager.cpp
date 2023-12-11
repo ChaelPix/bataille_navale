@@ -44,9 +44,23 @@ SfxManager::SfxManager() {
     currentMusic = &BackgroundMusic;
 }
 
-void SfxManager::creatSfx(sfx type){
-    if (static_cast<size_t>(type) < sfxs.size()) {
-        sfxs[static_cast<size_t>(type)].play();
+void SfxManager::createSfx(sfx type) {
+    if (static_cast<size_t>(type) < sfxVector.size()) {
+        sfxs.emplace_back(); 
+        auto& sound = sfxs.back();
+        sound.setBuffer(sfxVector.at(static_cast<int>(type)));
+        sound.play();
+    }
+}
+
+void SfxManager::update() {
+    for (auto it = sfxs.begin(); it != sfxs.end(); ) {
+        if (it->getStatus() == sf::Sound::Stopped) {
+            it = sfxs.erase(it); 
+        }
+        else {
+            ++it;
+        }
     }
 }
 
