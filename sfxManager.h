@@ -26,7 +26,8 @@ private:
 
 public:
 	SfxManager();
-	void creatSfx(sfx type);
+	void createSfx(sfx type);
 	void PlayMusic(bgm bgm);
+	void update();
 };
 
