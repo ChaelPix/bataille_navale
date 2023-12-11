@@ -131,6 +131,8 @@ void LoginMenu::LoginInvite() {
 	if (bdd != nullptr)
 		bdd->setIsConnected(false);
 
+	bdd->setIdPlayers("Guest");
+
 	isLogged = true;	
 }
 
