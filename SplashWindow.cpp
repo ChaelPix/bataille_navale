@@ -61,7 +61,7 @@ void SplashWindow::SplashAnim() {
     float timeElapsed = clockSplash.getElapsedTime().asSeconds();
 
     // Gérer le changement de logo
-    if (timeElapsed >= 5.0f) {
+    if (timeElapsed >= 1.0f) { //set speed value
         clockSplash.restart();
         if (currentLogoIndex == 0) {
             L1 = true;  // Marquer le premier logo comme affiché
