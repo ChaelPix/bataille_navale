@@ -54,6 +54,7 @@ private:
     sf::Texture BackgroundTexture;
     sf::Texture valideTexture;
     std::vector<EntityText*> textInfo;
+    std::vector<EntityText*> textInfoShop;
     std::vector<sf::Texture*> PictureCases;
     std::map<std::string, bool> lockerSection;
     std::vector<sf::Texture>* charactersImgs;
@@ -80,6 +81,19 @@ private:
 
     sf::Vector2f validPos;
     bool imageSelected = false;
+
+    std::vector<int> imageNumbers = { 
+           35000, 5000, 4000, 3000, 500,//section 1
+            25000, 20000, 1000, 2000,//section 2
+             1000, 1500, 1500,//section 3
+              1500, 1300, 2000, 1500, 1300, 500, 200,//section 4
+               15000, 20000, 12000, 300,//section 5
+                5000, 30000, 15000, 50000, 30000, 20000,//section 6
+                 5000, 15000, 15000,//section 7
+                  0, 0, 0, 0, 0, 0, 0, 0,//section 8
+                   100000, 120000, 130000, 120000, 200000, 180000, 80000, 300000,//section 9
+    };
+
 };
 
 

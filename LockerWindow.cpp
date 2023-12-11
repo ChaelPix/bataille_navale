@@ -46,6 +46,26 @@ void LockerWindow::Initialize()
           textInfo.push_back(new EntityText(LckSettings.font, LckSettings.textPosition[i], LckSettings.characterSize, LckSettings.sectionName[i]));
       }
 
+      float new_image_width = 304.8f; 
+      float new_image_height = 304.8f; 
+      float margin_each_side = 27.8f; 
+      float margin_each_top_bottom = 65.8f;
+
+      charactersImgs = &application->getCharactersImgs();
+
+      for (int i = 0; i < 48; ++i) {
+          int section = 0;
+          while (i >= section_starts[section + 1]) {
+              section++;
+          }
+
+          int index_in_section = i - section_starts[section];
+
+          float pos_x = (index_in_section % 4) * (new_image_width + margin_each_side) + margin_each_side;
+          float pos_y = (index_in_section / 4) * (new_image_height + margin_each_top_bottom) + margin_each_top_bottom;
+          textInfoShop.push_back(new EntityText(LckSettings.font, sf::Vector2f(pos_x, pos_y), LckSettings.characterSize, std::to_string(imageNumbers[i])));
+      }
+
     // Chargement et configuration des textures et sprites des boutons
     if (!buttonPrevTexture.loadFromFile("ressources/UI/ui_locker_previousbutton_on.png") ||
         !buttonNextTexture.loadFromFile("ressources/UI/ui_locker_nextbutton_on.png") || !exitButtonTexture.loadFromFile("ressources/UI/ui_locker_backbutton_on.png")) {
@@ -72,10 +92,10 @@ void LockerWindow::Initialize()
     //la section 1 va de 0 a 4, ce qui vaux l = 5 boucle, l pour loop, les sections ressemblent donc a ça: [0-4], [5-8], [9-10], [11-17], [18-22], [23-27], [28-30], [31-38]
 
     // Définitions des marges et taille des images
-    float new_image_width = 304.8f;  // Largeur de l'image après la mise à l'échelle
-    float new_image_height = 304.8f; // Hauteur de l'image après la mise à l'échelle
-    float margin_each_side = 27.8f;  // Marge sur les côtés
-    float margin_each_top_bottom = 65.8f; // Marge en haut et en bas
+    new_image_width = 304.8f;  // Largeur de l'image après la mise à l'échelle
+    new_image_height = 304.8f; // Hauteur de l'image après la mise à l'échelle
+    margin_each_side = 27.8f;  // Marge sur les côtés
+    margin_each_top_bottom = 65.8f; // Marge en haut et en bas
 
     // Tableau indiquant l'indice de début de chaque section
     //int section_starts[] = { 0, 5, 9, 12, 19, 23, 29, 32, 40 };
@@ -112,17 +132,21 @@ void LockerWindow::HandleEvents(sf::Event& event) {
                 if (i < entitiesPtr.size()) {
                     auto entity = entitiesPtr.at(i);
                     if (entity->getShape().getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
-                        pictureChoose = i; 
-                        bdd->setIdPicture(pictureChoose);
-                        std::cout << "Image " << pictureChoose << " cliquée" << std::to_string(bdd->getIdPicture()) << std::endl;
-                        // Mettre à jour validPos avec la position de l'image cliquée
-                        validPos = entity->getPosition(); // Assurez-vous que votre entité a une méthode getPosition()
-                        application->fxobj->createSfx(SfxManager::sfx::click);
-                        application->fxobj->setSfxVolume(100);
-                        // Mettre à jour la position de l'entité 'valide' avec la nouvelle position
-                        valide->setPosition(validPos);
-                        imageSelected = true;
-                        break;
+                        std::cout << "imageNumbers: " << imageNumbers[i] << " score de la bdd: " << stoi(application->getBddObj().getScore()) << std::endl;
+                        if (imageNumbers[i] <= stoi(application->getBddObj().getScore())) {
+                            std::cout << "imageNumbers: " << imageNumbers[i] << " score de la bdd: " << stoi(application->getBddObj().getScore()) << std::endl;
+                            pictureChoose = i;
+                            bdd->setIdPicture(pictureChoose);
+                            std::cout << "Image " << pictureChoose << " cliquée" << std::to_string(bdd->getIdPicture()) << std::endl;
+                            // Mettre à jour validPos avec la position de l'image cliquée
+                            validPos = entity->getPosition(); // Assurez-vous que votre entité a une méthode getPosition()
+                            application->fxobj->createSfx(SfxManager::sfx::click);
+                            application->fxobj->setSfxVolume(100);
+                            // Mettre à jour la position de l'entité 'valide' avec la nouvelle position
+                            valide->setPosition(validPos);
+                            imageSelected = true;
+                            break;
+                        }
                     }
                 }
             }
@@ -195,6 +219,8 @@ void LockerWindow::LockerManagement() {
         for (int i = p; i < p + l; ++i) {
             if (i < entitiesPtr.size()) {
                 entitiesPtr.at(i)->draw(window);
+                textInfoShop.at(s - 1)->draw(window);
+
             }
         }
         textInfo.at(s - 1)->draw(window);
@@ -202,8 +228,6 @@ void LockerWindow::LockerManagement() {
 
     if (lockerSection["section0"])
     textInfo.at(9)->draw(window);
-
-
 }
 
 
