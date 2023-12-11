@@ -21,18 +21,10 @@ PlayerHud::PlayerHud(sf::Font& font, bool isEnemy, std::string name, std::string
 
 	if (isEnemy)
 	{
-		WindowSettings w;
-		playerPicture->setPosition(sf::Vector2f(w.gameWindowSize.x - playerHudSettings.picturePos.x - playerHudSettings.pictureSize * 2, playerHudSettings.picturePos.y));
-
-		nameTxt->getText().setOrigin(sf::Vector2f(nameTxt->getText().getGlobalBounds().width, 0));
-		nameTxt->SetPosition(sf::Vector2f(w.gameWindowSize.x - playerHudSettings.namePos.x - playerHudSettings.pictureSize * 2, playerHudSettings.namePos.y));
-
-		kdTxt->getText().setOrigin(sf::Vector2f(kdTxt->getText().getGlobalBounds().width, 0));
-		kdTxt->SetPosition(sf::Vector2f(w.gameWindowSize.x - playerHudSettings.kdPos.x - playerHudSettings.pictureSize * 2, playerHudSettings.kdPos.y));
-
-		scoreTxt->getText().setOrigin(sf::Vector2f(scoreTxt->getText().getGlobalBounds().width, 0));
-		scoreTxt->SetPosition(sf::Vector2f(w.gameWindowSize.x - playerHudSettings.scorePos.x - playerHudSettings.pictureSize * 2, playerHudSettings.scorePos.y));
+		clock = new sf::Clock;
 	}
+	else
+		istxtok = true;
 
 }
 
@@ -41,8 +33,35 @@ void PlayerHud::draw(sf::RenderWindow& window)
 	if(!isEnemy)
 		background->draw(window);
 
-	nameTxt->draw(window);
-	kdTxt->draw(window);
-	scoreTxt->draw(window);
+	if(istxtok)
+	{
+		nameTxt->draw(window);
+		kdTxt->draw(window);
+		scoreTxt->draw(window);	
+	}
+	else if(clock != nullptr && clock->getElapsedTime().asMilliseconds() >= 100) {
+		InitEnemyTxt();
+	}
+
 	playerPicture->draw(window);
 }
+
+void PlayerHud::InitEnemyTxt()
+{
+	WindowSettings w;
+	playerPicture->setPosition(sf::Vector2f(w.gameWindowSize.x - playerHudSettings.picturePos.x - playerHudSettings.pictureSize * 2, playerHudSettings.picturePos.y));
+
+	nameTxt->getText().setOrigin(sf::Vector2f(nameTxt->getText().getGlobalBounds().width, 0));
+	nameTxt->SetPosition(sf::Vector2f(w.gameWindowSize.x - playerHudSettings.namePos.x - playerHudSettings.pictureSize * 2, playerHudSettings.namePos.y));
+
+	kdTxt->getText().setOrigin(sf::Vector2f(kdTxt->getText().getGlobalBounds().width, 0));
+	kdTxt->SetPosition(sf::Vector2f(w.gameWindowSize.x - playerHudSettings.kdPos.x - playerHudSettings.pictureSize * 2, playerHudSettings.kdPos.y));
+
+	scoreTxt->getText().setOrigin(sf::Vector2f(scoreTxt->getText().getGlobalBounds().width, 0));
+	scoreTxt->SetPosition(sf::Vector2f(w.gameWindowSize.x - playerHudSettings.scorePos.x - playerHudSettings.pictureSize * 2, playerHudSettings.scorePos.y));
+
+	istxtok = true;
+	clock = nullptr;
+}
+
+

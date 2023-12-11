@@ -267,7 +267,7 @@ struct PlayerHUDSettings {
 
     const sf::Vector2f namePos = sf::Vector2f(180, 0);
     const sf::Vector2f scorePos = sf::Vector2f(180, 120);
-    const sf::Vector2f kdPos = sf::Vector2f(180, 80);
+    const sf::Vector2f kdPos = sf::Vector2f(180, 95);
 
 };
 
