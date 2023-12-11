@@ -94,6 +94,7 @@
     <ClInclude Include="PlayerBoatsManager.h" />
     <ClInclude Include="PlayerHud.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="SaveData.h" />
     <ClInclude Include="SessionManager.h" />
     <ClInclude Include="Settings.h" />
@@ -135,6 +136,12 @@
       <FileType>Document</FileType>
     </CopyFileToFolders>
     <None Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn8-2-vs14.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ressources\appIco.ico" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
