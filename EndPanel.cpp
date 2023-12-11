@@ -13,7 +13,7 @@ EndPanel::EndPanel(sf::Font& font)
 	panel = new EntityRectangle(endMenuSettings.panelSize, sf::Vector2f(0, 0), endMenuSettings.panelColor);
 	doShow = false;
 
-	scoreText = new EntityText(font, endMenuSettings.scorePos, endMenuSettings.scoreSize, "", sf::Color(225, 225, 0));
+	scoreText = new EntityText(font, endMenuSettings.scorePos, endMenuSettings.scoreSize, "", sf::Color(225, 225, 225));
 }
 
 void EndPanel::Show(bool isVictory, int score, int wonPoints)
@@ -22,7 +22,7 @@ void EndPanel::Show(bool isVictory, int score, int wonPoints)
 	if (isVictory) id = 1;
 
 	endImage->setTexture(&imagesTextures[id]);
-	scoreText->SetTextAndCenter("Score: " + std::to_string(score) + "\n" + "Points Won: " + std::to_string(wonPoints) + "\nNew Score: " + std::to_string(score + wonPoints));
+	scoreText->SetText("Score: " + std::to_string(score) + "\n" + "Points Won: " + std::to_string(wonPoints) + "\nNew Score: " + std::to_string(score + wonPoints));
 	scoreText->SetPosition(endMenuSettings.scorePos);
 
 	doShow = true;
