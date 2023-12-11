@@ -46,25 +46,24 @@ void LockerWindow::Initialize()
           textInfo.push_back(new EntityText(LckSettings.font, LckSettings.textPosition[i], LckSettings.characterSize, LckSettings.sectionName[i]));
       }
 
-      float new_image_width = 304.8f; 
-      float new_image_height = 304.8f; 
-      float margin_each_side = 27.8f; 
-      float margin_each_top_bottom = 65.8f;
+      //float new_image_width = 304.8f; 
+      //float new_image_height = 304.8f; 
+      //float margin_each_side = 27.8f; 
+      //float margin_each_top_bottom = 65.8f;
 
-      charactersImgs = &application->getCharactersImgs();
+      //charactersImgs = &application->getCharactersImgs();
 
-      for (int i = 0; i < 48; ++i) {
-          int section = 0;
-          while (i >= section_starts[section + 1]) {
-              section++;
-          }
+      //for (int i = 0; i < 48; ++i) {
+      //    int section = 0;
+      //    while (i >= section_starts[section + 1]) {
+      //        section++;
+      //    }
 
-          int index_in_section = i - section_starts[section];
+      //    int index_in_section = i - section_starts[section];
 
-          float pos_x = (index_in_section % 4) * (new_image_width + margin_each_side) + margin_each_side;
-          float pos_y = (index_in_section / 4) * (new_image_height + margin_each_top_bottom) + margin_each_top_bottom;
-          textInfoShop.push_back(new EntityText(LckSettings.font, sf::Vector2f(pos_x, pos_y), LckSettings.characterSize, std::to_string(imageNumbers[i])));
-      }
+      //    float pos_x = (index_in_section % 4) * (new_image_width + margin_each_side) + margin_each_side;
+      //    float pos_y = (index_in_section / 4) * (new_image_height + margin_each_top_bottom) + margin_each_top_bottom;
+      //}
 
     // Chargement et configuration des textures et sprites des boutons
     if (!buttonPrevTexture.loadFromFile("ressources/UI/ui_locker_previousbutton_on.png") ||
@@ -91,14 +90,15 @@ void LockerWindow::Initialize()
     lockerSection["section0"] = true;
     //la section 1 va de 0 a 4, ce qui vaux l = 5 boucle, l pour loop, les sections ressemblent donc a ça: [0-4], [5-8], [9-10], [11-17], [18-22], [23-27], [28-30], [31-38]
 
-    // Définitions des marges et taille des images
-    new_image_width = 304.8f;  // Largeur de l'image après la mise à l'échelle
-    new_image_height = 304.8f; // Hauteur de l'image après la mise à l'échelle
-    margin_each_side = 27.8f;  // Marge sur les côtés
-    margin_each_top_bottom = 65.8f; // Marge en haut et en bas
+     // Définitions des marges et taille des images
+    float new_image_width = 304.8f;  // Largeur de l'image après la mise à l'échelle
+    float new_image_height = 304.8f; // Hauteur de l'image après la mise à l'échelle
+    float margin_each_side = 27.8f;  // Marge sur les côtés
+    float margin_each_top_bottom = 65.8f; // Marge en haut et en bas
 
     // Tableau indiquant l'indice de début de chaque section
     //int section_starts[] = { 0, 5, 9, 12, 19, 23, 29, 32, 40 };
+    std::vector<sf::Vector2f> imagePositions;
 
     // Boucle sur toutes les images
     charactersImgs = &application->getCharactersImgs();
@@ -116,8 +116,13 @@ void LockerWindow::Initialize()
         float pos_x = (index_in_section % 4) * (new_image_width + margin_each_side) + margin_each_side;
         float pos_y = (index_in_section / 4) * (new_image_height + margin_each_top_bottom) + margin_each_top_bottom;
 
+
         // Ajoutez la nouvelle entité à la fin du vecteur
         entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(280, 280), sf::Vector2f(pos_x, pos_y), charactersImgs->at(i)));
+        textInfoShop.push_back(new EntityText(LckSettings.font, sf::Vector2f(pos_x + 10, pos_y - 270), LckSettings.characterSize, std::to_string(imageNumbers[i])));
+        imagePositions.push_back(sf::Vector2f(pos_x, pos_y));
+
+
     }
     
 }
@@ -168,7 +173,8 @@ void LockerWindow::HandleEvents(sf::Event& event) {
                 running = false;
                 application->ChangeState(GameApplication::State::Menu);
                 bdd->setIdPicture(pictureChoose);
-                bdd->saveToText();
+                if (bdd->getIdPlayers() != "Guest")
+                    bdd->saveToText();
             }
         }
     }
@@ -219,8 +225,9 @@ void LockerWindow::LockerManagement() {
         for (int i = p; i < p + l; ++i) {
             if (i < entitiesPtr.size()) {
                 entitiesPtr.at(i)->draw(window);
-                textInfoShop.at(s - 1)->draw(window);
-
+                if (i < textInfoShop.size()) {
+                    textInfoShop.at(i +5 )->draw(window); // Assurez-vous que 'i' est un index valide pour textInfoShop
+                }
             }
         }
         textInfo.at(s - 1)->draw(window);
@@ -304,6 +311,7 @@ void LockerWindow::Render()
         }
         // Pas de réinitialisation de imageSelected ici
     }
-
+    //for (int i = 0; i < 20; i++)
+    //    textInfoShop.at(i)->draw(window);
 
 }
