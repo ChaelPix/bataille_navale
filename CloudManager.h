@@ -59,7 +59,7 @@ public:
             if (position.x < -2500) {
                 cloudsStaticAnimate[i].setPosition(sf::Vector2f(1000, -400));
             }
-            cloudsStaticAnimate[i].move(-0.025, 0);
+            cloudsStaticAnimate[i].move(-0.040, 0);
 
         }
 

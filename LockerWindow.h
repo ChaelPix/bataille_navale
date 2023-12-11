@@ -13,6 +13,7 @@
 #include "LoginMenu.h"
 #include "EntityText.h"
 #include "EntityTextBox.h"
+#include "SfxManager.h"
 
 
 class LockerWindow : public SfmlWindow
@@ -79,6 +80,8 @@ private:
 
     sf::Vector2f validPos;
     bool imageSelected = false;
+
+    SfxManager fxobj;
 
 };
 
