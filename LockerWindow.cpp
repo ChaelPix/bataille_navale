@@ -2,7 +2,7 @@
 
 LockerWindow::LockerWindow(GameApplication& application, const sf::Vector2i& windowPos)
     :
-    SfmlWindow("BattleShip locker", WindowSettings().menuWindowSize, windowPos), application(&application)
+    SfmlWindow("Valiant", WindowSettings().menuWindowSize, windowPos), application(&application)
 {
     Initialize();
 }

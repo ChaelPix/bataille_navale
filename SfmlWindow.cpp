@@ -4,6 +4,10 @@ SfmlWindow::SfmlWindow(const std::string& title, const sf::Vector2f& size, const
     : window(sf::VideoMode(size.x, size.y), title)
 {
     window.setPosition(windowPos);
+
+    sf::Image icon;
+    icon.loadFromFile("Ressources/appIco.png");
+    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 }
 
 void SfmlWindow::Run() {

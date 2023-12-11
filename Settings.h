@@ -133,8 +133,8 @@ struct BoatSettings {
 };
 
 struct TextBoxSettings {
-    const sf::Vector2f textBoxSize = sf::Vector2f(500, 50);
-    const sf::Vector2f selectBoxSize = sf::Vector2f(500, 5);
+    const sf::Vector2f textBoxSize = sf::Vector2f(430, 50);
+    const sf::Vector2f selectBoxSize = sf::Vector2f(450, 5);
     const sf::Vector2f selectBoxOffset = sf::Vector2f(0, 5);
     const sf::Color selectBoxColor = sf::Color::Blue;
     const sf::Color defaultTextColor = sf::Color(124, 124, 124, 200);
@@ -288,4 +288,22 @@ struct sfxSettings {
     const sf::Vector2f kdPos = sf::Vector2f(0, 25);
     const sf::Vector2f scorePos = sf::Vector2f(0, 25);
 
+};
+
+struct GameChatSettings {
+    const sf::Vector2f chatPos = sf::Vector2f(1220, 350);
+    const sf::Vector2f chatSize = sf::Vector2f(380, 480);
+    const sf::Vector2f textBoxPosFromChat = sf::Vector2f(0, 450);
+
+    const sf::Vector2f messageSize = sf::Vector2f(360, 100);
+    const sf::Vector2f messageOffset = sf::Vector2f(0, -20);
+    const sf::Vector2f messageOffsetFromName = sf::Vector2f(0, 25);
+    const sf::Vector2f firsMessagePosFromtxtBox = sf::Vector2f(15, -100);
+    const float maxY = 350;
+    const int nameFSize = 20;
+    const int messageFSize = 30;
+    std::string pathChatBox = "ressources/UI/ui_chatbox.png";
+    sf::Color nameEColor = sf::Color(153, 0, 0);
+    sf::Color namePColor = sf::Color(255, 198, 7);
+    sf::Color messageColor = sf::Color(255, 255, 255);
 };

@@ -2,7 +2,7 @@
 
 MenuWindow::MenuWindow(GameApplication& application, const sf::Vector2i& windowPos)
     :
-    SfmlWindow("BattleShip", WindowSettings().menuWindowSize, windowPos),
+    SfmlWindow("Valiant", WindowSettings().menuWindowSize, windowPos),
     application(&application)
 {
     Initialize();

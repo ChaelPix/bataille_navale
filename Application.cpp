@@ -96,7 +96,7 @@ GameApplication::MessageType GameApplication::getMessageType(std::string message
         return MessageType::Game;
     case 'B':
         return MessageType::BattleGrid;
-    case 'C':
+    case 'M':
         return MessageType::Chat;
     case 'F':
         return MessageType::End;
@@ -182,7 +182,7 @@ void GameApplication::ChangeState(State newState) {
         windowPos = currentWindow->GetWindowPosition();
         currentWindow->Stop();
         currentWindow = nullptr;
-          fxobj->clear();
+        fxobj->clear();
     }
 
     switch (currentState) 
