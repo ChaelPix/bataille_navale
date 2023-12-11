@@ -32,6 +32,9 @@ void GameWindow::HandleEvents(sf::Event& event) {
 }
 
 void GameWindow::Update(sf::Event& event) {
+    if (gameChat != nullptr)
+        gameChat->Update(event);
+
     processMessages();
     handleGameState();
 }
@@ -54,7 +57,8 @@ void GameWindow::processMessages() {
 
                 /*----------Receive Chat Message----------*/
             case GameApplication::MessageType::Chat:
-                std::cout << "Message : " << message;
+                std::cout << "got message : " << message << std::endl;
+                gameChat->ReceiveMessage(message);
                 break;
 
                 /*----------Enemy Disconnected----------*/
@@ -230,6 +234,8 @@ void GameWindow::CreateHud(std::string& enemyInfoMessage)
     playerHud = new PlayerHud(application->getGameFont(), false, application->getBddObj().getIdPlayers(), application->getBddObj().getRatio(), application->getBddObj().getScore(), application->getChoosenPicture());
     enemyHud = new PlayerHud(application->getGameFont(), true, id, ratio, score, application->getCharactersImgs().at(picture));
     isHudOk = true;
+
+    gameChat = new GameChat(application->client, application->getGameFont(), application->getBddObj().getIdPlayers(), id);
 }
 
 void GameWindow::OnEnd(bool isWin)
@@ -279,8 +285,11 @@ void GameWindow::Render()
     //gameInfoPanel->draw(window);
     if(isHudOk)
     {
-        //playerHud->draw(window);
+        playerHud->draw(window);
         //enemyHud->draw(window);
     }
     endPanel->draw(window);
+
+    if(gameChat != nullptr)
+        gameChat->Draw(window);
 }

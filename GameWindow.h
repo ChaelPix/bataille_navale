@@ -16,6 +16,7 @@ class GameApplication;
 #include "CursorCellSelector.h"
 #include "GameInfoPanel.h"
 #include "PlayerHud.h"
+#include "GameChat.h"
 
 class GameWindow : public SfmlWindow {
 public:
@@ -57,6 +58,7 @@ private:
     EndPanel* endPanel;
     GameVfx* gameVfx;
     GameInfoPanel* gameInfoPanel;
+    GameChat* gameChat;
 
     PlayerHud* playerHud;
     PlayerHud* enemyHud;

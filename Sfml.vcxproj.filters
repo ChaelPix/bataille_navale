@@ -41,6 +41,7 @@
     <ClCompile Include="TCPServer.cpp" />
     <ClCompile Include="TCPWinsocksMaster.cpp" />
     <ClCompile Include="WaitTimer.cpp" />
+    <ClCompile Include="GameMessage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedEntity.h" />
@@ -84,6 +85,7 @@
     <ClInclude Include="TCPServer.h" />
     <ClInclude Include="TCPWinsocksMaster.h" />
     <ClInclude Include="WaitTimer.h" />
+    <ClInclude Include="GameMessage.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn-static.lib" />
