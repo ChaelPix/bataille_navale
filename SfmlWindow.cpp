@@ -1,7 +1,7 @@
 #include "SfmlWindow.h"
 #include <iostream>
-SfmlWindow::SfmlWindow(const std::string& title, const sf::Vector2f& size, const sf::Vector2i& windowPos)
-    : window(sf::VideoMode(size.x, size.y), title) 
+SfmlWindow::SfmlWindow(const std::string& title, const sf::Vector2f& size, const sf::Vector2i& windowPos, SfxManager& sfx)
+    : window(sf::VideoMode(size.x, size.y), title), sfxManager(sfx)
 {
     window.setPosition(windowPos);
 }
