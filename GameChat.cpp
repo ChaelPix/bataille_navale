@@ -4,7 +4,8 @@ GameChat::GameChat(TCPClient* client, sf::Font& font, std::string playerName, st
 {
 	EndMenuSettings ems;
 	int bgSizeX = windowSettings.gameWindowSize.x - ems.panelSize.x;
-	background = new EntityRectangle(gameChatSettings.chatSize, gameChatSettings.chatPos, sf::Color(0, 0, 0, 200));
+	chatBoxText.loadFromFile(gameChatSettings.pathChatBox);
+	background = new EntityRectangle(gameChatSettings.chatSize, gameChatSettings.chatPos, chatBoxText);
 
 	textBox = new EntityTextBox(gameChatSettings.chatPos + gameChatSettings.textBoxPosFromChat, nullptr, font, "Message Here");
 	textBox->setSelected(true);

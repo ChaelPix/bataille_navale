@@ -301,7 +301,7 @@ struct GameChatSettings {
     const float maxY = 350;
     const int nameFSize = 20;
     const int messageFSize = 30;
-
+    std::string pathChatBox = "ressources/UI/ui_chatbox.png";
     sf::Color nameEColor = sf::Color(153, 0, 0);
     sf::Color namePColor = sf::Color(255, 198, 7);
     sf::Color messageColor = sf::Color(255, 255, 255);

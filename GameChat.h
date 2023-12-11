@@ -23,7 +23,7 @@ private:
 	sf::Font& font;
 	std::string playerName;
 	std::string enemyName;
-
+	sf::Texture chatBoxText;
 	void createMessage(std::string msg, bool isEnemy);
 
 public:
