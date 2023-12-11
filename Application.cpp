@@ -25,6 +25,7 @@ void GameApplication::Initialize()
     areImagesOk = false;
 
     imageLoadingThread = std::thread(&GameApplication::LoadImages, this);
+    checkForSaveFile();
 }
 
 void GameApplication::LoadImages() {
@@ -124,6 +125,32 @@ void GameApplication::setHasLogged(bool action)
 bool GameApplication::getAreImagesOk()
 {
     return areImagesOk;
+}
+
+bool GameApplication::getHasDataFile()
+{
+    return hasDataFile;
+}
+
+void GameApplication::checkForSaveFile()
+{
+    std::vector<std::string> dataVector;
+
+    SaveData saver;
+
+    dataVector = saver.loadDataFromFile("data.txt");
+
+    if (dataVector.at(0) == "")
+    {
+        hasDataFile = false;
+        return;
+    }
+
+    objBDD->setIdPlayers(dataVector.at(0));
+    objBDD->setMdp(dataVector.at(1));
+    objBDD->setIdPicture(std::stoi(dataVector.at(2)));
+
+    hasDataFile = true;
 }
 
 std::vector<sf::Texture>& GameApplication::getMenuBg()

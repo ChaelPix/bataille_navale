@@ -10,6 +10,7 @@
 #include "LockerWindow.h"
 #include "TCPClient.h"
 #include "BSBDD.h"
+#include "SaveData.h"
 
 
 class GameApplication {
@@ -47,6 +48,7 @@ private:
 
     bool hasLogged;
     bool areImagesOk;
+    bool hasDataFile;
 
     void Initialize();
     void LoadImages();
@@ -80,7 +82,10 @@ public:
     bool& getHasLogged();
     void setHasLogged(bool action);
     bool getAreImagesOk();
-    
+    bool getHasDataFile();
+    void checkForSaveFile();
+
+
     std::vector<sf::Texture>& getMenuBg();
     std::vector<sf::Texture>& getGameBg();
     std::vector<sf::Texture>& getCharactersImgs();

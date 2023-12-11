@@ -39,7 +39,7 @@ void PlayerHud::draw(sf::RenderWindow& window)
 		kdTxt->draw(window);
 		scoreTxt->draw(window);	
 	}
-	else if(clock != nullptr && clock->getElapsedTime().asMilliseconds() >= 100) {
+	else if(clock != nullptr && clock->getElapsedTime().asMilliseconds() >= 300) {
 		InitEnemyTxt();
 	}
 
