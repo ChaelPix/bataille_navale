@@ -14,6 +14,18 @@ LockerWindow::~LockerWindow()
 
 void LockerWindow::Initialize()
 {
+    std::vector<int> imageNumbers = {
+       35000, 5000, 4000, 3000, 500,//section 1
+        25000, 20000, 1000, 2000,//section 2
+         1000, 1500, 1500,//section 3
+          1500, 1300, 2000, 1500, 1300, 500, 200,//section 4
+           15000, 20000, 12000, 300,//section 5
+            5000, 30000, 15000, 50000, 30000, 20000,//section 6
+             5000, 15000, 15000,//section 7
+              0, 0, 0, 0, 0, 0, 0, 0,//section 8
+               100000, 120000, 130000, 120000, 200000, 180000, 80000, 300000,//section 9
+    };
+
     //entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
     //menuButtonsManager = new MenuButtonsManager(application->getGameFont());
     // Boucle pour initialiser 8 clés à 'true'
@@ -119,10 +131,7 @@ void LockerWindow::Initialize()
 
         // Ajoutez la nouvelle entité à la fin du vecteur
         entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(280, 280), sf::Vector2f(pos_x, pos_y), charactersImgs->at(i)));
-        textInfoShop.push_back(new EntityText(LckSettings.font, sf::Vector2f(pos_x + 10, pos_y - 270), LckSettings.characterSize, std::to_string(imageNumbers[i])));
-        imagePositions.push_back(sf::Vector2f(pos_x, pos_y));
-
-
+        textInfoShop.push_back(new EntityText(LckSettings.font, sf::Vector2f(pos_x, pos_y), LckSettings.characterSize, std::to_string(imageNumbers[i])));
     }
     
 }
@@ -226,7 +235,7 @@ void LockerWindow::LockerManagement() {
             if (i < entitiesPtr.size()) {
                 entitiesPtr.at(i)->draw(window);
                 if (i < textInfoShop.size()) {
-                    textInfoShop.at(i +5 )->draw(window); // Assurez-vous que 'i' est un index valide pour textInfoShop
+                    textInfoShop.at(i)->draw(window);
                 }
             }
         }
