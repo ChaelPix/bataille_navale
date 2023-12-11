@@ -265,6 +265,10 @@ struct PlayerHUDSettings {
     const sf::Color kdColor = sf::Color(75, 75, 75);
     const sf::Color scoreColor = sf::Color(200, 200, 200);
 
+    const sf::Vector2f namePos = sf::Vector2f(0, 25);
+    const sf::Vector2f kdPos = sf::Vector2f(0, 25);
+    const sf::Vector2f scorePos = sf::Vector2f(0, 25);
+
 };
 
 struct sfxSettings {
