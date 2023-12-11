@@ -43,7 +43,7 @@ struct GameMenuSettings {
     const std::string timerbgPath = "ressources/UI/ui_timer_bg.png";
 
     const int timerTxtSize = 75;
-    sf::Vector2f txtCenter = sf::Vector2f(ws.gameWindowSize.x / 2 - 90, 0);
+    sf::Vector2f txtCenter = sf::Vector2f(ws.gameWindowSize.x / 2, 0);
 
     const int nbTurnSize = 35;
     const int gameInfoTxtSize = 35;

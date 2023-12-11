@@ -20,15 +20,19 @@ void GameInfoPanel::updateTimer(float time, int max)
 {
 	float timeRemaining = max - time;
 	int seconds = static_cast<int>(timeRemaining);
-	int milliseconds = static_cast<int>((timeRemaining - seconds) * 1000);
+	int milliseconds = static_cast<int>((timeRemaining - seconds) * 100);
 
 	std::ostringstream timeStream;
 	timeStream << std::setw(2) << std::setfill('0') << seconds << ":"
 		<< std::setw(2) << std::setfill('0') << milliseconds;
 
 	timerTxt->SetText(timeStream.str());
-	std::cout << "fdh : " << timerTxt->getText().getGlobalBounds().width << std::endl;
-	timerTxt->SetPosition(gameMenuSettings.txtCenter);
+	timerTxt->SetPosition(gameMenuSettings.txtCenter - sf::Vector2f(62, 0));
+	
+	int red = 255;
+	int x = static_cast<int>(255 * timeRemaining / max);
+	timerTxt->SetColor(sf::Color(red, x, x));
+
 }
 
 void GameInfoPanel::updateTurn(int turn)
