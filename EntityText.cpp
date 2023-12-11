@@ -71,7 +71,7 @@ void EntityText::draw(sf::RenderWindow& window)
 	window.draw(Text);
 }
 
-sf::Text EntityText::getText()
+sf::Text& EntityText::getText()
 {
 	return Text;
 }

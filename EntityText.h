@@ -27,7 +27,7 @@ public:
 
     void draw(sf::RenderWindow& window) override;
 
-    sf::Text getText();
+    sf::Text& getText();
 
     float getWidth();
     float getHeight();

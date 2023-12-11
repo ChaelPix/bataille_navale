@@ -1,6 +1,6 @@
 #include "EntityTextBox.h"
 
-EntityTextBox::EntityTextBox(sf::Vector2f position, sf::Texture* texture, sf::Font &font, std::string description)
+EntityTextBox::EntityTextBox(sf::Vector2f position, sf::Texture* texture, sf::Font &font, std::string description, int maxChar) : maxChar(maxChar)
 {
 	isSelected = false;
 	inputText = "";
@@ -31,7 +31,7 @@ bool EntityTextBox::update(sf::Event &event)
 				inputText = inputText.substring(0, inputText.getSize() - 1);
 			else if (event.text.unicode == 13)
 				return true;
-            else if(inputText.getSize() < 20)
+            else if(inputText.getSize() < maxChar)
                 inputText += event.text.unicode;
 
             text->SetText(inputText);

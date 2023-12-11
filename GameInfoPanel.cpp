@@ -27,7 +27,7 @@ void GameInfoPanel::updateTimer(float time, int max)
 		<< std::setw(2) << std::setfill('0') << milliseconds;
 
 	timerTxt->SetText(timeStream.str());
-	timerTxt->SetPosition(gameMenuSettings.txtCenter - sf::Vector2f(62, 0));
+	timerTxt->SetPosition(gameMenuSettings.txtCenter - sf::Vector2f(60, 0));
 	
 	int red = 255;
 	int x = static_cast<int>(255 * timeRemaining / max);
@@ -45,7 +45,11 @@ void GameInfoPanel::updateTurn(int turn)
 void GameInfoPanel::updateGameInfo(std::string info)
 {
 	infoTxt->SetTextAndCenterX(info);
-	infoTxt->SetPosition(gameMenuSettings.txtCenter + sf::Vector2f(0, 135));
+	infoTxt->SetPosition(gameMenuSettings.txtCenter + sf::Vector2f(0, 110));
+	if (info == "Your Turn")
+		infoTxt->SetColor(sf::Color(252, 207, 3));
+	else
+		infoTxt->SetColor(gameMenuSettings.txtColor);
 }
 
 void GameInfoPanel::draw(sf::RenderWindow& window)

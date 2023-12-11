@@ -46,7 +46,7 @@ struct GameMenuSettings {
     sf::Vector2f txtCenter = sf::Vector2f(ws.gameWindowSize.x / 2, 0);
 
     const int nbTurnSize = 35;
-    const int gameInfoTxtSize = 35;
+    const int gameInfoTxtSize = 50;
     const sf::Color txtColor = sf::Color(200, 200, 200);
    /* sf::Vector2f nbTurnpos = sf::Vector2f(ws.gameWindowSize.x / 2, 0);
     sf::Vector2f gameInfoTxtpos = sf::Vector2f(ws.gameWindowSize.x / 2, 0);*/

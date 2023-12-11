@@ -16,10 +16,11 @@ private:
 	sf::String inputText;
 	TextBoxSettings textBoxSettings;
 	sf::Clock cooldown;
-	
+	int maxChar;
+
 public:
 
-	EntityTextBox(sf::Vector2f position, sf::Texture*, sf::Font& font, std::string description);
+	EntityTextBox(sf::Vector2f position, sf::Texture*, sf::Font& font, std::string description, int maxChar);
 
 	bool update(sf::Event &event);
 	void draw(sf::RenderWindow& window) override;
