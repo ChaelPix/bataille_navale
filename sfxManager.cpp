@@ -24,6 +24,9 @@ SfxManager::SfxManager() {
     if (buffer.loadFromFile(settings.pathVoicDefeat)) {
         sfxVector.push_back(buffer);
     }
+    if (buffer.loadFromFile(settings.pathWrong)) {
+        sfxVector.push_back(buffer);
+    }
 
     //// Initialisation of sf::Sound object with SoundBuffers
     //for (auto& buffer : sfxVector) {

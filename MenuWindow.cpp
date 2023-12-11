@@ -121,7 +121,7 @@ void MenuWindow::Render()
     if (!running)
         return;
 
-    //menuBackground->draw(window);
+    menuBackground->draw(window);
     loginMenu->draw(window, menuState);
 
     if (menuState == LoginMenu::MenuState::OnMenu)

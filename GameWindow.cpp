@@ -261,7 +261,7 @@ void GameWindow::Render()
 {
     bool isMouseOnEnemyGrid = gridEnemy.isMouseOnGrid(mouseManager);
 
-    //waterBackground->draw(window);
+    waterBackground->draw(window);
     gridPlayer.DrawGrid(window);
     playerBoatsManager->draw(window);
 
@@ -270,12 +270,12 @@ void GameWindow::Render()
     for (auto& entity : entitiesPtr)
         entity->draw(window);
 
-    //gameVfx->draw(window);
+    gameVfx->draw(window);
 
     if(!isMouseOnEnemyGrid)
         gridEnemy.DrawGrid(window);
 
-    //cloudManager->draw(window);
+    cloudManager->draw(window);
    
     if (isMouseOnEnemyGrid)
         gridEnemy.DrawGrid(window);
@@ -283,11 +283,11 @@ void GameWindow::Render()
     if(gameState == GameState::Attacking)
          cursor->draw(window);
 
-    //gameInfoPanel->draw(window);
+    gameInfoPanel->draw(window);
     if(isHudOk)
     {
         playerHud->draw(window);
-        //enemyHud->draw(window);
+        enemyHud->draw(window);
     }
     endPanel->draw(window);
 

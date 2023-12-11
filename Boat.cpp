@@ -9,7 +9,7 @@ Boat::Boat(int id, CoreGame::boatTypes boatType, sf::Vector2f size, sf::Texture*
 
 	if (texture != nullptr)
 	{
-		//setTexture(texture);
+		setTexture(texture);
 	}
 
 	gridSize = grid.squareSize / grid.nbPixels;

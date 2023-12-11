@@ -55,6 +55,7 @@ private:
     sf::Texture valideTexture;
     std::vector<EntityText*> textInfo;
     std::vector<EntityText*> textInfoShop;
+    EntityText* scoreText;
     std::vector<sf::Texture*> PictureCases;
     std::map<std::string, bool> lockerSection;
     std::vector<sf::Texture>* charactersImgs;
@@ -87,7 +88,7 @@ private:
             25000, 20000, 1000, 2000,//section 2
              1000, 1500, 1500,//section 3
               1500, 1300, 2000, 1500, 1300, 500, 200,//section 4
-               15000, 20000, 12000, 300,//section 5
+               15000, 20000, 12000, 3000,//section 5
                 5000, 30000, 15000, 50000, 30000, 20000,//section 6
                  5000, 15000, 15000,//section 7
                   0, 0, 0, 0, 0, 0, 0, 0,//section 8

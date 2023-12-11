@@ -17,7 +17,7 @@ struct GridSettings {
 struct WindowSettings {
     const sf::Vector2f gameWindowSize = sf::Vector2f(1600, 850);
     const sf::Vector2f menuWindowSize = sf::Vector2f(1333, 749);
-    const sf::Color bgColor = sf::Color::Blue;
+    const sf::Color bgColor = sf::Color::Black;
 };
 
 struct GameSettings
@@ -284,6 +284,7 @@ struct sfxSettings {
     std::string pathDefeat = "ressources/UI/sfx/sfx_defeat.wav";
     std::string pathVoicVictory = "ressources/UI/sfx/sfx_congratulation_voice.wav";
     std::string pathVoicDefeat = "ressources/UI/sfx/sfx_defeat_voice.wav";
+    std::string pathWrong = "ressources/UI/sfx/sfx_wrong.wav";
     const sf::Vector2f namePos = sf::Vector2f(0, 25);
     const sf::Vector2f kdPos = sf::Vector2f(0, 25);
     const sf::Vector2f scorePos = sf::Vector2f(0, 25);

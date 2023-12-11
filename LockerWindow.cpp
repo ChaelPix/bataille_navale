@@ -14,17 +14,6 @@ LockerWindow::~LockerWindow()
 
 void LockerWindow::Initialize()
 {
-    std::vector<int> imageNumbers = {
-       35000, 5000, 4000, 3000, 500,//section 1
-        25000, 20000, 1000, 2000,//section 2
-         1000, 1500, 1500,//section 3
-          1500, 1300, 2000, 1500, 1300, 500, 200,//section 4
-           15000, 20000, 12000, 300,//section 5
-            5000, 30000, 15000, 50000, 30000, 20000,//section 6
-             5000, 15000, 15000,//section 7
-              0, 0, 0, 0, 0, 0, 0, 0,//section 8
-               100000, 120000, 130000, 120000, 200000, 180000, 80000, 300000,//section 9
-    };
 
     //entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
     //menuButtonsManager = new MenuButtonsManager(application->getGameFont());
@@ -36,6 +25,8 @@ void LockerWindow::Initialize()
     //}
     //music.play();
     //music.setLoop(true);
+
+    scoreText = new EntityText(LckSettings.font, sf::Vector2f(1200, 5), LckSettings.characterSize, bdd->getScore());
 
     BackgroundTexture.loadFromFile(LckSettings.backgroundImgPath);
     Background = new EntityRectangle(ws.gameWindowSize, sf::Vector2f(0, 0), BackgroundTexture);
@@ -161,6 +152,8 @@ void LockerWindow::HandleEvents(sf::Event& event) {
                             imageSelected = true;
                             break;
                         }
+                        else 
+                            application->fxobj->createSfx(SfxManager::sfx::wrong);
                     }
                 }
             }
@@ -322,5 +315,7 @@ void LockerWindow::Render()
     }
     //for (int i = 0; i < 20; i++)
     //    textInfoShop.at(i)->draw(window);
+    scoreText->draw(window);
+
 
 }
