@@ -186,7 +186,7 @@ struct EndMenuSettings {
     };
 
     const int scoreSize = 35;
-    const sf::Vector2f scorePos = sf::Vector2f(800, 600);
+    const sf::Vector2f scorePos = sf::Vector2f(542, 550);
 
 };
 
