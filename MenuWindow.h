@@ -11,6 +11,7 @@
 #include "BsBDD.h"
 #include "LoginMenu.h"
 
+
 class MenuWindow : public SfmlWindow
 {
 public:

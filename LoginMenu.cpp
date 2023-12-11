@@ -1,7 +1,7 @@
 #include "LoginMenu.h"
 
 
-LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD, bool& hasClicked) : hasClicked(hasClicked)
+LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD, bool& hasClicked, loginByFileInfo& app) : hasClicked(hasClicked)
 {
 	usernameTextBox = new EntityTextBox(loginMenuSettings.usernameTextBoxPos, nullptr, font, "Username");
 	passwordTextBox = new EntityTextBox(loginMenuSettings.passwordTextBosPos, nullptr, font, "Password");
@@ -25,23 +25,16 @@ LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD, bool& hasClicked) : hasClick
 	else
 		isLogged = true;
 
-	checkForSaveFile();
+	checkForSaveFile(app);
 }
 
 
-bool LoginMenu::checkForSaveFile()
+bool LoginMenu::checkForSaveFile(loginByFileInfo& app)
 {
-	dataVector.clear();
-	dataVector = svData.loadDataFromFile("data.txt");
-
-	if (dataVector.at(0) == "")
+	if (!app.hasFile)
 		return false;
 
-	bdd->setIdPlayers(dataVector.at(0));
-	bdd->setMdp(dataVector.at(1));
-	bdd->setIdPicture(std::stoi(dataVector.at(2)));
-
-	Login(dataVector.at(0), dataVector.at(1));
+	Login(app.id, app.mdp);
 
 	return true;
 }

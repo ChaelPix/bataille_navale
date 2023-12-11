@@ -29,7 +29,12 @@ void MenuWindow::Initialize()
     entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(479, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 720, 0), "ressources/UI/ui_menu_sideMenu.png"));
     menuButtonsManager = new MenuButtonsManager(application->getGameFont());
 
-    loginMenu = new LoginMenu(application->getGameFont(), application->getBddObj(), application->getHasLogged());
+    LoginMenu::loginByFileInfo l;
+    l.hasFile = application->getHasDataFile();
+    l.id = application->getBddObj().getIdPlayers();
+    l.mdp = application->getBddObj().getmdp();
+
+    loginMenu = new LoginMenu(application->getGameFont(), application->getBddObj(), application->getHasLogged(), l);
 
     MenuServerInfoTextSettings ts;
     serverInfoTxt = new EntityText(application->getGameFont(), ts.textPosition, ts.characterSize, sf::Color::Red);

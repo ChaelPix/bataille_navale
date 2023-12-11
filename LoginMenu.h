@@ -11,6 +11,12 @@ class LoginMenu
 public :
 	enum class MenuState {WaitClick, LoginBDD, OnMenu};
 
+	struct loginByFileInfo {
+		std::string id;
+		std::string mdp;
+		bool hasFile;
+	};
+
 private:
 	EntityTextBox* usernameTextBox;
 	EntityTextBox* passwordTextBox;
@@ -41,9 +47,9 @@ private:
 	void updateBlink();
 public:
 
-	LoginMenu(sf::Font& font, BsBDD& objBDD, bool& hasClicked);
+	LoginMenu(sf::Font& font, BsBDD& objBDD, bool& hasClicked, loginByFileInfo& log);
 
-	bool checkForSaveFile();
+	bool checkForSaveFile(loginByFileInfo& log);
 	MenuState update(sf::Event& event, MouseManager &mouseManager);
 	void draw(sf::RenderWindow& window, LoginMenu::MenuState state);
 };
