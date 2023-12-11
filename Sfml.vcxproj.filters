@@ -1,298 +1,107 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Fichiers sources">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Fichiers de ressources">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Fichiers sources\Utilities">
-      <UniqueIdentifier>{cc403c51-0f1e-4c90-879c-3ca98f0d2262}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers de ressources\localization">
-      <UniqueIdentifier>{842012ea-308a-4a96-8e7d-aaa51e2f25ff}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers sources\SFML">
-      <UniqueIdentifier>{c2709aa0-b1e7-441b-9d72-a9fd593518e1}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="AnimatedEntity.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="BattleshipCore.cpp" />
+    <ClCompile Include="BattleshipServer.cpp" />
+    <ClCompile Include="Boat.cpp" />
+    <ClCompile Include="BsBDD.cpp" />
+    <ClCompile Include="CloudManager.cpp" />
+    <ClCompile Include="CoreGame.cpp" />
+    <ClCompile Include="CursorCellSelector.cpp" />
+    <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="EndPanel.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityRectangle.cpp" />
+    <ClCompile Include="EntityText.cpp" />
+    <ClCompile Include="EntityTextBox.cpp" />
+    <ClCompile Include="GameChat.cpp" />
+    <ClCompile Include="GameInfoPanel.cpp" />
+    <ClCompile Include="GameSessionState.cpp" />
+    <ClCompile Include="GameVfx.cpp" />
+    <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="imagesRename.cpp" />
+    <ClCompile Include="Localization.cpp" />
+    <ClCompile Include="LockerWindow.cpp" />
+    <ClCompile Include="LoginMenu.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MenuButtonsManager.cpp" />
+    <ClCompile Include="MenuWindow.cpp" />
+    <ClCompile Include="MouseManager.cpp" />
+    <ClCompile Include="PlayerBoatsManager.cpp" />
+    <ClCompile Include="PlayerHud.cpp" />
+    <ClCompile Include="SaveData.cpp" />
+    <ClCompile Include="SessionManager.cpp" />
+    <ClCompile Include="SfmlWindow.cpp" />
+    <ClCompile Include="SfxManager.cpp" />
+    <ClCompile Include="SplashWindow.cpp" />
+    <ClCompile Include="TCPClient.cpp" />
+    <ClCompile Include="TCPServer.cpp" />
+    <ClCompile Include="TCPWinsocksMaster.cpp" />
+    <ClCompile Include="WaitTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Localization.cpp">
-      <Filter>Fichiers sources\Utilities</Filter>
-    </ClCompile>
-    <ClCompile Include="CoreGame.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="BsBDD.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Debug.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="TCPClient.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Boat.cpp">
-      <Filter>Fichiers sources\SFML</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
-      <Filter>Fichiers sources\SFML</Filter>
-    </ClCompile>
-    <ClCompile Include="EntityRectangle.cpp">
-      <Filter>Fichiers sources\SFML</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimatedEntity.cpp">
-      <Filter>Fichiers sources\SFML</Filter>
-    </ClCompile>
-    <ClCompile Include="Grid.cpp">
-      <Filter>Fichiers sources\SFML</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerBoatsManager.cpp">
-      <Filter>Fichiers sources\SFML</Filter>
-    </ClCompile>
-    <ClCompile Include="MouseManager.cpp">
-      <Filter>Fichiers sources\SFML</Filter>
-    </ClCompile>
-    <ClCompile Include="Application.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="BattleshipCore.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="BattleshipServer.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CloudManager.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="GameWindow.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="imagesRename.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuButtonsManager.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuWindow.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SfmlWindow.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="TCPServer.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="TCPWinsocksMaster.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="WaitTimer.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SplashWindow.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="EntityText.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="EntityTextBox.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="LoginMenu.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SaveData.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="CursorCellSelector.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="LockerWindow.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="EndPanel.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="GameVfx.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="GameSessionState.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="SessionManager.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="GameChat.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="GameInfoPanel.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="sfxManager.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
+    <ClInclude Include="AnimatedEntity.h" />
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="BattleshipCore.h" />
+    <ClInclude Include="BattleshipServer.h" />
+    <ClInclude Include="Boat.h" />
+    <ClInclude Include="BsBDD.h" />
+    <ClInclude Include="CloudManager.h" />
+    <ClInclude Include="CoreGame.h" />
+    <ClInclude Include="CursorCellSelector.h" />
+    <ClInclude Include="Debug.h" />
+    <ClInclude Include="EndPanel.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityCircle.h" />
+    <ClInclude Include="EntityRectangle.h" />
+    <ClInclude Include="EntityText.h" />
+    <ClInclude Include="EntityTextBox.h" />
+    <ClInclude Include="GameChat.h" />
+    <ClInclude Include="GameInfoPanel.h" />
+    <ClInclude Include="GameSessionState.h" />
+    <ClInclude Include="GameVfx.h" />
+    <ClInclude Include="GameWindow.h" />
+    <ClInclude Include="Grid.h" />
+    <ClInclude Include="Localization.h" />
+    <ClInclude Include="LockerWindow.h" />
+    <ClInclude Include="LoginMenu.h" />
+    <ClInclude Include="MenuButtonsManager.h" />
+    <ClInclude Include="MenuWindow.h" />
+    <ClInclude Include="MouseManager.h" />
+    <ClInclude Include="PlayerBoatsManager.h" />
+    <ClInclude Include="PlayerHud.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SaveData.h" />
+    <ClInclude Include="SessionManager.h" />
+    <ClInclude Include="Settings.h" />
+    <ClInclude Include="SfmlWindow.h" />
+    <ClInclude Include="SfxManager.h" />
+    <ClInclude Include="SplashWindow.h" />
+    <ClInclude Include="TCPClient.h" />
+    <ClInclude Include="TCPServer.h" />
+    <ClInclude Include="TCPWinsocksMaster.h" />
+    <ClInclude Include="WaitTimer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Localization.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CoreGame.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="BsBDD.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="AnimatedEntity.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Boat.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Debug.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="EntityRectangle.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Grid.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Settings.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="TCPClient.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerBoatsManager.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="MouseManager.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Application.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="BattleshipCore.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="BattleshipServer.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CloudManager.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="GameWindow.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuButtonsManager.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuWindow.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="SfmlWindow.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="TCPServer.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="TCPWinsocksMaster.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="WaitTimer.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="SplashWindow.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="EntityText.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="EntityTextBox.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="LoginMenu.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="SaveData.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="CursorCellSelector.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="EntityCircle.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="LockerWindow.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="EndPanel.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="GameVfx.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="GameSessionState.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="SessionManager.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="GameChat.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="GameInfoPanel.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="sfxManager.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <_EmbedManagedResourceFile Include="localization\fr.json">
-      <Filter>Fichiers de ressources\localization</Filter>
-    </_EmbedManagedResourceFile>
-  </ItemGroup>
-  <ItemGroup>
-    <CopyFileToFolders Include="localization\eng.json">
-      <Filter>Fichiers de ressources\localization</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn-9-vs14.dll">
-      <Filter>Fichiers de ressources</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\libcrypto-3-x64.dll">
-      <Filter>Fichiers de ressources</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\libssl-3-x64.dll">
-      <Filter>Fichiers de ressources</Filter>
-    </CopyFileToFolders>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn.lib" />
-    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn8.lib" />
-    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn8-static.lib" />
     <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn-static.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn8-static.lib" />
+    <Library Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\vs14\mysqlcppconn8.lib" />
     <Library Include="WS2_32.Lib" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn8-2-vs14.dll">
-      <Filter>Fichiers de ressources</Filter>
-    </None>
+    <_EmbedManagedResourceFile Include="localization\fr.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="localization\eng.json" />
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn-9-vs14.dll" />
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\libcrypto-3-x64.dll" />
+    <CopyFileToFolders Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\libssl-3-x64.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn8-2-vs14.dll" />
   </ItemGroup>
 </Project>

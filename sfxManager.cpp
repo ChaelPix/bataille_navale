@@ -1,5 +1,14 @@
-#include "sfxManager.h"
+#include "SfxManager.h"
 
-void sfxManager::creatSfx(sfx){
-	//add.push_back(sfx);
+SfxManager::SfxManager()
+{
+}
+
+void SfxManager::creatSfx(sfx type)
+{
+}
+
+void SfxManager::PlayMusic(bgm bgm)
+{
+
 }

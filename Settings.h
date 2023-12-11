@@ -273,15 +273,16 @@ struct PlayerHUDSettings {
 
 struct sfxSettings {
 
-    std::string pathBGM = "";
-    std::string pathGME = "";
-    std::string pathLocker = "";
+    std::string pathBGM = "ressources/UI/sfx/music_background.wav";
+    std::string pathGME = "ressources/UI/sfx/music_game2.wav";
+    std::string pathLocker = "ressources/UI/sfx/sfx_boatLocker.wav";
 
-    std::string pathClick = ""; 
-    std::string pathExplosion = "";
-    std::string pathsinkBoat = "";
-    std::string pathVictory = "";
-    std::string pathDefeat = "";
+    std::string pathClick = "ressources/UI/sfx/sfx_click.wav";
+    std::string pathExplosion = "ressources/UI/sfx/sfx_explosion.wav"; 
+    std::string pathsinkBoat = "ressources/UI/sfx/sfx_sinkBoat_voice.wav"; 
+    std::string pathVictory = "ressources/UI/sfx/sfx_victory.wav";
+    std::string pathDefeat = "ressources/UI/sfx/sfx_defeat.wav";
+    std::string pathVoicVictory = "ressources/UI/sfx/sfx_congratulation_voice.wav";
     const sf::Vector2f namePos = sf::Vector2f(0, 25);
     const sf::Vector2f kdPos = sf::Vector2f(0, 25);
     const sf::Vector2f scorePos = sf::Vector2f(0, 25);
