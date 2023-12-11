@@ -35,6 +35,7 @@ public:
     sf::Color getColor() const;
     sf::RectangleShape getShape();
     sf::Vector2f getSize();
+    void setRotation(float angle);
 };
 
 #endif

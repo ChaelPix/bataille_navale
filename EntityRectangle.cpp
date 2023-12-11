@@ -118,3 +118,7 @@ sf::Vector2f EntityRectangle::getSize()
 {
     return shape.getSize();
 }
+
+void EntityRectangle::setRotation(float angle) {
+    shape.setRotation(angle);
+}

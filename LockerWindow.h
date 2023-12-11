@@ -94,7 +94,8 @@ private:
                   0, 0, 0, 0, 0, 0, 0, 0,//section 8
                    100000, 120000, 130000, 120000, 200000, 180000, 80000, 300000,//section 9
     };
-
+    float phaseOffset;
+    float maxRotationAngle = 0.2f;
 };
 
 

@@ -18,7 +18,7 @@ void LockerWindow::Initialize()
     //entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(523, 749), sf::Vector2f(windowSettings.gameWindowSize.x - 780, 0), "ressources/UI/ui_menu_sideMenu.png"));
     //menuButtonsManager = new MenuButtonsManager(application->getGameFont());
     // Boucle pour initialiser 8 clés à 'true'
-
+    phaseOffset = 3.14159f / 2;
     bdd = &application->getBddObj();
     ////Music
     //if (!music.openFromFile("ressources/UI/sfx/sfx_boatLocker.wav")) {
@@ -29,7 +29,7 @@ void LockerWindow::Initialize()
     scoreText = new EntityText(LckSettings.font, sf::Vector2f(1200, 5), LckSettings.characterSize, bdd->getScore());
 
     BackgroundTexture.loadFromFile(LckSettings.backgroundImgPath);
-    Background = new EntityRectangle(ws.gameWindowSize, sf::Vector2f(0, 0), BackgroundTexture);
+    Background = new EntityRectangle(ws.gameWindowSize, sf::Vector2f(-50, -50), BackgroundTexture);
 
     validPos = sf::Vector2f(100, 100);
 
@@ -243,15 +243,33 @@ void LockerWindow::LockerManagement() {
 void LockerWindow::Update(sf::Event& event) {
 
 }
-
 //movement
 void LockerWindow::UpdatePos(sf::Time deltaTime) {
     static float time = 0.0f;
     time += deltaTime.asSeconds();
 
-    float swayAmount = sin(time * swaySpeed) * swayMagnitude;
-    Background->setPosition(initialPosition + sf::Vector2f(swayAmount, 0));
+    // Swaying side to side
+    float swayAmountX = cos(time * swaySpeed) * swayMagnitude; // cos pour commencer au centre
+
+    // Creating an arc movement
+    float arcHeight = 2.0f; // hauteur de l'arc
+    float a = -4 * arcHeight / (swayMagnitude * swayMagnitude);
+    float b = arcHeight;
+    float swayAmountY = a * swayAmountX * swayAmountX + b;
+
+    // Adding a rotation that is in sync with the swayAmountX
+    float rotationAmount = swayAmountX / swayMagnitude * maxRotationAngle; // maxRotationAngle est l'angle de rotation maximal
+
+    // Update the position of the background with the new sway values
+    Background->setPosition(initialPosition + sf::Vector2f(swayAmountX, swayAmountY));
+
+    // Set the rotation of the background
+    Background->setRotation(rotationAmount);
 }
+
+
+
+
 
 void LockerWindow::debug() {
     // Réinitialisation de l'état des sections
