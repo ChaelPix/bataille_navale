@@ -48,6 +48,8 @@ private:
     EntityRectangle* Background;
     EntityRectangle* valide;
     WindowSettings ws;
+    BsBDD* bdd;
+    SaveData obj;
     sf::Texture BackgroundTexture;
     sf::Texture valideTexture;
     std::vector<EntityText*> textInfo;

@@ -17,7 +17,7 @@ void MenuWindow::Initialize()
 {
     if (application->getAreImagesOk())
     {
-        menuBackground = new AnimatedEntity(28, true, false, windowSettings.menuWindowSize, sf::Vector2f(0, 0), application->getMenuBg());
+        menuBackground = new AnimatedEntity(70, true, false, windowSettings.menuWindowSize, sf::Vector2f(0, 0), application->getMenuBg());
         playerPicture = new EntityCircle(50, sf::Vector2f(windowSettings.menuWindowSize.x - 135, 5), application->getChoosenPicture());
     }
     else

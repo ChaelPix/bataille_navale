@@ -313,16 +313,26 @@ void BsBDD::setAllData(){
     vcase.push_back(this->nbLostGames);
     vcase.push_back(this->nbWonGames);
     vcase.push_back(this->idPlayers);
+    vcase.push_back(std::to_string(this->idPicture));
 }
 
 void BsBDD::getAllData(std::vector<std::string>& Vector){
     
+    Vector.clear();
     Vector.push_back(this->userId + "$");
-    Vector.push_back(this->mdp);
+    Vector.push_back(this->mdp + "$");
+    Vector.push_back(std::to_string(this->idPicture));
 
     //for (int i = 0; i < vcase.size(); i++){ //incrémenter toute les valeurs
     //    Vector.push_back(this->vcase.at(i) + "$");
     //}
+}
+
+void BsBDD::saveToText() {
+    std::vector<std::string> vectorData;
+    getAllData(vectorData);
+    objDataSave.saveDataToFile(vectorData, "Data.txt", true);
+
 }
 
 std::string BsBDD::getStatsInfo()

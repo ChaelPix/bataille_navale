@@ -18,6 +18,8 @@ void LockerWindow::Initialize()
     //menuButtonsManager = new MenuButtonsManager(application->getGameFont());
     // Boucle pour initialiser 8 clés à 'true'
 
+    bdd = &application->getBddObj();
+
     //Music
     if (!music.openFromFile("ressources/UI/sfx/sfx_boatLocker.wav")) {
     }
@@ -112,8 +114,8 @@ void LockerWindow::HandleEvents(sf::Event& event) {
                     auto entity = entitiesPtr.at(i);
                     if (entity->getShape().getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
                         pictureChoose = i; 
-                        std::cout << "Image " << i << " cliquée" << std::endl;
-
+                        bdd->setIdPicture(pictureChoose);
+                        std::cout << "Image " << pictureChoose << " cliquée" << std::to_string(bdd->getIdPicture()) << std::endl;
                         // Mettre à jour validPos avec la position de l'image cliquée
                         validPos = entity->getPosition(); // Assurez-vous que votre entité a une méthode getPosition()
 
@@ -136,13 +138,14 @@ void LockerWindow::HandleEvents(sf::Event& event) {
                 currentSectionIndex = std::min(8, currentSectionIndex + 1); // Ne pas dépasser 8
                 UpdateSectionState();
             }
-            // Vérifier le clic sur le bouton suivant
+            // Vérifier le clic sur le back button
             else if (exitButtonSprite.getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
                 currentSectionIndex = std::min(8, currentSectionIndex + 1);
                 running = false;
                 application->ChangeState(GameApplication::State::Menu);
+                bdd->setIdPicture(pictureChoose);
+                bdd->saveToText();
             }
-            
         }
     }
 }

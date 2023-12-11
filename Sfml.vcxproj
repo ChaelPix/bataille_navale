@@ -52,6 +52,7 @@
     <ClCompile Include="SaveData.cpp" />
     <ClCompile Include="SessionManager.cpp" />
     <ClCompile Include="SfmlWindow.cpp" />
+    <ClCompile Include="sfxManager.cpp" />
     <ClCompile Include="SplashWindow.cpp" />
     <ClCompile Include="TCPClient.cpp" />
     <ClCompile Include="TCPServer.cpp" />
@@ -93,6 +94,7 @@
     <ClInclude Include="SessionManager.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SfmlWindow.h" />
+    <ClInclude Include="sfxManager.h" />
     <ClInclude Include="SplashWindow.h" />
     <ClInclude Include="TCPClient.h" />
     <ClInclude Include="TCPServer.h" />

@@ -237,7 +237,7 @@ struct LockerSettings {
         sf::Vector2f(580, 5), 
         sf::Vector2f(580, 5), 
         sf::Vector2f(580, 5), 
-        sf::Vector2f(250, 260), 
+        sf::Vector2f(200, 260), 
     };
     const int characterSize = 40;
 
@@ -264,4 +264,17 @@ struct PlayerHUDSettings {
     const sf::Color kdColor = sf::Color(75, 75, 75);
     const sf::Color scoreColor = sf::Color(200, 200, 200);
 
+};
+
+struct sfxSettings {
+
+    std::string pathBGM = "";
+    std::string pathGME = "";
+    std::string pathLocker = "";
+
+    std::string pathClick = ""; 
+    std::string pathExplosion = "";
+    std::string pathsinkBoat = "";
+    std::string pathVictory = "";
+    std::string pathDefeat = "";
 };

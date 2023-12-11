@@ -18,6 +18,7 @@
 #include <iomanip>
 #include <thread>
 #include <future>
+#include "SaveData.h"
 
 class BsBDD {
 
@@ -37,7 +38,7 @@ private:
     std::string idPlayers;
     int idPicture;
     std::vector<std::string> vcase;
-
+    SaveData objDataSave;
     bool isConnected;
 
 public:
@@ -58,6 +59,7 @@ public:
     void getPlayerData();
     void setAllData();
     void getAllData(std::vector<std::string>&Vector);
+    void saveToText();
     std::string getStatsInfo();
 
     bool isUserExistsButWrongPassword(const std::string& idUser, const std::string& password);

@@ -39,6 +39,7 @@ bool LoginMenu::checkForSaveFile()
 
 	bdd->setIdPlayers(dataVector.at(0));
 	bdd->setMdp(dataVector.at(1));
+	bdd->setIdPicture(std::stoi(dataVector.at(2)));
 
 	Login(dataVector.at(0), dataVector.at(1));
 
@@ -174,7 +175,7 @@ void LoginMenu::Login(std::string id, std::string mdp){
 	}
 
 	bdd->getAllData(dataVector);
-	svData.saveDataToFile(dataVector, "data.txt");
+	svData.saveDataToFile(dataVector, "data.txt", false);
 	isLogged = true;
 
 }
