@@ -118,7 +118,7 @@ void LockerWindow::HandleEvents(sf::Event& event) {
                         std::cout << "Image " << pictureChoose << " cliquée" << std::to_string(bdd->getIdPicture()) << std::endl;
                         // Mettre à jour validPos avec la position de l'image cliquée
                         validPos = entity->getPosition(); // Assurez-vous que votre entité a une méthode getPosition()
-                        fxobj.creatSfx(SfxManager::sfx::explosion);
+                        application->fxobj->creatSfx(SfxManager::sfx::click);
                         // Mettre à jour la position de l'entité 'valide' avec la nouvelle position
                         valide->setPosition(validPos);
                         imageSelected = true;

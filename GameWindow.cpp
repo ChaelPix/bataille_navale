@@ -84,8 +84,10 @@ void GameWindow::processMessages() {
                     gameInfoPanel->updateGameInfo("Your Turn");
                     gameState = GameState::Attacking;
                 }
-                else
+                else {
                     gameVfx->CreateFireCell(attckPos.x, attckPos.y, false);
+                    application->fxobj->creatSfx(SfxManager::sfx::explosion);
+                }
 
                 //if he missed
                 if (attackCell == BattleshipCore::CellType::water)

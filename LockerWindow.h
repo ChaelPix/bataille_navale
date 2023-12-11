@@ -80,9 +80,6 @@ private:
 
     sf::Vector2f validPos;
     bool imageSelected = false;
-
-    SfxManager fxobj;
-
 };
 
 

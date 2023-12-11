@@ -11,6 +11,7 @@
 #include "TCPClient.h"
 #include "BSBDD.h"
 #include "SaveData.h"
+#include "SfxManager.h"
 
 
 class GameApplication {
@@ -33,6 +34,7 @@ public:
     };
 
     TCPClient* client;
+    SfxManager* fxobj;
 
 private:
     bool running = true;

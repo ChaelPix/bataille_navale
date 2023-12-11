@@ -29,6 +29,12 @@ SfxManager::SfxManager() {
     //    sfxs.push_back(sound);
     //}
 
+        // Initialisation des objets sf::Sound avec les SoundBuffers
+    sfxs.resize(sfxVector.size());
+    for (size_t i = 0; i < sfxVector.size(); ++i) {
+        sfxs[i].setBuffer(sfxVector[i]);
+    }
+
     // loading music files
     BackgroundMusic.openFromFile(settings.pathBGM);
     GameMusic.openFromFile(settings.pathGME);
@@ -39,9 +45,9 @@ SfxManager::SfxManager() {
 }
 
 void SfxManager::creatSfx(sfx type){
-    sf::Sound sound;
-        sound.setBuffer(sfxVector.at((static_cast<int>(type))));
-        sfxs.push_back(sound);
+    if (static_cast<size_t>(type) < sfxs.size()) {
+        sfxs[static_cast<size_t>(type)].play();
+    }
 }
 
 void SfxManager::PlayMusic(bgm bgm)

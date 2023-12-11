@@ -23,7 +23,7 @@ void GameApplication::Initialize()
     gameFont.loadFromFile(fontSettings.fontPath);
     hasLogged = false;
     areImagesOk = false;
-
+    fxobj = new SfxManager();
     imageLoadingThread = std::thread(&GameApplication::LoadImages, this);
     checkForSaveFile();
 }
