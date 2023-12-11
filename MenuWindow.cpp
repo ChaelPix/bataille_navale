@@ -2,7 +2,7 @@
 
 MenuWindow::MenuWindow(GameApplication& application, const sf::Vector2i& windowPos)
     :
-    SfmlWindow("BattleShip", WindowSettings().menuWindowSize, windowPos, *application.fxobj),
+    SfmlWindow("BattleShip", WindowSettings().menuWindowSize, windowPos),
     application(&application)
 {
     Initialize();
@@ -48,7 +48,6 @@ void MenuWindow::HandleEvents(sf::Event& event) {
 }
 
 void MenuWindow::Update(sf::Event& event) {
-    sfxManager.update();
     menuState = loginMenu->update(event, mouseManager);
 
     
