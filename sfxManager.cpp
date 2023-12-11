@@ -45,17 +45,19 @@ SfxManager::SfxManager() {
 }
 
 void SfxManager::createSfx(sfx type) {
-    if (static_cast<size_t>(type) < sfxVector.size()) {
-        sfxs.emplace_back(); 
-        auto& sound = sfxs.back();
-        sound.setBuffer(sfxVector.at(static_cast<int>(type)));
-        sound.play();
-    }
+    sf::Sound sound;
+    sfxs.push_back(sound);
+    sfxs.at(sfxs.size() - 1).setBuffer(sfxVector.at((static_cast<int>(type))));
+    sfxs.at(sfxs.size() - 1).play();
 }
 
 void SfxManager::update() {
+    //for (int i = 0; i < sfxs.size(); i++)
+    //{
+    //    if(sfxs.at(i).getStatus() != sf::Sound::Playing)
+    //}
     for (auto it = sfxs.begin(); it != sfxs.end(); ) {
-        if (it->getStatus() == sf::Sound::Stopped) {
+        if (it->getStatus() != sf::Sound::Playing) {
             it = sfxs.erase(it); 
         }
         else {

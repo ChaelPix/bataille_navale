@@ -2,7 +2,7 @@
 
 SplashWindow::SplashWindow(GameApplication& application, const sf::Vector2i& windowPos)
     :
-    SfmlWindow("BattleShip", WindowSettings().menuWindowSize, windowPos),
+    SfmlWindow("BattleShip", WindowSettings().menuWindowSize, windowPos, *application.fxobj),
     application(&application)
 {
     Initialize();

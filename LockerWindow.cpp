@@ -2,7 +2,7 @@
 
 LockerWindow::LockerWindow(GameApplication& application, const sf::Vector2i& windowPos)
     :
-    SfmlWindow("BattleShip locker", WindowSettings().menuWindowSize, windowPos), application(&application)
+    SfmlWindow("BattleShip locker", WindowSettings().menuWindowSize, windowPos, *application.fxobj), application(&application)
 {
     Initialize();
 }
@@ -118,7 +118,7 @@ void LockerWindow::HandleEvents(sf::Event& event) {
                         std::cout << "Image " << pictureChoose << " cliquée" << std::to_string(bdd->getIdPicture()) << std::endl;
                         // Mettre à jour validPos avec la position de l'image cliquée
                         validPos = entity->getPosition(); // Assurez-vous que votre entité a une méthode getPosition()
-                        application->fxobj->creatSfx(SfxManager::sfx::click);
+                        application->fxobj->createSfx(SfxManager::sfx::explosion);
                         // Mettre à jour la position de l'entité 'valide' avec la nouvelle position
                         valide->setPosition(validPos);
                         imageSelected = true;
@@ -208,7 +208,7 @@ void LockerWindow::LockerManagement() {
 
 
 void LockerWindow::Update(sf::Event& event) {
-    
+    sfxManager.update();
 }
 
 //movement
