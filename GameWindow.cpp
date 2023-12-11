@@ -2,7 +2,7 @@
 
 GameWindow::GameWindow(GameApplication& application, const sf::Vector2i& windowPos)
     : 
-    SfmlWindow("BattleShip", WindowSettings().gameWindowSize, windowPos),
+    SfmlWindow("Valiant", WindowSettings().gameWindowSize, windowPos),
     gridPlayer(gridSettings.nbPixels, gridSettings.squareSize, gridSettings.playerGridPosition, gridSettings.lineColor),
     gridEnemy(gridSettings.nbPixels, gridSettings.squareSize, gridSettings.ennemyGridPosition, gridSettings.lineColor),
     application(&application)

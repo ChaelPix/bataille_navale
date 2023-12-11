@@ -2,7 +2,7 @@
 
 SplashWindow::SplashWindow(GameApplication& application, const sf::Vector2i& windowPos)
     :
-    SfmlWindow("BattleShip", WindowSettings().menuWindowSize, windowPos),
+    SfmlWindow("Valiant", WindowSettings().menuWindowSize, windowPos),
     application(&application)
 {
     Initialize();
@@ -61,7 +61,7 @@ void SplashWindow::SplashAnim() {
     float timeElapsed = clockSplash.getElapsedTime().asSeconds();
 
     // Gérer le changement de logo
-    if (timeElapsed >= 1.0f) { //set speed value
+    if (timeElapsed >= 5.0f) { //set speed value
         clockSplash.restart();
         if (currentLogoIndex == 0) {
             L1 = true;  // Marquer le premier logo comme affiché
