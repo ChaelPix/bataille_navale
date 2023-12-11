@@ -15,6 +15,7 @@ class GameApplication;
 #include <vector>
 #include "CursorCellSelector.h"
 #include "GameInfoPanel.h"
+#include "PlayerHud.h"
 
 class GameWindow : public SfmlWindow {
 public:
@@ -57,8 +58,13 @@ private:
     GameVfx* gameVfx;
     GameInfoPanel* gameInfoPanel;
 
+    PlayerHud* playerHud;
+    PlayerHud* enemyHud;
+    bool isHudOk = false;
     void processMessages();
     void handleGameState();
+
+    void CreateHud(std::string& enemyInfoMessage);
 };
 
 

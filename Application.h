@@ -27,6 +27,7 @@ public:
         Chat,
         BattleGrid,
         End,
+        PlayerInfo,
         Unknown
     };
 

@@ -99,6 +99,8 @@ GameApplication::MessageType GameApplication::getMessageType(std::string message
         return MessageType::Chat;
     case 'F':
         return MessageType::End;
+    case 'P':
+        return MessageType::PlayerInfo;
     default :
         return MessageType::Unknown;
     }

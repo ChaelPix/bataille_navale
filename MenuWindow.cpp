@@ -17,7 +17,7 @@ void MenuWindow::Initialize()
 {
     if (application->getAreImagesOk())
     {
-        menuBackground = new AnimatedEntity(28, true, false, windowSettings.menuWindowSize, sf::Vector2f(0, 0), application->getMenuBg());
+        menuBackground = new AnimatedEntity(70, true, false, windowSettings.menuWindowSize, sf::Vector2f(0, 0), application->getMenuBg());
         playerPicture = new EntityCircle(50, sf::Vector2f(windowSettings.menuWindowSize.x - 135, 5), application->getChoosenPicture());
     }
     else
@@ -110,7 +110,7 @@ void MenuWindow::Render()
     if (!running)
         return;
 
-    menuBackground->draw(window);
+    //menuBackground->draw(window);
     loginMenu->draw(window, menuState);
 
     if (menuState == LoginMenu::MenuState::OnMenu)
@@ -139,11 +139,11 @@ void MenuWindow::InitPlayerInfo()
     std::string s[6];
     BsBDD& bdd = application->getBddObj();
 
-    s[0] = "     " + bdd.getId();
+    s[0] = "     " + bdd.getIdPlayers();
     s[1] = "Score: " + bdd.getScore();
     s[2] = "Games Played: " + bdd.getNbGames();
-    s[3] = "Victories: " + bdd.getNbWonGames();
-    s[4] = "Defeats: " + bdd.getNbLostGames();
+    s[3] = " Victories: " + bdd.getNbWonGames();
+    s[4] = " Defeats: " + bdd.getNbLostGames();
     s[5] = "K/D: " + bdd.getRatio();
 
     for (int i = 0; i < 6; i++)

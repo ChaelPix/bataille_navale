@@ -2,7 +2,7 @@
 
 BsBDD::BsBDD() : userId("") {
     //connectToDB("tcp://10.187.52.4:3306", "batailleNavale", "batailleNavale");
-    this->id = "Guest";
+    this->userId = "Guest";
     this->score = "0";
     this->nbGames = "0";
     this->nbLostGames = "0";

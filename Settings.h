@@ -6,7 +6,7 @@ struct GridSettings {
     const int squareSize = 500;
     const int nbPixels = 10;
     const int fps = 15;
-    const sf::Color lineColor = sf::Color(0, 0, 0, 255);
+    const sf::Color lineColor = sf::Color(255, 255, 255, 255);
 
     const sf::Vector2f playerGridPosition = sf::Vector2f(100, 200);
     const sf::Vector2f ennemyGridPosition = sf::Vector2f(700, 200);
@@ -252,6 +252,7 @@ struct LockerSettings {
 struct PlayerHUDSettings {
 
     const sf::Vector2f hudSize = sf::Vector2f(1600, 213);
+    const std::string hudPath = "ressources/UI/ui_playersPanel.png";
 
     const int nameSize = 40;
     const int kdSize = 20;
@@ -263,5 +264,9 @@ struct PlayerHUDSettings {
     const sf::Color nameColor = sf::Color(255, 255, 255);
     const sf::Color kdColor = sf::Color(75, 75, 75);
     const sf::Color scoreColor = sf::Color(200, 200, 200);
+
+    const sf::Vector2f namePos = sf::Vector2f(0, 25);
+    const sf::Vector2f kdPos = sf::Vector2f(0, 25);
+    const sf::Vector2f scorePos = sf::Vector2f(0, 25);
 
 };
