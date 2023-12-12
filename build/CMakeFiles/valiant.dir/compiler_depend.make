@@ -185,23 +185,23 @@ CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.o: ../src/AnimatedEntity.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -242,84 +242,75 @@ CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.o: ../src/AnimatedEntity.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 
 CMakeFiles/valiant.dir/src/Application.cpp.o: ../src/Application.cpp \
   /usr/include/stdc-predef.h \
   ../include/Application.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -332,6 +323,9 @@ CMakeFiles/valiant.dir/src/Application.cpp.o: ../src/Application.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -492,15 +486,24 @@ CMakeFiles/valiant.dir/src/Application.cpp.o: ../src/Application.cpp \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -541,69 +544,69 @@ CMakeFiles/valiant.dir/src/Application.cpp.o: ../src/Application.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
   /usr/include/c++/11/bits/align.h \
@@ -627,34 +630,31 @@ CMakeFiles/valiant.dir/src/Application.cpp.o: ../src/Application.cpp \
   ../include/SfmlWindow.h \
   ../include/Settings.h \
   ../include/SfxManager.h \
-  /usr/include/SFML/Audio.hpp \
-  /usr/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/include/SFML/Audio/Export.hpp \
-  /usr/include/SFML/Audio/Listener.hpp \
-  /usr/include/SFML/Audio/Music.hpp \
-  /usr/include/SFML/Audio/SoundStream.hpp \
-  /usr/include/SFML/Audio/SoundSource.hpp \
-  /usr/include/SFML/Audio/AlResource.hpp \
-  /usr/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/include/SFML/Audio/Sound.hpp \
-  /usr/include/SFML/Audio/SoundBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Audio.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/InputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Listener.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Music.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundStream.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundSource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/AlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/OutputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Sound.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBuffer.hpp \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_set.h \
   /usr/include/c++/11/bits/stl_multiset.h \
-  /usr/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/include/SFML/Audio/SoundFileWriter.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileReader.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileWriter.hpp \
   ../include/GameWindow.h \
   ../include/PlayerBoatsManager.h \
   ../include/Boat.h \
   ../include/EntityRectangle.h \
   ../include/Entity.h \
-  /usr/include/c++/11/iostream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc \
   ../include/BattleshipCore.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
@@ -1520,23 +1520,23 @@ CMakeFiles/valiant.dir/src/Boat.cpp.o: ../src/Boat.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -1577,69 +1577,69 @@ CMakeFiles/valiant.dir/src/Boat.cpp.o: ../src/Boat.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/BattleshipCore.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
@@ -2167,23 +2167,23 @@ CMakeFiles/valiant.dir/src/CloudManager.cpp.o: ../src/CloudManager.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -2224,69 +2224,69 @@ CMakeFiles/valiant.dir/src/CloudManager.cpp.o: ../src/CloudManager.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 
 CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.o: ../src/CursorCellSelector.cpp \
   /usr/include/stdc-predef.h \
@@ -2472,23 +2472,23 @@ CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.o: ../src/CursorCellSelector.c
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -2529,69 +2529,69 @@ CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.o: ../src/CursorCellSelector.c
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/MouseManager.h \
   ../include/BattleshipCore.h \
   /usr/include/c++/11/sstream \
@@ -2880,23 +2880,23 @@ CMakeFiles/valiant.dir/src/EndPanel.cpp.o: ../src/EndPanel.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -2937,69 +2937,69 @@ CMakeFiles/valiant.dir/src/EndPanel.cpp.o: ../src/EndPanel.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/EntityText.h \
   ../include/MouseManager.h
 
@@ -3185,23 +3185,23 @@ CMakeFiles/valiant.dir/src/Entity.cpp.o: ../src/Entity.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -3242,69 +3242,69 @@ CMakeFiles/valiant.dir/src/Entity.cpp.o: ../src/Entity.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 
 CMakeFiles/valiant.dir/src/EntityCircle.cpp.o: ../src/EntityCircle.cpp \
   /usr/include/stdc-predef.h \
@@ -3489,23 +3489,23 @@ CMakeFiles/valiant.dir/src/EntityCircle.cpp.o: ../src/EntityCircle.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -3546,69 +3546,69 @@ CMakeFiles/valiant.dir/src/EntityCircle.cpp.o: ../src/EntityCircle.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 
 CMakeFiles/valiant.dir/src/EntityRectangle.cpp.o: ../src/EntityRectangle.cpp \
   /usr/include/stdc-predef.h \
@@ -3793,23 +3793,23 @@ CMakeFiles/valiant.dir/src/EntityRectangle.cpp.o: ../src/EntityRectangle.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -3850,69 +3850,69 @@ CMakeFiles/valiant.dir/src/EntityRectangle.cpp.o: ../src/EntityRectangle.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 
 CMakeFiles/valiant.dir/src/EntityText.cpp.o: ../src/EntityText.cpp \
   /usr/include/stdc-predef.h \
@@ -4097,23 +4097,23 @@ CMakeFiles/valiant.dir/src/EntityText.cpp.o: ../src/EntityText.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -4154,69 +4154,69 @@ CMakeFiles/valiant.dir/src/EntityText.cpp.o: ../src/EntityText.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 
 CMakeFiles/valiant.dir/src/EntityTextBox.cpp.o: ../src/EntityTextBox.cpp \
   /usr/include/stdc-predef.h \
@@ -4402,23 +4402,23 @@ CMakeFiles/valiant.dir/src/EntityTextBox.cpp.o: ../src/EntityTextBox.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -4459,69 +4459,69 @@ CMakeFiles/valiant.dir/src/EntityTextBox.cpp.o: ../src/EntityTextBox.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/EntityText.h \
   ../include/WaitTimer.h
 
@@ -4710,23 +4710,23 @@ CMakeFiles/valiant.dir/src/GameChat.cpp.o: ../src/GameChat.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -4767,69 +4767,69 @@ CMakeFiles/valiant.dir/src/GameChat.cpp.o: ../src/GameChat.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/EntityText.h \
   ../include/WaitTimer.h \
   ../include/TCPClient.h \
@@ -5072,23 +5072,23 @@ CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.o: ../src/GameInfoPanel.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -5129,69 +5129,69 @@ CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.o: ../src/GameInfoPanel.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/EntityRectangle.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
@@ -5216,17 +5216,8 @@ CMakeFiles/valiant.dir/src/GameMessage.cpp.o: ../src/GameMessage.cpp \
   /usr/include/stdc-predef.h \
   ../include/GameMessage.h \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -5239,6 +5230,9 @@ CMakeFiles/valiant.dir/src/GameMessage.cpp.o: ../src/GameMessage.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -5399,15 +5393,24 @@ CMakeFiles/valiant.dir/src/GameMessage.cpp.o: ../src/GameMessage.cpp \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -5448,74 +5451,71 @@ CMakeFiles/valiant.dir/src/GameMessage.cpp.o: ../src/GameMessage.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/EntityText.h \
   ../include/Entity.h \
-  /usr/include/c++/11/iostream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc \
   ../include/EntityCircle.h
 
 CMakeFiles/valiant.dir/src/GameSessionState.cpp.o: ../src/GameSessionState.cpp \
@@ -5878,23 +5878,23 @@ CMakeFiles/valiant.dir/src/GameVfx.cpp.o: ../src/GameVfx.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -5935,69 +5935,69 @@ CMakeFiles/valiant.dir/src/GameVfx.cpp.o: ../src/GameVfx.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_set.h \
   /usr/include/c++/11/bits/stl_multiset.h
@@ -6006,17 +6006,8 @@ CMakeFiles/valiant.dir/src/GameWindow.cpp.o: ../src/GameWindow.cpp \
   /usr/include/stdc-predef.h \
   ../include/GameWindow.h \
   ../include/Application.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -6029,6 +6020,9 @@ CMakeFiles/valiant.dir/src/GameWindow.cpp.o: ../src/GameWindow.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -6189,15 +6183,24 @@ CMakeFiles/valiant.dir/src/GameWindow.cpp.o: ../src/GameWindow.cpp \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -6238,69 +6241,69 @@ CMakeFiles/valiant.dir/src/GameWindow.cpp.o: ../src/GameWindow.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
   /usr/include/c++/11/bits/align.h \
@@ -6324,33 +6327,30 @@ CMakeFiles/valiant.dir/src/GameWindow.cpp.o: ../src/GameWindow.cpp \
   ../include/SfmlWindow.h \
   ../include/Settings.h \
   ../include/SfxManager.h \
-  /usr/include/SFML/Audio.hpp \
-  /usr/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/include/SFML/Audio/Export.hpp \
-  /usr/include/SFML/Audio/Listener.hpp \
-  /usr/include/SFML/Audio/Music.hpp \
-  /usr/include/SFML/Audio/SoundStream.hpp \
-  /usr/include/SFML/Audio/SoundSource.hpp \
-  /usr/include/SFML/Audio/AlResource.hpp \
-  /usr/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/include/SFML/Audio/Sound.hpp \
-  /usr/include/SFML/Audio/SoundBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Audio.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/InputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Listener.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Music.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundStream.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundSource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/AlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/OutputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Sound.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBuffer.hpp \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_set.h \
   /usr/include/c++/11/bits/stl_multiset.h \
-  /usr/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/include/SFML/Audio/SoundFileWriter.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileReader.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileWriter.hpp \
   ../include/MenuWindow.h \
   ../include/AnimatedEntity.h \
   ../include/EntityRectangle.h \
   ../include/Entity.h \
-  /usr/include/c++/11/iostream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc \
   ../include/EntityCircle.h \
   ../include/MouseManager.h \
   ../include/MenuButtonsManager.h \
@@ -6476,17 +6476,8 @@ CMakeFiles/valiant.dir/src/GameWindow.cpp.o: ../src/GameWindow.cpp \
 CMakeFiles/valiant.dir/src/Grid.cpp.o: ../src/Grid.cpp \
   /usr/include/stdc-predef.h \
   ../include/Grid.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -6499,6 +6490,9 @@ CMakeFiles/valiant.dir/src/Grid.cpp.o: ../src/Grid.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -6659,15 +6653,24 @@ CMakeFiles/valiant.dir/src/Grid.cpp.o: ../src/Grid.cpp \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -6708,85 +6711,76 @@ CMakeFiles/valiant.dir/src/Grid.cpp.o: ../src/Grid.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/MouseManager.h
 
 CMakeFiles/valiant.dir/src/Localization.cpp.o: ../src/Localization.cpp \
   /usr/include/stdc-predef.h \
   ../include/Localization.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -6799,6 +6793,9 @@ CMakeFiles/valiant.dir/src/Localization.cpp.o: ../src/Localization.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -6959,15 +6956,24 @@ CMakeFiles/valiant.dir/src/Localization.cpp.o: ../src/Localization.cpp \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -7008,69 +7014,69 @@ CMakeFiles/valiant.dir/src/Localization.cpp.o: ../src/Localization.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   /usr/include/nlohmann/json.hpp \
   /usr/include/c++/11/cstddef \
   /usr/include/c++/11/memory \
@@ -7155,8 +7161,6 @@ CMakeFiles/valiant.dir/src/Localization.cpp.o: ../src/Localization.cpp \
   /usr/include/c++/11/iomanip \
   /usr/include/c++/11/bits/quoted_string.h \
   /usr/include/c++/11/sstream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc \
   /usr/include/c++/11/bits/sstream.tcc \
   /usr/include/c++/11/codecvt \
   /usr/include/c++/11/bits/fs_dir.h \
@@ -7196,17 +7200,8 @@ CMakeFiles/valiant.dir/src/LockerWindow.cpp.o: ../src/LockerWindow.cpp \
   /usr/include/stdc-predef.h \
   ../include/LockerWindow.h \
   ../include/SfmlWindow.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -7219,6 +7214,9 @@ CMakeFiles/valiant.dir/src/LockerWindow.cpp.o: ../src/LockerWindow.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -7379,15 +7377,24 @@ CMakeFiles/valiant.dir/src/LockerWindow.cpp.o: ../src/LockerWindow.cpp \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -7428,91 +7435,91 @@ CMakeFiles/valiant.dir/src/LockerWindow.cpp.o: ../src/LockerWindow.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/Settings.h \
   ../include/SfxManager.h \
-  /usr/include/SFML/Audio.hpp \
-  /usr/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/include/SFML/Audio/Export.hpp \
-  /usr/include/SFML/Audio/Listener.hpp \
-  /usr/include/SFML/Audio/Music.hpp \
-  /usr/include/SFML/Audio/SoundStream.hpp \
-  /usr/include/SFML/Audio/SoundSource.hpp \
-  /usr/include/SFML/Audio/AlResource.hpp \
-  /usr/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/include/SFML/Audio/Sound.hpp \
-  /usr/include/SFML/Audio/SoundBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Audio.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/InputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Listener.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Music.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundStream.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundSource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/AlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/OutputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Sound.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBuffer.hpp \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_set.h \
   /usr/include/c++/11/bits/stl_multiset.h \
-  /usr/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/include/SFML/Audio/SoundFileWriter.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileReader.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileWriter.hpp \
   ../include/Application.h \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
@@ -7539,9 +7546,6 @@ CMakeFiles/valiant.dir/src/LockerWindow.cpp.o: ../src/LockerWindow.cpp \
   ../include/Boat.h \
   ../include/EntityRectangle.h \
   ../include/Entity.h \
-  /usr/include/c++/11/iostream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc \
   ../include/BattleshipCore.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
@@ -7848,23 +7852,23 @@ CMakeFiles/valiant.dir/src/LoginMenu.cpp.o: ../src/LoginMenu.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -7905,69 +7909,69 @@ CMakeFiles/valiant.dir/src/LoginMenu.cpp.o: ../src/LoginMenu.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/EntityText.h \
   ../include/WaitTimer.h \
   ../include/MouseManager.h \
@@ -8214,23 +8218,23 @@ CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.o: ../src/MenuButtonsManager.c
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -8271,69 +8275,69 @@ CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.o: ../src/MenuButtonsManager.c
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/MouseManager.h \
   ../include/WaitTimer.h \
   ../include/EntityText.h
@@ -8342,17 +8346,8 @@ CMakeFiles/valiant.dir/src/MenuWindow.cpp.o: ../src/MenuWindow.cpp \
   /usr/include/stdc-predef.h \
   ../include/MenuWindow.h \
   ../include/SfmlWindow.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -8365,6 +8360,9 @@ CMakeFiles/valiant.dir/src/MenuWindow.cpp.o: ../src/MenuWindow.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -8525,15 +8523,24 @@ CMakeFiles/valiant.dir/src/MenuWindow.cpp.o: ../src/MenuWindow.cpp \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -8574,91 +8581,91 @@ CMakeFiles/valiant.dir/src/MenuWindow.cpp.o: ../src/MenuWindow.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/Settings.h \
   ../include/SfxManager.h \
-  /usr/include/SFML/Audio.hpp \
-  /usr/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/include/SFML/Audio/Export.hpp \
-  /usr/include/SFML/Audio/Listener.hpp \
-  /usr/include/SFML/Audio/Music.hpp \
-  /usr/include/SFML/Audio/SoundStream.hpp \
-  /usr/include/SFML/Audio/SoundSource.hpp \
-  /usr/include/SFML/Audio/AlResource.hpp \
-  /usr/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/include/SFML/Audio/Sound.hpp \
-  /usr/include/SFML/Audio/SoundBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Audio.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/InputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Listener.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Music.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundStream.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundSource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/AlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/OutputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Sound.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBuffer.hpp \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_set.h \
   /usr/include/c++/11/bits/stl_multiset.h \
-  /usr/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/include/SFML/Audio/SoundFileWriter.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileReader.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileWriter.hpp \
   ../include/Application.h \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
@@ -8685,9 +8692,6 @@ CMakeFiles/valiant.dir/src/MenuWindow.cpp.o: ../src/MenuWindow.cpp \
   ../include/Boat.h \
   ../include/EntityRectangle.h \
   ../include/Entity.h \
-  /usr/include/c++/11/iostream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc \
   ../include/BattleshipCore.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
@@ -8812,17 +8816,8 @@ CMakeFiles/valiant.dir/src/MenuWindow.cpp.o: ../src/MenuWindow.cpp \
 CMakeFiles/valiant.dir/src/MouseManager.cpp.o: ../src/MouseManager.cpp \
   /usr/include/stdc-predef.h \
   ../include/MouseManager.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -8835,6 +8830,9 @@ CMakeFiles/valiant.dir/src/MouseManager.cpp.o: ../src/MouseManager.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -8995,15 +8993,24 @@ CMakeFiles/valiant.dir/src/MouseManager.cpp.o: ../src/MouseManager.cpp \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -9044,72 +9051,69 @@ CMakeFiles/valiant.dir/src/MouseManager.cpp.o: ../src/MouseManager.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/include/c++/11/iostream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp
 
 CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.o: ../src/PlayerBoatsManager.cpp \
   /usr/include/stdc-predef.h \
@@ -9296,23 +9300,23 @@ CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.o: ../src/PlayerBoatsManager.c
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -9353,69 +9357,69 @@ CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.o: ../src/PlayerBoatsManager.c
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/BattleshipCore.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
@@ -9661,23 +9665,23 @@ CMakeFiles/valiant.dir/src/PlayerHud.cpp.o: ../src/PlayerHud.cpp \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
   ../include/Settings.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -9718,69 +9722,69 @@ CMakeFiles/valiant.dir/src/PlayerHud.cpp.o: ../src/PlayerHud.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/EntityText.h \
   ../include/EntityCircle.h
 
@@ -10211,17 +10215,8 @@ CMakeFiles/valiant.dir/src/SessionManager.cpp.o: ../src/SessionManager.cpp \
 CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o: ../src/SfmlWindow.cpp \
   /usr/include/stdc-predef.h \
   ../include/SfmlWindow.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -10234,6 +10229,9 @@ CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o: ../src/SfmlWindow.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -10394,15 +10392,24 @@ CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o: ../src/SfmlWindow.cpp \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -10443,110 +10450,98 @@ CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o: ../src/SfmlWindow.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/Settings.h \
   ../include/SfxManager.h \
-  /usr/include/SFML/Audio.hpp \
-  /usr/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/include/SFML/Audio/Export.hpp \
-  /usr/include/SFML/Audio/Listener.hpp \
-  /usr/include/SFML/Audio/Music.hpp \
-  /usr/include/SFML/Audio/SoundStream.hpp \
-  /usr/include/SFML/Audio/SoundSource.hpp \
-  /usr/include/SFML/Audio/AlResource.hpp \
-  /usr/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/include/SFML/Audio/Sound.hpp \
-  /usr/include/SFML/Audio/SoundBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Audio.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/InputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Listener.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Music.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundStream.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundSource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/AlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/OutputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Sound.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBuffer.hpp \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_set.h \
   /usr/include/c++/11/bits/stl_multiset.h \
-  /usr/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/include/SFML/Audio/SoundFileWriter.hpp \
-  /usr/include/c++/11/iostream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc
+  ../SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileReader.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileWriter.hpp
 
 CMakeFiles/valiant.dir/src/SplashWindow.cpp.o: ../src/SplashWindow.cpp \
   /usr/include/stdc-predef.h \
   ../include/SplashWindow.h \
   ../include/SfmlWindow.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -10559,6 +10554,9 @@ CMakeFiles/valiant.dir/src/SplashWindow.cpp.o: ../src/SplashWindow.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -10719,15 +10717,24 @@ CMakeFiles/valiant.dir/src/SplashWindow.cpp.o: ../src/SplashWindow.cpp \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -10768,91 +10775,91 @@ CMakeFiles/valiant.dir/src/SplashWindow.cpp.o: ../src/SplashWindow.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/Settings.h \
   ../include/SfxManager.h \
-  /usr/include/SFML/Audio.hpp \
-  /usr/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/include/SFML/Audio/Export.hpp \
-  /usr/include/SFML/Audio/Listener.hpp \
-  /usr/include/SFML/Audio/Music.hpp \
-  /usr/include/SFML/Audio/SoundStream.hpp \
-  /usr/include/SFML/Audio/SoundSource.hpp \
-  /usr/include/SFML/Audio/AlResource.hpp \
-  /usr/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/include/SFML/Audio/Sound.hpp \
-  /usr/include/SFML/Audio/SoundBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Audio.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/InputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Listener.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Music.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundStream.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundSource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/AlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/OutputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Sound.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBuffer.hpp \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_set.h \
   /usr/include/c++/11/bits/stl_multiset.h \
-  /usr/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/include/SFML/Audio/SoundFileWriter.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileReader.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileWriter.hpp \
   ../include/Application.h \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
@@ -10879,9 +10886,6 @@ CMakeFiles/valiant.dir/src/SplashWindow.cpp.o: ../src/SplashWindow.cpp \
   ../include/Boat.h \
   ../include/EntityRectangle.h \
   ../include/Entity.h \
-  /usr/include/c++/11/iostream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc \
   ../include/BattleshipCore.h \
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
@@ -12022,17 +12026,8 @@ CMakeFiles/valiant.dir/src/imagesRename.cpp.o: ../src/imagesRename.cpp \
 
 CMakeFiles/valiant.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/stdc-predef.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -12045,6 +12040,9 @@ CMakeFiles/valiant.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -12205,15 +12203,24 @@ CMakeFiles/valiant.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -12254,72 +12261,69 @@ CMakeFiles/valiant.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/include/c++/11/iostream \
-  /usr/include/c++/11/istream \
-  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
   ../include/Application.h \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
@@ -12344,26 +12348,26 @@ CMakeFiles/valiant.dir/src/main.cpp.o: ../src/main.cpp \
   ../include/SfmlWindow.h \
   ../include/Settings.h \
   ../include/SfxManager.h \
-  /usr/include/SFML/Audio.hpp \
-  /usr/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/include/SFML/Audio/Export.hpp \
-  /usr/include/SFML/Audio/Listener.hpp \
-  /usr/include/SFML/Audio/Music.hpp \
-  /usr/include/SFML/Audio/SoundStream.hpp \
-  /usr/include/SFML/Audio/SoundSource.hpp \
-  /usr/include/SFML/Audio/AlResource.hpp \
-  /usr/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/include/SFML/Audio/Sound.hpp \
-  /usr/include/SFML/Audio/SoundBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Audio.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/InputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Listener.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Music.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundStream.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundSource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/AlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/OutputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Sound.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBuffer.hpp \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_set.h \
   /usr/include/c++/11/bits/stl_multiset.h \
-  /usr/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/include/SFML/Audio/SoundFileWriter.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileReader.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileWriter.hpp \
   ../include/GameWindow.h \
   ../include/PlayerBoatsManager.h \
   ../include/Boat.h \
@@ -12489,26 +12493,13 @@ CMakeFiles/valiant.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/tr1/modified_bessel_func.tcc \
   /usr/include/c++/11/tr1/poly_hermite.tcc \
   /usr/include/c++/11/tr1/poly_laguerre.tcc \
-  /usr/include/c++/11/tr1/riemann_zeta.tcc \
-  ../include/BattleshipServer.h \
-  ../include/TCPServer.h \
-  ../include/SessionManager.h \
-  ../include/GameSessionState.h
+  /usr/include/c++/11/tr1/riemann_zeta.tcc
 
 CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
   /usr/include/stdc-predef.h \
   ../include/SfxManager.h \
-  /usr/include/SFML/Graphics.hpp \
-  /usr/include/SFML/Window.hpp \
-  /usr/include/SFML/System.hpp \
-  /usr/include/SFML/Config.hpp \
-  /usr/include/SFML/System/Clock.hpp \
-  /usr/include/SFML/System/Export.hpp \
-  /usr/include/SFML/System/Time.hpp \
-  /usr/include/SFML/System/Err.hpp \
-  /usr/include/c++/11/ostream \
-  /usr/include/c++/11/ios \
-  /usr/include/c++/11/iosfwd \
+  ../SFML-2.5.1/include/SFML/Graphics.hpp \
+  /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
   /usr/include/features.h \
@@ -12521,6 +12512,9 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
   /usr/include/c++/11/pstl/pstl_config.h \
+  /usr/include/c++/11/ostream \
+  /usr/include/c++/11/ios \
+  /usr/include/c++/11/iosfwd \
   /usr/include/c++/11/bits/stringfwd.h \
   /usr/include/c++/11/bits/memoryfwd.h \
   /usr/include/c++/11/bits/postypes.h \
@@ -12681,15 +12675,24 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
   /usr/include/c++/11/bits/locale_facets.tcc \
   /usr/include/c++/11/bits/basic_ios.tcc \
   /usr/include/c++/11/bits/ostream.tcc \
-  /usr/include/SFML/System/FileInputStream.hpp \
-  /usr/include/SFML/System/InputStream.hpp \
-  /usr/include/SFML/System/NonCopyable.hpp \
-  /usr/include/SFML/System/Lock.hpp \
-  /usr/include/SFML/System/MemoryInputStream.hpp \
-  /usr/include/SFML/System/Mutex.hpp \
-  /usr/include/SFML/System/Sleep.hpp \
-  /usr/include/SFML/System/String.hpp \
-  /usr/include/SFML/System/Utf.hpp \
+  /usr/include/c++/11/istream \
+  /usr/include/c++/11/bits/istream.tcc \
+  ../SFML-2.5.1/include/SFML/Window.hpp \
+  ../SFML-2.5.1/include/SFML/System.hpp \
+  ../SFML-2.5.1/include/SFML/Config.hpp \
+  ../SFML-2.5.1/include/SFML/System/Clock.hpp \
+  ../SFML-2.5.1/include/SFML/System/Export.hpp \
+  ../SFML-2.5.1/include/SFML/System/Time.hpp \
+  ../SFML-2.5.1/include/SFML/System/Err.hpp \
+  ../SFML-2.5.1/include/SFML/System/FileInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/InputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/NonCopyable.hpp \
+  ../SFML-2.5.1/include/SFML/System/Lock.hpp \
+  ../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML-2.5.1/include/SFML/System/Mutex.hpp \
+  ../SFML-2.5.1/include/SFML/System/Sleep.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.hpp \
+  ../SFML-2.5.1/include/SFML/System/Utf.hpp \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -12730,89 +12733,89 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
   /usr/include/c++/11/bits/unique_ptr.h \
-  /usr/include/SFML/System/Utf.inl \
+  ../SFML-2.5.1/include/SFML/System/Utf.inl \
   /usr/include/c++/11/iterator \
   /usr/include/c++/11/bits/stream_iterator.h \
-  /usr/include/SFML/System/String.inl \
-  /usr/include/SFML/System/Thread.hpp \
-  /usr/include/SFML/System/Thread.inl \
-  /usr/include/SFML/System/ThreadLocal.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.hpp \
-  /usr/include/SFML/System/ThreadLocalPtr.inl \
-  /usr/include/SFML/System/Vector2.hpp \
-  /usr/include/SFML/System/Vector2.inl \
-  /usr/include/SFML/System/Vector3.hpp \
-  /usr/include/SFML/System/Vector3.inl \
-  /usr/include/SFML/Window/Clipboard.hpp \
-  /usr/include/SFML/Window/Export.hpp \
-  /usr/include/SFML/Window/Context.hpp \
-  /usr/include/SFML/Window/GlResource.hpp \
-  /usr/include/SFML/Window/ContextSettings.hpp \
-  /usr/include/SFML/Window/Cursor.hpp \
-  /usr/include/SFML/Window/Event.hpp \
-  /usr/include/SFML/Window/Joystick.hpp \
-  /usr/include/SFML/Window/Keyboard.hpp \
-  /usr/include/SFML/Window/Mouse.hpp \
-  /usr/include/SFML/Window/Sensor.hpp \
-  /usr/include/SFML/Window/Touch.hpp \
-  /usr/include/SFML/Window/VideoMode.hpp \
-  /usr/include/SFML/Window/Window.hpp \
-  /usr/include/SFML/Window/WindowHandle.hpp \
-  /usr/include/SFML/Window/WindowStyle.hpp \
-  /usr/include/SFML/Graphics/BlendMode.hpp \
-  /usr/include/SFML/Graphics/Export.hpp \
-  /usr/include/SFML/Graphics/CircleShape.hpp \
-  /usr/include/SFML/Graphics/Shape.hpp \
-  /usr/include/SFML/Graphics/Drawable.hpp \
-  /usr/include/SFML/Graphics/RenderStates.hpp \
-  /usr/include/SFML/Graphics/Transform.hpp \
-  /usr/include/SFML/Graphics/Rect.hpp \
-  /usr/include/SFML/Graphics/Rect.inl \
-  /usr/include/SFML/Graphics/Transformable.hpp \
-  /usr/include/SFML/Graphics/VertexArray.hpp \
-  /usr/include/SFML/Graphics/Vertex.hpp \
-  /usr/include/SFML/Graphics/Color.hpp \
-  /usr/include/SFML/Graphics/PrimitiveType.hpp \
-  /usr/include/SFML/Graphics/ConvexShape.hpp \
-  /usr/include/SFML/Graphics/Font.hpp \
-  /usr/include/SFML/Graphics/Glyph.hpp \
-  /usr/include/SFML/Graphics/Texture.hpp \
-  /usr/include/SFML/Graphics/Image.hpp \
+  ../SFML-2.5.1/include/SFML/System/String.inl \
+  ../SFML-2.5.1/include/SFML/System/Thread.hpp \
+  ../SFML-2.5.1/include/SFML/System/Thread.inl \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector2.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector2.inl \
+  ../SFML-2.5.1/include/SFML/System/Vector3.hpp \
+  ../SFML-2.5.1/include/SFML/System/Vector3.inl \
+  ../SFML-2.5.1/include/SFML/Window/Clipboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Context.hpp \
+  ../SFML-2.5.1/include/SFML/Window/GlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Cursor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Event.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Joystick.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Keyboard.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Mouse.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Sensor.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Touch.hpp \
+  ../SFML-2.5.1/include/SFML/Window/VideoMode.hpp \
+  ../SFML-2.5.1/include/SFML/Window/Window.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp \
+  ../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Transform.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Rect.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Color.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Font.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Texture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Image.hpp \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
-  /usr/include/SFML/Graphics/RectangleShape.hpp \
-  /usr/include/SFML/Graphics/RenderTarget.hpp \
-  /usr/include/SFML/Graphics/View.hpp \
-  /usr/include/SFML/Graphics/RenderTexture.hpp \
-  /usr/include/SFML/Graphics/RenderWindow.hpp \
-  /usr/include/SFML/Graphics/Shader.hpp \
-  /usr/include/SFML/Graphics/Glsl.hpp \
-  /usr/include/SFML/Graphics/Glsl.inl \
-  /usr/include/SFML/Graphics/Sprite.hpp \
-  /usr/include/SFML/Graphics/Text.hpp \
-  /usr/include/SFML/Graphics/VertexBuffer.hpp \
-  /usr/include/SFML/Audio.hpp \
-  /usr/include/SFML/Audio/InputSoundFile.hpp \
-  /usr/include/SFML/Audio/Export.hpp \
-  /usr/include/SFML/Audio/Listener.hpp \
-  /usr/include/SFML/Audio/Music.hpp \
-  /usr/include/SFML/Audio/SoundStream.hpp \
-  /usr/include/SFML/Audio/SoundSource.hpp \
-  /usr/include/SFML/Audio/AlResource.hpp \
-  /usr/include/SFML/Audio/OutputSoundFile.hpp \
-  /usr/include/SFML/Audio/Sound.hpp \
-  /usr/include/SFML/Audio/SoundBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/View.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Shader.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Glsl.inl \
+  ../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/Text.hpp \
+  ../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML-2.5.1/include/SFML/Audio.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/InputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Export.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Listener.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Music.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundStream.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundSource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/AlResource.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/OutputSoundFile.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/Sound.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBuffer.hpp \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_set.h \
   /usr/include/c++/11/bits/stl_multiset.h \
-  /usr/include/SFML/Audio/SoundBufferRecorder.hpp \
-  /usr/include/SFML/Audio/SoundRecorder.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.hpp \
-  /usr/include/SFML/Audio/SoundFileFactory.inl \
-  /usr/include/SFML/Audio/SoundFileReader.hpp \
-  /usr/include/SFML/Audio/SoundFileWriter.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundRecorder.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileReader.hpp \
+  ../SFML-2.5.1/include/SFML/Audio/SoundFileWriter.hpp \
   ../include/Settings.h
 
 
@@ -12826,6 +12829,8 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/regex_compiler.tcc:
 
+/usr/include/c++/11/bits/regex_compiler.h:
+
 /usr/include/c++/11/bits/regex_scanner.h:
 
 /usr/include/c++/11/bits/regex_automaton.tcc:
@@ -12833,8 +12838,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 /usr/include/c++/11/bits/regex_automaton.h:
 
 /usr/include/c++/11/bits/regex_constants.h:
-
-/usr/include/c++/11/bits/stl_stack.h:
 
 /usr/include/c++/11/bitset:
 
@@ -12852,8 +12855,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 ../src/SfmlWindow.cpp:
 
-../src/SessionManager.cpp:
-
 ../src/SaveData.cpp:
 
 /usr/include/c++/11/stack:
@@ -12868,11 +12869,11 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 ../src/LoginMenu.cpp:
 
-../src/LockerWindow.cpp:
-
 /usr/include/nlohmann/detail/macro_unscope.hpp:
 
 /usr/include/nlohmann/ordered_map.hpp:
+
+/usr/include/nlohmann/detail/conversions/to_chars.hpp:
 
 /usr/include/nlohmann/detail/output/output_adapters.hpp:
 
@@ -12886,29 +12887,17 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/nlohmann/detail/iterators/internal_iterator.hpp:
 
-/usr/include/nlohmann/detail/input/parser.hpp:
-
 /usr/include/nlohmann/detail/input/json_sax.hpp:
 
 /usr/include/nlohmann/detail/input/input_adapters.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+../SFML-2.5.1/include/SFML/Window/Context.hpp:
 
-/usr/include/c++/11/bits/regex_compiler.h:
+../include/EntityCircle.h:
 
-/usr/include/SFML/System/Vector3.hpp:
+../SFML-2.5.1/include/SFML/System/Vector3.hpp:
 
-/usr/include/c++/11/bits/invoke.h:
-
-/usr/include/SFML/System/ThreadLocal.hpp:
-
-/usr/include/SFML/System/String.inl:
-
-/usr/include/c++/11/bits/enable_special_members.h:
-
-/usr/include/c++/11/bits/basic_ios.tcc:
-
-/usr/include/c++/11/bits/codecvt.h:
+../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.inl:
 
 /usr/include/c++/11/bits/locale_conv.h:
 
@@ -12916,7 +12905,7 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/locale_facets_nonio.h:
 
-/usr/include/c++/11/bits/vector.tcc:
+../SFML-2.5.1/include/SFML/Graphics/Text.hpp:
 
 /usr/include/nlohmann/detail/string_escape.hpp:
 
@@ -12926,21 +12915,23 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/erase_if.h:
 
-/usr/include/stdint.h:
-
 /usr/include/c++/11/bits/ptr_traits.h:
 
 ../include/EndPanel.h:
 
-/usr/include/c++/11/mutex:
+/usr/include/c++/11/bits/enable_special_members.h:
 
-/usr/include/SFML/Window/Event.hpp:
-
-/usr/include/c++/11/bits/hashtable_policy.h:
+/usr/include/c++/11/bits/codecvt.h:
 
 /usr/include/c++/11/bits/hashtable.h:
 
+/usr/include/c++/11/bits/refwrap.h:
+
+/usr/include/linux/stddef.h:
+
 /usr/include/c++/11/bits/uses_allocator.h:
+
+../SFML-2.5.1/include/SFML/Audio/Music.hpp:
 
 /usr/include/c++/11/bits/unique_lock.h:
 
@@ -12954,37 +12945,45 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/stl_heap.h:
 
-/usr/include/c++/11/bits/std_abs.h:
-
 /usr/include/c++/11/pstl/execution_defs.h:
 
 ../include/Entity.h:
 
 /usr/include/c++/11/bits/stl_algo.h:
 
-/usr/include/c++/11/bits/stl_relops.h:
+../SFML-2.5.1/include/SFML/System/Sleep.hpp:
 
-/usr/include/SFML/System/String.hpp:
+/usr/include/c++/11/ctime:
 
-/usr/include/SFML/System/Mutex.hpp:
+../SFML-2.5.1/include/SFML/System/String.hpp:
 
-/usr/include/c++/11/bits/refwrap.h:
+/usr/include/c++/11/bits/basic_ios.tcc:
 
-/usr/include/linux/stddef.h:
+../SFML-2.5.1/include/SFML/System/MemoryInputStream.hpp:
 
-/usr/include/SFML/System/NonCopyable.hpp:
+../SFML-2.5.1/include/SFML/System/FileInputStream.hpp:
 
-/usr/include/SFML/Window.hpp:
+../SFML-2.5.1/include/SFML/System/Time.hpp:
 
-/usr/include/nlohmann/detail/conversions/to_chars.hpp:
+/usr/include/nlohmann/detail/input/parser.hpp:
 
-/usr/include/SFML/System/Time.hpp:
+../SFML-2.5.1/include/SFML/System/Thread.hpp:
 
-/usr/include/SFML/Window/Clipboard.hpp:
+../SFML-2.5.1/include/SFML/System/Export.hpp:
+
+/usr/include/c++/11/bits/invoke.h:
+
+../SFML-2.5.1/include/SFML/System.hpp:
+
+../SFML-2.5.1/include/SFML/Graphics.hpp:
+
+/usr/include/pthread.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+
+../SFML-2.5.1/include/SFML/Window/WindowStyle.hpp:
 
 ../include/TCPServer.h:
 
@@ -12998,11 +12997,11 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
 
-/usr/include/SFML/Window/Keyboard.hpp:
-
 /usr/include/nlohmann/detail/value_t.hpp:
 
 /usr/include/c++/11/bits/streambuf_iterator.h:
+
+../SFML-2.5.1/include/SFML/Graphics/Image.hpp:
 
 /usr/include/c++/11/cwctype:
 
@@ -13018,8 +13017,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/string.h:
 
-/usr/include/c++/11/stdexcept:
-
 /usr/include/c++/11/pstl/glue_algorithm_defs.h:
 
 /usr/include/c++/11/utility:
@@ -13029,10 +13026,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 /usr/include/c++/11/ios:
 
 /usr/include/c++/11/bits/stl_vector.h:
-
-/usr/include/SFML/Window/Sensor.hpp:
-
-/usr/include/c++/11/cstddef:
 
 /usr/include/c++/11/bits/basic_string.tcc:
 
@@ -13054,8 +13047,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
-/usr/include/SFML/Graphics/VertexArray.hpp:
-
 /usr/include/stdio.h:
 
 /usr/include/c++/11/cstdio:
@@ -13063,8 +13054,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 /usr/include/alloca.h:
 
 ../src/EntityText.cpp:
-
-/usr/include/c++/11/bits/fs_path.h:
 
 /usr/include/c++/11/bits/locale_classes.tcc:
 
@@ -13074,13 +13063,13 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
-/usr/include/SFML/Window/Mouse.hpp:
+../SFML-2.5.1/include/SFML/Graphics/RectangleShape.hpp:
 
 /usr/include/c++/11/future:
 
-/usr/include/SFML/System/ThreadLocalPtr.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+../SFML-2.5.1/include/SFML/System/Vector2.inl:
 
 /usr/include/stdlib.h:
 
@@ -13106,10 +13095,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/alloc_traits.h:
 
-/usr/include/c++/11/bits/streambuf.tcc:
-
-/usr/include/c++/11/bits/stl_iterator_base_funcs.h:
-
 /usr/include/endian.h:
 
 /usr/include/c++/11/bits/cpp_type_traits.h:
@@ -13117,8 +13102,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 /usr/include/c++/11/bits/std_thread.h:
 
 /usr/include/c++/11/bits/regex_scanner.tcc:
-
-/usr/include/SFML/System/Lock.hpp:
 
 /usr/include/c++/11/bits/stream_iterator.h:
 
@@ -13128,13 +13111,15 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/initializer_list:
 
-/usr/include/stdc-predef.h:
-
-/usr/include/SFML/Audio/SoundFileFactory.inl:
-
 /usr/include/c++/11/streambuf:
 
+../SFML-2.5.1/include/SFML/Audio/SoundFileWriter.hpp:
+
 /usr/include/c++/11/bits/concept_check.h:
+
+../SFML-2.5.1/include/SFML/Config.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
 
 /usr/include/c++/11/bits/string_view.tcc:
 
@@ -13146,8 +13131,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
-/usr/include/SFML/Audio/SoundFileWriter.hpp:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
@@ -13156,21 +13139,17 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h:
 
+/usr/include/c++/11/bits/fstream.tcc:
+
+/usr/include/asm-generic/posix_types.h:
+
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/c++/11/iterator:
 
-/usr/include/SFML/System/Utf.hpp:
-
-/usr/include/c++/11/map:
-
 /usr/include/c++/11/cstdlib:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
-/usr/include/c++/11/bits/stl_iterator.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
 /usr/include/c++/11/bits/stl_queue.h:
 
@@ -13180,6 +13159,12 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
+../SFML-2.5.1/include/SFML/System/ThreadLocalPtr.hpp:
+
+/usr/include/c++/11/bits/stl_raw_storage_iter.h:
+
+../SFML-2.5.1/include/SFML/System/Err.hpp:
+
 /usr/include/c++/11/bits/nested_exception.h:
 
 /usr/include/c++/11/bits/stl_algobase.h:
@@ -13188,7 +13173,7 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
 
-/usr/include/SFML/Graphics/Glsl.inl:
+../SFML-2.5.1/include/SFML/Window/GlResource.hpp:
 
 /usr/include/c++/11/bits/forward_list.h:
 
@@ -13198,11 +13183,17 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/tuple:
 
-/usr/include/SFML/Window/Context.hpp:
+../src/SessionManager.cpp:
+
+../SFML-2.5.1/include/SFML/Graphics/Color.hpp:
 
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
+../SFML-2.5.1/include/SFML/Audio/OutputSoundFile.hpp:
+
 ../include/LoginMenu.h:
+
+../SFML-2.5.1/include/SFML/Graphics/Export.hpp:
 
 /usr/include/c++/11/bits/istream.tcc:
 
@@ -13214,17 +13205,15 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
-/usr/include/SFML/Graphics/RectangleShape.hpp:
-
 /usr/include/c++/11/bits/ostream_insert.h:
 
 /usr/include/c++/11/string:
 
-/usr/include/SFML/System/Vector2.inl:
-
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
+
+../SFML-2.5.1/include/SFML/Audio/SoundRecorder.hpp:
 
 /usr/include/c++/11/debug/assertions.h:
 
@@ -13233,6 +13222,8 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/c++/11/chrono:
+
+../SFML-2.5.1/include/SFML/Window/Export.hpp:
 
 /usr/include/c++/11/bits/forward_list.tcc:
 
@@ -13246,7 +13237,7 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 ../SqlLibs/mysqlLinux/include/jdbc/cppconn/connection.h:
 
-/usr/include/SFML/Window/GlResource.hpp:
+../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.inl:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
@@ -13256,8 +13247,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
-/usr/include/SFML/System/Sleep.hpp:
-
 /usr/include/features.h:
 
 /usr/include/c++/11/bits/node_handle.h:
@@ -13266,19 +13255,27 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/iostream:
 
-/usr/include/SFML/Graphics/Glyph.hpp:
-
 ../include/CursorCellSelector.h:
 
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+../SFML-2.5.1/include/SFML/System/Utf.hpp:
+
+../SFML-2.5.1/include/SFML/System/Thread.inl:
+
+/usr/include/c++/11/bits/fs_ops.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
+../SFML-2.5.1/include/SFML/Graphics/PrimitiveType.hpp:
+
 /usr/include/c++/11/tr1/legendre_function.tcc:
 
 /usr/include/c++/11/bits/unique_ptr.h:
+
+../SFML-2.5.1/include/SFML/Graphics/Shape.hpp:
+
+../SFML-2.5.1/include/SFML/System/InputStream.hpp:
 
 /usr/include/c++/11/ostream:
 
@@ -13288,11 +13285,25 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/ext/type_traits.h:
 
+../SFML-2.5.1/include/SFML/System/ThreadLocal.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
-/usr/include/c++/11/ctime:
+../SFML-2.5.1/include/SFML/Window/ContextSettings.hpp:
+
+../SFML-2.5.1/include/SFML/System/Vector2.hpp:
+
+../SFML-2.5.1/include/SFML/System/NonCopyable.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/include/c++/11/istream:
+
+../SFML-2.5.1/include/SFML/Audio/Export.hpp:
+
+../SFML-2.5.1/include/SFML/Window.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
 
 /usr/include/c++/11/bits/cxxabi_init_exception.h:
 
@@ -13320,19 +13331,11 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/system_error:
 
-/usr/include/SFML/Audio/InputSoundFile.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/features-time64.h:
 
 /usr/include/c++/11/debug/debug.h:
-
-/usr/include/SFML/System/ThreadLocalPtr.inl:
-
-/usr/include/inttypes.h:
-
-/usr/include/SFML/Audio.hpp:
 
 /usr/include/c++/11/bits/memoryfwd.h:
 
@@ -13352,8 +13355,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
@@ -13362,13 +13363,15 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/allocator.h:
 
+../SFML-2.5.1/include/SFML/System/Utf.inl:
+
+../SFML-2.5.1/include/SFML/Audio/SoundSource.hpp:
+
 /usr/include/c++/11/cmath:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
 /usr/include/c++/11/cstdint:
-
-/usr/include/c++/11/bits/postypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/in.h:
 
@@ -13382,15 +13385,13 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/sstream.tcc:
 
-/usr/include/SFML/System.hpp:
-
 ../include/WaitTimer.h:
 
-/usr/include/SFML/System/Thread.hpp:
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
-/usr/include/SFML/System/Export.hpp:
+/usr/include/c++/11/bits/stl_iterator.h:
 
-../include/BattleshipServer.h:
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 ../include/GameSessionState.h:
 
@@ -13406,21 +13407,19 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/ext/alloc_traits.h:
 
+../SFML-2.5.1/include/SFML/Graphics/Drawable.hpp:
+
 /usr/include/c++/11/bits/unordered_map.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
 /usr/include/nlohmann/detail/input/position_t.hpp:
 
-/usr/include/SFML/System/Utf.inl:
-
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/include/c++/11/bits/range_access.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/include/SFML/Audio/SoundSource.hpp:
 
 /usr/include/c++/11/cctype:
 
@@ -13434,17 +13433,21 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/localefwd.h:
 
-/usr/include/SFML/Audio/Export.hpp:
-
 /usr/include/locale.h:
 
-/usr/include/SFML/Audio/SoundFileFactory.hpp:
+/usr/include/c++/11/bits/std_abs.h:
 
-/usr/include/SFML/System/MemoryInputStream.hpp:
+../SFML-2.5.1/include/SFML/System/Lock.hpp:
 
 /usr/include/nlohmann/detail/meta/is_sax.hpp:
 
 /usr/include/c++/11/pstl/glue_numeric_defs.h:
+
+/usr/include/c++/11/bits/streambuf.tcc:
+
+/usr/include/c++/11/bits/stl_iterator_base_funcs.h:
+
+../SFML-2.5.1/include/SFML/Graphics/RenderTexture.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
@@ -13452,11 +13455,11 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 ../src/AnimatedEntity.cpp:
 
-/usr/include/pthread.h:
-
 /usr/include/time.h:
 
 /usr/include/nlohmann/detail/iterators/iter_impl.hpp:
+
+../SFML-2.5.1/include/SFML/Graphics/Vertex.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
@@ -13486,19 +13489,11 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
-/usr/include/SFML/Graphics.hpp:
-
-/usr/include/c++/11/bits/exception_defines.h:
-
-/usr/include/x86_64-linux-gnu/bits/socket_type.h:
-
-/usr/include/SFML/Config.hpp:
-
 /usr/include/c++/11/ext/new_allocator.h:
 
-/usr/include/libintl.h:
-
 /usr/include/c++/11/bits/char_traits.h:
+
+/usr/include/libintl.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
@@ -13506,21 +13501,33 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/locale_classes.h:
 
+/usr/include/c++/11/bits/charconv.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
+/usr/include/c++/11/bits/exception_ptr.h:
+
+/usr/include/math.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
+
 /usr/include/c++/11/algorithm:
+
+../SFML-2.5.1/include/SFML/Graphics/Rect.hpp:
 
 /usr/include/c++/11/backward/binders.h:
 
-/usr/include/SFML/Graphics/RenderTexture.hpp:
+/usr/include/c++/11/bits/fs_path.h:
+
+../SFML-2.5.1/include/SFML/Window/Event.hpp:
 
 /usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
 /usr/include/c++/11/bits/stl_deque.h:
 
+../SFML-2.5.1/include/SFML/System/Mutex.hpp:
+
 /usr/include/c++/11/bits/basic_string.h:
-
-/usr/include/SFML/Graphics/PrimitiveType.hpp:
-
-/usr/include/SFML/System/Err.hpp:
 
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
@@ -13528,83 +13535,75 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/algorithmfwd.h:
 
+../SFML-2.5.1/include/SFML/Graphics/Glyph.hpp:
+
 /usr/include/c++/11/bits/cxxabi_forced.h:
 
-/usr/include/SFML/Window/ContextSettings.hpp:
+../SFML-2.5.1/include/SFML/Window/Cursor.hpp:
 
-/usr/include/SFML/System/Vector2.hpp:
+/usr/include/c++/11/bits/stl_stack.h:
 
-/usr/include/SFML/Window/Cursor.hpp:
+../SFML-2.5.1/include/SFML/Window/Joystick.hpp:
 
-/usr/include/SFML/Window/Joystick.hpp:
+../SFML-2.5.1/include/SFML/System/String.inl:
 
-/usr/include/SFML/Window/Touch.hpp:
+../SFML-2.5.1/include/SFML/Window/Keyboard.hpp:
 
-/usr/include/SFML/Window/VideoMode.hpp:
+../SFML-2.5.1/include/SFML/Window/Mouse.hpp:
 
-/usr/include/SFML/Graphics/Font.hpp:
+../SFML-2.5.1/include/SFML/Window/Sensor.hpp:
 
-/usr/include/SFML/Window/Window.hpp:
+../SFML-2.5.1/include/SFML/Window/VideoMode.hpp:
 
-/usr/include/c++/11/bits/stl_set.h:
+../SFML-2.5.1/include/SFML/Window/Window.hpp:
 
-/usr/include/c++/11/bits/gslice_array.h:
+/usr/include/stdc-predef.h:
 
-/usr/include/c++/11/istream:
+../SFML-2.5.1/include/SFML/Audio/SoundFileReader.hpp:
 
-/usr/include/SFML/Window/WindowHandle.hpp:
+../SFML-2.5.1/include/SFML/Window/WindowHandle.hpp:
 
-../include/GameMessage.h:
+../SFML-2.5.1/include/SFML/Graphics/BlendMode.hpp:
+
+../SFML-2.5.1/include/SFML/Graphics/CircleShape.hpp:
+
+../SFML-2.5.1/include/SFML/Graphics/RenderStates.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+../SqlLibs/mysqlLinux/include/jdbc/cppconn/build_config.h:
+
+../SFML-2.5.1/include/SFML/Graphics/Transform.hpp:
+
+../SFML-2.5.1/include/SFML/Graphics/Rect.inl:
+
+/usr/include/c++/11/cstddef:
+
+../SFML-2.5.1/include/SFML/Graphics/Glsl.inl:
+
+../SFML-2.5.1/include/SFML/Graphics/Transformable.hpp:
+
+../include/BattleshipServer.h:
+
+../SFML-2.5.1/include/SFML/Graphics/VertexArray.hpp:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
 
+../include/GameMessage.h:
+
 /usr/include/nlohmann/detail/conversions/to_json.hpp:
 
-/usr/include/SFML/Window/WindowStyle.hpp:
+../SFML-2.5.1/include/SFML/Graphics/ConvexShape.hpp:
 
-/usr/include/SFML/Graphics/BlendMode.hpp:
+/usr/include/c++/11/bits/hashtable_policy.h:
 
-/usr/include/SFML/Graphics/Export.hpp:
+../SFML-2.5.1/include/SFML/Graphics/Font.hpp:
 
-/usr/include/SFML/Graphics/CircleShape.hpp:
+/usr/include/stdint.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+../SFML-2.5.1/include/SFML/Graphics/Texture.hpp:
 
-../include/GameInfoPanel.h:
-
-/usr/include/SFML/Graphics/Shape.hpp:
-
-/usr/include/SFML/Graphics/Drawable.hpp:
-
-/usr/include/c++/11/bits/shared_ptr_atomic.h:
-
-/usr/include/c++/11/queue:
-
-/usr/include/SFML/Graphics/RenderStates.hpp:
-
-/usr/include/SFML/Graphics/Rect.hpp:
-
-/usr/include/SFML/Graphics/Rect.inl:
-
-/usr/include/SFML/Graphics/Transformable.hpp:
-
-/usr/include/SFML/Graphics/View.hpp:
-
-/usr/include/strings.h:
-
-/usr/include/SFML/Graphics/Vertex.hpp:
-
-/usr/include/c++/11/bits/align.h:
-
-/usr/include/SFML/Graphics/ConvexShape.hpp:
-
-/usr/include/SFML/System/Clock.hpp:
-
-/usr/include/SFML/Graphics/Color.hpp:
-
-/usr/include/SFML/Graphics/Texture.hpp:
-
-/usr/include/SFML/Graphics/Image.hpp:
+/usr/include/c++/11/map:
 
 /usr/include/c++/11/bits/stl_tree.h:
 
@@ -13612,27 +13611,23 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/stl_multimap.h:
 
-/usr/include/SFML/Graphics/RenderTarget.hpp:
+../SFML-2.5.1/include/SFML/Graphics/View.hpp:
 
-/usr/include/SFML/Graphics/RenderWindow.hpp:
+../SFML-2.5.1/include/SFML/Graphics/RenderWindow.hpp:
 
-/usr/include/SFML/Graphics/Shader.hpp:
+../SFML-2.5.1/include/SFML/Graphics/Shader.hpp:
 
-/usr/include/SFML/Graphics/Glsl.hpp:
+/usr/include/c++/11/bits/postypes.h:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+../SFML-2.5.1/include/SFML/Graphics/Glsl.hpp:
 
-/usr/include/SFML/Graphics/Sprite.hpp:
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
-/usr/include/SFML/Graphics/Text.hpp:
-
-/usr/include/SFML/Graphics/VertexBuffer.hpp:
+../SFML-2.5.1/include/SFML/Graphics/VertexBuffer.hpp:
 
 /usr/include/c++/11/memory:
 
-/usr/include/c++/11/bits/stl_raw_storage_iter.h:
-
-/usr/include/SFML/System/FileInputStream.hpp:
+/usr/include/c++/11/bits/align.h:
 
 /usr/include/c++/11/bit:
 
@@ -13640,11 +13635,13 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 ../include/PlayerHud.h:
 
-/usr/include/c++/11/codecvt:
+../include/EntityText.h:
 
-/usr/include/assert.h:
+/usr/include/c++/11/ext/concurrence.h:
 
-/usr/include/c++/11/bits/allocated_ptr.h:
+/usr/include/c++/11/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/11/queue:
 
 /usr/include/c++/11/bits/atomic_base.h:
 
@@ -13680,21 +13677,23 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/list:
 
-/usr/include/SFML/Audio/Listener.hpp:
+../src/LockerWindow.cpp:
 
-/usr/include/SFML/Audio/Music.hpp:
+../SFML-2.5.1/include/SFML/Audio.hpp:
 
-../SqlLibs/mysqlLinux/include/jdbc/cppconn/callback.h:
+../SFML-2.5.1/include/SFML/Audio/InputSoundFile.hpp:
 
-/usr/include/c++/11/bits/valarray_array.h:
+../src/main.cpp:
 
-/usr/include/SFML/Audio/AlResource.hpp:
+../src/CloudManager.cpp:
 
-/usr/include/SFML/Graphics/Transform.hpp:
+/usr/include/c++/11/bits/stl_relops.h:
 
-/usr/include/SFML/Audio/Sound.hpp:
+../SFML-2.5.1/include/SFML/Audio/AlResource.hpp:
 
-/usr/include/SFML/Audio/SoundBuffer.hpp:
+/usr/include/c++/11/stdexcept:
+
+../SFML-2.5.1/include/SFML/Audio/SoundBuffer.hpp:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
@@ -13702,31 +13701,23 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 ../include/TCPWinsocksMaster.h:
 
-../SqlLibs/mysqlLinux/include/jdbc/cppconn/driver.h:
+/usr/include/c++/11/bits/stl_set.h:
 
-/usr/include/c++/11/bits/stl_multiset.h:
+/usr/include/c++/11/bits/gslice_array.h:
 
 ../SqlLibs/mysqlLinux/include/jdbc/cppconn/variant.h:
 
-/usr/include/SFML/Audio/SoundBufferRecorder.hpp:
+/usr/include/c++/11/bits/vector.tcc:
 
-/usr/include/SFML/Audio/SoundRecorder.hpp:
+../SFML-2.5.1/include/SFML/Audio/SoundBufferRecorder.hpp:
 
-/usr/include/c++/11/bits/charconv.h:
+../SFML-2.5.1/include/SFML/System/Clock.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+../SFML-2.5.1/include/SFML/Audio/SoundFileFactory.hpp:
 
-/usr/include/c++/11/bits/exception_ptr.h:
+/usr/include/c++/11/bits/valarray_after.h:
 
-/usr/include/math.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:
-
-/usr/include/SFML/Audio/SoundFileReader.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+../SFML-2.5.1/include/SFML/Audio/Listener.hpp:
 
 ../include/Boat.h:
 
@@ -13742,9 +13733,9 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/quoted_string.h:
 
-/usr/include/x86_64-linux-gnu/bits/locale.h:
+/usr/include/c++/11/bits/stl_multiset.h:
 
-../SqlLibs/mysqlLinux/include/jdbc/cppconn/build_config.h:
+../SqlLibs/mysqlLinux/include/jdbc/cppconn/driver.h:
 
 ../SqlLibs/mysqlLinux/include/jdbc/cppconn/warning.h:
 
@@ -13758,6 +13749,14 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/list.tcc:
 
+/usr/include/arpa/inet.h:
+
+../SqlLibs/mysqlLinux/include/jdbc/cppconn/exception.h:
+
+../SqlLibs/mysqlLinux/include/jdbc/cppconn/callback.h:
+
+/usr/include/c++/11/bits/valarray_array.h:
+
 /usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
 ../SqlLibs/mysqlLinux/include/jdbc/cppconn/resultset.h:
@@ -13766,11 +13765,21 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 ../SqlLibs/mysqlLinux/include/jdbc/cppconn/config.h:
 
+/usr/include/inttypes.h:
+
+../SFML-2.5.1/include/SFML/Window/Touch.hpp:
+
 ../SqlLibs/mysqlLinux/include/jdbc/cppconn/datatype.h:
+
+../SFML-2.5.1/include/SFML/Audio/SoundStream.hpp:
+
+/usr/include/c++/11/mutex:
 
 /usr/include/c++/11/bits/std_mutex.h:
 
 /usr/include/c++/11/tr1/poly_laguerre.tcc:
+
+../SFML-2.5.1/include/SFML/Graphics/Sprite.hpp:
 
 /usr/include/c++/11/fstream:
 
@@ -13778,19 +13787,11 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
 
-/usr/include/c++/11/bits/fstream.tcc:
-
-/usr/include/asm-generic/posix_types.h:
-
-/usr/include/SFML/System/Vector3.inl:
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
 
 ../include/Grid.h:
 
 ../include/CloudManager.h:
-
-/usr/include/c++/11/ext/concurrence.h:
-
-../include/EntityText.h:
 
 ../include/TCPClient.h:
 
@@ -13799,6 +13800,10 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 /usr/include/x86_64-linux-gnu/bits/socket.h:
 
 /usr/include/nlohmann/detail/hash.hpp:
+
+/usr/include/c++/11/bits/exception_defines.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
 
 /usr/include/x86_64-linux-gnu/bits/sockaddr.h:
 
@@ -13814,13 +13819,7 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/netinet/in.h:
 
-../SqlLibs/mysqlLinux/include/jdbc/cppconn/exception.h:
-
-/usr/include/arpa/inet.h:
-
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
 
 /usr/include/c++/11/bits/functexcept.h:
 
@@ -13830,13 +13829,17 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
+/usr/include/strings.h:
+
 /usr/include/c++/11/deque:
 
 /usr/include/c++/11/bits/deque.tcc:
 
-../include/EntityCircle.h:
+../SFML-2.5.1/include/SFML/Window/Clipboard.hpp:
 
-/usr/include/SFML/System/Thread.inl:
+/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+
+../include/GameInfoPanel.h:
 
 ../include/GameChat.h:
 
@@ -13845,8 +13848,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 ../include/MenuWindow.h:
 
 ../include/MenuButtonsManager.h:
-
-/usr/include/SFML/Window/Export.hpp:
 
 ../include/SplashWindow.h:
 
@@ -13870,9 +13871,11 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
-/usr/include/c++/11/bits/specfun.h:
+/usr/include/x86_64-linux-gnu/bits/endian.h:
 
-/usr/include/SFML/Audio/SoundStream.hpp:
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/c++/11/bits/specfun.h:
 
 /usr/include/c++/11/tr1/special_function_util.h:
 
@@ -13896,19 +13899,17 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/nlohmann/thirdparty/hedley/hedley.hpp:
 
+../SFML-2.5.1/include/SFML/Graphics/RenderTarget.hpp:
+
 ../include/SessionManager.h:
 
 /usr/include/c++/11/tr1/modified_bessel_func.tcc:
 
 ../src/Boat.cpp:
 
-/usr/include/SFML/System/InputStream.hpp:
+../SFML-2.5.1/include/SFML/System/Vector3.inl:
 
 ../src/BsBDD.cpp:
-
-../src/main.cpp:
-
-../src/CloudManager.cpp:
 
 ../src/CursorCellSelector.cpp:
 
@@ -13924,6 +13925,8 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 ../include/Application.h:
 
+../SFML-2.5.1/include/SFML/Audio/Sound.hpp:
+
 ../src/EntityCircle.cpp:
 
 ../src/EntityRectangle.cpp:
@@ -13932,8 +13935,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 ../src/GameChat.cpp:
 
-/usr/include/SFML/Audio/OutputSoundFile.hpp:
-
 ../include/GameWindow.h:
 
 /usr/include/nlohmann/detail/macro_scope.hpp:
@@ -13941,8 +13942,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 /usr/include/c++/11/filesystem:
 
 /usr/include/c++/11/bits/fs_dir.h:
-
-/usr/include/c++/11/bits/fs_ops.h:
 
 ../src/GameMessage.cpp:
 
@@ -13974,8 +13973,6 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 
 /usr/include/c++/11/bits/slice_array.h:
 
-/usr/include/c++/11/bits/valarray_after.h:
-
 /usr/include/c++/11/bits/gslice.h:
 
 /usr/include/c++/11/bits/mask_array.h:
@@ -13987,6 +13984,12 @@ CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp \
 /usr/include/nlohmann/detail/meta/void_t.hpp:
 
 /usr/include/c++/11/cassert:
+
+/usr/include/c++/11/codecvt:
+
+/usr/include/c++/11/bits/allocated_ptr.h:
+
+/usr/include/assert.h:
 
 /usr/include/nlohmann/detail/meta/cpp_future.hpp:
 

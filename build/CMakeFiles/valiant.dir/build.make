@@ -716,11 +716,6 @@ valiant: CMakeFiles/valiant.dir/src/imagesRename.cpp.o
 valiant: CMakeFiles/valiant.dir/src/main.cpp.o
 valiant: CMakeFiles/valiant.dir/src/sfxManager.cpp.o
 valiant: CMakeFiles/valiant.dir/build.make
-valiant: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
-valiant: /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1
-valiant: /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1
-valiant: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
-valiant: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 valiant: ../SqlLibs/mysqlLinux/lib64/libmysqlcppconn.so
 valiant: CMakeFiles/valiant.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Linking CXX executable valiant"

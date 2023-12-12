@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/pix/valiant/bataille_navale/SqlLibs/mysqlLinux/include -I/home/pix/valiant/bataille_navale/include
+CXX_INCLUDES = -I/home/pix/valiant/bataille_navale/SqlLibs/mysqlLinux/include -I/home/pix/valiant/bataille_navale/SFML-2.5.1/include -I/home/pix/valiant/bataille_navale/include
 
 CXX_FLAGS = -g
 

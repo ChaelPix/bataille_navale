@@ -6,7 +6,7 @@ SfmlWindow::SfmlWindow(const std::string& title, const sf::Vector2f& size, const
     window.setPosition(windowPos);
 
     sf::Image icon;
-    icon.loadFromFile("Ressources/appIco.png");
+    icon.loadFromFile("ressources/appIco.png");
     window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 }
 
