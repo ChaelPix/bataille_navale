@@ -7,7 +7,7 @@
 
 class SfxManager{
 public:
-	enum class sfx { click, explosion, sinkBoat, victory, defeat, voiceVictory, voiceDefeat, water };
+	enum class sfx { click, explosion, sinkBoat, victory, defeat, voiceVictory, voiceDefeat, water, wrong };
 	enum class bgm { menu, game, locker};
 
 private:
