@@ -1,0 +1,3 @@
+/home/pix/valiant/bataille_navale/build/CMakeFiles/valiant.dir
+/home/pix/valiant/bataille_navale/build/CMakeFiles/edit_cache.dir
+/home/pix/valiant/bataille_navale/build/CMakeFiles/rebuild_cache.dir
