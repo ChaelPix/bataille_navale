@@ -69,52 +69,10 @@ include CMakeFiles/valiant.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/valiant.dir/flags.make
 
-CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.o: ../src/AnimatedEntity.cpp
-CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.o -MF CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.o.d -o CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.o -c /home/pix/valiant/bataille_navale/src/AnimatedEntity.cpp
-
-CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/AnimatedEntity.cpp > CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.i
-
-CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/AnimatedEntity.cpp -o CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.s
-
-CMakeFiles/valiant.dir/src/Application.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/Application.cpp.o: ../src/Application.cpp
-CMakeFiles/valiant.dir/src/Application.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/valiant.dir/src/Application.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/Application.cpp.o -MF CMakeFiles/valiant.dir/src/Application.cpp.o.d -o CMakeFiles/valiant.dir/src/Application.cpp.o -c /home/pix/valiant/bataille_navale/src/Application.cpp
-
-CMakeFiles/valiant.dir/src/Application.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/Application.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/Application.cpp > CMakeFiles/valiant.dir/src/Application.cpp.i
-
-CMakeFiles/valiant.dir/src/Application.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/Application.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/Application.cpp -o CMakeFiles/valiant.dir/src/Application.cpp.s
-
-CMakeFiles/valiant.dir/src/BattleshipCore.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/BattleshipCore.cpp.o: ../src/BattleshipCore.cpp
-CMakeFiles/valiant.dir/src/BattleshipCore.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/valiant.dir/src/BattleshipCore.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/BattleshipCore.cpp.o -MF CMakeFiles/valiant.dir/src/BattleshipCore.cpp.o.d -o CMakeFiles/valiant.dir/src/BattleshipCore.cpp.o -c /home/pix/valiant/bataille_navale/src/BattleshipCore.cpp
-
-CMakeFiles/valiant.dir/src/BattleshipCore.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/BattleshipCore.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/BattleshipCore.cpp > CMakeFiles/valiant.dir/src/BattleshipCore.cpp.i
-
-CMakeFiles/valiant.dir/src/BattleshipCore.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/BattleshipCore.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/BattleshipCore.cpp -o CMakeFiles/valiant.dir/src/BattleshipCore.cpp.s
-
 CMakeFiles/valiant.dir/src/BattleshipServer.cpp.o: CMakeFiles/valiant.dir/flags.make
 CMakeFiles/valiant.dir/src/BattleshipServer.cpp.o: ../src/BattleshipServer.cpp
 CMakeFiles/valiant.dir/src/BattleshipServer.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/valiant.dir/src/BattleshipServer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/valiant.dir/src/BattleshipServer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/BattleshipServer.cpp.o -MF CMakeFiles/valiant.dir/src/BattleshipServer.cpp.o.d -o CMakeFiles/valiant.dir/src/BattleshipServer.cpp.o -c /home/pix/valiant/bataille_navale/src/BattleshipServer.cpp
 
 CMakeFiles/valiant.dir/src/BattleshipServer.cpp.i: cmake_force
@@ -125,192 +83,10 @@ CMakeFiles/valiant.dir/src/BattleshipServer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/BattleshipServer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/BattleshipServer.cpp -o CMakeFiles/valiant.dir/src/BattleshipServer.cpp.s
 
-CMakeFiles/valiant.dir/src/Boat.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/Boat.cpp.o: ../src/Boat.cpp
-CMakeFiles/valiant.dir/src/Boat.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/valiant.dir/src/Boat.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/Boat.cpp.o -MF CMakeFiles/valiant.dir/src/Boat.cpp.o.d -o CMakeFiles/valiant.dir/src/Boat.cpp.o -c /home/pix/valiant/bataille_navale/src/Boat.cpp
-
-CMakeFiles/valiant.dir/src/Boat.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/Boat.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/Boat.cpp > CMakeFiles/valiant.dir/src/Boat.cpp.i
-
-CMakeFiles/valiant.dir/src/Boat.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/Boat.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/Boat.cpp -o CMakeFiles/valiant.dir/src/Boat.cpp.s
-
-CMakeFiles/valiant.dir/src/BsBDD.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/BsBDD.cpp.o: ../src/BsBDD.cpp
-CMakeFiles/valiant.dir/src/BsBDD.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/valiant.dir/src/BsBDD.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/BsBDD.cpp.o -MF CMakeFiles/valiant.dir/src/BsBDD.cpp.o.d -o CMakeFiles/valiant.dir/src/BsBDD.cpp.o -c /home/pix/valiant/bataille_navale/src/BsBDD.cpp
-
-CMakeFiles/valiant.dir/src/BsBDD.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/BsBDD.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/BsBDD.cpp > CMakeFiles/valiant.dir/src/BsBDD.cpp.i
-
-CMakeFiles/valiant.dir/src/BsBDD.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/BsBDD.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/BsBDD.cpp -o CMakeFiles/valiant.dir/src/BsBDD.cpp.s
-
-CMakeFiles/valiant.dir/src/CloudManager.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/CloudManager.cpp.o: ../src/CloudManager.cpp
-CMakeFiles/valiant.dir/src/CloudManager.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/valiant.dir/src/CloudManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/CloudManager.cpp.o -MF CMakeFiles/valiant.dir/src/CloudManager.cpp.o.d -o CMakeFiles/valiant.dir/src/CloudManager.cpp.o -c /home/pix/valiant/bataille_navale/src/CloudManager.cpp
-
-CMakeFiles/valiant.dir/src/CloudManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/CloudManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/CloudManager.cpp > CMakeFiles/valiant.dir/src/CloudManager.cpp.i
-
-CMakeFiles/valiant.dir/src/CloudManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/CloudManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/CloudManager.cpp -o CMakeFiles/valiant.dir/src/CloudManager.cpp.s
-
-CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.o: ../src/CursorCellSelector.cpp
-CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.o -MF CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.o.d -o CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.o -c /home/pix/valiant/bataille_navale/src/CursorCellSelector.cpp
-
-CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/CursorCellSelector.cpp > CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.i
-
-CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/CursorCellSelector.cpp -o CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.s
-
-CMakeFiles/valiant.dir/src/EndPanel.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/EndPanel.cpp.o: ../src/EndPanel.cpp
-CMakeFiles/valiant.dir/src/EndPanel.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/valiant.dir/src/EndPanel.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/EndPanel.cpp.o -MF CMakeFiles/valiant.dir/src/EndPanel.cpp.o.d -o CMakeFiles/valiant.dir/src/EndPanel.cpp.o -c /home/pix/valiant/bataille_navale/src/EndPanel.cpp
-
-CMakeFiles/valiant.dir/src/EndPanel.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/EndPanel.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/EndPanel.cpp > CMakeFiles/valiant.dir/src/EndPanel.cpp.i
-
-CMakeFiles/valiant.dir/src/EndPanel.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/EndPanel.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/EndPanel.cpp -o CMakeFiles/valiant.dir/src/EndPanel.cpp.s
-
-CMakeFiles/valiant.dir/src/Entity.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/Entity.cpp.o: ../src/Entity.cpp
-CMakeFiles/valiant.dir/src/Entity.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/valiant.dir/src/Entity.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/Entity.cpp.o -MF CMakeFiles/valiant.dir/src/Entity.cpp.o.d -o CMakeFiles/valiant.dir/src/Entity.cpp.o -c /home/pix/valiant/bataille_navale/src/Entity.cpp
-
-CMakeFiles/valiant.dir/src/Entity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/Entity.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/Entity.cpp > CMakeFiles/valiant.dir/src/Entity.cpp.i
-
-CMakeFiles/valiant.dir/src/Entity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/Entity.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/Entity.cpp -o CMakeFiles/valiant.dir/src/Entity.cpp.s
-
-CMakeFiles/valiant.dir/src/EntityCircle.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/EntityCircle.cpp.o: ../src/EntityCircle.cpp
-CMakeFiles/valiant.dir/src/EntityCircle.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/valiant.dir/src/EntityCircle.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/EntityCircle.cpp.o -MF CMakeFiles/valiant.dir/src/EntityCircle.cpp.o.d -o CMakeFiles/valiant.dir/src/EntityCircle.cpp.o -c /home/pix/valiant/bataille_navale/src/EntityCircle.cpp
-
-CMakeFiles/valiant.dir/src/EntityCircle.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/EntityCircle.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/EntityCircle.cpp > CMakeFiles/valiant.dir/src/EntityCircle.cpp.i
-
-CMakeFiles/valiant.dir/src/EntityCircle.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/EntityCircle.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/EntityCircle.cpp -o CMakeFiles/valiant.dir/src/EntityCircle.cpp.s
-
-CMakeFiles/valiant.dir/src/EntityRectangle.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/EntityRectangle.cpp.o: ../src/EntityRectangle.cpp
-CMakeFiles/valiant.dir/src/EntityRectangle.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/valiant.dir/src/EntityRectangle.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/EntityRectangle.cpp.o -MF CMakeFiles/valiant.dir/src/EntityRectangle.cpp.o.d -o CMakeFiles/valiant.dir/src/EntityRectangle.cpp.o -c /home/pix/valiant/bataille_navale/src/EntityRectangle.cpp
-
-CMakeFiles/valiant.dir/src/EntityRectangle.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/EntityRectangle.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/EntityRectangle.cpp > CMakeFiles/valiant.dir/src/EntityRectangle.cpp.i
-
-CMakeFiles/valiant.dir/src/EntityRectangle.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/EntityRectangle.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/EntityRectangle.cpp -o CMakeFiles/valiant.dir/src/EntityRectangle.cpp.s
-
-CMakeFiles/valiant.dir/src/EntityText.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/EntityText.cpp.o: ../src/EntityText.cpp
-CMakeFiles/valiant.dir/src/EntityText.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/valiant.dir/src/EntityText.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/EntityText.cpp.o -MF CMakeFiles/valiant.dir/src/EntityText.cpp.o.d -o CMakeFiles/valiant.dir/src/EntityText.cpp.o -c /home/pix/valiant/bataille_navale/src/EntityText.cpp
-
-CMakeFiles/valiant.dir/src/EntityText.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/EntityText.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/EntityText.cpp > CMakeFiles/valiant.dir/src/EntityText.cpp.i
-
-CMakeFiles/valiant.dir/src/EntityText.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/EntityText.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/EntityText.cpp -o CMakeFiles/valiant.dir/src/EntityText.cpp.s
-
-CMakeFiles/valiant.dir/src/EntityTextBox.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/EntityTextBox.cpp.o: ../src/EntityTextBox.cpp
-CMakeFiles/valiant.dir/src/EntityTextBox.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/valiant.dir/src/EntityTextBox.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/EntityTextBox.cpp.o -MF CMakeFiles/valiant.dir/src/EntityTextBox.cpp.o.d -o CMakeFiles/valiant.dir/src/EntityTextBox.cpp.o -c /home/pix/valiant/bataille_navale/src/EntityTextBox.cpp
-
-CMakeFiles/valiant.dir/src/EntityTextBox.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/EntityTextBox.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/EntityTextBox.cpp > CMakeFiles/valiant.dir/src/EntityTextBox.cpp.i
-
-CMakeFiles/valiant.dir/src/EntityTextBox.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/EntityTextBox.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/EntityTextBox.cpp -o CMakeFiles/valiant.dir/src/EntityTextBox.cpp.s
-
-CMakeFiles/valiant.dir/src/GameChat.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/GameChat.cpp.o: ../src/GameChat.cpp
-CMakeFiles/valiant.dir/src/GameChat.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/valiant.dir/src/GameChat.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/GameChat.cpp.o -MF CMakeFiles/valiant.dir/src/GameChat.cpp.o.d -o CMakeFiles/valiant.dir/src/GameChat.cpp.o -c /home/pix/valiant/bataille_navale/src/GameChat.cpp
-
-CMakeFiles/valiant.dir/src/GameChat.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/GameChat.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/GameChat.cpp > CMakeFiles/valiant.dir/src/GameChat.cpp.i
-
-CMakeFiles/valiant.dir/src/GameChat.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/GameChat.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/GameChat.cpp -o CMakeFiles/valiant.dir/src/GameChat.cpp.s
-
-CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.o: ../src/GameInfoPanel.cpp
-CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.o -MF CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.o.d -o CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.o -c /home/pix/valiant/bataille_navale/src/GameInfoPanel.cpp
-
-CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/GameInfoPanel.cpp > CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.i
-
-CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/GameInfoPanel.cpp -o CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.s
-
-CMakeFiles/valiant.dir/src/GameMessage.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/GameMessage.cpp.o: ../src/GameMessage.cpp
-CMakeFiles/valiant.dir/src/GameMessage.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/valiant.dir/src/GameMessage.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/GameMessage.cpp.o -MF CMakeFiles/valiant.dir/src/GameMessage.cpp.o.d -o CMakeFiles/valiant.dir/src/GameMessage.cpp.o -c /home/pix/valiant/bataille_navale/src/GameMessage.cpp
-
-CMakeFiles/valiant.dir/src/GameMessage.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/GameMessage.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/GameMessage.cpp > CMakeFiles/valiant.dir/src/GameMessage.cpp.i
-
-CMakeFiles/valiant.dir/src/GameMessage.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/GameMessage.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/GameMessage.cpp -o CMakeFiles/valiant.dir/src/GameMessage.cpp.s
-
 CMakeFiles/valiant.dir/src/GameSessionState.cpp.o: CMakeFiles/valiant.dir/flags.make
 CMakeFiles/valiant.dir/src/GameSessionState.cpp.o: ../src/GameSessionState.cpp
 CMakeFiles/valiant.dir/src/GameSessionState.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/valiant.dir/src/GameSessionState.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/valiant.dir/src/GameSessionState.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/GameSessionState.cpp.o -MF CMakeFiles/valiant.dir/src/GameSessionState.cpp.o.d -o CMakeFiles/valiant.dir/src/GameSessionState.cpp.o -c /home/pix/valiant/bataille_navale/src/GameSessionState.cpp
 
 CMakeFiles/valiant.dir/src/GameSessionState.cpp.i: cmake_force
@@ -321,178 +97,10 @@ CMakeFiles/valiant.dir/src/GameSessionState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/GameSessionState.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/GameSessionState.cpp -o CMakeFiles/valiant.dir/src/GameSessionState.cpp.s
 
-CMakeFiles/valiant.dir/src/GameVfx.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/GameVfx.cpp.o: ../src/GameVfx.cpp
-CMakeFiles/valiant.dir/src/GameVfx.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/valiant.dir/src/GameVfx.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/GameVfx.cpp.o -MF CMakeFiles/valiant.dir/src/GameVfx.cpp.o.d -o CMakeFiles/valiant.dir/src/GameVfx.cpp.o -c /home/pix/valiant/bataille_navale/src/GameVfx.cpp
-
-CMakeFiles/valiant.dir/src/GameVfx.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/GameVfx.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/GameVfx.cpp > CMakeFiles/valiant.dir/src/GameVfx.cpp.i
-
-CMakeFiles/valiant.dir/src/GameVfx.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/GameVfx.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/GameVfx.cpp -o CMakeFiles/valiant.dir/src/GameVfx.cpp.s
-
-CMakeFiles/valiant.dir/src/GameWindow.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/GameWindow.cpp.o: ../src/GameWindow.cpp
-CMakeFiles/valiant.dir/src/GameWindow.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/valiant.dir/src/GameWindow.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/GameWindow.cpp.o -MF CMakeFiles/valiant.dir/src/GameWindow.cpp.o.d -o CMakeFiles/valiant.dir/src/GameWindow.cpp.o -c /home/pix/valiant/bataille_navale/src/GameWindow.cpp
-
-CMakeFiles/valiant.dir/src/GameWindow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/GameWindow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/GameWindow.cpp > CMakeFiles/valiant.dir/src/GameWindow.cpp.i
-
-CMakeFiles/valiant.dir/src/GameWindow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/GameWindow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/GameWindow.cpp -o CMakeFiles/valiant.dir/src/GameWindow.cpp.s
-
-CMakeFiles/valiant.dir/src/Grid.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/Grid.cpp.o: ../src/Grid.cpp
-CMakeFiles/valiant.dir/src/Grid.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/valiant.dir/src/Grid.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/Grid.cpp.o -MF CMakeFiles/valiant.dir/src/Grid.cpp.o.d -o CMakeFiles/valiant.dir/src/Grid.cpp.o -c /home/pix/valiant/bataille_navale/src/Grid.cpp
-
-CMakeFiles/valiant.dir/src/Grid.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/Grid.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/Grid.cpp > CMakeFiles/valiant.dir/src/Grid.cpp.i
-
-CMakeFiles/valiant.dir/src/Grid.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/Grid.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/Grid.cpp -o CMakeFiles/valiant.dir/src/Grid.cpp.s
-
-CMakeFiles/valiant.dir/src/Localization.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/Localization.cpp.o: ../src/Localization.cpp
-CMakeFiles/valiant.dir/src/Localization.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/valiant.dir/src/Localization.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/Localization.cpp.o -MF CMakeFiles/valiant.dir/src/Localization.cpp.o.d -o CMakeFiles/valiant.dir/src/Localization.cpp.o -c /home/pix/valiant/bataille_navale/src/Localization.cpp
-
-CMakeFiles/valiant.dir/src/Localization.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/Localization.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/Localization.cpp > CMakeFiles/valiant.dir/src/Localization.cpp.i
-
-CMakeFiles/valiant.dir/src/Localization.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/Localization.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/Localization.cpp -o CMakeFiles/valiant.dir/src/Localization.cpp.s
-
-CMakeFiles/valiant.dir/src/LockerWindow.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/LockerWindow.cpp.o: ../src/LockerWindow.cpp
-CMakeFiles/valiant.dir/src/LockerWindow.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/valiant.dir/src/LockerWindow.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/LockerWindow.cpp.o -MF CMakeFiles/valiant.dir/src/LockerWindow.cpp.o.d -o CMakeFiles/valiant.dir/src/LockerWindow.cpp.o -c /home/pix/valiant/bataille_navale/src/LockerWindow.cpp
-
-CMakeFiles/valiant.dir/src/LockerWindow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/LockerWindow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/LockerWindow.cpp > CMakeFiles/valiant.dir/src/LockerWindow.cpp.i
-
-CMakeFiles/valiant.dir/src/LockerWindow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/LockerWindow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/LockerWindow.cpp -o CMakeFiles/valiant.dir/src/LockerWindow.cpp.s
-
-CMakeFiles/valiant.dir/src/LoginMenu.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/LoginMenu.cpp.o: ../src/LoginMenu.cpp
-CMakeFiles/valiant.dir/src/LoginMenu.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/valiant.dir/src/LoginMenu.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/LoginMenu.cpp.o -MF CMakeFiles/valiant.dir/src/LoginMenu.cpp.o.d -o CMakeFiles/valiant.dir/src/LoginMenu.cpp.o -c /home/pix/valiant/bataille_navale/src/LoginMenu.cpp
-
-CMakeFiles/valiant.dir/src/LoginMenu.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/LoginMenu.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/LoginMenu.cpp > CMakeFiles/valiant.dir/src/LoginMenu.cpp.i
-
-CMakeFiles/valiant.dir/src/LoginMenu.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/LoginMenu.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/LoginMenu.cpp -o CMakeFiles/valiant.dir/src/LoginMenu.cpp.s
-
-CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.o: ../src/MenuButtonsManager.cpp
-CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.o -MF CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.o.d -o CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.o -c /home/pix/valiant/bataille_navale/src/MenuButtonsManager.cpp
-
-CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/MenuButtonsManager.cpp > CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.i
-
-CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/MenuButtonsManager.cpp -o CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.s
-
-CMakeFiles/valiant.dir/src/MenuWindow.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/MenuWindow.cpp.o: ../src/MenuWindow.cpp
-CMakeFiles/valiant.dir/src/MenuWindow.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/valiant.dir/src/MenuWindow.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/MenuWindow.cpp.o -MF CMakeFiles/valiant.dir/src/MenuWindow.cpp.o.d -o CMakeFiles/valiant.dir/src/MenuWindow.cpp.o -c /home/pix/valiant/bataille_navale/src/MenuWindow.cpp
-
-CMakeFiles/valiant.dir/src/MenuWindow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/MenuWindow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/MenuWindow.cpp > CMakeFiles/valiant.dir/src/MenuWindow.cpp.i
-
-CMakeFiles/valiant.dir/src/MenuWindow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/MenuWindow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/MenuWindow.cpp -o CMakeFiles/valiant.dir/src/MenuWindow.cpp.s
-
-CMakeFiles/valiant.dir/src/MouseManager.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/MouseManager.cpp.o: ../src/MouseManager.cpp
-CMakeFiles/valiant.dir/src/MouseManager.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/valiant.dir/src/MouseManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/MouseManager.cpp.o -MF CMakeFiles/valiant.dir/src/MouseManager.cpp.o.d -o CMakeFiles/valiant.dir/src/MouseManager.cpp.o -c /home/pix/valiant/bataille_navale/src/MouseManager.cpp
-
-CMakeFiles/valiant.dir/src/MouseManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/MouseManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/MouseManager.cpp > CMakeFiles/valiant.dir/src/MouseManager.cpp.i
-
-CMakeFiles/valiant.dir/src/MouseManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/MouseManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/MouseManager.cpp -o CMakeFiles/valiant.dir/src/MouseManager.cpp.s
-
-CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.o: ../src/PlayerBoatsManager.cpp
-CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.o -MF CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.o.d -o CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.o -c /home/pix/valiant/bataille_navale/src/PlayerBoatsManager.cpp
-
-CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/PlayerBoatsManager.cpp > CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.i
-
-CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/PlayerBoatsManager.cpp -o CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.s
-
-CMakeFiles/valiant.dir/src/PlayerHud.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/PlayerHud.cpp.o: ../src/PlayerHud.cpp
-CMakeFiles/valiant.dir/src/PlayerHud.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/valiant.dir/src/PlayerHud.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/PlayerHud.cpp.o -MF CMakeFiles/valiant.dir/src/PlayerHud.cpp.o.d -o CMakeFiles/valiant.dir/src/PlayerHud.cpp.o -c /home/pix/valiant/bataille_navale/src/PlayerHud.cpp
-
-CMakeFiles/valiant.dir/src/PlayerHud.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/PlayerHud.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/PlayerHud.cpp > CMakeFiles/valiant.dir/src/PlayerHud.cpp.i
-
-CMakeFiles/valiant.dir/src/PlayerHud.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/PlayerHud.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/PlayerHud.cpp -o CMakeFiles/valiant.dir/src/PlayerHud.cpp.s
-
-CMakeFiles/valiant.dir/src/SaveData.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/SaveData.cpp.o: ../src/SaveData.cpp
-CMakeFiles/valiant.dir/src/SaveData.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/valiant.dir/src/SaveData.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/SaveData.cpp.o -MF CMakeFiles/valiant.dir/src/SaveData.cpp.o.d -o CMakeFiles/valiant.dir/src/SaveData.cpp.o -c /home/pix/valiant/bataille_navale/src/SaveData.cpp
-
-CMakeFiles/valiant.dir/src/SaveData.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/SaveData.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/SaveData.cpp > CMakeFiles/valiant.dir/src/SaveData.cpp.i
-
-CMakeFiles/valiant.dir/src/SaveData.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/SaveData.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/SaveData.cpp -o CMakeFiles/valiant.dir/src/SaveData.cpp.s
-
 CMakeFiles/valiant.dir/src/SessionManager.cpp.o: CMakeFiles/valiant.dir/flags.make
 CMakeFiles/valiant.dir/src/SessionManager.cpp.o: ../src/SessionManager.cpp
 CMakeFiles/valiant.dir/src/SessionManager.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/valiant.dir/src/SessionManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/valiant.dir/src/SessionManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/SessionManager.cpp.o -MF CMakeFiles/valiant.dir/src/SessionManager.cpp.o.d -o CMakeFiles/valiant.dir/src/SessionManager.cpp.o -c /home/pix/valiant/bataille_navale/src/SessionManager.cpp
 
 CMakeFiles/valiant.dir/src/SessionManager.cpp.i: cmake_force
@@ -503,38 +111,10 @@ CMakeFiles/valiant.dir/src/SessionManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/SessionManager.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/SessionManager.cpp -o CMakeFiles/valiant.dir/src/SessionManager.cpp.s
 
-CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o: ../src/SfmlWindow.cpp
-CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o -MF CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o.d -o CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o -c /home/pix/valiant/bataille_navale/src/SfmlWindow.cpp
-
-CMakeFiles/valiant.dir/src/SfmlWindow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/SfmlWindow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/SfmlWindow.cpp > CMakeFiles/valiant.dir/src/SfmlWindow.cpp.i
-
-CMakeFiles/valiant.dir/src/SfmlWindow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/SfmlWindow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/SfmlWindow.cpp -o CMakeFiles/valiant.dir/src/SfmlWindow.cpp.s
-
-CMakeFiles/valiant.dir/src/SplashWindow.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/SplashWindow.cpp.o: ../src/SplashWindow.cpp
-CMakeFiles/valiant.dir/src/SplashWindow.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/valiant.dir/src/SplashWindow.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/SplashWindow.cpp.o -MF CMakeFiles/valiant.dir/src/SplashWindow.cpp.o.d -o CMakeFiles/valiant.dir/src/SplashWindow.cpp.o -c /home/pix/valiant/bataille_navale/src/SplashWindow.cpp
-
-CMakeFiles/valiant.dir/src/SplashWindow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/SplashWindow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/SplashWindow.cpp > CMakeFiles/valiant.dir/src/SplashWindow.cpp.i
-
-CMakeFiles/valiant.dir/src/SplashWindow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/SplashWindow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/SplashWindow.cpp -o CMakeFiles/valiant.dir/src/SplashWindow.cpp.s
-
 CMakeFiles/valiant.dir/src/TCPClient.cpp.o: CMakeFiles/valiant.dir/flags.make
 CMakeFiles/valiant.dir/src/TCPClient.cpp.o: ../src/TCPClient.cpp
 CMakeFiles/valiant.dir/src/TCPClient.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/valiant.dir/src/TCPClient.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/valiant.dir/src/TCPClient.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/TCPClient.cpp.o -MF CMakeFiles/valiant.dir/src/TCPClient.cpp.o.d -o CMakeFiles/valiant.dir/src/TCPClient.cpp.o -c /home/pix/valiant/bataille_navale/src/TCPClient.cpp
 
 CMakeFiles/valiant.dir/src/TCPClient.cpp.i: cmake_force
@@ -548,7 +128,7 @@ CMakeFiles/valiant.dir/src/TCPClient.cpp.s: cmake_force
 CMakeFiles/valiant.dir/src/TCPServer.cpp.o: CMakeFiles/valiant.dir/flags.make
 CMakeFiles/valiant.dir/src/TCPServer.cpp.o: ../src/TCPServer.cpp
 CMakeFiles/valiant.dir/src/TCPServer.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/valiant.dir/src/TCPServer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/valiant.dir/src/TCPServer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/TCPServer.cpp.o -MF CMakeFiles/valiant.dir/src/TCPServer.cpp.o.d -o CMakeFiles/valiant.dir/src/TCPServer.cpp.o -c /home/pix/valiant/bataille_navale/src/TCPServer.cpp
 
 CMakeFiles/valiant.dir/src/TCPServer.cpp.i: cmake_force
@@ -562,7 +142,7 @@ CMakeFiles/valiant.dir/src/TCPServer.cpp.s: cmake_force
 CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.o: CMakeFiles/valiant.dir/flags.make
 CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.o: ../src/TCPWinsocksMaster.cpp
 CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.o -MF CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.o.d -o CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.o -c /home/pix/valiant/bataille_navale/src/TCPWinsocksMaster.cpp
 
 CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.i: cmake_force
@@ -573,38 +153,10 @@ CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/TCPWinsocksMaster.cpp -o CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.s
 
-CMakeFiles/valiant.dir/src/WaitTimer.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/WaitTimer.cpp.o: ../src/WaitTimer.cpp
-CMakeFiles/valiant.dir/src/WaitTimer.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/valiant.dir/src/WaitTimer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/WaitTimer.cpp.o -MF CMakeFiles/valiant.dir/src/WaitTimer.cpp.o.d -o CMakeFiles/valiant.dir/src/WaitTimer.cpp.o -c /home/pix/valiant/bataille_navale/src/WaitTimer.cpp
-
-CMakeFiles/valiant.dir/src/WaitTimer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/WaitTimer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/WaitTimer.cpp > CMakeFiles/valiant.dir/src/WaitTimer.cpp.i
-
-CMakeFiles/valiant.dir/src/WaitTimer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/WaitTimer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/WaitTimer.cpp -o CMakeFiles/valiant.dir/src/WaitTimer.cpp.s
-
-CMakeFiles/valiant.dir/src/imagesRename.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/imagesRename.cpp.o: ../src/imagesRename.cpp
-CMakeFiles/valiant.dir/src/imagesRename.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/valiant.dir/src/imagesRename.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/imagesRename.cpp.o -MF CMakeFiles/valiant.dir/src/imagesRename.cpp.o.d -o CMakeFiles/valiant.dir/src/imagesRename.cpp.o -c /home/pix/valiant/bataille_navale/src/imagesRename.cpp
-
-CMakeFiles/valiant.dir/src/imagesRename.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/imagesRename.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/imagesRename.cpp > CMakeFiles/valiant.dir/src/imagesRename.cpp.i
-
-CMakeFiles/valiant.dir/src/imagesRename.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/imagesRename.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/imagesRename.cpp -o CMakeFiles/valiant.dir/src/imagesRename.cpp.s
-
 CMakeFiles/valiant.dir/src/main.cpp.o: CMakeFiles/valiant.dir/flags.make
 CMakeFiles/valiant.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/valiant.dir/src/main.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/valiant.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/valiant.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/main.cpp.o -MF CMakeFiles/valiant.dir/src/main.cpp.o.d -o CMakeFiles/valiant.dir/src/main.cpp.o -c /home/pix/valiant/bataille_navale/src/main.cpp
 
 CMakeFiles/valiant.dir/src/main.cpp.i: cmake_force
@@ -615,115 +167,29 @@ CMakeFiles/valiant.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/main.cpp -o CMakeFiles/valiant.dir/src/main.cpp.s
 
-CMakeFiles/valiant.dir/src/sfxManager.cpp.o: CMakeFiles/valiant.dir/flags.make
-CMakeFiles/valiant.dir/src/sfxManager.cpp.o: ../src/sfxManager.cpp
-CMakeFiles/valiant.dir/src/sfxManager.cpp.o: CMakeFiles/valiant.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/valiant.dir/src/sfxManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/valiant.dir/src/sfxManager.cpp.o -MF CMakeFiles/valiant.dir/src/sfxManager.cpp.o.d -o CMakeFiles/valiant.dir/src/sfxManager.cpp.o -c /home/pix/valiant/bataille_navale/src/sfxManager.cpp
-
-CMakeFiles/valiant.dir/src/sfxManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/valiant.dir/src/sfxManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pix/valiant/bataille_navale/src/sfxManager.cpp > CMakeFiles/valiant.dir/src/sfxManager.cpp.i
-
-CMakeFiles/valiant.dir/src/sfxManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/valiant.dir/src/sfxManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pix/valiant/bataille_navale/src/sfxManager.cpp -o CMakeFiles/valiant.dir/src/sfxManager.cpp.s
-
 # Object files for target valiant
 valiant_OBJECTS = \
-"CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.o" \
-"CMakeFiles/valiant.dir/src/Application.cpp.o" \
-"CMakeFiles/valiant.dir/src/BattleshipCore.cpp.o" \
 "CMakeFiles/valiant.dir/src/BattleshipServer.cpp.o" \
-"CMakeFiles/valiant.dir/src/Boat.cpp.o" \
-"CMakeFiles/valiant.dir/src/BsBDD.cpp.o" \
-"CMakeFiles/valiant.dir/src/CloudManager.cpp.o" \
-"CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.o" \
-"CMakeFiles/valiant.dir/src/EndPanel.cpp.o" \
-"CMakeFiles/valiant.dir/src/Entity.cpp.o" \
-"CMakeFiles/valiant.dir/src/EntityCircle.cpp.o" \
-"CMakeFiles/valiant.dir/src/EntityRectangle.cpp.o" \
-"CMakeFiles/valiant.dir/src/EntityText.cpp.o" \
-"CMakeFiles/valiant.dir/src/EntityTextBox.cpp.o" \
-"CMakeFiles/valiant.dir/src/GameChat.cpp.o" \
-"CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.o" \
-"CMakeFiles/valiant.dir/src/GameMessage.cpp.o" \
 "CMakeFiles/valiant.dir/src/GameSessionState.cpp.o" \
-"CMakeFiles/valiant.dir/src/GameVfx.cpp.o" \
-"CMakeFiles/valiant.dir/src/GameWindow.cpp.o" \
-"CMakeFiles/valiant.dir/src/Grid.cpp.o" \
-"CMakeFiles/valiant.dir/src/Localization.cpp.o" \
-"CMakeFiles/valiant.dir/src/LockerWindow.cpp.o" \
-"CMakeFiles/valiant.dir/src/LoginMenu.cpp.o" \
-"CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.o" \
-"CMakeFiles/valiant.dir/src/MenuWindow.cpp.o" \
-"CMakeFiles/valiant.dir/src/MouseManager.cpp.o" \
-"CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.o" \
-"CMakeFiles/valiant.dir/src/PlayerHud.cpp.o" \
-"CMakeFiles/valiant.dir/src/SaveData.cpp.o" \
 "CMakeFiles/valiant.dir/src/SessionManager.cpp.o" \
-"CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o" \
-"CMakeFiles/valiant.dir/src/SplashWindow.cpp.o" \
 "CMakeFiles/valiant.dir/src/TCPClient.cpp.o" \
 "CMakeFiles/valiant.dir/src/TCPServer.cpp.o" \
 "CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.o" \
-"CMakeFiles/valiant.dir/src/WaitTimer.cpp.o" \
-"CMakeFiles/valiant.dir/src/imagesRename.cpp.o" \
-"CMakeFiles/valiant.dir/src/main.cpp.o" \
-"CMakeFiles/valiant.dir/src/sfxManager.cpp.o"
+"CMakeFiles/valiant.dir/src/main.cpp.o"
 
 # External object files for target valiant
 valiant_EXTERNAL_OBJECTS =
 
-valiant: CMakeFiles/valiant.dir/src/AnimatedEntity.cpp.o
-valiant: CMakeFiles/valiant.dir/src/Application.cpp.o
-valiant: CMakeFiles/valiant.dir/src/BattleshipCore.cpp.o
 valiant: CMakeFiles/valiant.dir/src/BattleshipServer.cpp.o
-valiant: CMakeFiles/valiant.dir/src/Boat.cpp.o
-valiant: CMakeFiles/valiant.dir/src/BsBDD.cpp.o
-valiant: CMakeFiles/valiant.dir/src/CloudManager.cpp.o
-valiant: CMakeFiles/valiant.dir/src/CursorCellSelector.cpp.o
-valiant: CMakeFiles/valiant.dir/src/EndPanel.cpp.o
-valiant: CMakeFiles/valiant.dir/src/Entity.cpp.o
-valiant: CMakeFiles/valiant.dir/src/EntityCircle.cpp.o
-valiant: CMakeFiles/valiant.dir/src/EntityRectangle.cpp.o
-valiant: CMakeFiles/valiant.dir/src/EntityText.cpp.o
-valiant: CMakeFiles/valiant.dir/src/EntityTextBox.cpp.o
-valiant: CMakeFiles/valiant.dir/src/GameChat.cpp.o
-valiant: CMakeFiles/valiant.dir/src/GameInfoPanel.cpp.o
-valiant: CMakeFiles/valiant.dir/src/GameMessage.cpp.o
 valiant: CMakeFiles/valiant.dir/src/GameSessionState.cpp.o
-valiant: CMakeFiles/valiant.dir/src/GameVfx.cpp.o
-valiant: CMakeFiles/valiant.dir/src/GameWindow.cpp.o
-valiant: CMakeFiles/valiant.dir/src/Grid.cpp.o
-valiant: CMakeFiles/valiant.dir/src/Localization.cpp.o
-valiant: CMakeFiles/valiant.dir/src/LockerWindow.cpp.o
-valiant: CMakeFiles/valiant.dir/src/LoginMenu.cpp.o
-valiant: CMakeFiles/valiant.dir/src/MenuButtonsManager.cpp.o
-valiant: CMakeFiles/valiant.dir/src/MenuWindow.cpp.o
-valiant: CMakeFiles/valiant.dir/src/MouseManager.cpp.o
-valiant: CMakeFiles/valiant.dir/src/PlayerBoatsManager.cpp.o
-valiant: CMakeFiles/valiant.dir/src/PlayerHud.cpp.o
-valiant: CMakeFiles/valiant.dir/src/SaveData.cpp.o
 valiant: CMakeFiles/valiant.dir/src/SessionManager.cpp.o
-valiant: CMakeFiles/valiant.dir/src/SfmlWindow.cpp.o
-valiant: CMakeFiles/valiant.dir/src/SplashWindow.cpp.o
 valiant: CMakeFiles/valiant.dir/src/TCPClient.cpp.o
 valiant: CMakeFiles/valiant.dir/src/TCPServer.cpp.o
 valiant: CMakeFiles/valiant.dir/src/TCPWinsocksMaster.cpp.o
-valiant: CMakeFiles/valiant.dir/src/WaitTimer.cpp.o
-valiant: CMakeFiles/valiant.dir/src/imagesRename.cpp.o
 valiant: CMakeFiles/valiant.dir/src/main.cpp.o
-valiant: CMakeFiles/valiant.dir/src/sfxManager.cpp.o
 valiant: CMakeFiles/valiant.dir/build.make
-valiant: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1
-valiant: /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1
-valiant: /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1
-valiant: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
-valiant: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
-valiant: ../SqlLibs/mysqlLinux/lib64/libmysqlcppconn.so
 valiant: CMakeFiles/valiant.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Linking CXX executable valiant"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pix/valiant/bataille_navale/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable valiant"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/valiant.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

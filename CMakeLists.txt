@@ -3,10 +3,6 @@ project(Valiant)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(MYSQLCPPCONN_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/SqlLibs/mysqlLinux/include)
-set(MYSQLCPPCONN_LIBRARY ${CMAKE_SOURCE_DIR}/SqlLibs/mysqlLinux/lib64)
-
-include_directories(${MYSQLCPPCONN_INCLUDE_DIR})
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
@@ -17,8 +13,4 @@ include_directories(${Boost_INCLUDE_DIRS})
 
 add_executable(valiant ${SOURCES})
 
-find_library(MYSQLCPPCONN_LIB NAMES mysqlcppconn PATHS ${MYSQLCPPCONN_LIBRARY})
-target_link_libraries(valiant sfml-graphics sfml-audio sfml-network sfml-window sfml-system ${MYSQLCPPCONN_LIB} ${Boost_LIBRARIES})
-
-set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS_DEBUG "-g")
+target_link_libraries(valiant)

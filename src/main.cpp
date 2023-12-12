@@ -1,7 +1,4 @@
-#include <SFML/Graphics.hpp>
 #include <iostream>
-
-
 #include "BattleshipServer.h"
 
 void ServerMod()
@@ -9,7 +6,7 @@ void ServerMod()
     ushort port = 12345;
 
     BattleshipServer server(port);
-    std::cout << "Serveur d\202marr\202 sur le port " << port << ". Entrez le mdp 1234 pour arr�ter..." << std::endl;
+    std::cout << "Started Server on port: " << port << ". Type the password (1234) to stop the server..." << std::endl;
 
     std::string s  = "";
 
@@ -23,5 +20,3 @@ int main() {
     ServerMod();
     return 0;
 }
-
-
