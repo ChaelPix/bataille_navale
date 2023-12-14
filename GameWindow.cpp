@@ -174,7 +174,7 @@ void GameWindow::handleGameState() {
 
             case CursorCellSelector::State::ExtraTurn:
                 gameVfx->CreateFireCell(MousePos.x, MousePos.y, true);
-
+                application->fxobj->createSfx(SfxManager::sfx::explosion);
                 gameInfoPanel->updateTurn(++nbTurn);
                 gameState = GameState::Attacking;
 
