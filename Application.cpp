@@ -224,7 +224,7 @@ bool GameApplication::CreateClient()
   
    try
    {
-       this->client = new TCPClient("135.125.103.133", 12345);
+       this->client = new TCPClient("135.125.103.133", 55555);
        //this->client = new TCPClient("10.187.52.31", 12345);
        return true;
    }

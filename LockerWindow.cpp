@@ -137,9 +137,8 @@ void LockerWindow::HandleEvents(sf::Event& event) {
                 if (i < entitiesPtr.size()) {
                     auto entity = entitiesPtr.at(i);
                     if (entity->getShape().getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
-                        std::cout << "imageNumbers: " << imageNumbers[i] << " score de la bdd: " << stoi(application->getBddObj().getScore()) << std::endl;
+                        std::cout << "Le prix de la requete vaux : " << imageNumbers[i] << " a l'emplacement: " << i << " du vecteur, et le score de la bdd vaux: " << stoi(application->getBddObj().getScore()) << std::endl;
                         if (imageNumbers[i] <= stoi(application->getBddObj().getScore())) {
-                            std::cout << "imageNumbers: " << imageNumbers[i] << " score de la bdd: " << stoi(application->getBddObj().getScore()) << std::endl;
                             pictureChoose = i;
                             bdd->setIdPicture(pictureChoose);
                             std::cout << "Image " << pictureChoose << " cliquée" << std::to_string(bdd->getIdPicture()) << std::endl;
