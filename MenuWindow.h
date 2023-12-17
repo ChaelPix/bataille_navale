@@ -5,10 +5,12 @@
 
 #include "Settings.h"
 #include "AnimatedEntity.h"
+#include "EntityCircle.h"
 #include "MouseManager.h"
 #include "MenuButtonsManager.h"
 #include "BsBDD.h"
 #include "LoginMenu.h"
+
 
 class MenuWindow : public SfmlWindow
 {
@@ -24,6 +26,9 @@ protected:
 
     void Update(sf::Event& event) override;
 
+    void HandleMatchmaking();
+    void CheckExitButton();
+
     void Render() override;
 
 private:
@@ -33,15 +38,16 @@ private:
     AnimatedEntity* menuBackground;
     MenuButtonsManager* menuButtonsManager;
     std::vector<Entity*> entitiesPtr;
+    EntityText* serverInfoTxt;
+
+    EntityCircle* playerPicture;
 
     LoginMenu* loginMenu;
 
-    sf::Text stat;
-    sf::Text name;
-    sf::Font FontStat;
+    LoginMenu::MenuState menuState;
 
-    std::string statInformation;
-    std::string NameInformation;
+    std::vector<EntityText*> playerInfosText;
+    void InitPlayerInfo();
 };
 
 

@@ -20,10 +20,31 @@ EntityText::EntityText(sf::Font& font, const sf::Vector2f position, const int si
 	SetCharacterSize(size);
 	SetColor(color);
 }
+EntityText::EntityText(sf::Font& font, const sf::Vector2f position, const int size, std::string text, sf::Color color)
+{
+	Text.setFont(font);
+	SetPosition(position);
+	SetCharacterSize(size);
+	SetColor(color);
+	SetText(text);
+}
 void EntityText::SetText(std::string txt)
 {
 	Text.setString(txt);
 }
+
+void EntityText::SetTextAndCenter(std::string txt)
+{
+	SetText(txt);
+	Text.setOrigin(sf::Vector2f(Text.getLocalBounds().width / 2, Text.getLocalBounds().height / 2));
+}
+
+void EntityText::SetTextAndCenterX(std::string txt)
+{
+	SetText(txt);
+	Text.setOrigin(sf::Vector2f(Text.getLocalBounds().width / 2, 0));
+}
+
 
 void EntityText::SetPosition(sf::Vector2f position)
 {
@@ -50,7 +71,7 @@ void EntityText::draw(sf::RenderWindow& window)
 	window.draw(Text);
 }
 
-sf::Text EntityText::getText()
+sf::Text& EntityText::getText()
 {
 	return Text;
 }

@@ -35,3 +35,11 @@ void Grid::DrawGrid(sf::RenderWindow& window)
 	for (const auto& line : grid)
 		window.draw(line);
 }
+
+bool Grid::isMouseOnGrid(MouseManager mouse)
+{
+	sf::Vector2f pos = mouse.getClickPosition();
+
+	return (pos.x >= startGridPos.x && pos.x <= startGridPos.x + gridSize
+		&& pos.y >= startGridPos.y && pos.y <= startGridPos.y + gridSize);
+}

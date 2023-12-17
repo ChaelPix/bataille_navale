@@ -16,17 +16,19 @@ private:
 	sf::String inputText;
 	TextBoxSettings textBoxSettings;
 	sf::Clock cooldown;
-
+	int maxChar;
+	bool isPressed;
 public:
 
-	EntityTextBox(sf::Vector2f position, sf::Texture*, sf::Font& font, std::string description);
+	EntityTextBox(sf::Vector2f position, sf::Texture*, sf::Font& font, std::string description, int maxChar);
 
-	void update(sf::Event &event);
+	bool update(sf::Event &event);
 	void draw(sf::RenderWindow& window) override;
 
 	bool isOnTextBox(sf::Vector2f pos);
 	std::string getText();
 
+	void clearText();
 	void setSelected(bool isSelected);
 };
 

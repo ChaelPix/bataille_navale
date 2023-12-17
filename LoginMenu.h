@@ -8,11 +8,26 @@
 
 class LoginMenu
 {
+public :
+	enum class MenuState {WaitClick, LoginBDD, OnMenu};
+
+	struct loginByFileInfo {
+		std::string id;
+		std::string mdp;
+		bool hasFile;
+	};
+
 private:
 	EntityTextBox* usernameTextBox;
 	EntityTextBox* passwordTextBox;
 	EntityRectangle* loginButton;
+	EntityRectangle* background;
+	EntityText* textInfo;
+	EntityText* startText;
+
+
 	sf::Texture buttonTextures[2];
+	sf::Texture bgtexture;
 	BsBDD* bdd;
 	SaveData objData;
 	LoginMenuSettings loginMenuSettings;
@@ -20,15 +35,22 @@ private:
 	bool isLogged = false;
 	bool isOnButton = false;
 	bool isBusy;
-	std::vector<std::string> DataVector;
-	void Login();
+	bool& hasClicked;
+
+	std::vector<std::string> dataVector;
+	void Login(std::string id, std::string mdp);
 	void LoginInvite();
 
+	float opacite = 255.0f;
+	bool increasing = true;
+	const float blinkSpeed = .5;
+	void updateBlink();
 public:
 
-	LoginMenu(sf::Font& font, BsBDD& objBDD); //à ajuster selon la bdd
+	LoginMenu(sf::Font& font, BsBDD& objBDD, bool& hasClicked, loginByFileInfo& log);
 
-	void update(sf::Event& event, MouseManager &mouseManager);
-	void draw(sf::RenderWindow& window);	
+	bool checkForSaveFile(loginByFileInfo& log);
+	MenuState update(sf::Event& event, MouseManager &mouseManager);
+	void draw(sf::RenderWindow& window, LoginMenu::MenuState state);
 };
 

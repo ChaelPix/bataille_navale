@@ -34,6 +34,9 @@
     <ClCompile Include="EntityRectangle.cpp" />
     <ClCompile Include="EntityText.cpp" />
     <ClCompile Include="EntityTextBox.cpp" />
+    <ClCompile Include="GameChat.cpp" />
+    <ClCompile Include="GameInfoPanel.cpp" />
+    <ClCompile Include="GameMessage.cpp" />
     <ClCompile Include="GameSessionState.cpp" />
     <ClCompile Include="GameVfx.cpp" />
     <ClCompile Include="GameWindow.cpp" />
@@ -47,9 +50,11 @@
     <ClCompile Include="MenuWindow.cpp" />
     <ClCompile Include="MouseManager.cpp" />
     <ClCompile Include="PlayerBoatsManager.cpp" />
+    <ClCompile Include="PlayerHud.cpp" />
     <ClCompile Include="SaveData.cpp" />
     <ClCompile Include="SessionManager.cpp" />
     <ClCompile Include="SfmlWindow.cpp" />
+    <ClCompile Include="SfxManager.cpp" />
     <ClCompile Include="SplashWindow.cpp" />
     <ClCompile Include="TCPClient.cpp" />
     <ClCompile Include="TCPServer.cpp" />
@@ -73,6 +78,9 @@
     <ClInclude Include="EntityRectangle.h" />
     <ClInclude Include="EntityText.h" />
     <ClInclude Include="EntityTextBox.h" />
+    <ClInclude Include="GameChat.h" />
+    <ClInclude Include="GameInfoPanel.h" />
+    <ClInclude Include="GameMessage.h" />
     <ClInclude Include="GameSessionState.h" />
     <ClInclude Include="GameVfx.h" />
     <ClInclude Include="GameWindow.h" />
@@ -84,11 +92,14 @@
     <ClInclude Include="MenuWindow.h" />
     <ClInclude Include="MouseManager.h" />
     <ClInclude Include="PlayerBoatsManager.h" />
+    <ClInclude Include="PlayerHud.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="SaveData.h" />
     <ClInclude Include="SessionManager.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SfmlWindow.h" />
+    <ClInclude Include="SfxManager.h" />
     <ClInclude Include="SplashWindow.h" />
     <ClInclude Include="TCPClient.h" />
     <ClInclude Include="TCPServer.h" />
@@ -125,6 +136,12 @@
       <FileType>Document</FileType>
     </CopyFileToFolders>
     <None Include="SqlLibs\mysql-connector-c++-8.1.0-winx64\mysql-connector-c++-8.1.0-winx64\lib64\mysqlcppconn8-2-vs14.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ressources\appIco.ico" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -240,6 +257,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -260,6 +279,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>winmm.lib;opengl32.lib;freetype.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

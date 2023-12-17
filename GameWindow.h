@@ -14,6 +14,9 @@ class GameApplication;
 #include "GameVfx.h"
 #include <vector>
 #include "CursorCellSelector.h"
+#include "GameInfoPanel.h"
+#include "PlayerHud.h"
+#include "GameChat.h"
 
 class GameWindow : public SfmlWindow {
 public:
@@ -29,6 +32,7 @@ protected:
     void Render() override;
 
 private:
+    int nbTurn = 1;
     CloudManager* cloudManager = new CloudManager();
 
     GameApplication* application;
@@ -36,6 +40,7 @@ private:
     MouseManager mouseManager;
     GridSettings gridSettings;
     WindowSettings windowSettings;
+    GameSettings gameSettings;
 
     AnimatedEntity* waterBackground;
 
@@ -52,6 +57,17 @@ private:
     CursorCellSelector* cursor;
     EndPanel* endPanel;
     GameVfx* gameVfx;
+    GameInfoPanel* gameInfoPanel;
+    GameChat* gameChat;
+
+    PlayerHud* playerHud;
+    PlayerHud* enemyHud;
+    bool isHudOk = false;
+    void processMessages();
+    void handleGameState();
+
+    void CreateHud(std::string& enemyInfoMessage);
+    void OnEnd(bool isWin);
 };
 
 

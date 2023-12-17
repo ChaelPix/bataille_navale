@@ -27,8 +27,9 @@ public:
 	MenuButtonsManager(sf::Font & font);
 
 	void draw(sf::RenderWindow& window);
-	bool CheckButtonHover(MouseManager& mouse);
+	int CheckButtonHover(MouseManager& mouse);
 
 	bool getIsMatchMaking();
+	void setIsMatchMaking(bool action);
 };
 

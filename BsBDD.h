@@ -16,7 +16,9 @@
 #include <jdbc/cppconn/statement.h>
 #include <jdbc/cppconn/prepared_statement.h>
 #include <iomanip>
-
+#include <thread>
+#include <future>
+#include "SaveData.h"
 
 class BsBDD {
 
@@ -34,7 +36,10 @@ private:
     std::string nbLostGames;
     std::string nbWonGames;
     std::string idPlayers;
+    int idPicture;
     std::vector<std::string> vcase;
+    SaveData objDataSave;
+    bool isConnected;
 
 public:
     BsBDD();
@@ -42,10 +47,10 @@ public:
 
     void Connexion();
     void setPseudo(std::string name);
-    void connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password);
+    bool connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password);
     bool login(const std::string& idPlayer, const std::string& password);
     bool registerUser(const std::string& idUser, const std::string& password);
-    void BonusWin();
+    void BonusWin(int nbPoints = 100);
     void incrementNbGames();
     void incrementNbLostGames();
     void incrementNbWonGames();
@@ -54,7 +59,11 @@ public:
     void getPlayerData();
     void setAllData();
     void getAllData(std::vector<std::string>&Vector);
+    void saveToText();
     std::string getStatsInfo();
+
+    bool isUserExistsButWrongPassword(const std::string& idUser, const std::string& password);
+    bool isUserDoesNotExist(const std::string& idUser);
 
     // Déclarations des méthodes getteurs
     std::string getId() const;
@@ -64,6 +73,13 @@ public:
     std::string getNbWonGames() const;
     std::string getIdPlayers() const;
     std::string getmdp() const;
+    std::string getRatio();
+
+    bool getIsConnected();
+    void setIsConnected(bool action);
+    
+    int getIdPicture();
+    void setIdPicture(int id);
 
     // Setters
     void setId(const std::string& newId);

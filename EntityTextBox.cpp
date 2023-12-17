@@ -1,6 +1,6 @@
 #include "EntityTextBox.h"
 
-EntityTextBox::EntityTextBox(sf::Vector2f position, sf::Texture* texture, sf::Font &font, std::string description)
+EntityTextBox::EntityTextBox(sf::Vector2f position, sf::Texture* texture, sf::Font &font, std::string description, int maxChar) : maxChar(maxChar)
 {
 	isSelected = false;
 	inputText = "";
@@ -17,35 +17,40 @@ EntityTextBox::EntityTextBox(sf::Vector2f position, sf::Texture* texture, sf::Fo
 	defaultText->SetText(description);
 }
 
-void EntityTextBox::update(sf::Event &event)
+bool EntityTextBox::update(sf::Event &event)
 {
 	if (!isSelected)
-		return;
+		return false;
 
-    if (cooldown.getElapsedTime().asMilliseconds() >= textBoxSettings.timeCooldownTyping)
-    {
-		cooldown.restart();
-        if (event.type == sf::Event::TextEntered)
-        {
-            if(event.text.unicode == 8)
-                inputText = inputText.substring(0, inputText.getSize() - 1);
-            else if(event.text.unicode == 13)
-                std::cout << "enter pressed" << std::endl;
-            else
-                inputText += event.text.unicode;
+	if (event.type == sf::Event::TextEntered)
+	{
+		if (isPressed)
+			return false;
 
-            text->SetText(inputText);
-        }
-    }
+		if (event.text.unicode == 8)
+			inputText = inputText.substring(0, inputText.getSize() - 1);
+		else if (event.text.unicode == 13)
+			return true;
+		else if (inputText.getSize() < maxChar)
+			inputText += event.text.unicode;
+
+		text->SetText(inputText);
+		isPressed = true;
+	}
+	else
+		isPressed = false;
+	
 
 	//
 	int characterSize = textBoxSettings.maxCharacterSize;
 	text->SetCharacterSize(characterSize);
-	while ((text->getWidth() > textBackground->getSize().x /*|| text->getHeight() > textBoxSettings.textBoxSize.y / 2.5*/) && characterSize > textBoxSettings.minCharacterSize)
+	while ((text->getWidth() > textBackground->getSize().x) && characterSize > textBoxSettings.minCharacterSize)
 	{
 		characterSize--;
 		text->SetCharacterSize(characterSize);
 	}
+
+	return false;
 }
 
 void EntityTextBox::draw(sf::RenderWindow& window)
@@ -56,7 +61,7 @@ void EntityTextBox::draw(sf::RenderWindow& window)
 		selectedBackground->draw(window);
 
 	text->draw(window);
-
+	
 	if (inputText.isEmpty())
 		defaultText->draw(window);
 }
@@ -69,6 +74,12 @@ bool EntityTextBox::isOnTextBox(sf::Vector2f pos)
 std::string EntityTextBox::getText()
 {
 	return inputText;
+}
+
+void EntityTextBox::clearText()
+{
+	inputText = "";
+	text->SetText("");
 }
 
 void EntityTextBox::setSelected(bool isSelected)

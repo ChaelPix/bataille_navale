@@ -23,6 +23,7 @@ public :
 	AnimatedEntity(int timer, bool doLoop, bool doDie, sf::Vector2f size, sf::Vector2f position, std::vector<sf::Texture>& textures);
 
 	virtual void draw(sf::RenderWindow& window);
+	void ChangeTexturesRef(std::vector<sf::Texture>* refTexts);
 
 	bool getIsDead();
 };

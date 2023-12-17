@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <sstream>
-
+#include "BsBDD.h"
 class BattleshipCore
 {
 public:
@@ -30,9 +30,7 @@ private:
 
 	bool hasReceivedOpponentGrid;
 	int playerBoatsDown = 0;
-	int enemyBoatDown = 0;
-
-	
+	int enemyBoatDown = 0;	
 
 public:
 	BattleshipCore();
@@ -55,7 +53,12 @@ public:
 	bool CheckIfBoatDown(int x, int y, bool isOnOpponent, bool doCountAttack, int originX, int originY);
 	BattleshipCore::CellType Attack(int x, int y, bool isOnOpponent);
 
+	BattleshipCore::CellType getCaseCellType(int x, int y, bool isEnemy);
+
 	bool areAllEnnemyBoatsDown();
 	bool areAllPlayerBoatsDown();
+	int getEnemyBoatSunk();
+
+	void SaveEndGame(bool isWin, BsBDD& bdd);
 };
 

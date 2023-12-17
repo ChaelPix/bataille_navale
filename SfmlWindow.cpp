@@ -1,9 +1,13 @@
 #include "SfmlWindow.h"
 #include <iostream>
 SfmlWindow::SfmlWindow(const std::string& title, const sf::Vector2f& size, const sf::Vector2i& windowPos)
-    : window(sf::VideoMode(size.x, size.y), title) 
+    : window(sf::VideoMode(size.x, size.y), title)
 {
     window.setPosition(windowPos);
+
+    sf::Image icon;
+    icon.loadFromFile("Ressources/appIco.png");
+    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 }
 
 void SfmlWindow::Run() {
@@ -12,7 +16,10 @@ void SfmlWindow::Run() {
 
     while (window.pollEvent(event)) {
         if (event.type == sf::Event::Closed)
+        {
             window.close();
+            exit(0);
+        }
 
         HandleEvents(event);
     }

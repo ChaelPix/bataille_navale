@@ -2,12 +2,16 @@
 
 #include <SFML/Graphics.hpp>
 #include <memory>
+#include <thread>
 #include "SfmlWindow.h"
 #include "GameWindow.h"
 #include "MenuWindow.h"
 #include "SplashWindow.h"
+#include "LockerWindow.h"
 #include "TCPClient.h"
 #include "BSBDD.h"
+#include "SaveData.h"
+#include "SfxManager.h"
 
 
 class GameApplication {
@@ -25,10 +29,12 @@ public:
         Chat,
         BattleGrid,
         End,
+        PlayerInfo,
         Unknown
     };
 
     TCPClient* client;
+    SfxManager* fxobj;
 
 private:
     bool running = true;
@@ -38,7 +44,18 @@ private:
     BsBDD* objBDD;
     sf::Font gameFont;
 
+    std::vector<sf::Texture> menuBg;
+    std::vector<sf::Texture> gameBg;
+    std::vector<sf::Texture> charactersPictures;
+
+    bool hasLogged;
+    bool areImagesOk;
+    bool hasDataFile;
+
     void Initialize();
+    void LoadImages();
+
+    std::thread imageLoadingThread;
 
 public:
     GameApplication();
@@ -49,7 +66,7 @@ public:
 
     void ChangeState(State newState);
 
-    void CreateClient();
+    bool CreateClient();
     void DeleteClient();
 
     void Close();
@@ -63,4 +80,17 @@ public:
     MessageType getMessageType(std::string message);
 
     sf::Font& getGameFont();
+
+    bool& getHasLogged();
+    void setHasLogged(bool action);
+    bool getAreImagesOk();
+    bool getHasDataFile();
+    void checkForSaveFile();
+
+
+    std::vector<sf::Texture>& getMenuBg();
+    std::vector<sf::Texture>& getGameBg();
+    std::vector<sf::Texture>& getCharactersImgs();
+    sf::Texture& getChoosenPicture();
+
 };

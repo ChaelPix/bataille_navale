@@ -1,6 +1,7 @@
 #pragma once
 
 #include "EntityRectangle.h"
+#include "EntityText.h"
 #include "MouseManager.h"
 #include "Settings.h"
 
@@ -13,14 +14,14 @@ private:
 	sf::Texture imagesTextures[2];
 	sf::Texture buttonTextures[2];
 	EndMenuSettings endMenuSettings;
-
+	EntityText* scoreText;
 	bool doShow;
 
 public:
 
-	EndPanel();
+	EndPanel(sf::Font& font);
 
-	void Show(bool isVictory);
+	void Show(bool isVictory, int score, int wonPoints);
 	bool isLeaveButtonClicked(MouseManager mouse);
 	void draw(sf::RenderWindow& window);
 };

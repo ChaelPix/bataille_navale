@@ -4,14 +4,42 @@
 bool BattleshipCore::areAllEnnemyBoatsDown()
 {
     std::cout << "Ennemy boat : " << enemyBoatDown << std::endl;
-    return enemyBoatDown >= 5;
+    bool b = enemyBoatDown >= 5;
+    return b;
 }
 
 bool BattleshipCore::areAllPlayerBoatsDown()
 {
     std::cout << "Player boat : " << playerBoatsDown << std::endl;
-    return playerBoatsDown >= 5;
+    bool b = playerBoatsDown >= 5;
+    return b;
 }
+
+int BattleshipCore::getEnemyBoatSunk()
+{
+    return enemyBoatDown;
+}
+
+void BattleshipCore::SaveEndGame(bool isWin, BsBDD& bdd)
+{
+    if (!bdd.getIsConnected())
+        return;
+
+    bdd.incrementNbGames();
+
+    if (!isWin)
+        bdd.incrementNbLostGames();
+    else
+        bdd.incrementNbWonGames();
+
+
+    int score = getEnemyBoatSunk() * 50;
+    if (isWin)
+        score += 250;
+
+    bdd.BonusWin(score);
+}
+
 
 BattleshipCore::BattleshipCore()
 {
@@ -209,6 +237,12 @@ BattleshipCore::CellType BattleshipCore::Attack(int x, int y, bool isOnOpponent)
         grilleCible[x][y] = CellType::water; 
 
     return grilleCible[x][y];
+}
+
+BattleshipCore::CellType BattleshipCore::getCaseCellType(int x, int y, bool isEnemy)
+{
+    CellType(*grilleCible)[nbCol] = isEnemy ? targetGrid : playerGrid;
+    return  grilleCible[x][y];
 }
 
 bool BattleshipCore::CheckIfBoatDown(int x, int y, bool isOnOpponent, bool doCountAttack, int origX, int origY) {

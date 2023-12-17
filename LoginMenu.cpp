@@ -1,24 +1,67 @@
 #include "LoginMenu.h"
 
 
-LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD)
+LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD, bool& hasClicked, loginByFileInfo& app) : hasClicked(hasClicked)
 {
-	usernameTextBox = new EntityTextBox(loginMenuSettings.usernameTextBoxPos, nullptr, font, "Username");
-	passwordTextBox = new EntityTextBox(loginMenuSettings.passwordTextBosPos, nullptr, font, "Password");
+	usernameTextBox = new EntityTextBox(loginMenuSettings.usernameTextBoxPos, nullptr, font, "Username (max 9)", 9);
+	passwordTextBox = new EntityTextBox(loginMenuSettings.passwordTextBosPos, nullptr, font, "Password (max 10)", 10);
 	
 	for (int i = 0; i < 2; i++)
 		buttonTextures[i].loadFromFile(loginMenuSettings.buttonImagePaths[i]);
 	
 	loginButton = new EntityRectangle(loginMenuSettings.buttonSize, loginMenuSettings.buttonPos, buttonTextures[0]);
+	textInfo = new EntityText(font, loginMenuSettings.textPosition, loginMenuSettings.characterSize, "Login Menu");
+
+	bgtexture.loadFromFile(loginMenuSettings.backgroundMenuPath);
+	background = new EntityRectangle(loginMenuSettings.backgroundMenuSize, loginMenuSettings.backgroundMenuPos, bgtexture);
 
 	bdd = &objBDD;
 	isBusy = false;
+
+	if (!hasClicked)
+	{
+		startText = new EntityText(font, loginMenuSettings.startTextPos, loginMenuSettings.startTextCharacterSize, "Left Click to begin your voyage");
+	}
+	else
+		isLogged = true;
+
+	checkForSaveFile(app);
 }
 
-void LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
+
+bool LoginMenu::checkForSaveFile(loginByFileInfo& app)
 {
-	if (isBusy || isLogged)
-		return;
+	if (!app.hasFile)
+		return false;
+
+	Login(app.id, app.mdp);
+
+	return true;
+}
+
+LoginMenu::MenuState LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
+{
+	if (!hasClicked)
+	{
+		updateBlink();
+		startText->SetColor(sf::Color(255, 255, 255, opacite));
+		if (mouseManager.isMouseClicked())
+		{
+			hasClicked = true;
+			return LoginMenu::MenuState::LoginBDD;
+		}
+
+		return LoginMenu::MenuState::WaitClick;
+	}
+
+
+	if (isLogged)
+	{
+		return LoginMenu::MenuState::OnMenu;
+	}
+
+	if (isBusy)
+		return LoginMenu::MenuState::LoginBDD;
 
 	bool isOnUsername = false;
 	bool isOnPassword = false;
@@ -42,29 +85,16 @@ void LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
 
 		if (mouseManager.isMouseClicked())
 		{
-			if (usernameTextBox->getText().empty() || passwordTextBox->getText().empty()) {
-				//isBusy = true;
-				//std::cout << "empty ";
-				//LoginInvite();
-				DataVector.clear();
-				DataVector = svData.loadDataFromFile("data.txt");
-
-				bdd->setIdPlayers(DataVector[0]);
-				bdd->setMdp(DataVector[1]);
-				std::cout << "Login: " << bdd->getIdPlayers() << ", Mot de passe: " << bdd->getmdp() << std::endl;
-				// Affichage des données pour vérifier
-				for (size_t i = 0; i < DataVector.size(); i += 2) {
-					std::cout << "Login: " << DataVector[i] << ", Mot de passe: " << DataVector[i + 1] << std::endl;
-				}
-
+			if (usernameTextBox->getText().empty() && passwordTextBox->getText().empty()) {
+				isBusy = true;
+				LoginInvite();
 			}
 			else
 			{
 				isBusy = true;
-				Login();
+				Login(usernameTextBox->getText(), passwordTextBox->getText());
 			}	
 		}
-
 	}
 	else if (isOnButton)
 	{
@@ -74,36 +104,91 @@ void LoginMenu::update(sf::Event& event, MouseManager& mouseManager)
 
 	usernameTextBox->setSelected(isOnUsername);
 	passwordTextBox->setSelected(isOnPassword);
+
+	return LoginMenu::MenuState::LoginBDD;
 }
 
-void LoginMenu::draw(sf::RenderWindow& window)
+void LoginMenu::draw(sf::RenderWindow& window, LoginMenu::MenuState state)
 {
-	usernameTextBox->draw(window);
-	passwordTextBox->draw(window);
-	loginButton->draw(window);
+	if (!hasClicked)
+	{
+		startText->draw(window);
+	}
+	else if(state == LoginMenu::MenuState::LoginBDD)
+	{
+		background->draw(window);
+		usernameTextBox->draw(window);
+		passwordTextBox->draw(window);
+		loginButton->draw(window);
+		textInfo->draw(window);
+	}
+
 }
 
 void LoginMenu::LoginInvite() {
+	
 	std::cout << "Welcome invite.... ";
-	std::cout << bdd->getIdPlayers() << " ---------->" << bdd->getScore();
-	isLogged = true;
+	if (bdd != nullptr)
+		bdd->setIsConnected(false);
 
+	bdd->setIdPlayers("Guest");
+
+	isLogged = true;	
 }
 
-void LoginMenu::Login(){
+void LoginMenu::Login(std::string id, std::string mdp){
+
 	std::cout << "Login.... ";
-	bdd->connectToDB("10.187.52.4", "batailleNavale", "batailleNavale");
-	std::string id = usernameTextBox->getText();
-	std::string mdp = passwordTextBox->getText();
-	std::cout << id + mdp;
-	bdd->login(id, mdp);
-	std::cout << bdd->getIdPlayers() << " ----------> " << bdd->getScore();
-	std::cout << " vector data be ";
-	bdd->getAllData(DataVector);
-	for (int i = 0; i < DataVector.size(); i++){
-		std::cout << DataVector.at(i);
+	textInfo->SetText("Login...");
+
+	bool isConnected = bdd->connectToDB("tcp://135.125.103.133:3306", "bataille", "batailleSNIR");
+
+	if (!isConnected)
+	{
+		LoginInvite();
+		return;
 	}
-	svData.saveDataToFile(DataVector, "data.txt");
+
+	if (bdd->isUserDoesNotExist(id))
+	{
+		bdd->registerUser(id, mdp);	
+	} 
+	else if (bdd->isUserExistsButWrongPassword(id, mdp))
+	{
+		textInfo->SetText("Wrong Password.");
+		isBusy = false;
+		return;
+	}
+	else
+	{
+		if (!bdd->login(id, mdp))
+		{
+			textInfo->SetText("Error, please retry.");
+			isBusy = false;
+			return;
+		}
+	}
+	bdd->setMdp(mdp);
+	bdd->setIsConnected(true);
+	bdd->getAllData(dataVector);
+	svData.saveDataToFile(dataVector, "data.txt", false);
 	isLogged = true;
+
 }
 
+void LoginMenu::updateBlink() {
+	if (increasing) {
+		opacite += blinkSpeed;
+		if (opacite >= 255.0f) {
+			opacite = 255.0f;
+			increasing = false;
+		}
+	}
+	else {
+		opacite -= blinkSpeed;
+		if (opacite <= 0.0f) {
+			opacite = 0.0f;
+			increasing = true;
+		}
+	}
+}

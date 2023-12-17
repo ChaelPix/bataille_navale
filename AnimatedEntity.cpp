@@ -83,6 +83,12 @@ void AnimatedEntity::draw(sf::RenderWindow& window)
 	}
 }
 
+void AnimatedEntity::ChangeTexturesRef(std::vector<sf::Texture>* refTexts)
+{
+	actualBgIndex = 0;
+	refTextures = refTexts;
+}
+
 bool AnimatedEntity::getIsDead()
 {
 	return this->isDead;

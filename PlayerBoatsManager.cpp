@@ -10,7 +10,7 @@ PlayerBoatsManager::PlayerBoatsManager(BattleshipCore* gameCore, int bottomGridO
 	boatsType.push_back(CoreGame::boatTypes::PorteAvion);
 	boatsType.push_back(CoreGame::boatTypes::Torpilleur);
 
-	this->rotateCooldown = 1000;
+	this->rotateCooldown = 500;
 	this->battleshipCore = gameCore;
 
 	BoatSettings boatSettings;
