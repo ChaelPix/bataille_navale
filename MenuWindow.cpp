@@ -90,6 +90,7 @@ void MenuWindow::HandleMatchmaking()
             running = false;
             application->ChangeState(GameApplication::State::Game);
             application->fxobj->PlayMusic(SfxManager::bgm::game);
+            application->fxobj->setMusicLoop(SfxManager::bgm::game, true);
         }
 
     }
@@ -105,7 +106,6 @@ void MenuWindow::CheckExitButton()
     {
         running = false;
         application->Close();
-        application->fxobj->PlayMusic(SfxManager::bgm::game);
     }
     else if (id == 1)
     {
