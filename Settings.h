@@ -23,6 +23,7 @@ struct WindowSettings {
 struct GameSettings
 {
     const int timeToPlaceBoat = 15;
+    const int timeToSync = 1;
     const int timeToPlay = 10;
 };
 

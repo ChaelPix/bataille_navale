@@ -120,6 +120,12 @@ void GameWindow::handleGameState() {
             if (time >= gameSettings.timeToPlaceBoat) {
                 timer.restart();
                 playerBoatsManager->RandomPlacement();
+                gameState = GameState::SynchroGrid;
+            }
+            break;
+        case GameState::SynchroGrid:
+            if (time >= gameSettings.timeToSync) {
+                timer.restart();
                 application->client->sendMessage(battleshipCore.serializePlayerGrid());
                 gameState = GameState::WaitingGrid;
             }
