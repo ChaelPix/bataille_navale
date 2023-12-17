@@ -138,7 +138,7 @@ void GameApplication::checkForSaveFile()
 
     SaveData saver;
 
-    dataVector = saver.loadDataFromFile("data.txt");
+    dataVector = saver.loadDataFromFile();
 
     if (dataVector.at(0) == "")
     {
