@@ -1,52 +1,30 @@
-#include "SaveData.h"
-
-namespace fs = std::filesystem;
+ï»¿#include "SaveData.h"
 
 void SaveData::saveDataToFile(const std::vector<std::string>& dataVector, bool flag) {
-    char* userProfile = nullptr;
-    size_t userProfileSize = 0;
-    errno_t err = _dupenv_s(&userProfile, &userProfileSize, "USERPROFILE");
 
-    if (err) {
-        std::cerr << "Erreur en obtenant le chemin USERPROFILE" << std::endl;
-        return;
+    if (flag) {
+        std::vector<std::string> adjustedDataVector = dataVector;
+        if (adjustedDataVector.size() > 2) {
+            adjustedDataVector.pop_back();
+        }
     }
 
-    fs::path documentsPath = fs::path(userProfile) / "Documents" / "Valiant";
-    fs::create_directories(documentsPath); // Crée les dossiers si nécessaire
-    fs::path filePath = documentsPath / "data.txt";
-
-    free(userProfile); // Libérer la mémoire allouée par _dupenv_s
-
-    std::ofstream file(filePath);
+    std::ofstream file("data.txt");
     if (file.is_open()) {
         for (const auto& data : dataVector) {
-            file << data << std::endl;
+            file << data; // ï¿½crit chaque ï¿½lï¿½ment dans le fichier avec un saut de ligne
         }
         file.close();
     }
     else {
-        std::cerr << "Impossible d'ouvrir le fichier pour l'écriture." << std::endl;
+        // Gestion de l'erreur si le fichier ne peut pas ï¿½tre ouvert
     }
 }
 
+
 std::vector<std::string> SaveData::loadDataFromFile() {
-    char* userProfile = nullptr;
-    size_t userProfileSize = 0;
-    errno_t err = _dupenv_s(&userProfile, &userProfileSize, "USERPROFILE");
-
-    if (err) {
-        std::cerr << "Erreur en obtenant le chemin USERPROFILE" << std::endl;
-        return std::vector<std::string>();
-    }
-
-    fs::path documentsPath = fs::path(userProfile) / "Documents" / "Valiant";
-    fs::path filePath = documentsPath / "data.txt";
-
-    free(userProfile); // Libérer la mémoire allouée par _dupenv_s
-
+    std::ifstream file("data.txt");
     std::vector<std::string> loginsAndPasswordsAndIdPicture;
-    std::ifstream file(filePath);
     std::string line;
 
     if (file.is_open()) {
@@ -66,7 +44,7 @@ std::vector<std::string> SaveData::loadDataFromFile() {
     }
     else {
         std::cerr << "Impossible d'ouvrir le fichier pour la lecture." << std::endl;
-        loginsAndPasswordsAndIdPicture.assign(3, "");
+        loginsAndPasswordsAndIdPicture.assign(3, ""); // Remplit avec trois chaï¿½nes vides
     }
 
     return loginsAndPasswordsAndIdPicture;
