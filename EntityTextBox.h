@@ -17,7 +17,7 @@ private:
 	TextBoxSettings textBoxSettings;
 	sf::Clock cooldown;
 	int maxChar;
-
+	bool isPressed;
 public:
 
 	EntityTextBox(sf::Vector2f position, sf::Texture*, sf::Font& font, std::string description, int maxChar);

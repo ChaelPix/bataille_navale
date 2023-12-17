@@ -3,8 +3,8 @@
 
 LoginMenu::LoginMenu(sf::Font &font, BsBDD& objBDD, bool& hasClicked, loginByFileInfo& app) : hasClicked(hasClicked)
 {
-	usernameTextBox = new EntityTextBox(loginMenuSettings.usernameTextBoxPos, nullptr, font, "Username", 9);
-	passwordTextBox = new EntityTextBox(loginMenuSettings.passwordTextBosPos, nullptr, font, "Password", 15);
+	usernameTextBox = new EntityTextBox(loginMenuSettings.usernameTextBoxPos, nullptr, font, "Username (max 9)", 9);
+	passwordTextBox = new EntityTextBox(loginMenuSettings.passwordTextBosPos, nullptr, font, "Password (max 10)", 10);
 	
 	for (int i = 0; i < 2; i++)
 		buttonTextures[i].loadFromFile(loginMenuSettings.buttonImagePaths[i]);

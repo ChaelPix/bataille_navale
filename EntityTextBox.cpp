@@ -22,21 +22,24 @@ bool EntityTextBox::update(sf::Event &event)
 	if (!isSelected)
 		return false;
 
-    if (cooldown.getElapsedTime().asMilliseconds() >= textBoxSettings.timeCooldownTyping)
-    {
-		cooldown.restart();
-        if (event.type == sf::Event::TextEntered)
-        {
-			if (event.text.unicode == 8)
-				inputText = inputText.substring(0, inputText.getSize() - 1);
-			else if (event.text.unicode == 13)
-				return true;
-            else if(inputText.getSize() < maxChar)
-                inputText += event.text.unicode;
+	if (event.type == sf::Event::TextEntered)
+	{
+		if (isPressed)
+			return false;
 
-            text->SetText(inputText);
-        }
-    }
+		if (event.text.unicode == 8)
+			inputText = inputText.substring(0, inputText.getSize() - 1);
+		else if (event.text.unicode == 13)
+			return true;
+		else if (inputText.getSize() < maxChar)
+			inputText += event.text.unicode;
+
+		text->SetText(inputText);
+		isPressed = true;
+	}
+	else
+		isPressed = false;
+	
 
 	//
 	int characterSize = textBoxSettings.maxCharacterSize;

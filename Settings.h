@@ -140,7 +140,7 @@ struct TextBoxSettings {
     const sf::Color defaultTextColor = sf::Color(124, 124, 124, 200);
     const int maxCharacterSize = 40;
     const int minCharacterSize = 3;
-    const int timeCooldownTyping = 75;
+    const int timeCooldownTyping = 100;
 };
 
 struct LoginMenuSettings {
