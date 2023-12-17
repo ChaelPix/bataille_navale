@@ -42,6 +42,7 @@ void MenuWindow::Initialize()
     MenuServerInfoTextSettings ts;
     serverInfoTxt = new EntityText(application->getGameFont(), ts.textPosition, ts.characterSize, sf::Color::Red);
 
+    creditsTxt = new EntityText(application->getGameFont(), sf::Vector2f(0, 0), 15, "By LAURENT Raphael x BEAUJARD Traïan");
     
 
 }
@@ -101,6 +102,9 @@ void MenuWindow::HandleMatchmaking()
 
 void MenuWindow::CheckExitButton()
 {
+    if (menuState != LoginMenu::MenuState::OnMenu)
+        return;
+
     int id = menuButtonsManager->CheckButtonHover(mouseManager);
     if (id == 2)
     {
@@ -132,6 +136,7 @@ void MenuWindow::Render()
         menuButtonsManager->draw(window);
         serverInfoTxt->draw(window);
         playerPicture->draw(window);
+        creditsTxt->draw(window);
 
         if (playerInfosText.empty())
             InitPlayerInfo();

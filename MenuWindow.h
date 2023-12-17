@@ -39,6 +39,7 @@ private:
     MenuButtonsManager* menuButtonsManager;
     std::vector<Entity*> entitiesPtr;
     EntityText* serverInfoTxt;
+    EntityText* creditsTxt;
 
     EntityCircle* playerPicture;
 
