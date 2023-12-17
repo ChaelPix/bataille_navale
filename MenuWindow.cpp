@@ -42,7 +42,7 @@ void MenuWindow::Initialize()
     MenuServerInfoTextSettings ts;
     serverInfoTxt = new EntityText(application->getGameFont(), ts.textPosition, ts.characterSize, sf::Color::Red);
 
-    creditsTxt = new EntityText(application->getGameFont(), sf::Vector2f(0, 0), 15, "By LAURENT Raphael x BEAUJARD Traïan");
+    creditsTxt = new EntityText(application->getGameFont(), sf::Vector2f(1000, 730), 15, "By LAURENT Raphael x BEAUJARD Traïan");
     
 
 }
