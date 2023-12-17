@@ -331,7 +331,7 @@ void BsBDD::getAllData(std::vector<std::string>& Vector){
 void BsBDD::saveToText() {
     std::vector<std::string> vectorData;
     getAllData(vectorData);
-    objDataSave.saveDataToFile(vectorData, "Data.txt", true);
+    objDataSave.saveDataToFile(vectorData, true);
 
 }
 
