@@ -2,7 +2,6 @@
 #include <iostream>
 
 
-#include "Application.h"
 #include "BattleshipServer.h"
 
 void ServerMod()
@@ -10,11 +9,11 @@ void ServerMod()
     ushort port = 12345;
 
     BattleshipServer server(port);
-    std::cout << "Serveur d\202marr\202 sur le port " << port << ". Entrez le mdp 1234 pour arrêter..." << std::endl;
+    std::cout << "Serveur d\202marr\202 sur le port " << port << ". Entrez 'STOP' pour arrêter..." << std::endl;
 
     std::string s  = "";
 
-    while (s != "1234")
+    while (s != "STOP")
         std::cin >> s;
 
     server.closeSocket();
@@ -23,9 +22,7 @@ void ServerMod()
 int main() {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
-    GameApplication game(GameApplication::State::Splash);
-    game.Run();
-
+    ServerMod();
     return 0;
 }
 

@@ -1,8 +1,8 @@
 //{{NO_DEPENDENCIES}}
 // fichier Include Microsoft Visual C++.
-// Utilisé par ressources.rc
+// Utilisé par Resource.rc
 //
-#define IDR_LOCALIZATION1               101
+#define IDI_ICON1                       101
 
 // Next default values for new objects
 // 
