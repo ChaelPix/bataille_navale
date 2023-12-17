@@ -29,6 +29,7 @@ public:
 	std::string getText();
 
 	void clearText();
+	void setText(std::string txt);
 	void setSelected(bool isSelected);
 };
 

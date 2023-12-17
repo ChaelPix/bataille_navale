@@ -35,7 +35,7 @@ public:
 
     TCPClient* client;
     SfxManager* fxobj;
-
+    std::string serverIP = "10.187.52.XXX";
 private:
     bool running = true;
     State currentState;
@@ -67,6 +67,7 @@ public:
     void ChangeState(State newState);
 
     bool CreateClient();
+    bool CreateClient(std::string ip);
     void DeleteClient();
 
     void Close();

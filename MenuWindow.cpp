@@ -42,9 +42,12 @@ void MenuWindow::Initialize()
     MenuServerInfoTextSettings ts;
     serverInfoTxt = new EntityText(application->getGameFont(), ts.textPosition, ts.characterSize, sf::Color::Red);
 
-    creditsTxt = new EntityText(application->getGameFont(), sf::Vector2f(0, 0), 15, "By LAURENT Raphael x BEAUJARD Traïan");
-    
+    creditsTxt = new EntityText(application->getGameFont(), sf::Vector2f(1000, 730), 15, "By LAURENT Raphael x BEAUJARD Traïan");
 
+    serverIpDesc = new EntityText(application->getGameFont(), sf::Vector2f(5, 0), 25, "Local Server IP:");
+    serverIpTxtbox = new EntityTextBox(sf::Vector2f(5, 30), nullptr, application->getGameFont(), "SERVER IP", 15);
+    serverIpTxtbox->setSelected(true);
+    serverIpTxtbox->setText(application->serverIP);
 }
 
 void MenuWindow::HandleEvents(sf::Event& event) {
@@ -57,6 +60,9 @@ void MenuWindow::Update(sf::Event& event) {
     
     CheckExitButton();
     HandleMatchmaking();
+
+    if (!menuButtonsManager->getIsMatchMaking() && menuState == LoginMenu::MenuState::OnMenu)
+        serverIpTxtbox->update(event);
 }
 
 void MenuWindow::HandleMatchmaking()
@@ -65,7 +71,7 @@ void MenuWindow::HandleMatchmaking()
     {
         if (application->client == nullptr)
         {
-            if (!application->CreateClient())
+            if (!application->CreateClient(serverIpTxtbox->getText()))
             {
                 serverInfoTxt->SetText("Server is Inactive");
                 menuButtonsManager->setIsMatchMaking(false);
@@ -137,7 +143,8 @@ void MenuWindow::Render()
         serverInfoTxt->draw(window);
         playerPicture->draw(window);
         creditsTxt->draw(window);
-
+        serverIpDesc->draw(window);
+        serverIpTxtbox->draw(window);
         if (playerInfosText.empty())
             InitPlayerInfo();
         else

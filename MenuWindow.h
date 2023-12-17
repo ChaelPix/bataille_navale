@@ -47,6 +47,9 @@ private:
 
     LoginMenu::MenuState menuState;
 
+    EntityText* serverIpDesc;
+    EntityTextBox* serverIpTxtbox;
+
     std::vector<EntityText*> playerInfosText;
     void InitPlayerInfo();
 };
