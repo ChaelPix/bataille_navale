@@ -69,7 +69,7 @@ bool BsBDD::connectToDB(const std::string& dbURI, const std::string& userName, c
         try {
             driver = get_driver_instance();
             con = driver->connect(dbURI, userName, password);
-            con->setSchema("bataille_b");
+            con->setSchema("batailleNavale_b");
             connectPromise.set_value(true);
         }
         catch (sql::SQLException& e) {
