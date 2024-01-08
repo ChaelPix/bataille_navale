@@ -6,6 +6,7 @@
 #define espace4 "\t\t\t\t\t\t         "
 #define espace5 "\t\t\t\t\t\t      "
 #define effacer system("cls");
+
 #include <utility>
 #include <string>
 #include <vector>
@@ -47,7 +48,7 @@ public:
 
     void Connexion();
     void setPseudo(std::string name);
-    bool connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password);
+    bool connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password, const std::string& bddShema);
     bool login(const std::string& idPlayer, const std::string& password);
     bool registerUser(const std::string& idUser, const std::string& password);
     void BonusWin(int nbPoints = 100);

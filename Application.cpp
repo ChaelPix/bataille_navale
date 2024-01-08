@@ -138,7 +138,7 @@ void GameApplication::checkForSaveFile()
 
     SaveData saver;
 
-    dataVector = saver.loadDataFromFile("data.txt");
+    dataVector = saver.loadDataFromFile();
 
     if (dataVector.at(0) == "")
     {
@@ -220,18 +220,29 @@ void GameApplication::ChangeState(State newState) {
 
 bool GameApplication::CreateClient()
 {
-  // this->client = new TCPClient("10.187.52.31", 12345);
-  
    try
    {
-       this->client = new TCPClient("135.125.103.133", 55555);
-       //this->client = new TCPClient("10.187.52.31", 12345);
+       this->client = new TCPClient(networkSettings.serverIp, networkSettings.serverPort);
        return true;
    }
    catch (const std::runtime_error& e)
    {
        return false;
    }
+
+}
+bool GameApplication::CreateClient(std::string ip)
+{
+    serverIP = ip;
+    try
+    {
+        this->client = new TCPClient(ip, 12345);
+        return true;
+    }
+    catch (const std::runtime_error& e)
+    {
+        return false;
+    }
 
 }
 

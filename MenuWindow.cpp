@@ -42,8 +42,12 @@ void MenuWindow::Initialize()
     MenuServerInfoTextSettings ts;
     serverInfoTxt = new EntityText(application->getGameFont(), ts.textPosition, ts.characterSize, sf::Color::Red);
 
-    
+    creditsTxt = new EntityText(application->getGameFont(), sf::Vector2f(1000, 730), 15, "By LAURENT Raphael x BEAUJARD Traïan");
 
+    serverIpDesc = new EntityText(application->getGameFont(), sf::Vector2f(5, 0), 25, "Local Server IP:");
+    serverIpTxtbox = new EntityTextBox(sf::Vector2f(5, 30), nullptr, application->getGameFont(), "SERVER IP", 15);
+    serverIpTxtbox->setSelected(true);
+    serverIpTxtbox->setText(application->serverIP);
 }
 
 void MenuWindow::HandleEvents(sf::Event& event) {
@@ -56,22 +60,30 @@ void MenuWindow::Update(sf::Event& event) {
     
     CheckExitButton();
     HandleMatchmaking();
+
+    if (!menuButtonsManager->getIsMatchMaking() && menuState == LoginMenu::MenuState::OnMenu)
+        serverIpTxtbox->update(event);
 }
 
 void MenuWindow::HandleMatchmaking()
 {
     if (menuButtonsManager->getIsMatchMaking())
     {
-        if (application->client == nullptr)
-        {
-            if (!application->CreateClient())
-            {
+        if (application->client == nullptr) {
+            bool success;
+            if (application->networkSettings.isLocal) {
+                success = application->CreateClient(serverIpTxtbox->getText());
+            }
+            else {
+                success = application->CreateClient();
+            }
+
+            if (!success) {
                 serverInfoTxt->SetText("Server is Inactive");
                 menuButtonsManager->setIsMatchMaking(false);
                 return;
             }
-            else
-            {
+            else {
                 serverInfoTxt->SetText("");
             }
         }
@@ -101,6 +113,9 @@ void MenuWindow::HandleMatchmaking()
 
 void MenuWindow::CheckExitButton()
 {
+    if (menuState != LoginMenu::MenuState::OnMenu)
+        return;
+
     int id = menuButtonsManager->CheckButtonHover(mouseManager);
     if (id == 2)
     {
@@ -132,6 +147,13 @@ void MenuWindow::Render()
         menuButtonsManager->draw(window);
         serverInfoTxt->draw(window);
         playerPicture->draw(window);
+        creditsTxt->draw(window);
+
+        if (application->networkSettings.isLocal)
+        {
+            serverIpDesc->draw(window);
+            serverIpTxtbox->draw(window);
+        }
 
         if (playerInfosText.empty())
             InitPlayerInfo();

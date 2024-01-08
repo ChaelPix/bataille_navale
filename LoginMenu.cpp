@@ -141,7 +141,7 @@ void LoginMenu::Login(std::string id, std::string mdp){
 	std::cout << "Login.... ";
 	textInfo->SetText("Login...");
 
-	bool isConnected = bdd->connectToDB("tcp://135.125.103.133:3306", "bataille", "batailleSNIR");
+	bool isConnected = bdd->connectToDB(networkSettings.bddIp, networkSettings.bddLogin, networkSettings.bddMdp, networkSettings.bddSchema);
 
 	if (!isConnected)
 	{
@@ -171,7 +171,7 @@ void LoginMenu::Login(std::string id, std::string mdp){
 	bdd->setMdp(mdp);
 	bdd->setIsConnected(true);
 	bdd->getAllData(dataVector);
-	svData.saveDataToFile(dataVector, "data.txt", false);
+	svData.saveDataToFile(dataVector, false);
 	isLogged = true;
 
 }

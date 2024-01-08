@@ -2,6 +2,31 @@
 
 #include <SFML/Graphics.hpp>
 
+
+//Local
+//struct NetworkSettings {
+//    const bool isLocal = true;
+//    const std::string bddSchema = "batailleNavale_b";
+//    const std::string bddIp = "tcp://10.187.52.4:3306";
+//    const std::string bddLogin = "batailleNavale";
+//    const std::string bddMdp = "batailleNavale";
+//
+//    const std::string serverIp = "";
+//    const int serverPort = 12345;
+//};
+
+//Public
+struct NetworkSettings {
+    const bool isLocal = false;
+    const std::string bddSchema = "bataille";
+    const std::string bddIp = "tcp://135.125.103.133:3306";
+    const std::string bddLogin = "bataille";
+    const std::string bddMdp = "batailleSNIR";
+
+    const std::string serverIp = "135.125.103.133";
+    const int serverPort = 55555;
+};
+
 struct GridSettings {
     const int squareSize = 500;
     const int nbPixels = 10;
@@ -23,6 +48,7 @@ struct WindowSettings {
 struct GameSettings
 {
     const int timeToPlaceBoat = 15;
+    const int timeToSync = 1;
     const int timeToPlay = 10;
 };
 
@@ -144,21 +170,21 @@ struct TextBoxSettings {
 };
 
 struct LoginMenuSettings {
-    const sf::Vector2f usernameTextBoxPos = sf::Vector2f(400, 300);
-    const sf::Vector2f passwordTextBosPos = sf::Vector2f(400, 400);
+    const sf::Vector2f usernameTextBoxPos = sf::Vector2f(400, 200);
+    const sf::Vector2f passwordTextBosPos = sf::Vector2f(400, 300);
 
-    const sf::Vector2f backgroundMenuPos = sf::Vector2f(350, 150);
-    const sf::Vector2f backgroundMenuSize = sf::Vector2f(600, 500);
+    const sf::Vector2f backgroundMenuPos = sf::Vector2f(350, 50);
+    const sf::Vector2f backgroundMenuSize = sf::Vector2f(600, 400);
     const std::string backgroundMenuPath = "ressources/UI/ui_menuBg.png";
 
-    const sf::Vector2f buttonPos = sf::Vector2f(530, 500);
+    const sf::Vector2f buttonPos = sf::Vector2f(530, 365);
     const sf::Vector2f buttonSize = sf::Vector2f(228, 80);
     const std::string buttonImagePaths[2] = {
       "ressources/UI/ui_menu_loginbutton_off.png",
       "ressources/UI/ui_menu_loginbutton_on.png"
     };
 
-    const sf::Vector2f textPosition = sf::Vector2f(400, 200);
+    const sf::Vector2f textPosition = sf::Vector2f(400, 100);
     const int characterSize = 40;
 
     const sf::Vector2f startTextPos = sf::Vector2f(300, 500);

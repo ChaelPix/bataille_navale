@@ -82,6 +82,12 @@ void EntityTextBox::clearText()
 	text->SetText("");
 }
 
+void EntityTextBox::setText(std::string txt)
+{
+	inputText = txt;
+	text->SetText(txt);
+}
+
 void EntityTextBox::setSelected(bool isSelected)
 {
 	this->isSelected = isSelected;

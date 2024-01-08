@@ -61,7 +61,7 @@ void BsBDD::setPseudo(std::string name) {
 #include <thread>
 #include <future>
 
-bool BsBDD::connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password) {
+bool BsBDD::connectToDB(const std::string& dbURI, const std::string& userName, const std::string& password, const std::string& bddShema) {
     std::promise<bool> connectPromise;
     auto connectFuture = connectPromise.get_future();
 
@@ -69,7 +69,7 @@ bool BsBDD::connectToDB(const std::string& dbURI, const std::string& userName, c
         try {
             driver = get_driver_instance();
             con = driver->connect(dbURI, userName, password);
-            con->setSchema("bataille");
+            con->setSchema(bddShema);
             connectPromise.set_value(true);
         }
         catch (sql::SQLException& e) {
@@ -331,7 +331,7 @@ void BsBDD::getAllData(std::vector<std::string>& Vector){
 void BsBDD::saveToText() {
     std::vector<std::string> vectorData;
     getAllData(vectorData);
-    objDataSave.saveDataToFile(vectorData, "Data.txt", true);
+    objDataSave.saveDataToFile(vectorData, true);
 
 }
 

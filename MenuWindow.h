@@ -39,12 +39,16 @@ private:
     MenuButtonsManager* menuButtonsManager;
     std::vector<Entity*> entitiesPtr;
     EntityText* serverInfoTxt;
+    EntityText* creditsTxt;
 
     EntityCircle* playerPicture;
 
     LoginMenu* loginMenu;
 
     LoginMenu::MenuState menuState;
+
+    EntityText* serverIpDesc;
+    EntityTextBox* serverIpTxtbox;
 
     std::vector<EntityText*> playerInfosText;
     void InitPlayerInfo();

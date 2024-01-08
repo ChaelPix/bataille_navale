@@ -123,6 +123,8 @@ void LockerWindow::Initialize()
         // Ajoutez la nouvelle entité à la fin du vecteur
         entitiesPtr.push_back(new EntityRectangle(sf::Vector2f(280, 280), sf::Vector2f(pos_x, pos_y), charactersImgs->at(i)));
         textInfoShop.push_back(new EntityText(LckSettings.font, sf::Vector2f(pos_x, pos_y), LckSettings.characterSize, std::to_string(imageNumbers[i])));
+
+        pictureChoose = application->getBddObj().getIdPicture();
     }
     
 }

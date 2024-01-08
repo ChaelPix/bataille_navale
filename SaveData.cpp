@@ -1,7 +1,7 @@
 #include "SaveData.h"
 
-void SaveData::saveDataToFile(const std::vector<std::string>& dataVector, const std::string& filename, bool flag) {
-    
+void SaveData::saveDataToFile(const std::vector<std::string>& dataVector, bool flag) {
+
     if (flag) {
         std::vector<std::string> adjustedDataVector = dataVector;
         if (adjustedDataVector.size() > 2) {
@@ -9,22 +9,21 @@ void SaveData::saveDataToFile(const std::vector<std::string>& dataVector, const 
         }
     }
 
-    std::ofstream file(filename);
+    std::ofstream file("data.txt");
     if (file.is_open()) {
         for (const auto& data : dataVector) {
-            file << data; // Écrit chaque élément dans le fichier avec un saut de ligne
+            file << data; 
         }
         file.close();
     }
     else {
-        // Gestion de l'erreur si le fichier ne peut pas être ouvert
-        std::cerr << "Impossible d'ouvrir le fichier pour l'écriture." << std::endl;
+    
     }
 }
 
 
-std::vector<std::string> SaveData::loadDataFromFile(const std::string& filename) {
-    std::ifstream file(filename);
+std::vector<std::string> SaveData::loadDataFromFile() {
+    std::ifstream file("data.txt");
     std::vector<std::string> loginsAndPasswordsAndIdPicture;
     std::string line;
 
@@ -45,7 +44,7 @@ std::vector<std::string> SaveData::loadDataFromFile(const std::string& filename)
     }
     else {
         std::cerr << "Impossible d'ouvrir le fichier pour la lecture." << std::endl;
-        loginsAndPasswordsAndIdPicture.assign(3, ""); // Remplit avec trois chaînes vides
+        loginsAndPasswordsAndIdPicture.assign(3, ""); 
     }
 
     return loginsAndPasswordsAndIdPicture;

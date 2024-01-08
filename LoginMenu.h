@@ -32,6 +32,7 @@ private:
 	SaveData objData;
 	LoginMenuSettings loginMenuSettings;
 	SaveData svData;
+	NetworkSettings networkSettings;
 	bool isLogged = false;
 	bool isOnButton = false;
 	bool isBusy;
