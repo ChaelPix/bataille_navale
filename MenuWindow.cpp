@@ -71,7 +71,7 @@ void MenuWindow::HandleMatchmaking()
     {
         if (application->client == nullptr) {
             bool success;
-            if (application->networkSettings.isLocal) {
+            if (application->networkSettings._ISLOCAL) {
                 success = application->CreateClient(serverIpTxtbox->getText());
             }
             else {
@@ -149,7 +149,7 @@ void MenuWindow::Render()
         playerPicture->draw(window);
         creditsTxt->draw(window);
 
-        if (application->networkSettings.isLocal)
+        if (application->networkSettings._ISLOCAL)
         {
             serverIpDesc->draw(window);
             serverIpTxtbox->draw(window);

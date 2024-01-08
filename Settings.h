@@ -2,8 +2,6 @@
 
 #include <SFML/Graphics.hpp>
 
-
-//Local
 struct NetworkSettings {
     const bool _ISLOCAL = true;
 
