@@ -4,28 +4,30 @@
 
 
 //Local
-//struct NetworkSettings {
-//    const bool isLocal = true;
-//    const std::string bddSchema = "batailleNavale_b";
-//    const std::string bddIp = "tcp://10.187.52.4:3306";
-//    const std::string bddLogin = "batailleNavale";
-//    const std::string bddMdp = "batailleNavale";
-//
-//    const std::string serverIp = "";
-//    const int serverPort = 12345;
-//};
-
-//Public
 struct NetworkSettings {
-    const bool isLocal = false;
-    const std::string bddSchema = "bataille";
-    const std::string bddIp = "tcp://135.125.103.133:3306";
-    const std::string bddLogin = "bataille";
-    const std::string bddMdp = "batailleSNIR";
+    const bool _ISLOCAL = true;
 
-    const std::string serverIp = "135.125.103.133";
-    const int serverPort = 55555;
+    std::string bddSchema = "batailleNavale_b";
+    std::string bddIp = "tcp://10.187.52.4:3306";
+    std::string bddLogin = "batailleNavale";
+    std::string bddMdp = "batailleNavale";
+    std::string serverIp = "";
+    int serverPort = 12345;
+
+    NetworkSettings()
+    {
+        if(!_ISLOCAL)
+        {
+             bddSchema = "bataille";
+             bddIp = "tcp://135.125.103.133:3306";
+             bddLogin = "bataille";
+             bddMdp = "batailleSNIR";
+             serverIp = "135.125.103.133";
+             serverPort = 55555;
+        }
+    }
 };
+
 
 struct GridSettings {
     const int squareSize = 500;
