@@ -4,6 +4,7 @@
 #include <memory>
 #include <thread>
 #include "SfmlWindow.h"
+#include "Settings.h"
 #include "GameWindow.h"
 #include "MenuWindow.h"
 #include "SplashWindow.h"
@@ -36,6 +37,8 @@ public:
     TCPClient* client;
     SfxManager* fxobj;
     std::string serverIP = "10.187.52.XXX";
+    NetworkSettings networkSettings;
+
 private:
     bool running = true;
     State currentState;

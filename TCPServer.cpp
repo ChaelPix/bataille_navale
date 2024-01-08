@@ -9,6 +9,7 @@ void TCPServer::init()
 {
     bindAndListen();
     isServerOn = true;
+
     listenerThread = std::thread(&TCPServer::acceptClients, this);
     matchThread = std::thread(&TCPServer::matchClientsForGame, this);
 }
@@ -21,6 +22,7 @@ void TCPServer::setupAddress()
     adr_server.sin_port = htons(serverPORT);
     adr_server.sin_addr.s_addr = htonl(INADDR_ANY);
 }
+
 
 void TCPServer::bindAndListen()
 {

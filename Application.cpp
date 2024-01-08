@@ -222,8 +222,7 @@ bool GameApplication::CreateClient()
 {
    try
    {
-       this->client = new TCPClient("135.125.103.133", 55555);
-       //this->client = new TCPClient("10.187.52.31", 12345);
+       this->client = new TCPClient(networkSettings.serverIp, networkSettings.serverPort);
        return true;
    }
    catch (const std::runtime_error& e)
@@ -238,7 +237,6 @@ bool GameApplication::CreateClient(std::string ip)
     try
     {
         this->client = new TCPClient(ip, 12345);
-        //this->client = new TCPClient("10.187.52.31", 12345);
         return true;
     }
     catch (const std::runtime_error& e)

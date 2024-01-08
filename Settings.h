@@ -2,6 +2,31 @@
 
 #include <SFML/Graphics.hpp>
 
+
+//Local
+//struct NetworkSettings {
+//    const bool isLocal = true;
+//    const std::string bddSchema = "batailleNavale_b";
+//    const std::string bddIp = "tcp://10.187.52.4:3306";
+//    const std::string bddLogin = "batailleNavale";
+//    const std::string bddMdp = "batailleNavale";
+//
+//    const std::string serverIp = "";
+//    const int serverPort = 12345;
+//};
+
+//Public
+struct NetworkSettings {
+    const bool isLocal = false;
+    const std::string bddSchema = "bataille";
+    const std::string bddIp = "tcp://135.125.103.133:3306";
+    const std::string bddLogin = "bataille";
+    const std::string bddMdp = "batailleSNIR";
+
+    const std::string serverIp = "135.125.103.133";
+    const int serverPort = 55555;
+};
+
 struct GridSettings {
     const int squareSize = 500;
     const int nbPixels = 10;

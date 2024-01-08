@@ -69,16 +69,21 @@ void MenuWindow::HandleMatchmaking()
 {
     if (menuButtonsManager->getIsMatchMaking())
     {
-        if (application->client == nullptr)
-        {
-            if (!application->CreateClient(serverIpTxtbox->getText()))
-            {
+        if (application->client == nullptr) {
+            bool success;
+            if (application->networkSettings.isLocal) {
+                success = application->CreateClient(serverIpTxtbox->getText());
+            }
+            else {
+                success = application->CreateClient();
+            }
+
+            if (!success) {
                 serverInfoTxt->SetText("Server is Inactive");
                 menuButtonsManager->setIsMatchMaking(false);
                 return;
             }
-            else
-            {
+            else {
                 serverInfoTxt->SetText("");
             }
         }
@@ -143,8 +148,13 @@ void MenuWindow::Render()
         serverInfoTxt->draw(window);
         playerPicture->draw(window);
         creditsTxt->draw(window);
-        serverIpDesc->draw(window);
-        serverIpTxtbox->draw(window);
+
+        if (application->networkSettings.isLocal)
+        {
+            serverIpDesc->draw(window);
+            serverIpTxtbox->draw(window);
+        }
+
         if (playerInfosText.empty())
             InitPlayerInfo();
         else

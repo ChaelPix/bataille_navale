@@ -141,7 +141,7 @@ void LoginMenu::Login(std::string id, std::string mdp){
 	std::cout << "Login.... ";
 	textInfo->SetText("Login...");
 
-	bool isConnected = bdd->connectToDB("tcp://10.187.52.4:3306", "batailleNavale", "batailleNavale");
+	bool isConnected = bdd->connectToDB(networkSettings.bddIp, networkSettings.bddLogin, networkSettings.bddMdp, networkSettings.bddSchema);
 
 	if (!isConnected)
 	{

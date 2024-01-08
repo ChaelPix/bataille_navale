@@ -18,10 +18,11 @@ protected:
     struct sockaddr_in adr_client;
     int addr_len;
 
+protected:
     std::thread listenerThread;
-    std::thread receiveThread;
-
     std::thread matchThread;
+
+    std::thread receiveThread;
 
     std::vector<SOCKET> idsClients;
 
